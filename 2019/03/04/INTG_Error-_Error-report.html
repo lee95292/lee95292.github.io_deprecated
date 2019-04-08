@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>[INTG Project] 프로그래밍 언어, 프레임워크 Error Report</title>
-  <meta name="description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  javascript  javaJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 있을때,  getElementsBy… 에서는 작동하지만, querySelectorAll는 작동하지 않는다...">
+  <meta name="description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  Javascript  Eclipse_Setting  Spring  Java  Git  python  Jekyll/BlogJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 있을때,  g...">
   
   <meta name="author" content="LeeMyungKyu">
   <meta name="copyright" content="&copy; LeeMyungKyu 2019">
@@ -41,7 +41,7 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  javascript  javaJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 있을때,  getElementsBy… 에서는 작동하지만, querySelectorAll는 작동하지 않는다..." />
+  <meta property="og:description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  Javascript  Eclipse_Setting  Spring  Java  Git  python  Jekyll/BlogJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 있을때,  g..." />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
   <meta property="og:title" content="[INTG Project] 프로그래밍 언어, 프레임워크 Error Report" />
@@ -56,7 +56,7 @@
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="[INTG Project] 프로그래밍 언어, 프레임워크 Error Report">
-  <meta name="twitter:description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  javascript  javaJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 있을때,  getElementsBy… 에서는 작동하지만, querySelectorAll는 작동하지 않는다...">
+  <meta name="twitter:description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  Javascript  Eclipse_Setting  Spring  Java  Git  python  Jekyll/BlogJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 있을때,  g...">
   <meta name="twitter:image" content="http://lee95292.github.io/centrarium/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
   
@@ -148,8 +148,13 @@
 <hr />
 
 <ul>
-  <li><a href="#js">javascript</a></li>
-  <li><a href="#java">java</a></li>
+  <li><a href="#js">Javascript</a></li>
+  <li><a href="#eclipse">Eclipse_Setting</a></li>
+  <li><a href="#spring">Spring</a></li>
+  <li><a href="#java">Java</a></li>
+  <li><a href="#git">Git</a></li>
+  <li><a href="#python">python</a></li>
+  <li><a href="#blog">Jekyll/Blog</a></li>
 </ul>
 
 <p><br /><br /><br /></p>
@@ -173,7 +178,7 @@
   <li>추측) Dom tree가 만들어지기 전에 쿼리셀렉터를 작동시키면 동작하지 않는다. <del>괜히 쿼리셀렉터가 반환하는 Node에 문제가 있는줄 알았다.</del></li>
 </ul>
 
-<h1><a name="java">Java</a></h1>
+<h1><a name="eclipse">Java</a></h1>
 <hr />
 <p><br /></p>
 
@@ -211,6 +216,58 @@ Server Tomcat v</em>.0 Server at localhost was unable to start within 45 seconds
 </ul>
 
 <p>해결 - 서버탭 의 해당서버 우클릭 &gt; open &gt; 서버 설정창 내에서, timeout 탭 &gt; strat timeout 시간을 늘려준다.</p>
+
+<p><strong>E003</strong> Server Tomcat vX.X Server at localhost failed to start 에러</p>
+
+<hr />
+
+<blockquote>
+  <p>Server Tomcat v<em>.</em> Server at localhost failed to start</p>
+</blockquote>
+
+<p>대화상자에는 저렇게만 표시되고 아무런 오류메시지가 없음</p>
+
+<p>해결방법</p>
+
+<ol>
+  <li>JRE 설정</li>
+  <li>유일한 URL Mapping 사용</li>
+  <li>tomcat 자체 실행확인</li>
+  <li>Project-Java Build Path 의 Server Library[tomcat 버전] 설치</li>
+</ol>
+
+<h1><a name="Spring">Spring</a></h1>
+<hr />
+<p><br /></p>
+
+<h1><a name="Java">Java</a></h1>
+<hr />
+<p><br /></p>
+
+<h1><a name="git">Java</a></h1>
+<hr />
+<p><br /></p>
+
+<h1><a name="python">Java</a></h1>
+<hr />
+<p><br /></p>
+
+<h1><a name="blog">Jekyll/Blog</a></h1>
+<hr />
+<p><br /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>lib/bundler/runtime.rb:319:in `check_for_activated_spec!': You have already activated addressable 2.5.2, but your Gemfile requires addressable 2.4.0. Prepending `bundle exec` to your command may solve this.
+</code></pre>
+</div>
+
+<p>테마 변경을 위해, 해당테마에서 jekyll build 수행 시 위와 같은 에러 발생.</p>
+
+<p>prepending bundle exec, 즉, 수행구문 앞에 bundle exec 붙여주면 해결됨</p>
+
+<blockquote>
+  <p>bundle exec jekyll build
+bundle exec jekyll serve</p>
+</blockquote>
 
 </article>
 

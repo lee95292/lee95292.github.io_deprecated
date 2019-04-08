@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/centrarium/</link>
     <atom:link href="http://lee95292.github.io/centrarium/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 08 Apr 2019 10:48:05 +0900</pubDate>
-    <lastBuildDate>Mon, 08 Apr 2019 10:48:05 +0900</lastBuildDate>
+    <pubDate>Mon, 08 Apr 2019 20:50:33 +0900</pubDate>
+    <lastBuildDate>Mon, 08 Apr 2019 20:50:33 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -155,8 +155,13 @@
 &lt;hr /&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#js&quot;&gt;javascript&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#java&quot;&gt;java&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#js&quot;&gt;Javascript&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#eclipse&quot;&gt;Eclipse_Setting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#spring&quot;&gt;Spring&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#java&quot;&gt;Java&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#git&quot;&gt;Git&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#python&quot;&gt;python&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#blog&quot;&gt;Jekyll/Blog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -180,7 +185,7 @@
   &lt;li&gt;추측) Dom tree가 만들어지기 전에 쿼리셀렉터를 작동시키면 동작하지 않는다. &lt;del&gt;괜히 쿼리셀렉터가 반환하는 Node에 문제가 있는줄 알았다.&lt;/del&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1&gt;&lt;a name=&quot;java&quot;&gt;Java&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a name=&quot;eclipse&quot;&gt;Java&lt;/a&gt;&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -218,6 +223,58 @@ Server Tomcat v&lt;/em&gt;.0 Server at localhost was unable to start within 45 s
 &lt;/ul&gt;
 
 &lt;p&gt;해결 - 서버탭 의 해당서버 우클릭 &amp;gt; open &amp;gt; 서버 설정창 내에서, timeout 탭 &amp;gt; strat timeout 시간을 늘려준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;E003&lt;/strong&gt; Server Tomcat vX.X Server at localhost failed to start 에러&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Server Tomcat v&lt;em&gt;.&lt;/em&gt; Server at localhost failed to start&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;대화상자에는 저렇게만 표시되고 아무런 오류메시지가 없음&lt;/p&gt;
+
+&lt;p&gt;해결방법&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;JRE 설정&lt;/li&gt;
+  &lt;li&gt;유일한 URL Mapping 사용&lt;/li&gt;
+  &lt;li&gt;tomcat 자체 실행확인&lt;/li&gt;
+  &lt;li&gt;Project-Java Build Path 의 Server Library[tomcat 버전] 설치&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1&gt;&lt;a name=&quot;Spring&quot;&gt;Spring&lt;/a&gt;&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1&gt;&lt;a name=&quot;Java&quot;&gt;Java&lt;/a&gt;&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1&gt;&lt;a name=&quot;git&quot;&gt;Java&lt;/a&gt;&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1&gt;&lt;a name=&quot;python&quot;&gt;Java&lt;/a&gt;&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1&gt;&lt;a name=&quot;blog&quot;&gt;Jekyll/Blog&lt;/a&gt;&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lib/bundler/runtime.rb:319:in `check_for_activated_spec!': You have already activated addressable 2.5.2, but your Gemfile requires addressable 2.4.0. Prepending `bundle exec` to your command may solve this.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;테마 변경을 위해, 해당테마에서 jekyll build 수행 시 위와 같은 에러 발생.&lt;/p&gt;
+
+&lt;p&gt;prepending bundle exec, 즉, 수행구문 앞에 bundle exec 붙여주면 해결됨&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;bundle exec jekyll build
+bundle exec jekyll serve&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         <pubDate>Mon, 04 Mar 2019 14:46:00 +0900</pubDate>
         <link>http://lee95292.github.io/centrarium/2019/03/04/INTG_Error-_Error-report.html</link>
