@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[blog/첫글] 마크다운 사용법</title>
+  <meta name="description" content="안녕하세요~ 마크다운 글 정리로 첫 포스팅을 시작합니다.지킬 블로그를 시작하게 되면서, 티스토리 에디터를 사용했던 때 말고는 마크다운을 거의 처음 접해보는데요, 티스토리에서 사용하면서도 문법을 모르고 써서 조금 헤맸던 기억이 납니다.바로 마크다운 사용법을 정리해보도록 하겠습니다.(...">
+  
+  <meta name="author" content="LeeMyungKyu">
+  <meta name="copyright" content="&copy; LeeMyungKyu 2019">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/centrarium/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/centrarium/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/centrarium/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/centrarium/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/centrarium/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/centrarium/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/centrarium/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/centrarium/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/centrarium/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/centrarium/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/centrarium/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/centrarium/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/centrarium/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/centrarium/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/centrarium/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/centrarium/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/centrarium/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="안녕하세요~ 마크다운 글 정리로 첫 포스팅을 시작합니다.지킬 블로그를 시작하게 되면서, 티스토리 에디터를 사용했던 때 말고는 마크다운을 거의 처음 접해보는데요, 티스토리에서 사용하면서도 문법을 모르고 써서 조금 헤맸던 기억이 납니다.바로 마크다운 사용법을 정리해보도록 하겠습니다.(..." />
+  <meta property="og:url" content="http://lee95292.github.io" />
+  <meta property="og:site_name" content="Mleek's blog" />
+  <meta property="og:title" content="[blog/첫글] 마크다운 사용법" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://lee95292.github.io/centrarium/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[blog/첫글] 마크다운 사용법">
+  <meta name="twitter:description" content="안녕하세요~ 마크다운 글 정리로 첫 포스팅을 시작합니다.지킬 블로그를 시작하게 되면서, 티스토리 에디터를 사용했던 때 말고는 마크다운을 거의 처음 접해보는데요, 티스토리에서 사용하면서도 문법을 모르고 써서 조금 헤맸던 기억이 납니다.바로 마크다운 사용법을 정리해보도록 하겠습니다.(...">
+  <meta name="twitter:image" content="http://lee95292.github.io/centrarium/assets/logo.png">
+  <meta name="twitter:url" content="http://lee95292.github.io">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/centrarium/css/main.css">
+  <link rel="canonical" href="http://lee95292.github.io/centrarium/jekyll/update/2018/12/21/blog-Markdown-usage.html">
+  <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/centrarium/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/centrarium/" class="logo">
+      
+      <img src="/centrarium/assets/logo.png" alt="Mleek's blog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/centrarium/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/centrarium/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/centrarium/typography/">Typography</a>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">[blog/첫글] 마크다운 사용법</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">December 21, 2018</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/centrarium/category/jekyll">Jekyll</a>, 
+    
+  
+    
+    <a href="/centrarium/category/update">Update</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p><br />
+안녕하세요~ 마크다운 글 정리로 첫 포스팅을 시작합니다.</p>
+
+<p>지킬 블로그를 시작하게 되면서, 티스토리 에디터를 사용했던 때 말고는 마크다운을 거의 처음 접해보는데요, 티스토리에서 사용하면서도 문법을 모르고 써서 조금 헤맸던 기억이 납니다.</p>
+
+<p>바로 마크다운 사용법을 정리해보도록 하겠습니다.</p>
+
+<p><em>(해당 글에서 유용한 마크다운 문법을 지속적으로 업데이트 할 예정입니다.) 최종 업데이트 : 2018-12-23</em>
+<br /><br /><br /></p>
+
+<h1 id="section">1. 폰트 및 글씨</h1>
+<hr />
+
+<p><br /><br />
+<strong>—1.1 글씨 크기 조절</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> # 이 문장들이 각각
+ ## 아래와 같이 변하게 됩니다.
+ ### html의 h1, h2, h3와 유사합니다.
+</code></pre>
+</div>
+
+<h1 id="section-1">&gt;이 문장들이 각각</h1>
+<h2 id="section-2">&gt;아래와 같이 변합니다.</h2>
+<h3 id="html-h1-h2-h3--h6--">&gt; html의 h1, h2, h3 ~ h6 와 유사합니다.</h3>
+
+<p><br /><br /></p>
+
+<p><strong>—1.2 문단 및 리스팅</strong>
+<br /><br /></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt; 첫 번째
+&gt;&gt; 두 번째
+&gt;&gt;&gt; 세 번째까지
+</code></pre>
+</div>
+<blockquote>
+  <p>첫 번째</p>
+  <blockquote>
+    <p>두 번째</p>
+    <blockquote>
+      <p>세 번째 까지</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p><strong>—1.3 기본적인 폰트 변경</strong>
+<br /></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>*이탈릭체1*
+
+_이탈릭체2_
+
+**볼드체 1**
+
+__볼드체 2__
+
+~~취소선~~
+</code></pre>
+</div>
+<p><em>이탈릭체1</em></p>
+
+<p><em>이탈릭체2</em></p>
+
+<p><strong>볼드체 1</strong></p>
+
+<p><strong>볼드체 2</strong></p>
+
+<p><del>취소선</del></p>
+
+<h1 id="section-3">2. 이미지 및 링크 참조</h1>
+<hr />
+<p><strong>—2.1 링크 참조</strong></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>[github](https://github.com)
+</code></pre>
+</div>
+<p><strong>결과 :</strong> <a href="http://github.com">github</a></p>
+
+<h1 id="section-4">3. 소스코드 작성</h1>
+<hr />
+
+<p>–2.1소스코드 작성하는 방법</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>'''python
+이 곳에 소스코드를 작성하면 됩니다!
+ ` 는일반적인 키보드 기준으로, 물결표시에 위치해 있습니다.
+'''
+</code></pre>
+</div>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/centrarium/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=%5Bblog%2F%EC%B2%AB%EA%B8%80%5D+%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4+%EC%82%AC%EC%9A%A9%EB%B2%95&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fjekyll%2Fupdate%2F2018%2F12%2F21%2Fblog-Markdown-usage.html&via=TheBenCentra"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+      <a href="//www.facebook.com/sharer.php?t=%5Bblog%2F%EC%B2%AB%EA%B8%80%5D+%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4+%EC%82%AC%EC%9A%A9%EB%B2%95&u=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fjekyll%2Fupdate%2F2018%2F12%2F21%2Fblog-Markdown-usage.html"
+        onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
+        <i class="fa fa-facebook-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fjekyll%2Fupdate%2F2018%2F12%2F21%2Fblog-Markdown-usage.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      <a href="//plus.google.com/share?title=%5Bblog%2F%EC%B2%AB%EA%B8%80%5D+%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4+%EC%82%AC%EC%9A%A9%EB%B2%95&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fjekyll%2Fupdate%2F2018%2F12%2F21%2Fblog-Markdown-usage.html"
+        onclick="window.open(this.href, 'google-plus-share', 'width=550,height=255');return false;">
+        <i class="fa fa-google-plus-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=%5Bblog%2F%EC%B2%AB%EA%B8%80%5D+%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4+%EC%82%AC%EC%9A%A9%EB%B2%95&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fjekyll%2Fupdate%2F2018%2F12%2F21%2Fblog-Markdown-usage.html&media=http://lee95292.github.io/centrarium/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+      <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent('http://lee95292.github.io/centrarium/jekyll/update/2018/12/21/blog-Markdown-usage.html') + '&title=[blog/첫글] 마크다운 사용법'; return false">
+        <i class="fa fa-reddit-square fa-lg"></i>
+      </a>
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Mleek's blog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/centrarium/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/centrarium/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/centrarium/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:lee95292@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">lee95292@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/TheBenCentra" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">TheBenCentra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/bencentra" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">bencentra</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/pub/ben-centra/47/769/60a" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Ben Centra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/centrarium/feed.xml">via RSS</a></strong></p>
+      <p class="text">Mleek's blog_ study note & daily life
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

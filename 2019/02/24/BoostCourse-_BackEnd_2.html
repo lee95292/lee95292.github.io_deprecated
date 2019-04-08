@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[BoostCourse] PJ2 BackEnd 강의 정리</title>
+  <meta name="description" content="JSP 강의정리Java Server Page, 자바 언어를 통해, 웹 페이지를 표시하는 기술Scope란?웹을 개발하면서 사용할 변수들에 대해, 유지되는 범위(scope)를 의미한다.page &gt; request &gt; session &gt; application 의 포함관계가 ...">
+  
+  <meta name="author" content="LeeMyungKyu">
+  <meta name="copyright" content="&copy; LeeMyungKyu 2019">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/centrarium/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/centrarium/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/centrarium/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/centrarium/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/centrarium/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/centrarium/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/centrarium/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/centrarium/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/centrarium/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/centrarium/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/centrarium/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/centrarium/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/centrarium/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/centrarium/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/centrarium/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/centrarium/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/centrarium/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="JSP 강의정리Java Server Page, 자바 언어를 통해, 웹 페이지를 표시하는 기술Scope란?웹을 개발하면서 사용할 변수들에 대해, 유지되는 범위(scope)를 의미한다.page &gt; request &gt; session &gt; application 의 포함관계가 ..." />
+  <meta property="og:url" content="http://lee95292.github.io" />
+  <meta property="og:site_name" content="Mleek's blog" />
+  <meta property="og:title" content="[BoostCourse] PJ2 BackEnd 강의 정리" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://lee95292.github.io/centrarium/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[BoostCourse] PJ2 BackEnd 강의 정리">
+  <meta name="twitter:description" content="JSP 강의정리Java Server Page, 자바 언어를 통해, 웹 페이지를 표시하는 기술Scope란?웹을 개발하면서 사용할 변수들에 대해, 유지되는 범위(scope)를 의미한다.page &gt; request &gt; session &gt; application 의 포함관계가 ...">
+  <meta name="twitter:image" content="http://lee95292.github.io/centrarium/assets/logo.png">
+  <meta name="twitter:url" content="http://lee95292.github.io">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/centrarium/css/main.css">
+  <link rel="canonical" href="http://lee95292.github.io/centrarium/2019/02/24/BoostCourse-_BackEnd_2.html">
+  <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/centrarium/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/centrarium/" class="logo">
+      
+      <img src="/centrarium/assets/logo.png" alt="Mleek's blog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/centrarium/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/centrarium/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/centrarium/typography/">Typography</a>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">[BoostCourse] PJ2 BackEnd 강의 정리</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">February 24, 2019</div>
+  <div class="post-categories">
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h2 id="jsp-">JSP 강의정리</h2>
+
+<hr />
+
+<p>Java Server Page, 자바 언어를 통해, 웹 페이지를 표시하는 기술</p>
+
+<p><br /></p>
+
+<h1 id="scope">Scope란?</h1>
+
+<hr />
+
+<p>웹을 개발하면서 사용할 변수들에 대해, 유지되는 범위(scope)를 의미한다.</p>
+
+<p>page &gt; request &gt; session &gt; application 의 포함관계가 있다.</p>
+
+<p><br /></p>
+
+<h1 id="page-scope">page scope</h1>
+
+<hr />
+
+<p>서블릿의 PageContext</p>
+
+<ul>
+  <li>pageContext 내장객체 사용(jsp)</li>
+  <li>웹 페이지가 실행되는 동안 사용됨 (forward시, 내장객체 사라짐)</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="request-scope">request scope</h1>
+
+<hr />
+
+<p>서블릿의 HttpServeltRequest</p>
+
+<ul>
+  <li>request 내장객체 사용(jsp), set,get Attribute 메서드, 디스패쳐 메서드 존재</li>
+  <li>요청이 들어오고 응답이 나갈 때 까지 사용됨</li>
+  <li>페이지가 이동하는 forward에서도 객체 유지됨</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="session-scope">session scope</h1>
+
+<hr />
+
+<p>서블릿의 HttpSession</p>
+
+<ul>
+  <li>세션이 유지되는 동안 객체 유지됨, session 내장객체(jsp) 사용</li>
+  <li>set,get Attribute 메서드 존재</li>
+  <li>클라이언트(browser) 별로 변수 관리</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="application-scope">application scope</h1>
+
+<hr />
+
+<p>서블릿의 ServletContext</p>
+
+<ul>
+  <li>여러 개의 클라이언트들이 값을 공유, application 내장객체(jsp) 사용</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="expression-language">Expression Language</h1>
+
+<hr />
+
+<p>EL은, 값을 표현하는 데 사용되는 스크립트언어로서 JSP 문법을 보완하는 역할을 하며, 기능은 다음과 같다.</p>
+
+<ul>
+  <li>JSP의 스코프에 맞는 속성 사용</li>
+  <li>집합 객체에 대한 접근 방법 제공</li>
+  <li>수치, 관계, 논리 연산자 제공</li>
+  <li>자바 클래스 메서드 호출 기능 제공</li>
+  <li>EL만의 기본객체 제공</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="section">표현언어의 사용방법</h2>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="err">$</span><span class="o">{</span><span class="n">expression</span><span class="o">}</span> 
+</code></pre>
+</div>
+
+<p>위의 기본예제와 같이, $달러 옆의 {}중괄호 내에 표현식을 작성한다.</p>
+
+<pre><code class="language-jsp">&lt;jsp:include page = "/module/${skin.id}/header.jsp" flush="true"&gt;
+&lt;b&gt;${sessionScope.member.id}&lt;/b&gt;님 환영합니다.
+</code></pre>
+
+<p>jsp로 작성된 EL 예제</p>
+
+<p>표현언어가 제공하는 기본객체는 아래와 같다.</p>
+
+<ul>
+  <li>
+    <p>pageContext</p>
+  </li>
+  <li>
+    <p>pageScope, requestScope, sessionScope, applicationScope - 기본객체에 저장된 <strong>속성-값</strong> 매핑을 저장한 Map 객체</p>
+  </li>
+  <li>
+    <p>param - 요청 파라미터의 <strong>파라미터이름-값</strong> 매핑을 저장한 Map 객체</p>
+  </li>
+  <li>
+    <p>paramValues - 요청 파라미터의 값들을 <strong>파라미터이름 - 값배열</strong> 매핑을 저장한 Map 객체</p>
+  </li>
+  <li>
+    <p>header - 요청정보의 헤더이름-값 매핑을 저장한 Map 객체</p>
+  </li>
+  <li>
+    <p>headerValues - 위 관계와 동일</p>
+  </li>
+  <li>
+    <p>cookie - 쿠키이름 - 쿠키 매핑저장</p>
+  </li>
+  <li>
+    <p>initParam - 초기화 파라미터의 이름- 값 매핑 저장</p>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+<h1 id="jstl---jsp-standard-tag-library">JSTL - JSP Standard Tag Library</h1>
+
+<p>작성자가 너ㅓ무 귀찮은 관계로 미룸</p>
+
+<h1 id="database">DataBase</h1>
+
+<p>데이터베이스는 따로 Mysql 설치, 문법 예제 연습 의 2개 시리즈의 포스팅으로 나누어 작성</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/centrarium/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=%5BBoostCourse%5D+PJ2+BackEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F2019%2F02%2F24%2FBoostCourse-_BackEnd_2.html&via=TheBenCentra"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+      <a href="//www.facebook.com/sharer.php?t=%5BBoostCourse%5D+PJ2+BackEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&u=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F2019%2F02%2F24%2FBoostCourse-_BackEnd_2.html"
+        onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
+        <i class="fa fa-facebook-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F2019%2F02%2F24%2FBoostCourse-_BackEnd_2.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      <a href="//plus.google.com/share?title=%5BBoostCourse%5D+PJ2+BackEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F2019%2F02%2F24%2FBoostCourse-_BackEnd_2.html"
+        onclick="window.open(this.href, 'google-plus-share', 'width=550,height=255');return false;">
+        <i class="fa fa-google-plus-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BBoostCourse%5D+PJ2+BackEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F2019%2F02%2F24%2FBoostCourse-_BackEnd_2.html&media=http://lee95292.github.io/centrarium/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+      <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent('http://lee95292.github.io/centrarium/2019/02/24/BoostCourse-_BackEnd_2.html') + '&title=[BoostCourse] PJ2 BackEnd 강의 정리'; return false">
+        <i class="fa fa-reddit-square fa-lg"></i>
+      </a>
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Mleek's blog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/centrarium/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/centrarium/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/centrarium/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:lee95292@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">lee95292@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/TheBenCentra" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">TheBenCentra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/bencentra" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">bencentra</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/pub/ben-centra/47/769/60a" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Ben Centra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/centrarium/feed.xml">via RSS</a></strong></p>
+      <p class="text">Mleek's blog_ study note & daily life
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

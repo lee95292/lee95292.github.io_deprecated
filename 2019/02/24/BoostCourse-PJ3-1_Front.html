@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[BoostCourse] PJ3 FrontEnd 강의 정리</title>
+  <meta name="description" content="javascript 배열      선언 : new Array()를 통해서 가능하지만, 보통 a = [] 처럼 간단히 선언        모든 데이터타입이 들어갈 수 있다. (객체, 함수, null 등등 )```javascripta=[4];a[100]=4;  console.log(a....">
+  
+  <meta name="author" content="LeeMyungKyu">
+  <meta name="copyright" content="&copy; LeeMyungKyu 2019">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/centrarium/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/centrarium/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/centrarium/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/centrarium/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/centrarium/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/centrarium/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/centrarium/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/centrarium/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/centrarium/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/centrarium/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/centrarium/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/centrarium/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/centrarium/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/centrarium/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/centrarium/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/centrarium/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/centrarium/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="javascript 배열      선언 : new Array()를 통해서 가능하지만, 보통 a = [] 처럼 간단히 선언        모든 데이터타입이 들어갈 수 있다. (객체, 함수, null 등등 )```javascripta=[4];a[100]=4;  console.log(a...." />
+  <meta property="og:url" content="http://lee95292.github.io" />
+  <meta property="og:site_name" content="Mleek's blog" />
+  <meta property="og:title" content="[BoostCourse] PJ3 FrontEnd 강의 정리" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://lee95292.github.io/centrarium/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[BoostCourse] PJ3 FrontEnd 강의 정리">
+  <meta name="twitter:description" content="javascript 배열      선언 : new Array()를 통해서 가능하지만, 보통 a = [] 처럼 간단히 선언        모든 데이터타입이 들어갈 수 있다. (객체, 함수, null 등등 )```javascripta=[4];a[100]=4;  console.log(a....">
+  <meta name="twitter:image" content="http://lee95292.github.io/centrarium/assets/logo.png">
+  <meta name="twitter:url" content="http://lee95292.github.io">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/centrarium/css/main.css">
+  <link rel="canonical" href="http://lee95292.github.io/centrarium/2019/02/24/BoostCourse-PJ3-1_Front.html">
+  <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/centrarium/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/centrarium/" class="logo">
+      
+      <img src="/centrarium/assets/logo.png" alt="Mleek's blog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/centrarium/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/centrarium/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/centrarium/typography/">Typography</a>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">[BoostCourse] PJ3 FrontEnd 강의 정리</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">February 24, 2019</div>
+  <div class="post-categories">
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h3 id="javascript-">javascript 배열</h3>
+
+<hr />
+
+<ul>
+  <li>
+    <p>선언 : new Array()를 통해서 가능하지만, 보통 a = [] 처럼 간단히 선언</p>
+  </li>
+  <li>
+    <p>모든 데이터타입이 들어갈 수 있다. (객체, 함수, null 등등 )
+```javascript
+a=[4];
+a[100]=4;</p>
+  </li>
+</ul>
+
+<p>console.log(a.length);      // 101 출력</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+### javascript 배열의 유용한 메서드들
+
+---
+
+```javascript
+a=[];
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>push - a.push(10); //a=[10], 배열에 순차적으로 원소 삽입,pop도 있음</p>
+  </li>
+  <li>
+    <p>indexof - a.indexof(10);  // =0, 특정원소가 존재하는 인덱스 반환.</p>
+  </li>
+  <li>
+    <p>concat - a=a.concat(1,2,3) //a=[1,2,3,10] 배열에 원소 이어붙임, (이어붙인 배열을 반환).</p>
+  </li>
+  <li>
+    <p>join - a=a.join() // =”1,2,3,10” 배열을 문자열로 합친 후 반환.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>join,concat같은 경우, 실행시 배열의 내용이 직접 바뀌지 않고, 수행된 값을 반환하는 작업만을 함에 유의하자.</p>
+</blockquote>
+
+<p><strong>배열탐색</strong></p>
+
+<ul>
+  <li>
+    <p>foreach(function(v,i)) : v,i를 각각 value, index에 파싱하여 function에 해당하는 내용 루프돌며 실행한다.</p>
+  </li>
+  <li>
+    <p>map(function(v,i)) :  function의 리턴값들의 배열을 리턴합니다.</p>
+  </li>
+</ul>
+
+<pre><code class="language-javascirpt">var newArr = ["apple","tomato"].map(function(value, index) {
+   return index + "번째 과일은 " + value + "입니다";
+});
+console.log(newArr)     //문자열 배열로 리턴
+</code></pre>
+
+<h3 id="javascript--1">javascript 객체</h3>
+
+<hr />
+
+<ul>
+  <li>
+    <p>key, value로 이루어진 js의 대표적인  자료구조 .(온점)을 통해 접근.</p>
+  </li>
+  <li>
+    <p>,(콤마)를 통해 속성을 구분, :(콜론) 을 통해 키/벨류를 바인딩.</p>
+  </li>
+  <li>
+    <p>for-in 문을 사용하여 순회.</p>
+  </li>
+  <li>
+    <p>Object.keys() - 오브젝트의 키로 이루어진 배열 반환</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Object.keys()로도 객체 순회 가능</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">:</span><span class="s2">"myName"</span><span class="p">};</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">value</span><span class="p">]);</span>
+    <span class="p">});</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>객체의 속성 추가는 접근방법과 같다.</p>
+  </li>
+  <li>
+    <p>속성 제거에는 delete 키워드를 통해 가능하다.
+```javascript
+obj[“name”]=”mleek”;    //name 속성 생성</p>
+  </li>
+</ul>
+
+<p>delete obj.name;        //name속성 제거</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+실습 1.
+
+[링크](https://gist.github.com/nigayo/ade2c3f74417fc202c8097214c965f27) 에서, 숫자타입의 키값들만 출력하기.
+
+```javascript
+function findTypeKeys(v,type){
+    for(key in v){
+        if(typeof(v[key])=="object"){
+            findTypeKeys(v[key],type);
+        }else if(typeof(v[key])==type){
+            console.log(key);
+        }
+    }
+}
+
+findTypeKeys(data,"number");
+</code></pre>
+</div>
+
+<p>실습 2.</p>
+
+<p><a href="https://gist.github.com/nigayo/a9a118977f82780441db664d6785efe3">링크</a> 에서, “type”키 값이 “sk”인것의 name 출력하기</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">findPropAttr</span> <span class="p">(</span><span class="nx">v</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">v</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">v</span><span class="p">[</span><span class="nx">key</span><span class="p">])</span><span class="o">==</span><span class="s2">"object"</span><span class="p">){</span>
+            <span class="nx">findPropAttr</span><span class="p">(</span><span class="nx">v</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">key</span><span class="o">==</span><span class="s2">"type"</span><span class="o">&amp;&amp;</span><span class="nx">v</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span><span class="o">==</span><span class="s2">"sk"</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="dom-node--dom-api">DOM Node 조작하기 (DOM API)</h3>
+
+<hr />
+
+<p><a href="https://www.w3schools.com/jsref/dom_obj_document.asp">Document노드_API</a></p>
+
+<p><a href="https://www.w3schools.com/jsref/dom_obj_all.asp">Elements노드_API</a></p>
+
+<p>DOM 엘리먼트 속성</p>
+
+<ul>
+  <li>tagName : 엘리먼트 태그명 변환</li>
+  <li>textContent</li>
+</ul>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/centrarium/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=%5BBoostCourse%5D+PJ3+FrontEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F2019%2F02%2F24%2FBoostCourse-PJ3-1_Front.html&via=TheBenCentra"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+      <a href="//www.facebook.com/sharer.php?t=%5BBoostCourse%5D+PJ3+FrontEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&u=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F2019%2F02%2F24%2FBoostCourse-PJ3-1_Front.html"
+        onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
+        <i class="fa fa-facebook-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F2019%2F02%2F24%2FBoostCourse-PJ3-1_Front.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      <a href="//plus.google.com/share?title=%5BBoostCourse%5D+PJ3+FrontEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F2019%2F02%2F24%2FBoostCourse-PJ3-1_Front.html"
+        onclick="window.open(this.href, 'google-plus-share', 'width=550,height=255');return false;">
+        <i class="fa fa-google-plus-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BBoostCourse%5D+PJ3+FrontEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F2019%2F02%2F24%2FBoostCourse-PJ3-1_Front.html&media=http://lee95292.github.io/centrarium/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+      <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent('http://lee95292.github.io/centrarium/2019/02/24/BoostCourse-PJ3-1_Front.html') + '&title=[BoostCourse] PJ3 FrontEnd 강의 정리'; return false">
+        <i class="fa fa-reddit-square fa-lg"></i>
+      </a>
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Mleek's blog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/centrarium/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/centrarium/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/centrarium/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:lee95292@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">lee95292@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/TheBenCentra" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">TheBenCentra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/bencentra" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">bencentra</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/pub/ben-centra/47/769/60a" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Ben Centra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/centrarium/feed.xml">via RSS</a></strong></p>
+      <p class="text">Mleek's blog_ study note & daily life
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>
