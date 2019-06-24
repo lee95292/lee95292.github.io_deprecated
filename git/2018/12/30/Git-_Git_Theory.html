@@ -6,9 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Mleek's blog</title>
-  <meta name="description" content="Mleek's blog_ study note & daily life
-">
+  <title>Git 용어 및 개념 정리</title>
+  <meta name="description" content="0408_ 일단 후퇴궁금한것_  git fetch  git branch 관리하기">
   
   <meta name="author" content="LeeMyungKyu">
   <meta name="copyright" content="&copy; LeeMyungKyu 2019">
@@ -42,11 +41,10 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="Mleek's blog_ study note & daily life
-" />
+  <meta property="og:description" content="0408_ 일단 후퇴궁금한것_  git fetch  git branch 관리하기" />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
-  <meta property="og:title" content="Mleek's blog" />
+  <meta property="og:title" content="Git 용어 및 개념 정리" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://lee95292.github.io/centrarium/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -57,9 +55,8 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Mleek's blog">
-  <meta name="twitter:description" content="Mleek's blog_ study note & daily life
-">
+  <meta name="twitter:title" content="Git 용어 및 개념 정리">
+  <meta name="twitter:description" content="0408_ 일단 후퇴궁금한것_  git fetch  git branch 관리하기">
   <meta name="twitter:image" content="http://lee95292.github.io/centrarium/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
   
@@ -68,7 +65,7 @@
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/centrarium/css/main.css">
-  <link rel="canonical" href="http://lee95292.github.io/centrarium/page3/">
+  <link rel="canonical" href="http://lee95292.github.io/centrarium/git/2018/12/30/Git-_Git_Theory.html">
   <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/centrarium/feed.xml" />
 </head>
 
@@ -117,129 +114,236 @@
 
 
     <div class="page-content">
-        <div class="home">
+        <div class="post">
 
-<div class="site-header-container has-cover" style="background-image: url(/centrarium/assets/header_image.jpg);">
-  <div class="scrim has-cover">
-    <header class="site-header">
-      <h1 class="title">Mleek's blog</h1>
-      <p class="subtitle">A simple yet classy theme for your Jekyll website or blog</p>
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">Git 용어 및 개념 정리</h1>
+      <p class="info">by <strong></strong></p>
     </header>
   </div>
 </div>
 
 <div class="wrapper">
-<ul class="post-list">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">December 30, 2018</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/centrarium/category/git">Git</a>
+    
   
-  <li>
-    <h2>
-      <a class="post-link" href="/centrarium/boostcourse/2018/12/27/BoostCourse-_Front1.html">[BoostCourse] PJ1. 프론트엔드 강의 정리</a>
-    </h2>
-    <section class="post-excerpt" itemprop="description">
-      <p>CSS 1227 수강내용 선언방법 선언방법에는, 태그 속성으로 지정해주는 inline방법, style 태그 내에 지정해주는 internal 방법, 외부 파일을 link 태그로 연결해주어 지정하는 external방법이 있습니다. 선언방법 간 , 우선순위 는 다음과 같습니다. inline &gt; (internal = external) 인라인 코드가 가장 높은 우선순위를 갖고, 그렇지 않은 경우 나중에 선언된 코드가 높은 우선순위를 갖습니다....</p>
-    </section>
-    <section class="post-meta">
-      <div class="post-date">December 27, 2018</div>
-      <div class="post-categories">
-      in 
-        
-        <a href="/centrarium/category/boostcourse">Boostcourse</a>
-        
-      
-      </div>
-    </section>
-  </li>
-  
-  <hr>
-  
-  
-  <li>
-    <h2>
-      <a class="post-link" href="/centrarium/crawling/2018/12/26/INTG_Python-data_crowling2.html">[INTG Project] 웹 데이터 크롤링 총정리(셀레니움, requests,bs4)</a>
-    </h2>
-    <section class="post-excerpt" itemprop="description">
-      <p>웹 크롤링 및 데이터분석 자동화에 관한 함수들을 나열해놓은 포스팅입니다. 기록용이므로, 참고에 불편하실 수 있습니다. 선수지식 : HTML/CSS ,python, HTTP 1. requests 모듈 기초 import requests #get 대신 post를 사용할 수 있으며, 두 번째 인자부터 parameter를 지정할 수 있다. r = requests.get('https://www.naver.com',headers=[]) # html 메시지의 상태코드 e.g 200 OK, 404NotFound 등...</p>
-    </section>
-    <section class="post-meta">
-      <div class="post-date">December 26, 2018</div>
-      <div class="post-categories">
-      in 
-        
-        <a href="/centrarium/category/crawling">Crawling</a>
-        
-      
-      </div>
-    </section>
-  </li>
-  
-  <hr>
-  
-  
-  <li>
-    <h2>
-      <a class="post-link" href="/centrarium/blog/2018/12/22/blog-howToPost.html">[blog] Git Hosting을 통한 Jekyll 블로그 관리</a>
-    </h2>
-    <section class="post-excerpt" itemprop="description">
-      <p>이번 포스팅은 메모용도로 작성된 포스팅으로, 로컬 PC에 jekyll 소프트웨어, git page 호스팅 및 저장소 생성 등의 작업이 끝난 상태를 기준으로 합니다. 깃허브 블로그에 포스트를 추가하는 방법, 레이아웃, 웹로그 분석 등 블로그 관리에 관한 글을 기록하는 용도입니다. 또한 추가된 개인적인 설정에 관한 설명이 들어있습니다. 1. 기본 커밋(포스팅) 로컬에서 변경된 내용들을 _site...</p>
-    </section>
-    <section class="post-meta">
-      <div class="post-date">December 22, 2018</div>
-      <div class="post-categories">
-      in 
-        
-        <a href="/centrarium/category/blog">Blog</a>
-        
-      
-      </div>
-    </section>
-  </li>
-  
-  <hr>
-  
-  
-  <li>
-    <h2>
-      <a class="post-link" href="/centrarium/markdown/2018/12/21/blog-Markdown-usage.html">[blog/첫글] 마크다운 사용법</a>
-    </h2>
-    <section class="post-excerpt" itemprop="description">
-      <p>안녕하세요~ 마크다운 글 정리로 첫 포스팅을 시작합니다. 지킬 블로그를 시작하게 되면서, 티스토리 에디터를 사용했던 때 말고는 마크다운을 거의 처음 접해보는데요, 티스토리에서 사용하면서도 문법을 모르고 써서 조금 헤맸던 기억이 납니다. 바로 마크다운 사용법을 정리해보도록 하겠습니다. (해당 글에서 유용한 마크다운 문법을 지속적으로 업데이트 할 예정입니다.) 최종 업데이트 : 2018-12-23 1. 폰트 및...</p>
-    </section>
-    <section class="post-meta">
-      <div class="post-date">December 21, 2018</div>
-      <div class="post-categories">
-      in 
-        
-        <a href="/centrarium/category/markdown">Markdown</a>
-        
-      
-      </div>
-    </section>
-  </li>
-  
-  
+  </div>
+</section>
+
+<article class="post-content">
+  <p>0408_ 일단 후퇴</p>
+
+<p>궁금한것_</p>
+
+<ul>
+  <li>git fetch</li>
+  <li>git branch 관리하기</li>
 </ul>
 
-<nav class="pagination" role="navigation">
-	<p>
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/centrarium/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
     
-			
-			<a class="newer-posts" href="/centrarium/page2">
-				<span class="fa-stack fa-lg">
-					<i class="fa fa-square fa-stack-2x"></i>
-					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-				</span>
-			</a>
-			
-		
-		<span class="page-number">Page 3 of 3</span>
-		
-		<span class="fa-stack fa-lg">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
-    </span>
-		
-	</p>
-</nav>
+    
+      <a href="//twitter.com/share?text=Git+%EC%9A%A9%EC%96%B4+%EB%B0%8F+%EA%B0%9C%EB%85%90+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fgit%2F2018%2F12%2F30%2FGit-_Git_Theory.html&via=TheBenCentra"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+      <a href="//www.facebook.com/sharer.php?t=Git+%EC%9A%A9%EC%96%B4+%EB%B0%8F+%EA%B0%9C%EB%85%90+%EC%A0%95%EB%A6%AC&u=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fgit%2F2018%2F12%2F30%2FGit-_Git_Theory.html"
+        onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
+        <i class="fa fa-facebook-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fgit%2F2018%2F12%2F30%2FGit-_Git_Theory.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      <a href="//plus.google.com/share?title=Git+%EC%9A%A9%EC%96%B4+%EB%B0%8F+%EA%B0%9C%EB%85%90+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fgit%2F2018%2F12%2F30%2FGit-_Git_Theory.html"
+        onclick="window.open(this.href, 'google-plus-share', 'width=550,height=255');return false;">
+        <i class="fa fa-google-plus-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=Git+%EC%9A%A9%EC%96%B4+%EB%B0%8F+%EA%B0%9C%EB%85%90+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fgit%2F2018%2F12%2F30%2FGit-_Git_Theory.html&media=http://lee95292.github.io/centrarium/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+      <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent('http://lee95292.github.io/centrarium/git/2018/12/30/Git-_Git_Theory.html') + '&title=Git 용어 및 개념 정리'; return false">
+        <i class="fa fa-reddit-square fa-lg"></i>
+      </a>
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
 
 </div>
 </div>

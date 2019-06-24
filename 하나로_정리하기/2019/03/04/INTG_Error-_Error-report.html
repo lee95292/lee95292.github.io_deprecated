@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[INTG Project] 프로그래밍 언어, 프레임워크 Error Report</title>
+  <meta name="description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  Javascript  Eclipse_Setting  Spring  Java  Git  python  Jekyll/BlogJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 있을때,  g...">
+  
+  <meta name="author" content="LeeMyungKyu">
+  <meta name="copyright" content="&copy; LeeMyungKyu 2019">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/centrarium/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/centrarium/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/centrarium/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/centrarium/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/centrarium/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/centrarium/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/centrarium/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/centrarium/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/centrarium/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/centrarium/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/centrarium/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/centrarium/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/centrarium/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/centrarium/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/centrarium/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/centrarium/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/centrarium/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  Javascript  Eclipse_Setting  Spring  Java  Git  python  Jekyll/BlogJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 있을때,  g..." />
+  <meta property="og:url" content="http://lee95292.github.io" />
+  <meta property="og:site_name" content="Mleek's blog" />
+  <meta property="og:title" content="[INTG Project] 프로그래밍 언어, 프레임워크 Error Report" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://lee95292.github.io/centrarium/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[INTG Project] 프로그래밍 언어, 프레임워크 Error Report">
+  <meta name="twitter:description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  Javascript  Eclipse_Setting  Spring  Java  Git  python  Jekyll/BlogJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 있을때,  g...">
+  <meta name="twitter:image" content="http://lee95292.github.io/centrarium/assets/logo.png">
+  <meta name="twitter:url" content="http://lee95292.github.io">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/centrarium/css/main.css">
+  <link rel="canonical" href="http://lee95292.github.io/centrarium/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_Error-_Error-report.html">
+  <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/centrarium/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/centrarium/" class="logo">
+      
+      <img src="/centrarium/assets/logo.png" alt="Mleek's blog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/centrarium/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/centrarium/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/centrarium/typography/">Typography</a>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">[INTG Project] 프로그래밍 언어, 프레임워크 Error Report</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">March 4, 2019</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/centrarium/category/하나로_정리하기">하나로_정리하기</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p>에러 리포트 하나로 정리하기 : INTG 프로젝트</p>
+
+<h3 id="section">목차</h3>
+
+<hr />
+
+<ul>
+  <li><a href="#js">Javascript</a></li>
+  <li><a href="#eclipse">Eclipse_Setting</a></li>
+  <li><a href="#spring">Spring</a></li>
+  <li><a href="#java">Java</a></li>
+  <li><a href="#git">Git</a></li>
+  <li><a href="#python">python</a></li>
+  <li><a href="#blog">Jekyll/Blog</a></li>
+</ul>
+
+<p><br /><br /><br /></p>
+<h1><a name="js">Javascript</a></h1>
+<hr />
+<p><br /></p>
+
+<p><strong>E001</strong></p>
+
+<hr />
+
+<p>에러 내용 - js파일이 html파일에 extern 형식으로 들어가 있을때,  getElementsBy… 에서는 작동하지만, querySelectorAll는 작동하지 않는다.</p>
+
+<p>즉, 특정한 자바스크립트 코드가 작동하지 않는다.</p>
+
+<p>해결 방법 : script의 로딩하는 태그를 html문서의 맨 뒤로 넣어보자!</p>
+
+<p><br /></p>
+
+<ul>
+  <li>추측) Dom tree가 만들어지기 전에 쿼리셀렉터를 작동시키면 동작하지 않는다. <del>괜히 쿼리셀렉터가 반환하는 Node에 문제가 있는줄 알았다.</del></li>
+</ul>
+
+<h1><a name="eclipse">Eclipse_Setting</a></h1>
+<hr />
+<p><br /></p>
+
+<p><strong>E001</strong> ,Dynamic Web project
+ —</p>
+
+<p>에러내용 - The superclass “javax.servlet.http.HttpServlet” was not found on the Java Build Path</p>
+
+<p>빌드패스에서 서블릿클래스가 없어졌다!</p>
+
+<p>이럴 땐, Project &gt; properties &gt; Project Facet 에서, Runtime 탭에 들어간다.</p>
+
+<p>WAS, 서버 Runtime을 잘 설정해준다. (J2EE, Apache 서버에 체크해줌)</p>
+
+<ul>
+  <li>추측) 서블릿관련 클래스들은, 아파치서버에 있거나, J2EE라는 WAS에 존재하는 듯 하다. (너무 당연한 추측이다.)</li>
+</ul>
+
+<p><br /><br /></p>
+
+<p><strong>E002</strong> Eclipse 서버구동 타임아웃 에러</p>
+
+<hr />
+
+<p>“Starting Tomcat v<em>.0 Server at localhost’ has encountered a problem.
+Server Tomcat v</em>.0 Server at localhost was unable to start within 45 seconds. If the server requires more time, try increasing the timeout in the server editor.</p>
+
+<ul>
+  <li>
+    <p>아파치-톰캣 서버를 런타임으로 설정하면, 기본 타임아웃 세팅이 45초로 지정되어있음.</p>
+  </li>
+  <li>
+    <p>시작하는데 45초까진 안걸렸는데 오류를 출력하고 서버시작 실패</p>
+  </li>
+</ul>
+
+<p>해결 - 서버탭 의 해당서버 우클릭 &gt; open &gt; 서버 설정창 내에서, timeout 탭 &gt; strat timeout 시간을 늘려준다.</p>
+
+<p><strong>E003</strong> Server Tomcat vX.X Server at localhost failed to start 에러</p>
+
+<hr />
+
+<blockquote>
+  <p>Server Tomcat v<em>.</em> Server at localhost failed to start</p>
+</blockquote>
+
+<p>대화상자에는 저렇게만 표시되고 아무런 오류메시지가 없음</p>
+
+<p>해결방법</p>
+
+<ol>
+  <li>JRE 설정</li>
+  <li>유일한 URL Mapping 사용</li>
+  <li>tomcat 자체 실행확인</li>
+  <li>Project-Java Build Path 의 Server Library[tomcat 버전] 설치</li>
+</ol>
+
+<h1><a name="spring">Spring</a></h1>
+<hr />
+<p><br /></p>
+
+<h1><a name="Java">Java</a></h1>
+<hr />
+<p><br /></p>
+
+<h1><a name="git">Git</a></h1>
+<hr />
+<p><br /></p>
+
+<h1><a name="python">Python</a></h1>
+<hr />
+<p><br /></p>
+
+<h1><a name="blog">Jekyll/Blog</a></h1>
+<hr />
+<p><br /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>lib/bundler/runtime.rb:319:in `check_for_activated_spec!': 
+You have already activated addressable 2.5.2, 
+but your Gemfile requires addressable 2.4.0. Prepending `bundle exec` 
+to your command may solve this.
+</code></pre>
+</div>
+
+<p>테마 변경을 위해, 해당테마에서 jekyll build 수행 시 위와 같은 에러 발생.</p>
+
+<p>prepending bundle exec, 즉, 수행구문 앞에 bundle exec 붙여주면 해결됨</p>
+
+<p><strong>해결방법</strong></p>
+
+<blockquote>
+  <p>bundle exec jekyll build</p>
+</blockquote>
+
+<blockquote>
+  <p>bundle exec jekyll serve</p>
+</blockquote>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/centrarium/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=%5BINTG+Project%5D+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D+%EC%96%B8%EC%96%B4%2C+%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC+Error+Report&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F%25ED%2595%2598%25EB%2582%2598%25EB%25A1%259C_%25EC%25A0%2595%25EB%25A6%25AC%25ED%2595%2598%25EA%25B8%25B0%2F2019%2F03%2F04%2FINTG_Error-_Error-report.html&via=TheBenCentra"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+      <a href="//www.facebook.com/sharer.php?t=%5BINTG+Project%5D+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D+%EC%96%B8%EC%96%B4%2C+%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC+Error+Report&u=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F%25ED%2595%2598%25EB%2582%2598%25EB%25A1%259C_%25EC%25A0%2595%25EB%25A6%25AC%25ED%2595%2598%25EA%25B8%25B0%2F2019%2F03%2F04%2FINTG_Error-_Error-report.html"
+        onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
+        <i class="fa fa-facebook-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F%25ED%2595%2598%25EB%2582%2598%25EB%25A1%259C_%25EC%25A0%2595%25EB%25A6%25AC%25ED%2595%2598%25EA%25B8%25B0%2F2019%2F03%2F04%2FINTG_Error-_Error-report.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      <a href="//plus.google.com/share?title=%5BINTG+Project%5D+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D+%EC%96%B8%EC%96%B4%2C+%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC+Error+Report&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F%25ED%2595%2598%25EB%2582%2598%25EB%25A1%259C_%25EC%25A0%2595%25EB%25A6%25AC%25ED%2595%2598%25EA%25B8%25B0%2F2019%2F03%2F04%2FINTG_Error-_Error-report.html"
+        onclick="window.open(this.href, 'google-plus-share', 'width=550,height=255');return false;">
+        <i class="fa fa-google-plus-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BINTG+Project%5D+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D+%EC%96%B8%EC%96%B4%2C+%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC+Error+Report&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2F%25ED%2595%2598%25EB%2582%2598%25EB%25A1%259C_%25EC%25A0%2595%25EB%25A6%25AC%25ED%2595%2598%25EA%25B8%25B0%2F2019%2F03%2F04%2FINTG_Error-_Error-report.html&media=http://lee95292.github.io/centrarium/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+      <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent('http://lee95292.github.io/centrarium/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_Error-_Error-report.html') + '&title=[INTG Project] 프로그래밍 언어, 프레임워크 Error Report'; return false">
+        <i class="fa fa-reddit-square fa-lg"></i>
+      </a>
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Mleek's blog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/centrarium/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/centrarium/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/centrarium/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:lee95292@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">lee95292@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/TheBenCentra" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">TheBenCentra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/bencentra" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">bencentra</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/pub/ben-centra/47/769/60a" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Ben Centra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/centrarium/feed.xml">via RSS</a></strong></p>
+      <p class="text">Mleek's blog_ study note & daily life
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

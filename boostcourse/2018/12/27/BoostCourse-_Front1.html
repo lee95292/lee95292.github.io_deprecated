@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[BoostCourse] PJ1. 프론트엔드 강의 정리</title>
+  <meta name="description" content="CSS 1227 수강내용선언방법선언방법에는,      태그 속성으로 지정해주는 inline방법,        style 태그 내에 지정해주는 internal 방법,        외부 파일을 link 태그로 연결해주어 지정하는 external방법이 있습니다.  선언방법 간 , 우선순...">
+  
+  <meta name="author" content="LeeMyungKyu">
+  <meta name="copyright" content="&copy; LeeMyungKyu 2019">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/centrarium/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/centrarium/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/centrarium/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/centrarium/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/centrarium/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/centrarium/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/centrarium/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/centrarium/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/centrarium/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/centrarium/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/centrarium/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/centrarium/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/centrarium/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/centrarium/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/centrarium/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/centrarium/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/centrarium/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="CSS 1227 수강내용선언방법선언방법에는,      태그 속성으로 지정해주는 inline방법,        style 태그 내에 지정해주는 internal 방법,        외부 파일을 link 태그로 연결해주어 지정하는 external방법이 있습니다.  선언방법 간 , 우선순..." />
+  <meta property="og:url" content="http://lee95292.github.io" />
+  <meta property="og:site_name" content="Mleek's blog" />
+  <meta property="og:title" content="[BoostCourse] PJ1. 프론트엔드 강의 정리" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://lee95292.github.io/centrarium/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[BoostCourse] PJ1. 프론트엔드 강의 정리">
+  <meta name="twitter:description" content="CSS 1227 수강내용선언방법선언방법에는,      태그 속성으로 지정해주는 inline방법,        style 태그 내에 지정해주는 internal 방법,        외부 파일을 link 태그로 연결해주어 지정하는 external방법이 있습니다.  선언방법 간 , 우선순...">
+  <meta name="twitter:image" content="http://lee95292.github.io/centrarium/assets/logo.png">
+  <meta name="twitter:url" content="http://lee95292.github.io">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/centrarium/css/main.css">
+  <link rel="canonical" href="http://lee95292.github.io/centrarium/boostcourse/2018/12/27/BoostCourse-_Front1.html">
+  <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/centrarium/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/centrarium/" class="logo">
+      
+      <img src="/centrarium/assets/logo.png" alt="Mleek's blog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/centrarium/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/centrarium/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/centrarium/typography/">Typography</a>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">[BoostCourse] PJ1. 프론트엔드 강의 정리</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">December 27, 2018</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/centrarium/category/boostcourse">Boostcourse</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="css-1227-">CSS 1227 수강내용</h1>
+<hr />
+<p><br /><br /></p>
+<h3 id="section">선언방법</h3>
+<hr />
+<p>선언방법에는,</p>
+
+<ul>
+  <li>
+    <p>태그 속성으로 지정해주는 <strong>inline</strong>방법,</p>
+  </li>
+  <li>
+    <p>style 태그 내에 지정해주는 <strong>internal</strong> 방법,</p>
+  </li>
+  <li>
+    <p>외부 파일을 link 태그로 연결해주어 지정하는 <strong>external</strong>방법이 있습니다.</p>
+  </li>
+</ul>
+
+<p>선언방법 간 , <strong>우선순위</strong> 는 다음과 같습니다.</p>
+
+<p><strong>inline &gt; (internal = external)</strong></p>
+
+<p>인라인 코드가 가장 높은 우선순위를 갖고,  그렇지 않은 경우 나중에 선언된 코드가 높은 우선순위를 갖습니다.
+<br /><br /></p>
+<h3 id="section-1">상속과 우선순위 결정</h3>
+<hr />
+<ol>
+  <li>
+    <p>상위 태그에서 적용한 스타일은 하위에서도 반영(상속).</p>
+  </li>
+  <li>
+    <p>but, Box-Model이라 불리는 속성들(width, height, margin, padding, border)은, 배치관련 속성이므로 상속되지 않음.</p>
+  </li>
+  <li>
+    <p>id &gt; class &gt; 엘리먼트(태그) 순서로 우선순위를 가짐.</p>
+  </li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#a{
+ color : red;
+}
+
+.b{
+ color : blue;
+}
+
+div{
+ color : green;
+}
+</code></pre>
+</div>
+
+<p>위와 같은 경우, <strong>&lt;div class="b" id="a"&gt; color&lt;/div&gt;</strong>의 색상은 <strong>red</strong>로 결정됨. 이러한 성질을 Cascading, 캐스캐이이딩 이라 부른다.</p>
+
+<ol>
+  <li>선언 방식에 따라, 표현이 구체적인 선택자가 적용된다. 만약 선택자가 같을 경우, 나중에 선언한 것이 적용된다.</li>
+</ol>
+
+<p>body&gt;span (0)</p>
+
+<p>span(x)</p>
+
+<h3 id="color--">color 속성 지정</h3>
+<hr />
+<ol>
+  <li>색상의 이름으로 지정</li>
+</ol>
+
+<blockquote>
+  <p>color : red</p>
+</blockquote>
+
+<p>(또는 magenta, green,orange, cyan, black, white 등등,,)</p>
+
+<ol>
+  <li>16진수로 RGB 조정, 가장 많이 사용되는 방법</li>
+</ol>
+
+<blockquote>
+  <p>color : #ffa024</p>
+</blockquote>
+
+<ol>
+  <li>rgba를 소괄호로 지정</li>
+</ol>
+
+<blockquote>
+  <p>color : rgb(255, 0, 0, 0.5)</p>
+</blockquote>
+
+<p><br /><br /></p>
+<h3 id="section-2">폰트</h3>
+<hr />
+<p><br /></p>
+<blockquote>
+  <p>font-size : 16px</p>
+</blockquote>
+
+<blockquote>
+  <p>font-size :2em</p>
+</blockquote>
+
+<p><strong>em</strong>은 상대적인 값, 상속받은 픽셀의 2배를 뜻함</p>
+
+<p><br /></p>
+
+<blockquote>
+  <p>font-family : monospace, sans-serif, Gulim</p>
+</blockquote>
+
+<p>코마(,)를 기준으로 순서대로 브라우저가 지원하는 폰트를 적용.</p>
+
+<p><br /><br /></p>
+<h3 id="css--">CSS의 레이아웃 속성들</h3>
+<hr />
+
+<p>CSS가 엘리먼트의 효과적인 배치를 위해 제공하는 속성들</p>
+
+<ol>
+  <li>display 속성 : block, inline, inline-block</li>
+</ol>
+
+<hr />
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;block : 벽돌처럼, **세로로 쌓이는** 속성. 대부분의 엘리먼트들이 block으로 설정되어 있다.
+
+&gt;inlline : 엘리먼트가 **옆으로 흐르도록** 설정하는 속성. a, strong ,u 태그 등등.. 몇가지 안된다.
+</code></pre>
+</div>
+
+<ol>
+  <li>position 속성 : static, absolute, relative, fixed</li>
+</ol>
+
+<hr />
+
+<p>엘리먼트가 기본적인 틀을 벗어난 배치를 제공하기 위해 존재.</p>
+
+<ul>
+  <li>static
+    <blockquote>
+      <p>기본값</p>
+    </blockquote>
+  </li>
+  <li>absolute
+    <blockquote>
+      <p><strong>static이 아닌 기준 엘리먼트로부터 일정한 거리 떨어진 만큼 위치시킴</strong></p>
+    </blockquote>
+  </li>
+  <li>relative
+    <blockquote>
+      <p>원래 있어야하는 위치를 기준으로 일정한 거리 떨어진 만큼 위치시킴</p>
+    </blockquote>
+  </li>
+  <li>fixed
+    <blockquote>
+      <p>viewport를 기준으로 엘리먼트 위치시킴. 따라다니는 광고같은 것.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="float---left-right-">3.float 속성 : left, right 속성</h2>
+<p><strong>다른 레이어</strong>에 존재하는 느낌. 2단, 3단 컬럼 배치를 할 수 있다.</p>
+
+<hr />
+<h3 id="float">float</h3>
+
+<p>부모 엘리먼트의 속성에 <span class="bBorder">overflow : auto</span> 를 지정하여 float 설정된 엘리먼트를 자식으로 인식시킨다.</p>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/centrarium/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=%5BBoostCourse%5D+PJ1.+%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fboostcourse%2F2018%2F12%2F27%2FBoostCourse-_Front1.html&via=TheBenCentra"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+      <a href="//www.facebook.com/sharer.php?t=%5BBoostCourse%5D+PJ1.+%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&u=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fboostcourse%2F2018%2F12%2F27%2FBoostCourse-_Front1.html"
+        onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
+        <i class="fa fa-facebook-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fboostcourse%2F2018%2F12%2F27%2FBoostCourse-_Front1.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      <a href="//plus.google.com/share?title=%5BBoostCourse%5D+PJ1.+%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fboostcourse%2F2018%2F12%2F27%2FBoostCourse-_Front1.html"
+        onclick="window.open(this.href, 'google-plus-share', 'width=550,height=255');return false;">
+        <i class="fa fa-google-plus-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BBoostCourse%5D+PJ1.+%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fcentrarium%2Fboostcourse%2F2018%2F12%2F27%2FBoostCourse-_Front1.html&media=http://lee95292.github.io/centrarium/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+      <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent('http://lee95292.github.io/centrarium/boostcourse/2018/12/27/BoostCourse-_Front1.html') + '&title=[BoostCourse] PJ1. 프론트엔드 강의 정리'; return false">
+        <i class="fa fa-reddit-square fa-lg"></i>
+      </a>
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Mleek's blog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/centrarium/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/centrarium/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/centrarium/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:lee95292@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">lee95292@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/TheBenCentra" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">TheBenCentra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/bencentra" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">bencentra</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/pub/ben-centra/47/769/60a" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Ben Centra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/centrarium/feed.xml">via RSS</a></strong></p>
+      <p class="text">Mleek's blog_ study note & daily life
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

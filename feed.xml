@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/centrarium/</link>
     <atom:link href="http://lee95292.github.io/centrarium/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 08 Apr 2019 20:50:33 +0900</pubDate>
-    <lastBuildDate>Mon, 08 Apr 2019 20:50:33 +0900</lastBuildDate>
+    <pubDate>Mon, 24 Jun 2019 12:21:13 +0900</pubDate>
+    <lastBuildDate>Mon, 24 Jun 2019 12:21:13 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -140,9 +140,11 @@
 
 </description>
         <pubDate>Mon, 04 Mar 2019 14:46:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/2019/03/04/INTG_SQL-_SQLquery.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/2019/03/04/INTG_SQL-_SQLquery.html</guid>
+        <link>http://lee95292.github.io/centrarium/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_SQL-_SQLquery.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/centrarium/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_SQL-_SQLquery.html</guid>
         
+        
+        <category>하나로_정리하기</category>
         
       </item>
     
@@ -185,7 +187,7 @@
   &lt;li&gt;추측) Dom tree가 만들어지기 전에 쿼리셀렉터를 작동시키면 동작하지 않는다. &lt;del&gt;괜히 쿼리셀렉터가 반환하는 Node에 문제가 있는줄 알았다.&lt;/del&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1&gt;&lt;a name=&quot;eclipse&quot;&gt;Java&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a name=&quot;eclipse&quot;&gt;Eclipse_Setting&lt;/a&gt;&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -243,7 +245,7 @@ Server Tomcat v&lt;/em&gt;.0 Server at localhost was unable to start within 45 s
   &lt;li&gt;Project-Java Build Path 의 Server Library[tomcat 버전] 설치&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h1&gt;&lt;a name=&quot;Spring&quot;&gt;Spring&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a name=&quot;spring&quot;&gt;Spring&lt;/a&gt;&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -251,11 +253,11 @@ Server Tomcat v&lt;/em&gt;.0 Server at localhost was unable to start within 45 s
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1&gt;&lt;a name=&quot;git&quot;&gt;Java&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a name=&quot;git&quot;&gt;Git&lt;/a&gt;&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1&gt;&lt;a name=&quot;python&quot;&gt;Java&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a name=&quot;python&quot;&gt;Python&lt;/a&gt;&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -263,7 +265,10 @@ Server Tomcat v&lt;/em&gt;.0 Server at localhost was unable to start within 45 s
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lib/bundler/runtime.rb:319:in `check_for_activated_spec!': You have already activated addressable 2.5.2, but your Gemfile requires addressable 2.4.0. Prepending `bundle exec` to your command may solve this.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lib/bundler/runtime.rb:319:in `check_for_activated_spec!': 
+You have already activated addressable 2.5.2, 
+but your Gemfile requires addressable 2.4.0. Prepending `bundle exec` 
+to your command may solve this.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -271,15 +276,22 @@ Server Tomcat v&lt;/em&gt;.0 Server at localhost was unable to start within 45 s
 
 &lt;p&gt;prepending bundle exec, 즉, 수행구문 앞에 bundle exec 붙여주면 해결됨&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;해결방법&lt;/strong&gt;&lt;/p&gt;
+
 &lt;blockquote&gt;
-  &lt;p&gt;bundle exec jekyll build
-bundle exec jekyll serve&lt;/p&gt;
+  &lt;p&gt;bundle exec jekyll build&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;bundle exec jekyll serve&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <pubDate>Mon, 04 Mar 2019 14:46:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/2019/03/04/INTG_Error-_Error-report.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/2019/03/04/INTG_Error-_Error-report.html</guid>
+        <link>http://lee95292.github.io/centrarium/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_Error-_Error-report.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/centrarium/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_Error-_Error-report.html</guid>
         
+        
+        <category>하나로_정리하기</category>
         
       </item>
     
@@ -294,21 +306,21 @@ bundle exec jekyll serve&lt;/p&gt;
     &lt;p&gt;선언 : new Array()를 통해서 가능하지만, 보통 a = [] 처럼 간단히 선언&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;모든 데이터타입이 들어갈 수 있다. (객체, 함수, null 등등 )
-```javascript
-a=[4];
-a[100]=4;&lt;/p&gt;
+    &lt;p&gt;모든 데이터타입이 들어갈 수 있다. (객체, 함수, null 등등 )&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;console.log(a.length);      // 101 출력&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-### javascript 배열의 유용한 메서드들
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;sa&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// 101 출력&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
----
+&lt;h3 id=&quot;javascript---&quot;&gt;javascript 배열의 유용한 메서드들&lt;/h3&gt;
 
-```javascript
-a=[];
+&lt;hr /&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -384,34 +396,41 @@ console.log(newArr)     //문자열 배열로 리턴
     &lt;p&gt;객체의 속성 추가는 접근방법과 같다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;속성 제거에는 delete 키워드를 통해 가능하다.
-```javascript
-obj[“name”]=”mleek”;    //name 속성 생성&lt;/p&gt;
+    &lt;p&gt;속성 제거에는 delete 키워드를 통해 가능하다.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;delete obj.name;        //name속성 제거&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-실습 1.
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mleek&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//name 속성 생성&lt;/span&gt;
 
-[링크](https://gist.github.com/nigayo/ade2c3f74417fc202c8097214c965f27) 에서, 숫자타입의 키값들만 출력하기.
-
-```javascript
-function findTypeKeys(v,type){
-    for(key in v){
-        if(typeof(v[key])==&quot;object&quot;){
-            findTypeKeys(v[key],type);
-        }else if(typeof(v[key])==type){
-            console.log(key);
-        }
-    }
-}
-
-findTypeKeys(data,&quot;number&quot;);
+&lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//name속성 제거&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;실습 2.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;실습 1.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com/nigayo/ade2c3f74417fc202c8097214c965f27&quot;&gt;링크&lt;/a&gt; 에서, 숫자타입의 키값들만 출력하기.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;findTypeKeys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;object&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;findTypeKeys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;findTypeKeys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;number&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;실습 2.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://gist.github.com/nigayo/a9a118977f82780441db664d6785efe3&quot;&gt;링크&lt;/a&gt; 에서, “type”키 값이 “sk”인것의 name 출력하기&lt;/p&gt;
 
@@ -444,9 +463,11 @@ findTypeKeys(data,&quot;number&quot;);
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 24 Feb 2019 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/2019/02/24/BoostCourse-PJ3-1_Front.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/2019/02/24/BoostCourse-PJ3-1_Front.html</guid>
+        <link>http://lee95292.github.io/centrarium/boostcourse/2019/02/24/BoostCourse-PJ3-1_Front.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/centrarium/boostcourse/2019/02/24/BoostCourse-PJ3-1_Front.html</guid>
         
+        
+        <category>boostcourse</category>
         
       </item>
     
@@ -586,16 +607,18 @@ findTypeKeys(data,&quot;number&quot;);
 &lt;br /&gt;&lt;/p&gt;
 &lt;h1 id=&quot;jstl---jsp-standard-tag-library&quot;&gt;JSTL - JSP Standard Tag Library&lt;/h1&gt;
 
-&lt;p&gt;작성자가 너ㅓ무 귀찮은 관계로 미룸&lt;/p&gt;
+&lt;p&gt;생략&lt;/p&gt;
 
 &lt;h1 id=&quot;database&quot;&gt;DataBase&lt;/h1&gt;
 
 &lt;p&gt;데이터베이스는 따로 Mysql 설치, 문법 예제 연습 의 2개 시리즈의 포스팅으로 나누어 작성&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Feb 2019 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/2019/02/24/BoostCourse-_BackEnd_2.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/2019/02/24/BoostCourse-_BackEnd_2.html</guid>
+        <link>http://lee95292.github.io/centrarium/boostcourse/2019/02/24/BoostCourse-_BackEnd_2.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/centrarium/boostcourse/2019/02/24/BoostCourse-_BackEnd_2.html</guid>
         
+        
+        <category>boostcourse</category>
         
       </item>
     
@@ -864,9 +887,11 @@ findTypeKeys(data,&quot;number&quot;);
 &lt;p&gt;-끝&lt;/p&gt;
 </description>
         <pubDate>Mon, 18 Feb 2019 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/2019/02/18/BoostCourse-_FrontEnd_2.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/2019/02/18/BoostCourse-_FrontEnd_2.html</guid>
+        <link>http://lee95292.github.io/centrarium/boostcourse/2019/02/18/BoostCourse-_FrontEnd_2.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/centrarium/boostcourse/2019/02/18/BoostCourse-_FrontEnd_2.html</guid>
         
+        
+        <category>boostcourse</category>
         
       </item>
     
@@ -1043,9 +1068,11 @@ findTypeKeys(data,&quot;number&quot;);
 &lt;p&gt;내가 움직일 때 축이 되어줄 수 있는 거대한 기둥을 더욱 튼튼히 해야한다.&lt;/p&gt;
 </description>
         <pubDate>Sat, 16 Feb 2019 18:46:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/2019/02/16/etc-2019_Schedule.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/2019/02/16/etc-2019_Schedule.html</guid>
+        <link>http://lee95292.github.io/centrarium/%ED%9A%8C%EA%B3%A0/2019/02/16/etc-2019_Schedule.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/centrarium/%ED%9A%8C%EA%B3%A0/2019/02/16/etc-2019_Schedule.html</guid>
         
+        
+        <category>회고</category>
         
       </item>
     
@@ -1058,14 +1085,36 @@ findTypeKeys(data,&quot;number&quot;);
 &lt;p&gt;(김동근 저, 쉽게 배우는 파이썬 프로그래밍 책의 내용을 정리했음)&lt;/p&gt;
 </description>
         <pubDate>Sat, 02 Feb 2019 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/2019/02/02/pyhton-fucntion.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/2019/02/02/pyhton-fucntion.html</guid>
+        <link>http://lee95292.github.io/centrarium/python/2019/02/02/pyhton-fucntion.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/centrarium/python/2019/02/02/pyhton-fucntion.html</guid>
         
+        
+        <category>python</category>
         
       </item>
     
       <item>
-        <title>Git 사용법 정리</title>
+        <title>Git 용어 및 개념 정리</title>
+        <description>&lt;p&gt;0408_ 일단 후퇴&lt;/p&gt;
+
+&lt;p&gt;궁금한것_&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;git fetch&lt;/li&gt;
+  &lt;li&gt;git branch 관리하기&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 30 Dec 2018 21:00:00 +0900</pubDate>
+        <link>http://lee95292.github.io/centrarium/git/2018/12/30/Git-_Git_Theory.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/centrarium/git/2018/12/30/Git-_Git_Theory.html</guid>
+        
+        
+        <category>git</category>
+        
+      </item>
+    
+      <item>
+        <title>Git 명령어 예제 정리</title>
         <description>&lt;p&gt;Git 사용법을 정리하는 시간을 갖겠습니다.&lt;/p&gt;
 
 &lt;p&gt;기초적인 내용만을 정리하도록 하겠습니다.&lt;/p&gt;
@@ -1150,11 +1199,17 @@ findTypeKeys(data,&quot;number&quot;);
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;blockquote&gt;
+  &lt;p&gt;master branch의 upstream&lt;/p&gt;
+&lt;/blockquote&gt;
+
 </description>
         <pubDate>Sun, 30 Dec 2018 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/2018/12/30/Git-_Git-Exercise.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/2018/12/30/Git-_Git-Exercise.html</guid>
+        <link>http://lee95292.github.io/centrarium/git/2018/12/30/Git-_Git-Exercise.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/centrarium/git/2018/12/30/Git-_Git-Exercise.html</guid>
         
+        
+        <category>git</category>
         
       </item>
     
@@ -1364,188 +1419,11 @@ findTypeKeys(data,&quot;number&quot;);
 &lt;strong&gt;-끝-&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 28 Dec 2018 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/2018/12/28/BoostCourse-_BackEnd_1.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/2018/12/28/BoostCourse-_BackEnd_1.html</guid>
+        <link>http://lee95292.github.io/centrarium/boostcourse/2018/12/28/BoostCourse-_BackEnd_1.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/centrarium/boostcourse/2018/12/28/BoostCourse-_BackEnd_1.html</guid>
         
         
-      </item>
-    
-      <item>
-        <title>[BoostCourse] PJ1. 프론트엔드 강의 정리</title>
-        <description>&lt;h1 id=&quot;css-1227-&quot;&gt;CSS 1227 수강내용&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;section&quot;&gt;선언방법&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;선언방법에는,&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;태그 속성으로 지정해주는 &lt;strong&gt;inline&lt;/strong&gt;방법,&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;style 태그 내에 지정해주는 &lt;strong&gt;internal&lt;/strong&gt; 방법,&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;외부 파일을 link 태그로 연결해주어 지정하는 &lt;strong&gt;external&lt;/strong&gt;방법이 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;선언방법 간 , &lt;strong&gt;우선순위&lt;/strong&gt; 는 다음과 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;inline &amp;gt; (internal = external)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;인라인 코드가 가장 높은 우선순위를 갖고,  그렇지 않은 경우 나중에 선언된 코드가 높은 우선순위를 갖습니다.
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;section-1&quot;&gt;상속과 우선순위 결정&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;상위 태그에서 적용한 스타일은 하위에서도 반영(상속).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;but, Box-Model이라 불리는 속성들(width, height, margin, padding, border)은, 배치관련 속성이므로 상속되지 않음.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;id &amp;gt; class &amp;gt; 엘리먼트(태그) 순서로 우선순위를 가짐.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#a{
- color : red;
-}
-
-.b{
- color : blue;
-}
-
-div{
- color : green;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;위와 같은 경우, &lt;strong&gt;&amp;lt;div class=&quot;b&quot; id=&quot;a&quot;&amp;gt; color&amp;lt;/div&amp;gt;&lt;/strong&gt;의 색상은 &lt;strong&gt;red&lt;/strong&gt;로 결정됨. 이러한 성질을 Cascading, 캐스캐이이딩 이라 부른다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;선언 방식에 따라, 표현이 구체적인 선택자가 적용된다. 만약 선택자가 같을 경우, 나중에 선언한 것이 적용된다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;body&amp;gt;span (0)&lt;/p&gt;
-
-&lt;p&gt;span(x)&lt;/p&gt;
-
-&lt;h3 id=&quot;color--&quot;&gt;color 속성 지정&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-  &lt;li&gt;색상의 이름으로 지정&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;color : red&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;(또는 magenta, green,orange, cyan, black, white 등등,,)&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;16진수로 RGB 조정, 가장 많이 사용되는 방법&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;color : #ffa024&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;rgba를 소괄호로 지정&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;color : rgb(255, 0, 0, 0.5)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;section-2&quot;&gt;폰트&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;font-size : 16px&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;font-size :2em&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;em&lt;/strong&gt;은 상대적인 값, 상속받은 픽셀의 2배를 뜻함&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;font-family : monospace, sans-serif, Gulim&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;코마(,)를 기준으로 순서대로 브라우저가 지원하는 폰트를 적용.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;css--&quot;&gt;CSS의 레이아웃 속성들&lt;/h3&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;CSS가 엘리먼트의 효과적인 배치를 위해 제공하는 속성들&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;display 속성 : block, inline, inline-block&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;block : 벽돌처럼, **세로로 쌓이는** 속성. 대부분의 엘리먼트들이 block으로 설정되어 있다.
-
-&amp;gt;inlline : 엘리먼트가 **옆으로 흐르도록** 설정하는 속성. a, strong ,u 태그 등등.. 몇가지 안된다.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;position 속성 : static, absolute, relative, fixed&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;엘리먼트가 기본적인 틀을 벗어난 배치를 제공하기 위해 존재.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;static
-    &lt;blockquote&gt;
-      &lt;p&gt;기본값&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;absolute
-    &lt;blockquote&gt;
-      &lt;p&gt;&lt;strong&gt;static이 아닌 기준 엘리먼트로부터 일정한 거리 떨어진 만큼 위치시킴&lt;/strong&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;relative
-    &lt;blockquote&gt;
-      &lt;p&gt;원래 있어야하는 위치를 기준으로 일정한 거리 떨어진 만큼 위치시킴&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;fixed
-    &lt;blockquote&gt;
-      &lt;p&gt;viewport를 기준으로 엘리먼트 위치시킴. 따라다니는 광고같은 것.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;float---left-right-&quot;&gt;3.float 속성 : left, right 속성&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;다른 레이어&lt;/strong&gt;에 존재하는 느낌. 2단, 3단 컬럼 배치를 할 수 있다.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;float&quot;&gt;float&lt;/h3&gt;
-
-&lt;p&gt;부모 엘리먼트의 속성에 &lt;span class=&quot;bBorder&quot;&gt;overflow : auto&lt;/span&gt; 를 지정하여 float 설정된 엘리먼트를 자식으로 인식시킨다.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 27 Dec 2018 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/2018/12/27/BoostCourse-_Front1.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/2018/12/27/BoostCourse-_Front1.html</guid>
-        
+        <category>boostcourse</category>
         
       </item>
     
