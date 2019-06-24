@@ -4,10 +4,10 @@
     <title>Mleek's blog</title>
     <description>Mleek's blog_ study note &amp; daily life
 </description>
-    <link>http://lee95292.github.io/centrarium/</link>
-    <atom:link href="http://lee95292.github.io/centrarium/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 24 Jun 2019 12:21:13 +0900</pubDate>
-    <lastBuildDate>Mon, 24 Jun 2019 12:21:13 +0900</lastBuildDate>
+    <link>http://lee95292.github.io/</link>
+    <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 24 Jun 2019 12:37:51 +0900</pubDate>
+    <lastBuildDate>Mon, 24 Jun 2019 12:37:51 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -140,8 +140,8 @@
 
 </description>
         <pubDate>Mon, 04 Mar 2019 14:46:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_SQL-_SQLquery.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_SQL-_SQLquery.html</guid>
+        <link>http://lee95292.github.io/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_SQL-_SQLquery.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_SQL-_SQLquery.html</guid>
         
         
         <category>하나로_정리하기</category>
@@ -287,8 +287,8 @@ to your command may solve this.
 &lt;/blockquote&gt;
 </description>
         <pubDate>Mon, 04 Mar 2019 14:46:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_Error-_Error-report.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_Error-_Error-report.html</guid>
+        <link>http://lee95292.github.io/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_Error-_Error-report.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_Error-_Error-report.html</guid>
         
         
         <category>하나로_정리하기</category>
@@ -463,8 +463,8 @@ console.log(newArr)     //문자열 배열로 리턴
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 24 Feb 2019 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/boostcourse/2019/02/24/BoostCourse-PJ3-1_Front.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/boostcourse/2019/02/24/BoostCourse-PJ3-1_Front.html</guid>
+        <link>http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-PJ3-1_Front.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-PJ3-1_Front.html</guid>
         
         
         <category>boostcourse</category>
@@ -614,8 +614,8 @@ console.log(newArr)     //문자열 배열로 리턴
 &lt;p&gt;데이터베이스는 따로 Mysql 설치, 문법 예제 연습 의 2개 시리즈의 포스팅으로 나누어 작성&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Feb 2019 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/boostcourse/2019/02/24/BoostCourse-_BackEnd_2.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/boostcourse/2019/02/24/BoostCourse-_BackEnd_2.html</guid>
+        <link>http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-_BackEnd_2.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-_BackEnd_2.html</guid>
         
         
         <category>boostcourse</category>
@@ -887,8 +887,8 @@ console.log(newArr)     //문자열 배열로 리턴
 &lt;p&gt;-끝&lt;/p&gt;
 </description>
         <pubDate>Mon, 18 Feb 2019 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/boostcourse/2019/02/18/BoostCourse-_FrontEnd_2.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/boostcourse/2019/02/18/BoostCourse-_FrontEnd_2.html</guid>
+        <link>http://lee95292.github.io/boostcourse/2019/02/18/BoostCourse-_FrontEnd_2.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/boostcourse/2019/02/18/BoostCourse-_FrontEnd_2.html</guid>
         
         
         <category>boostcourse</category>
@@ -1068,8 +1068,8 @@ console.log(newArr)     //문자열 배열로 리턴
 &lt;p&gt;내가 움직일 때 축이 되어줄 수 있는 거대한 기둥을 더욱 튼튼히 해야한다.&lt;/p&gt;
 </description>
         <pubDate>Sat, 16 Feb 2019 18:46:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/%ED%9A%8C%EA%B3%A0/2019/02/16/etc-2019_Schedule.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/%ED%9A%8C%EA%B3%A0/2019/02/16/etc-2019_Schedule.html</guid>
+        <link>http://lee95292.github.io/%ED%9A%8C%EA%B3%A0/2019/02/16/etc-2019_Schedule.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/%ED%9A%8C%EA%B3%A0/2019/02/16/etc-2019_Schedule.html</guid>
         
         
         <category>회고</category>
@@ -1085,8 +1085,8 @@ console.log(newArr)     //문자열 배열로 리턴
 &lt;p&gt;(김동근 저, 쉽게 배우는 파이썬 프로그래밍 책의 내용을 정리했음)&lt;/p&gt;
 </description>
         <pubDate>Sat, 02 Feb 2019 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/python/2019/02/02/pyhton-fucntion.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/python/2019/02/02/pyhton-fucntion.html</guid>
+        <link>http://lee95292.github.io/python/2019/02/02/pyhton-fucntion.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/python/2019/02/02/pyhton-fucntion.html</guid>
         
         
         <category>python</category>
@@ -1105,8 +1105,8 @@ console.log(newArr)     //문자열 배열로 리턴
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 30 Dec 2018 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/git/2018/12/30/Git-_Git_Theory.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/git/2018/12/30/Git-_Git_Theory.html</guid>
+        <link>http://lee95292.github.io/git/2018/12/30/Git-_Git_Theory.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/git/2018/12/30/Git-_Git_Theory.html</guid>
         
         
         <category>git</category>
@@ -1205,8 +1205,8 @@ console.log(newArr)     //문자열 배열로 리턴
 
 </description>
         <pubDate>Sun, 30 Dec 2018 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/git/2018/12/30/Git-_Git-Exercise.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/git/2018/12/30/Git-_Git-Exercise.html</guid>
+        <link>http://lee95292.github.io/git/2018/12/30/Git-_Git-Exercise.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/git/2018/12/30/Git-_Git-Exercise.html</guid>
         
         
         <category>git</category>
@@ -1419,8 +1419,8 @@ console.log(newArr)     //문자열 배열로 리턴
 &lt;strong&gt;-끝-&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 28 Dec 2018 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/centrarium/boostcourse/2018/12/28/BoostCourse-_BackEnd_1.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/centrarium/boostcourse/2018/12/28/BoostCourse-_BackEnd_1.html</guid>
+        <link>http://lee95292.github.io/boostcourse/2018/12/28/BoostCourse-_BackEnd_1.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/boostcourse/2018/12/28/BoostCourse-_BackEnd_1.html</guid>
         
         
         <category>boostcourse</category>
