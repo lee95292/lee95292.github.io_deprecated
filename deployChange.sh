@@ -2,10 +2,10 @@
 bundle exec jekyll build
 cd _site
 
-curDate = $(date)
-echo $curDate
+CURDATE = $(date)
+echo $CURDATE
 
 git add .
-git commit -m 'posted_'$curDate
+git commit -m 'posted_'$CURDATE
 git push origin master
 
