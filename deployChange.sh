@@ -2,7 +2,7 @@
 bundle exec jekyll build
 cd _site
 
-curDate = date
+curDate = 'date'
 echo ${curDate}
 
 git add .
