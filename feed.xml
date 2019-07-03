@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 24 Jun 2019 12:37:51 +0900</pubDate>
-    <lastBuildDate>Mon, 24 Jun 2019 12:37:51 +0900</lastBuildDate>
+    <pubDate>Wed, 03 Jul 2019 19:45:12 +0900</pubDate>
+    <lastBuildDate>Wed, 03 Jul 2019 19:45:12 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -461,6 +461,17 @@ console.log(newArr)     //문자열 배열로 리턴
   &lt;li&gt;tagName : 엘리먼트 태그명 변환&lt;/li&gt;
   &lt;li&gt;textContent&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;### DOM API로 Node 조작 실습&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;실습 1. 
+ 지금 나온 DOM API를 사용해서, strawberry 아래에 새로운 과일을 하나 더 추가하시오.&lt;/p&gt;
+
+&lt;p&gt;추가 된 이후에는 다시 삭제하시오.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../img/pr01.JPG&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Feb 2019 21:00:00 +0900</pubDate>
         <link>http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-PJ3-1_Front.html</link>
@@ -928,7 +939,7 @@ console.log(newArr)     //문자열 배열로 리턴
 
 &lt;p&gt;내가 타인의 욕망을 욕망하더라도 흔들리지 않는 강인한 멘탈이 필요하다.&lt;/p&gt;
 
-&lt;p&gt;&lt;del&gt;결론: 올해 목표 - 멘탈&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;글머리가 너무 지저분하지만, 생각을 조금 털고싶어 적어본다. &lt;del&gt;결론: 올해 목표 - 멘탈&lt;/del&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-1&quot;&gt;2018 회고&lt;/h1&gt;
 &lt;hr /&gt;
@@ -959,7 +970,7 @@ console.log(newArr)     //문자열 배열로 리턴
 
 &lt;p&gt;위 과정으로 18년 1월 한달동안 진행된 과정이다. 강의하시는분들도 전부 보안회사와 업무협약을 맺어 실무를 하시는 분들이 강사로 초청되셨고&lt;/p&gt;
 
-&lt;p&gt;지금보면 얻어갈게 참 많은 커리큘럼인데 기초가 부족해 따라가기도 어려웠다.&lt;/p&gt;
+&lt;p&gt;지금보면 얻어갈게 참 많은 커리큘럼인데 몇몇 부분은 기초가 부족해 따라가기도 어려웠다.&lt;/p&gt;
 
 &lt;p&gt;그래도 이거 듣는다고 평일에는 7시에 일어나서 9시부터 6시까지 교육받으면서,&lt;/p&gt;
 
@@ -974,7 +985,7 @@ console.log(newArr)     //문자열 배열로 리턴
 
 &lt;p&gt;운영진 활동으로는 매 주 회의에 참여해서 동아리 일정이나 기획사항들을 검토하고,&lt;/p&gt;
 
-&lt;p&gt;행사기획(사실 이것이 대부분), 해킹캠프 문제 출제등을 맡아 했다.&lt;/p&gt;
+&lt;p&gt;행사기획 및 동아리 전반 운영(사실 이것이 대부분), 해킹캠프 문제 출제등을 맡아 했다.&lt;/p&gt;
 
 &lt;p&gt;특히 해킹캠프 문제 출제할 때는 없는 지식 끌어내느라 머리가 빠지는것 같았다.
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1001,9 +1012,8 @@ console.log(newArr)     //문자열 배열로 리턴
 
 &lt;p&gt;바쁘다고 세미나 발표를 끝까지 미루다가 시험주간에 발표를 하게 됐다.&lt;/p&gt;
 
-&lt;p&gt;기말고사 시험기간이기도 했고, 재미없지만 쉽고 편한 주제로 할 수 있었지만,&lt;/p&gt;
+&lt;p&gt;이때는 apm 띄우는게 왜이리 어려웠는지.. 아쉽게도 이론부분만 발표하고 실습은 진행하지 못했다.&lt;/p&gt;
 
-&lt;p&gt;프로그래밍(edwith, 웹), 그림, 공모전(마이다스), 진로 결정(대학원, 취업, 창업), 글쓰기&lt;/p&gt;
 &lt;h1 id=&quot;section-5&quot;&gt;1. 2019 계획&lt;/h1&gt;
 &lt;hr /&gt;
 
@@ -1011,11 +1021,13 @@ console.log(newArr)     //문자열 배열로 리턴
 
 &lt;p&gt;우선, 2019년에는 &lt;strong&gt;진로결정&lt;/strong&gt;을 명확히 했으면 한다.&lt;/p&gt;
 
-&lt;p&gt;사실 이것은 조금 더 공부하고 경험하면서 해도 늦지는 않지만, 쉽게말해 대학원(공부), 취업(돈), 창업(일) 사이에서, 해당 분야가 원하는 능력을 키워야한다는 생각이 든다.&lt;/p&gt;
+&lt;p&gt;사실 이것은 조금 더 공부하고 경험하면서 해도 늦지는 않지만, 쉽게말해 대학원, 취업, 창업 사이에서, 해당 분야가 원하는 능력을 키워야한다는 생각이 든다.&lt;/p&gt;
 
-&lt;p&gt;취업시장에서 중요한 알고리즘시험을 보면 매번 절망하고, 대학원가려면 필요한 학점챙기기는 늘 어렵고, 창업을 하기에는 프로젝트 하나 제대로 설계하기도 힘든 내 현재 모습이 맘에 들지는 않는다.&lt;/p&gt;
+&lt;p&gt;취업시장에서 중요한 알고리즘시험을 보면 매번 절망하고, 대학원가려면 필요한 학점챙기기는 늘 어렵고, 창업을 하기에는 프로젝트 하나 제대로 설계하기도 힘든 내&lt;/p&gt;
 
-&lt;h3 id=&quot;section-6&quot;&gt;아직 나는 하고싶은걸 한다.&lt;/h3&gt;
+&lt;p&gt;현재 모습이 맘에 들지는 않는다.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;그래도 나는 아직 하고싶은걸 한다.&lt;/h3&gt;
 &lt;hr /&gt;
 
 &lt;ol&gt;
@@ -1037,23 +1049,13 @@ console.log(newArr)     //문자열 배열로 리턴
   &lt;li&gt;
     &lt;p&gt;공모전 -Midas IT : 사실 2학년때 지원은 했는데 다른활동이랑 겹쳐서 못나갔다. 이거하기에는 실력이 부족하다는 생각도 했다. 그때에 비해서 웹프는 조금 늘었는데 알고리즘실력은 그대로다. 이번에 코딩테스트 보면서 자신감이 많이 하락했는데, 진짜 19년 4월 한달 불태운다는 심정으로 알고리즘/웹프 준비할거다.&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;기술스택 결정&lt;/li&gt;
-  &lt;li&gt;교육활동
-오늘할일 1227&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;기술스택 결정&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;교육활동&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;bs4, requests 모듈로 우회방법 찾기 -&amp;gt; 중도에서 크롤링책&lt;/p&gt;
-
-&lt;p&gt;지도교수님 상담 2시&lt;/p&gt;
-
-&lt;p&gt;edwith 프론트엔드 다 듣기&lt;/p&gt;
-
-&lt;p&gt;깃허브 학습 및 포스팅  –&amp;gt; 중도에서 git 책&lt;/p&gt;
-
-&lt;p&gt;포스팅방법 학습 및 해당 포스트 완성 (2019계획 작성)&lt;/p&gt;
-
-&lt;p&gt;이후 : d2.naver.com/helloworld/206816 해석하기
-—1.1 Java/Spring&lt;/p&gt;
 
 &lt;p&gt;앞으로 무엇을 어떻게 해야할지부터 나는 어떤 사람이 되어야 하는지 계속해서 생각하고 있으면&lt;/p&gt;
 
@@ -1102,11 +1104,12 @@ console.log(newArr)     //문자열 배열로 리턴
 &lt;ul&gt;
   &lt;li&gt;git fetch&lt;/li&gt;
   &lt;li&gt;git branch 관리하기&lt;/li&gt;
+  &lt;li&gt;git&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 30 Dec 2018 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/git/2018/12/30/Git-_Git_Theory.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/git/2018/12/30/Git-_Git_Theory.html</guid>
+        <link>http://lee95292.github.io/git/2018/12/30/__LatePost__-Git-_Git_Theory.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/git/2018/12/30/__LatePost__-Git-_Git_Theory.html</guid>
         
         
         <category>git</category>
