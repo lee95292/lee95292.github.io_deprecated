@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 Jul 2019 23:17:42 +0900</pubDate>
-    <lastBuildDate>Wed, 03 Jul 2019 23:17:42 +0900</lastBuildDate>
+    <pubDate>Wed, 03 Jul 2019 23:21:27 +0900</pubDate>
+    <lastBuildDate>Wed, 03 Jul 2019 23:21:27 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -466,7 +466,7 @@ console.log(newArr)     //문자열 배열로 리턴
 
 &lt;hr /&gt;
 
-&lt;p&gt;실습 1. 
+&lt;p&gt;실습 1.
  지금 나온 DOM API를 사용해서, strawberry 아래에 새로운 과일을 하나 더 추가하시오.&lt;/p&gt;
 
 &lt;p&gt;추가 된 이후에는 다시 삭제하시오.&lt;/p&gt;
