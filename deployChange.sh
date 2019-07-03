@@ -5,6 +5,6 @@ cd _site
 CURDATE=$(date)
 
 git add .
-git commit -m '${CURDATE} posted'
+git commit -m "${CURDATE}"
 git push origin master
 
