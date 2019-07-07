@@ -6,9 +6,20 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 Jul 2019 23:51:46 +0900</pubDate>
-    <lastBuildDate>Wed, 03 Jul 2019 23:51:46 +0900</lastBuildDate>
+    <pubDate>Sun, 07 Jul 2019 20:22:27 +0900</pubDate>
+    <lastBuildDate>Sun, 07 Jul 2019 20:22:27 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>[boostcourse]pj3_backend_spring</title>
+        <description>
+</description>
+        <pubDate>Sun, 07 Jul 2019 00:00:00 +0900</pubDate>
+        <link>http://lee95292.github.io/2019/07/07/BoostCourse-PJ3_Backend_Spring.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/2019/07/07/BoostCourse-PJ3_Backend_Spring.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>[INTG Project] SQL 구문 예제 및 문법 정리</title>
@@ -296,7 +307,107 @@ to your command may solve this.
       </item>
     
       <item>
-        <title>[BoostCourse] PJ3 FrontEnd 강의 정리</title>
+        <title>[BoostCourse] PJ3 FrontEnd 강의 정리 -2</title>
+        <description>&lt;h3 id=&quot;css-javascript-animation&quot;&gt;CSS와 Javascript에서의 Animation&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Animation?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;반복적인 움직임의 처리! 간단하고 규칙적인 움직임은 CSS3의 transition, transform 속성으로 처리 가능하며, javascript보다 좋은 성능을 보장함.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;javascript Animation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;복잡하고 정밀한 애니메이션을 표현하기 위해 주로 사용&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;setInterval, setTimeout, requestAnimationFrame, Animations API 등을 활용할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;하지만, setInterval같은 경우 애니메이션 구현에 사용되지 않음.
+&lt;img src=&quot;/assets/img/boostcourse/setinterval.png&quot; /&gt;
+위 그림에서 설명하는 “지연문제” 때문인데, 부스트코스에서는 이를 “제 때 일어나야 할 이벤트 콜백이 지연/사라지는 현상”이라고 설명했음.&lt;/p&gt;
+
+&lt;p&gt;자세한 설명은 &lt;a href=&quot;https://javascript.info/settimeout-setinterval&quot;&gt;Javascript_Event_Scheduling&lt;/a&gt;에서 확인.&lt;/p&gt;
+
+&lt;h3 id=&quot;javascript-requestanimationframe&quot;&gt;Javascript의 requestAnimationFrame&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;위 상황처럼, setTimeout,setInterval은 애니매이션을 위해 최적화되지 않음. animation 주기가 16.6ms 미만으로 내려갈 경우, 불필요한 frame이 생기기 때문임.&lt;/p&gt;
+
+&lt;p&gt;이에 대한 대안으로 &lt;strong&gt;requestAnimationFrame&lt;/strong&gt;이 탄생함.
+사용법은 setTimeout과 크게 다르지 않은듯.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;.mynode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mynode&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        testyest
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'.mynode'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0px&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;px&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;requestAnimationFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;requestAnimationFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;css3-transition&quot;&gt;CSS3 transition&lt;/h3&gt;
+
+&lt;p&gt;GPU 가속을 이용하는 CSS 속성들을 사용하면 
+Javascript로 구현하는 것보다 더 빠르다고 알려짐!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;transform:translateXX();&lt;/li&gt;
+  &lt;li&gt;transform:scale();&lt;/li&gt;
+  &lt;li&gt;transform: rotate();&lt;/li&gt;
+  &lt;li&gt;opacity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;transition 으로 변화시킬 속성과 변화 시간을 지정할 수 있음&lt;/p&gt;
+
+&lt;p&gt;transition [property] [duration] [timing-function] [delay]&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;transform&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;transition&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;transform&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;2s&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 24 Feb 2019 21:00:00 +0900</pubDate>
+        <link>http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-PJ3-1_Front_2.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-PJ3-1_Front_2.html</guid>
+        
+        
+        <category>boostcourse</category>
+        
+      </item>
+    
+      <item>
+        <title>[BoostCourse] PJ3 FrontEnd 강의 정리 -1</title>
         <description>&lt;h3 id=&quot;javascript-&quot;&gt;javascript 배열&lt;/h3&gt;
 
 &lt;hr /&gt;
@@ -509,8 +620,10 @@ console.log(newArr)     //문자열 배열로 리턴
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Node/insertBefore&quot;&gt;insertBefore_Docuemnt&lt;/a&gt;
-&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Element/insertAdjacentHTML&quot;&gt;insertAdjacentHTML_Document&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;참고링크 
+&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Node/insertBefore&quot;&gt;insertBefore_Docuemnt&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Element/insertAdjacentHTML&quot;&gt;insertAdjacentHTML_Document&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1208,320 +1321,6 @@ console.log(newArr)     //문자열 배열로 리턴
         
         
         <category>git</category>
-        
-      </item>
-    
-      <item>
-        <title>Git 명령어 예제 정리</title>
-        <description>&lt;p&gt;Git 사용법을 정리하는 시간을 갖겠습니다.&lt;/p&gt;
-
-&lt;p&gt;기초적인 내용만을 정리하도록 하겠습니다.&lt;/p&gt;
-&lt;h4 id=&quot;section&quot;&gt;참고 및 연습 링크&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=hFJZwOfme6w&amp;amp;list=PLuHgQVnccGMA8iwZwrGyNXCGy2LAAsTXk&quot;&gt;지옥에서 온 Git&lt;/a&gt; - egoing님 생활코딩Youtube&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://learngitbranching.js.org/&quot;&gt;Git 연습용 웹페이지&lt;/a&gt; - git 버전관리 상태를 시각적으로 보여줍니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;starting-a-project--configuration&quot;&gt;Starting a project &amp;amp; configuration&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;em&gt;starting a project&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;git init : 로컬 디렉터리에 깃 저장소를 생성&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;git clone [git path]: 원격 저장소에 존재하는 깃허브 프로젝트를 가져옴 (복사)
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;configuration&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;유저 이름과 이메일 설정&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;git config –global user.name [myName]&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;git config –global user.email [myEmail]
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;git---&quot;&gt;Git 을 통한 버전관리&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;git status : commit 대기 상태의 stage area의 파일들을 출력&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;git add fileName : git stage area에 관리할 파일 또는 디렉토리 등록&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;git commit -m “commit message” : 현재 stage area의 파일들(add된 파일들)을 프로젝트 버전으로 적용시킨다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;section-1&quot;&gt;원격 저장소 생성 및 사용하기&lt;/h1&gt;
-&lt;hr /&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;원격 저장소(Remote Repository)란? 로컬 저장소(Local Repository)와 대비되는 개념으로, 협업을 위해 인터넷 상에 위치한 저장소를 의미한다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;git remote add origin [Path] : 해당 경로에 존재하는 원격 저장소를 origin이라는 이름으로 설정.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;git remote -v 명령으로, 추가된 저장소 위치 확인 가능&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;git stage에 소스코드를 등록하는 방법은, 로컬 저장소의 방법과 같다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;git push origin master : master 브랜치로 git stage에 커밋된 소스코드들을 원격 저장소에 저장한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;master branch의 upstream&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        <pubDate>Sun, 30 Dec 2018 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/git/2018/12/30/Git-_Git-Exercise.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/git/2018/12/30/Git-_Git-Exercise.html</guid>
-        
-        
-        <category>git</category>
-        
-      </item>
-    
-      <item>
-        <title>[BoostCourse] PJ1. 백엔드 강의 정리</title>
-        <description>&lt;h1 id=&quot;dynamic-web-project--hello-world-&quot;&gt;Dynamic Web Project 프로젝트 Hello world 작성하기&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;
-(프로젝트 생성)&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;File &amp;gt; new &amp;gt; Other  &amp;gt; Dynamic WebProject 선택&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;프로젝트 이름 지정 및 Target Runtime 지정 (WAS:톰캣 설치디렉터리 지정)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;hellow-servlet-&quot;&gt;Hellow Servlet 작성&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;1.project에서 new &amp;gt; servlet 으로 서블릿 생성.&lt;/p&gt;
-
-&lt;p&gt;doGet메서드에 다음과 같이 작성&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doGet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HttpServletRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HttpServletResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
-&lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ServletException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IOException&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setContentType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/html;charset=UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                 &lt;span class=&quot;c1&quot;&gt;//response 데이터의 meta정보 지정&lt;/span&gt;
-
-		&lt;span class=&quot;n&quot;&gt;PrintWriter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getWriter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		
-		&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;h1&amp;gt;한글 테스트, hello! servlet&amp;lt;/h1&amp;gt;&amp;lt;br&amp;gt;&quot;&lt;/span&gt;
-			&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LocalDate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;br&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LocalTime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;	
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;//관련이미지 추가
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;자바 웹 어플리케이션과 서블릿에 관해서..&lt;/h1&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;section-1&quot;&gt;- 자바 웹 어플리케이션&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;자바 웹 어플리케이션이란, WAS에 배치(desploy)되어 동작하는 애플리케이션이다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;자바 웹 어플리케이션에는 HTML, CSS, Image, Java Class, Setting 등등을 저장한 파이들이 포함된다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;특히, 톰캣에서는 &lt;span class=&quot;bBorder&quot;&gt;&lt;strong&gt;web.xml&lt;/strong&gt;&lt;/span&gt; 파일이 &lt;span class=&quot;bBorder&quot;&gt;&lt;strong&gt;배치 기술자&lt;/strong&gt;&lt;/span&gt; 라고 불리며, 중요한 설정들이 저장된다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Servlet3.0 미만에서는 필수적으로 존재해야 하지만, 3.0 이후 버전에서는 &lt;strong&gt;어노테이션&lt;/strong&gt;을 사용한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;(but Spring에서는 다른 설정들을 저장하기 위해 사용한다.)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;section-2&quot;&gt;- 서블릿&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;자바 웹 어플리케이션 내에서, 동적인 처리를하는 프로그램의 역할.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;WAS 내에서 동작하며, HttpServlet클래스를 상속받는 JAVA 클래스.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;JSP가 &lt;span class=&quot;bBorder&quot;&gt;View&lt;/span&gt; 역할을 맡는다면, 서블릿은 &lt;span class=&quot;bBorder&quot;&gt;Controller&lt;/span&gt; 역할&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;section-3&quot;&gt;- 서블릿의 라이프사이클&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;클라이언트가 서버에게 요청.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;URL을 받아, URL Mapping에 해당하는 서블릿 존재여부 검증.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;init----&quot;&gt;(여기서의 검증이란, 서블릿이 메모리에 올라가있는지 판단하는 것. 서블릿은 하나의 객체만이 메모리에 올라가기 때문에, 서버 구동 이후 Init 과정이 한 번만 실행됨)&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;검증 후, 서블릿이 생성되지 않았다면, init 과정을 수행하고, service 과정 수행&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;생성되어있는 경우, 바로 service 과정 수행.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;서버를 종료&lt;/strong&gt;시키는 경우 destroy 과정 수행.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;또는, 서블릿이 &lt;strong&gt;수정된&lt;/strong&gt; 경우, 메모리에서 servlet을 제거해야 하므로, destroy 과정 수행.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;section-4&quot;&gt;- 서블릿의 구현&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;서블릿은 HttpServlet클래스를 상속받는다.&lt;/p&gt;
-
-&lt;p&gt;이후 필요에 따라 메서드를 오버라이딩을 통해 구현한다.&lt;/p&gt;
-
-&lt;p&gt;이와 같은 디자인패턴을 &lt;a href=&quot;https://terms.naver.com/entry.nhn?docId=3532974&amp;amp;cid=58528&amp;amp;categoryId=58528&quot;&gt;템플릿 메서드 패턴&lt;/a&gt; 이라고 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;request-response--&quot;&gt;Request, Response 객체 이해하기&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;em&gt;서블릿의 동작..&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;WAS는 브라우저로부터 요청을 받으면, HttpServletRequest객체를 생성합니다. 이후 이 객체에게 요청에 관한 정보들을 전부 저장해줍니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;HttpServletRequest&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;http프로토콜의 요청정보를 서블릿에게 전달하기 위한 목적&lt;/li&gt;
-  &lt;li&gt;헤더정보 / 파라미터 / 쿠키 / URI / URL 등의 정보를 읽어들이는 메서드를 가지고 있다.&lt;/li&gt;
-  &lt;li&gt;Body의 Stream을 읽어들이는 메서드를 가지고 있다. (이해가 잘 안돼서, 질문글 남김)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;HttpServletResponse&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;응답을 보내기 위해 해당 객체를 생성합니다.&lt;/li&gt;
-  &lt;li&gt;서블릿은 해당 객체를 사용해, content type 이나, 응답코드, 응답 메시지들을 전송해줍니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;section-5&quot;&gt;- 요청 정보의 종류들 알아내기&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doGet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HttpServletRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HttpServletResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
-		&lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ServletException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IOException&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-		&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setContentType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/html;charset=UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;PrintWriter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getWriter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-				
-		&lt;span class=&quot;n&quot;&gt;Enumeration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaderNames&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		
-		&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hasMoreElements&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headerName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextElement&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headerValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headerName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headerName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; : &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headerValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;br&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;HttpServletRequest 객체에 있는 헤더정보를 모두 출력해주는 코드입니다.&lt;/p&gt;
-
-&lt;p&gt;헤더란, HTTP 프로토콜 메시지의 맨 앞에서, 클라이언트의 정보 또는 메시지의 형태를 알려주는 역할을 하는 HTTP 메시지의 구성요소.
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-6&quot;&gt;- 요청 정보의 파라미터들을 알아내기&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doGet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HttpServletRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HttpServletResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
-		&lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ServletException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IOException&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-		&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setContentType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/html;charset=UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;PrintWriter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getWriter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-		&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;______________Parameter 정보_______________&amp;lt;br&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		
-		&lt;span class=&quot;n&quot;&gt;Enumeration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paramNames&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getParameterNames&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		
-		&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;paramNames&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hasMoreElements&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paramName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paramNames&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextElement&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paramValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getParameter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;paramName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;paramName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; : &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;paramValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;br&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-		
-
-		&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;HttpServletRequest 객체에 있는 파라미터정보를 모두 출력해주는 코드입니다.&lt;/p&gt;
-
-&lt;p&gt;이 떄, get을 통해 전달되는 파라미터는, 위 사진처럼 URL을 통해 전달할 수도 있으며, html의 form 태그를 통해서도 전달가능.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;-끝-&lt;/strong&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 28 Dec 2018 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/boostcourse/2018/12/28/BoostCourse-_BackEnd_1.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/boostcourse/2018/12/28/BoostCourse-_BackEnd_1.html</guid>
-        
-        
-        <category>boostcourse</category>
         
       </item>
     

@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>[BoostCourse] PJ2 BackEnd 강의 정리</title>
-  <meta name="description" content="JSP 강의정리Java Server Page, 자바 언어를 통해, 웹 페이지를 표시하는 기술Scope란?웹을 개발하면서 사용할 변수들에 대해, 유지되는 범위(scope)를 의미한다.page &gt; request &gt; session &gt; application 의 포함관계가 ...">
+  <title>[BoostCourse] PJ3 FrontEnd 강의 정리 -2</title>
+  <meta name="description" content="CSS와 Javascript에서의 Animation  Animation?반복적인 움직임의 처리! 간단하고 규칙적인 움직임은 CSS3의 transition, transform 속성으로 처리 가능하며, javascript보다 좋은 성능을 보장함.  javascript Animation...">
   
   <meta name="author" content="LeeMyungKyu">
   <meta name="copyright" content="&copy; LeeMyungKyu 2019">
@@ -41,10 +41,10 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="JSP 강의정리Java Server Page, 자바 언어를 통해, 웹 페이지를 표시하는 기술Scope란?웹을 개발하면서 사용할 변수들에 대해, 유지되는 범위(scope)를 의미한다.page &gt; request &gt; session &gt; application 의 포함관계가 ..." />
+  <meta property="og:description" content="CSS와 Javascript에서의 Animation  Animation?반복적인 움직임의 처리! 간단하고 규칙적인 움직임은 CSS3의 transition, transform 속성으로 처리 가능하며, javascript보다 좋은 성능을 보장함.  javascript Animation..." />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
-  <meta property="og:title" content="[BoostCourse] PJ2 BackEnd 강의 정리" />
+  <meta property="og:title" content="[BoostCourse] PJ3 FrontEnd 강의 정리 -2" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -55,8 +55,8 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="[BoostCourse] PJ2 BackEnd 강의 정리">
-  <meta name="twitter:description" content="JSP 강의정리Java Server Page, 자바 언어를 통해, 웹 페이지를 표시하는 기술Scope란?웹을 개발하면서 사용할 변수들에 대해, 유지되는 범위(scope)를 의미한다.page &gt; request &gt; session &gt; application 의 포함관계가 ...">
+  <meta name="twitter:title" content="[BoostCourse] PJ3 FrontEnd 강의 정리 -2">
+  <meta name="twitter:description" content="CSS와 Javascript에서의 Animation  Animation?반복적인 움직임의 처리! 간단하고 규칙적인 움직임은 CSS3의 transition, transform 속성으로 처리 가능하며, javascript보다 좋은 성능을 보장함.  javascript Animation...">
   <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
   
@@ -65,7 +65,7 @@
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-_BackEnd_2.html">
+  <link rel="canonical" href="http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-PJ3-1_Front_2.html">
   <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
 </head>
 
@@ -121,7 +121,7 @@
 <div class="post-header-container " >
   <div class="scrim ">
     <header class="post-header">
-      <h1 class="title">[BoostCourse] PJ2 BackEnd 강의 정리</h1>
+      <h1 class="title">[BoostCourse] PJ3 FrontEnd 강의 정리 -2</h1>
       <p class="info">by <strong></strong></p>
     </header>
   </div>
@@ -147,145 +147,94 @@
 </section>
 
 <article class="post-content">
-  <h2 id="jsp-">JSP 강의정리</h2>
+  <h3 id="css-javascript-animation">CSS와 Javascript에서의 Animation</h3>
 
 <hr />
-
-<p>Java Server Page, 자바 언어를 통해, 웹 페이지를 표시하는 기술</p>
-
-<p><br /></p>
-
-<h1 id="scope">Scope란?</h1>
-
-<hr />
-
-<p>웹을 개발하면서 사용할 변수들에 대해, 유지되는 범위(scope)를 의미한다.</p>
-
-<p>page &gt; request &gt; session &gt; application 의 포함관계가 있다.</p>
-
-<p><br /></p>
-
-<h1 id="page-scope">page scope</h1>
-
-<hr />
-
-<p>서블릿의 PageContext</p>
 
 <ul>
-  <li>pageContext 내장객체 사용(jsp)</li>
-  <li>웹 페이지가 실행되는 동안 사용됨 (forward시, 내장객체 사라짐)</li>
+  <li>Animation?</li>
 </ul>
 
-<p><br /></p>
+<p>반복적인 움직임의 처리! 간단하고 규칙적인 움직임은 CSS3의 transition, transform 속성으로 처리 가능하며, javascript보다 좋은 성능을 보장함.</p>
 
-<h1 id="request-scope">request scope</h1>
+<ul>
+  <li>javascript Animation</li>
+</ul>
+
+<p>복잡하고 정밀한 애니메이션을 표현하기 위해 주로 사용</p>
+<ul>
+  <li>setInterval, setTimeout, requestAnimationFrame, Animations API 등을 활용할 수 있음</li>
+</ul>
+
+<p>하지만, setInterval같은 경우 애니메이션 구현에 사용되지 않음.
+<img src="/assets/img/boostcourse/setinterval.png" />
+위 그림에서 설명하는 “지연문제” 때문인데, 부스트코스에서는 이를 “제 때 일어나야 할 이벤트 콜백이 지연/사라지는 현상”이라고 설명했음.</p>
+
+<p>자세한 설명은 <a href="https://javascript.info/settimeout-setinterval">Javascript_Event_Scheduling</a>에서 확인.</p>
+
+<h3 id="javascript-requestanimationframe">Javascript의 requestAnimationFrame</h3>
 
 <hr />
 
-<p>서블릿의 HttpServeltRequest</p>
+<p>위 상황처럼, setTimeout,setInterval은 애니매이션을 위해 최적화되지 않음. animation 주기가 16.6ms 미만으로 내려갈 경우, 불필요한 frame이 생기기 때문임.</p>
 
-<ul>
-  <li>request 내장객체 사용(jsp), set,get Attribute 메서드, 디스패쳐 메서드 존재</li>
-  <li>요청이 들어오고 응답이 나갈 때 까지 사용됨</li>
-  <li>페이지가 이동하는 forward에서도 객체 유지됨</li>
-</ul>
+<p>이에 대한 대안으로 <strong>requestAnimationFrame</strong>이 탄생함.
+사용법은 setTimeout과 크게 다르지 않은듯.</p>
 
-<p><br /></p>
-
-<h1 id="session-scope">session scope</h1>
-
-<hr />
-
-<p>서블릿의 HttpSession</p>
-
-<ul>
-  <li>세션이 유지되는 동안 객체 유지됨, session 내장객체(jsp) 사용</li>
-  <li>set,get Attribute 메서드 존재</li>
-  <li>클라이언트(browser) 별로 변수 관리</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="application-scope">application scope</h1>
-
-<hr />
-
-<p>서블릿의 ServletContext</p>
-
-<ul>
-  <li>여러 개의 클라이언트들이 값을 공유, application 내장객체(jsp) 사용</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="expression-language">Expression Language</h1>
-
-<hr />
-
-<p>EL은, 값을 표현하는 데 사용되는 스크립트언어로서 JSP 문법을 보완하는 역할을 하며, 기능은 다음과 같다.</p>
-
-<ul>
-  <li>JSP의 스코프에 맞는 속성 사용</li>
-  <li>집합 객체에 대한 접근 방법 제공</li>
-  <li>수치, 관계, 논리 연산자 제공</li>
-  <li>자바 클래스 메서드 호출 기능 제공</li>
-  <li>EL만의 기본객체 제공</li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="section">표현언어의 사용방법</h2>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="err">$</span><span class="o">{</span><span class="n">expression</span><span class="o">}</span> 
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+        <span class="nc">.mynode</span><span class="p">{</span>
+            <span class="nl">position</span><span class="p">:</span><span class="nb">relative</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mynode"</span><span class="nt">&gt;</span>
+        testyest
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </code></pre>
 </div>
 
-<p>위의 기본예제와 같이, $달러 옆의 {}중괄호 내에 표현식을 작성한다.</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">node</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'.mynode'</span><span class="p">);</span>
+<span class="nx">node</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="o">=</span><span class="s2">"0px"</span><span class="p">;</span>
 
-<pre><code class="language-jsp">&lt;jsp:include page = "/module/${skin.id}/header.jsp" flush="true"&gt;
-&lt;b&gt;${sessionScope.member.id}&lt;/b&gt;님 환영합니다.
+<span class="kd">function</span> <span class="nx">run</span><span class="p">(){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">count</span><span class="o">&gt;</span><span class="mi">40</span><span class="p">)</span><span class="k">return</span><span class="p">;</span>
+    
+    <span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+    <span class="nx">node</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span><span class="o">=</span><span class="nx">count</span><span class="o">+</span><span class="s2">"px"</span><span class="p">;</span>
+    <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">run</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">run</span><span class="p">);</span>
 </code></pre>
+</div>
 
-<p>jsp로 작성된 EL 예제</p>
+<h3 id="css3-transition">CSS3 transition</h3>
 
-<p>표현언어가 제공하는 기본객체는 아래와 같다.</p>
+<p>GPU 가속을 이용하는 CSS 속성들을 사용하면 
+Javascript로 구현하는 것보다 더 빠르다고 알려짐!</p>
 
 <ul>
-  <li>
-    <p>pageContext</p>
-  </li>
-  <li>
-    <p>pageScope, requestScope, sessionScope, applicationScope - 기본객체에 저장된 <strong>속성-값</strong> 매핑을 저장한 Map 객체</p>
-  </li>
-  <li>
-    <p>param - 요청 파라미터의 <strong>파라미터이름-값</strong> 매핑을 저장한 Map 객체</p>
-  </li>
-  <li>
-    <p>paramValues - 요청 파라미터의 값들을 <strong>파라미터이름 - 값배열</strong> 매핑을 저장한 Map 객체</p>
-  </li>
-  <li>
-    <p>header - 요청정보의 헤더이름-값 매핑을 저장한 Map 객체</p>
-  </li>
-  <li>
-    <p>headerValues - 위 관계와 동일</p>
-  </li>
-  <li>
-    <p>cookie - 쿠키이름 - 쿠키 매핑저장</p>
-  </li>
-  <li>
-    <p>initParam - 초기화 파라미터의 이름- 값 매핑 저장</p>
-  </li>
+  <li>transform:translateXX();</li>
+  <li>transform:scale();</li>
+  <li>transform: rotate();</li>
+  <li>opacity</li>
 </ul>
 
-<p><br />
-<br /></p>
-<h1 id="jstl---jsp-standard-tag-library">JSTL - JSP Standard Tag Library</h1>
+<p>transition 으로 변화시킬 속성과 변화 시간을 지정할 수 있음</p>
 
-<p>생략</p>
+<p>transition [property] [duration] [timing-function] [delay]</p>
 
-<h1 id="database">DataBase</h1>
-
-<p>데이터베이스는 따로 Mysql 설치, 문법 예제 연습 의 2개 시리즈의 포스팅으로 나누어 작성</p>
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">transform</span> <span class="o">:</span> <span class="nt">scale</span><span class="o">(</span><span class="nt">1</span><span class="o">);</span>
+<span class="nt">transition</span> <span class="o">:</span> <span class="nt">transform</span> <span class="nt">2s</span>
+</code></pre>
+</div>
 
 </article>
 
@@ -302,7 +251,7 @@
   
     
     
-      <a href="//twitter.com/share?text=%5BBoostCourse%5D+PJ2+BackEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-_BackEnd_2.html&via=TheBenCentra"
+      <a href="//twitter.com/share?text=%5BBoostCourse%5D+PJ3+FrontEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC+-2&url=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-PJ3-1_Front_2.html&via=TheBenCentra"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
         <i class="fa fa-twitter-square fa-lg"></i>
       </a>
@@ -317,7 +266,7 @@
     
     
     
-      <a href="//www.facebook.com/sharer.php?t=%5BBoostCourse%5D+PJ2+BackEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&u=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-_BackEnd_2.html"
+      <a href="//www.facebook.com/sharer.php?t=%5BBoostCourse%5D+PJ3+FrontEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC+-2&u=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-PJ3-1_Front_2.html"
         onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
         <i class="fa fa-facebook-square fa-lg"></i>
       </a>
@@ -342,7 +291,7 @@
     
     
     
-      <a href="//www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-_BackEnd_2.html"
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-PJ3-1_Front_2.html"
         onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
         <i class="fa fa-linkedin-square fa-lg"></i>
       </a>
@@ -355,7 +304,7 @@
     
     
     
-      <a href="//plus.google.com/share?title=%5BBoostCourse%5D+PJ2+BackEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-_BackEnd_2.html"
+      <a href="//plus.google.com/share?title=%5BBoostCourse%5D+PJ3+FrontEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC+-2&url=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-PJ3-1_Front_2.html"
         onclick="window.open(this.href, 'google-plus-share', 'width=550,height=255');return false;">
         <i class="fa fa-google-plus-square fa-lg"></i>
       </a>
@@ -389,7 +338,7 @@
     
     
     
-      <a href="//www.pinterest.com/pin/create/button/?description=%5BBoostCourse%5D+PJ2+BackEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-_BackEnd_2.html&media=http://lee95292.github.io/assets/header_image.jpg"
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BBoostCourse%5D+PJ3+FrontEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC+-2&url=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-PJ3-1_Front_2.html&media=http://lee95292.github.io/assets/header_image.jpg"
         onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
         <i class="fa fa-pinterest-square fa-lg"></i>
       </a>
@@ -458,7 +407,7 @@
     
     
     
-      <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent('http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-_BackEnd_2.html') + '&title=[BoostCourse] PJ2 BackEnd 강의 정리'; return false">
+      <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent('http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-PJ3-1_Front_2.html') + '&title=[BoostCourse] PJ3 FrontEnd 강의 정리 -2'; return false">
         <i class="fa fa-reddit-square fa-lg"></i>
       </a>
     
