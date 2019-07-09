@@ -6,20 +6,9 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 07 Jul 2019 20:22:27 +0900</pubDate>
-    <lastBuildDate>Sun, 07 Jul 2019 20:22:27 +0900</lastBuildDate>
+    <pubDate>Tue, 09 Jul 2019 16:33:56 +0900</pubDate>
+    <lastBuildDate>Tue, 09 Jul 2019 16:33:56 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
-    
-      <item>
-        <title>[boostcourse]pj3_backend_spring</title>
-        <description>
-</description>
-        <pubDate>Sun, 07 Jul 2019 00:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/2019/07/07/BoostCourse-PJ3_Backend_Spring.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/2019/07/07/BoostCourse-PJ3_Backend_Spring.html</guid>
-        
-        
-      </item>
     
       <item>
         <title>[INTG Project] SQL 구문 예제 및 문법 정리</title>
@@ -303,6 +292,100 @@ to your command may solve this.
         
         
         <category>하나로_정리하기</category>
+        
+      </item>
+    
+      <item>
+        <title>[BoostCourse] PJ3 BackEnd 강의 정리(Spring 개요)</title>
+        <description>&lt;h2 id=&quot;spring&quot;&gt;Spring이란?&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;엔터프라이즈급 웹 어플리케이션을 제작하기 위한 솔루션. AOP, IoC, DI, 선언적 트랜잭션등 여러 기능을 제공하며,&lt;/p&gt;
+
+&lt;p&gt;이들의 모듈화된 부분들을 사용할 수 있도록 설계된 프레임워크.&lt;/p&gt;
+
+&lt;p&gt;여기서 프레임워크란, 라이브러리와는 확연한 차이가 있다.&lt;/p&gt;
+
+&lt;p&gt;강의에서는 라이브러리와 프레임워크를 원재료와 반제품으로 묘사하였다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;라이브러리 - 자주 사용하는 기능들을 함수 또는 기능으로 제작하여, 컴파일 타임에 링킹되는 소스코드(또는 기능)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;프레임워크 - 자주 사용되는 기능이나 기본적인 실행환경 및 구조를 제공한다. (Spring에서는 DI,IoC,AOP etc..)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A 라이브러리 사용한 프로그램이 어떤 종류의 프로그램인지 알지 못하지만–&amp;gt;’원재료 비유’,&lt;/p&gt;
+
+&lt;p&gt;B 프레임워크에서 동작하는 프로그램은 어떤 프로그램인지 알 수 있다. –&amp;gt; ‘반제품 비유’
+BCI : 실행시간에 .class 바이트코드 수정&lt;/p&gt;
+
+&lt;h2 id=&quot;spring-framework-&quot;&gt;Spring Framework의 모듈&lt;/h2&gt;
+
+&lt;h3 id=&quot;aop-instrumentation&quot;&gt;&lt;strong&gt;AOP와 Instrumentation&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;AOP가 뭔데?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.naver.com/kyh31126/221496146885&quot;&gt;AOP_링크&lt;/a&gt; - 자세한 AOP 설명은 여기에서 많이 참고했다.&lt;/p&gt;
+
+&lt;p&gt;Aspect Oriented Programming 직역하면 관점지향 프로그래밍인데, 이는 비즈니스 로직과 공통 모듈을 구분하여, 비즈니스 로직에 공통 모듈을 삽입하는 개발 방법이다.&lt;/p&gt;
+
+&lt;p&gt;대표적으로 메소드의 성능을 검사할 때, 비즈니스 로직에 System.currentTimeMills() 메서드를 삽입해 성능을 측정하는 방법이 있지만, AOP를 이용해 해당 로직 밖에서 성능 측정코드를 삽입하는 AOP방법이 사용된다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;spring-AOP - AOP얼라이언스와 호환되는 방법으로 AOP지원&lt;/li&gt;
+  &lt;li&gt;spring-aspects - AspectJ와의 통합 제공 (AspectJ는 BCI 제공 툴)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Spring의 AOP에는 &lt;a href=&quot;https://ukja.tistory.com/17&quot;&gt;BCI(Btye Code Instrumentation)&lt;/a&gt; 이라는 기술이 핵심적으로 사용된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;spring-instrument&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;messaging&quot;&gt;&lt;strong&gt;Messaging&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;메시지란, 네트워크에서 컴퓨터간 일반 통신을 의미.&lt;/p&gt;
+
+&lt;p&gt;spring-messaging - 스프링4에서는 메시지 기반 어플리케이션을 작성하기 위해 Message, MessageChannel, MessageHadler, 메시지 매핑 어노테이션 제공&lt;/p&gt;
+
+&lt;h3 id=&quot;data-access-integration&quot;&gt;&lt;strong&gt;Data Access/ Integration&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;spring-jdbc, spring-tx(선언적 트랜잭션 관리), spring-orm(JPA,JDO,Hibernate), spring-oxm, spring-jms&lt;/p&gt;
+
+&lt;h3 id=&quot;web&quot;&gt;&lt;strong&gt;Web&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;spring-web - 멀티파트 파일 업로드, 서블릿 리스너 등의 웹 지향 통합 기능 제공&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;spring-webmvc - webservlet모듈, SpringMVC 및 REST 웹서비스 구현 포함&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;spring-websocket - 웹소켓  지원&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 24 Feb 2019 21:00:00 +0900</pubDate>
+        <link>http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-PJ3_Backend_Spring.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-PJ3_Backend_Spring.html</guid>
+        
+        
+        <category>boostcourse</category>
         
       </item>
     

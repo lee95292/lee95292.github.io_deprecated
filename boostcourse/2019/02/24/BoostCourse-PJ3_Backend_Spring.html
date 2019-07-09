@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[BoostCourse] PJ3 BackEnd 강의 정리(Spring 개요)</title>
+  <meta name="description" content="Spring이란?엔터프라이즈급 웹 어플리케이션을 제작하기 위한 솔루션. AOP, IoC, DI, 선언적 트랜잭션등 여러 기능을 제공하며,이들의 모듈화된 부분들을 사용할 수 있도록 설계된 프레임워크.여기서 프레임워크란, 라이브러리와는 확연한 차이가 있다.강의에서는 라이브러리와 프레임...">
+  
+  <meta name="author" content="LeeMyungKyu">
+  <meta name="copyright" content="&copy; LeeMyungKyu 2019">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Spring이란?엔터프라이즈급 웹 어플리케이션을 제작하기 위한 솔루션. AOP, IoC, DI, 선언적 트랜잭션등 여러 기능을 제공하며,이들의 모듈화된 부분들을 사용할 수 있도록 설계된 프레임워크.여기서 프레임워크란, 라이브러리와는 확연한 차이가 있다.강의에서는 라이브러리와 프레임..." />
+  <meta property="og:url" content="http://lee95292.github.io" />
+  <meta property="og:site_name" content="Mleek's blog" />
+  <meta property="og:title" content="[BoostCourse] PJ3 BackEnd 강의 정리(Spring 개요)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[BoostCourse] PJ3 BackEnd 강의 정리(Spring 개요)">
+  <meta name="twitter:description" content="Spring이란?엔터프라이즈급 웹 어플리케이션을 제작하기 위한 솔루션. AOP, IoC, DI, 선언적 트랜잭션등 여러 기능을 제공하며,이들의 모듈화된 부분들을 사용할 수 있도록 설계된 프레임워크.여기서 프레임워크란, 라이브러리와는 확연한 차이가 있다.강의에서는 라이브러리와 프레임...">
+  <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
+  <meta name="twitter:url" content="http://lee95292.github.io">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-PJ3_Backend_Spring.html">
+  <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Mleek's blog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/typography/">Typography</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">[BoostCourse] PJ3 BackEnd 강의 정리(Spring 개요)</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">February 24, 2019</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/boostcourse">Boostcourse</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h2 id="spring">Spring이란?</h2>
+
+<hr />
+
+<p>엔터프라이즈급 웹 어플리케이션을 제작하기 위한 솔루션. AOP, IoC, DI, 선언적 트랜잭션등 여러 기능을 제공하며,</p>
+
+<p>이들의 모듈화된 부분들을 사용할 수 있도록 설계된 프레임워크.</p>
+
+<p>여기서 프레임워크란, 라이브러리와는 확연한 차이가 있다.</p>
+
+<p>강의에서는 라이브러리와 프레임워크를 원재료와 반제품으로 묘사하였다.</p>
+
+<ul>
+  <li>
+    <p>라이브러리 - 자주 사용하는 기능들을 함수 또는 기능으로 제작하여, 컴파일 타임에 링킹되는 소스코드(또는 기능)</p>
+  </li>
+  <li>
+    <p>프레임워크 - 자주 사용되는 기능이나 기본적인 실행환경 및 구조를 제공한다. (Spring에서는 DI,IoC,AOP etc..)</p>
+  </li>
+</ul>
+
+<p>A 라이브러리 사용한 프로그램이 어떤 종류의 프로그램인지 알지 못하지만–&gt;’원재료 비유’,</p>
+
+<p>B 프레임워크에서 동작하는 프로그램은 어떤 프로그램인지 알 수 있다. –&gt; ‘반제품 비유’
+BCI : 실행시간에 .class 바이트코드 수정</p>
+
+<h2 id="spring-framework-">Spring Framework의 모듈</h2>
+
+<h3 id="aop-instrumentation"><strong>AOP와 Instrumentation</strong></h3>
+
+<hr />
+
+<p><strong>AOP가 뭔데?</strong></p>
+
+<p><a href="https://blog.naver.com/kyh31126/221496146885">AOP_링크</a> - 자세한 AOP 설명은 여기에서 많이 참고했다.</p>
+
+<p>Aspect Oriented Programming 직역하면 관점지향 프로그래밍인데, 이는 비즈니스 로직과 공통 모듈을 구분하여, 비즈니스 로직에 공통 모듈을 삽입하는 개발 방법이다.</p>
+
+<p>대표적으로 메소드의 성능을 검사할 때, 비즈니스 로직에 System.currentTimeMills() 메서드를 삽입해 성능을 측정하는 방법이 있지만, AOP를 이용해 해당 로직 밖에서 성능 측정코드를 삽입하는 AOP방법이 사용된다.</p>
+
+<hr />
+
+<ul>
+  <li>spring-AOP - AOP얼라이언스와 호환되는 방법으로 AOP지원</li>
+  <li>spring-aspects - AspectJ와의 통합 제공 (AspectJ는 BCI 제공 툴)</li>
+</ul>
+
+<p>Spring의 AOP에는 <a href="https://ukja.tistory.com/17">BCI(Btye Code Instrumentation)</a> 이라는 기술이 핵심적으로 사용된다.</p>
+
+<ul>
+  <li>spring-instrument</li>
+</ul>
+
+<h3 id="messaging"><strong>Messaging</strong></h3>
+
+<hr />
+
+<p>메시지란, 네트워크에서 컴퓨터간 일반 통신을 의미.</p>
+
+<p>spring-messaging - 스프링4에서는 메시지 기반 어플리케이션을 작성하기 위해 Message, MessageChannel, MessageHadler, 메시지 매핑 어노테이션 제공</p>
+
+<h3 id="data-access-integration"><strong>Data Access/ Integration</strong></h3>
+
+<hr />
+
+<p>spring-jdbc, spring-tx(선언적 트랜잭션 관리), spring-orm(JPA,JDO,Hibernate), spring-oxm, spring-jms</p>
+
+<h3 id="web"><strong>Web</strong></h3>
+
+<ul>
+  <li>
+    <p>spring-web - 멀티파트 파일 업로드, 서블릿 리스너 등의 웹 지향 통합 기능 제공</p>
+  </li>
+  <li>
+    <p>spring-webmvc - webservlet모듈, SpringMVC 및 REST 웹서비스 구현 포함</p>
+  </li>
+  <li>
+    <p>spring-websocket - 웹소켓  지원</p>
+  </li>
+  <li></li>
+</ul>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=%5BBoostCourse%5D+PJ3+BackEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC%28Spring+%EA%B0%9C%EC%9A%94%29&url=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-PJ3_Backend_Spring.html&via=TheBenCentra"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+      <a href="//www.facebook.com/sharer.php?t=%5BBoostCourse%5D+PJ3+BackEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC%28Spring+%EA%B0%9C%EC%9A%94%29&u=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-PJ3_Backend_Spring.html"
+        onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
+        <i class="fa fa-facebook-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+      <a href="//www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-PJ3_Backend_Spring.html"
+        onclick="window.open(this.href, 'linkedin-share', 'width=550,height=255');return false;">
+        <i class="fa fa-linkedin-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      <a href="//plus.google.com/share?title=%5BBoostCourse%5D+PJ3+BackEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC%28Spring+%EA%B0%9C%EC%9A%94%29&url=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-PJ3_Backend_Spring.html"
+        onclick="window.open(this.href, 'google-plus-share', 'width=550,height=255');return false;">
+        <i class="fa fa-google-plus-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BBoostCourse%5D+PJ3+BackEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC%28Spring+%EA%B0%9C%EC%9A%94%29&url=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F02%2F24%2FBoostCourse-PJ3_Backend_Spring.html&media=http://lee95292.github.io/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+      <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent('http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-PJ3_Backend_Spring.html') + '&title=[BoostCourse] PJ3 BackEnd 강의 정리(Spring 개요)'; return false">
+        <i class="fa fa-reddit-square fa-lg"></i>
+      </a>
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Mleek's blog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:lee95292@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">lee95292@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/TheBenCentra" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">TheBenCentra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/bencentra" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">bencentra</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/pub/ben-centra/47/769/60a" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Ben Centra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Mleek's blog_ study note & daily life
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>
