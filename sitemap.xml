@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://lee95292.github.io/boostcourse/2019/07/08/BoostCourse-PJ3_Backend_Spring.html</loc>
+<lastmod>2019-07-08T21:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://lee95292.github.io/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_SQL-_SQLquery.html</loc>
 <lastmod>2019-03-04T14:46:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://lee95292.github.io/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_Error-_Error-report.html</loc>
 <lastmod>2019-03-04T14:46:00+09:00</lastmod>
-</url>
-<url>
-<loc>http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-PJ3_Backend_Spring.html</loc>
-<lastmod>2019-02-24T21:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://lee95292.github.io/boostcourse/2019/02/24/BoostCourse-PJ3-1_Front_2.html</loc>
