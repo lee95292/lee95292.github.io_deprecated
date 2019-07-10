@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 09 Jul 2019 16:35:16 +0900</pubDate>
-    <lastBuildDate>Tue, 09 Jul 2019 16:35:16 +0900</lastBuildDate>
+    <pubDate>Thu, 11 Jul 2019 08:31:50 +0900</pubDate>
+    <lastBuildDate>Thu, 11 Jul 2019 08:31:50 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -95,6 +95,164 @@ BCI : 실행시간에 .class 바이트코드 수정&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
+&lt;p&gt;XML, java_config 설정부분&lt;/p&gt;
+
+&lt;p&gt;Spring JDBC 부분&lt;/p&gt;
+
+&lt;h2 id=&quot;spring-mvc--important&quot;&gt;Spring MVC  __important&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MVC?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Model - View - Controller&lt;/p&gt;
+
+&lt;p&gt;서비스에서 저장되는 데이터, 주문목록, 회원정보, 상품목록 자체를 &lt;strong&gt;Model&lt;/strong&gt;이라고 함.&lt;/p&gt;
+
+&lt;p&gt;최종적으로 말단 기기에서 유저에게 보여지는 화면. 또는 화면을 렌더링하는 주체를 &lt;strong&gt;View라고&lt;/strong&gt; 함&lt;/p&gt;
+
+&lt;p&gt;사용자의 요청에 의해 Model에서 비즈니스 로직을 거쳐 View를 만들기 까지의 액션을 수행하는 주체를 &lt;strong&gt;Controller&lt;/strong&gt;라고 함&lt;/p&gt;
+
+&lt;p&gt;웹 상에서 MVC  구조는 몇 단계의 발전을 이뤄왔다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/boostcourse/mvc.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 MVC 구조에서는 JSP Page 내에 html과 java 코드가 섞여있어 유지/보수가 힘들었다.&lt;/p&gt;
+
+&lt;p&gt;뷰를 담당하는 영역과 컨트롤을 담당하는 영역이 혼재되어 있어, 한사람이 본다면 문제가 없겠지만,&lt;/p&gt;
+
+&lt;p&gt;뷰와 컨트롤을 담당하는 사람이 분리된 프로젝트의 경우 상당한 불편함을 초래했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/boostcourse/mvc1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;MVC2 구조에서는 요청을 servlet이 받아, Controll 작업을 수행해, 로직과 뷰를 분리하였다.&lt;/p&gt;
+
+&lt;p&gt;이는 다음과 같은 장점을 갖는다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;관리 및 테스트의 용이&lt;/li&gt;
+  &lt;li&gt;확장성 증가&lt;/li&gt;
+  &lt;li&gt;관심사의 효과적인 분리&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/boostcourse/mvc2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 MVC2 발전형태에서는, Front Controller가 요청을 받고, 또 다른 Controller 클래스가 요청을 위임받는다.&lt;/p&gt;
+
+&lt;p&gt;이를 ControllerClass, HandlerClass라고 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;spring-mvc-&quot;&gt;Spring MVC 구성요소&lt;/h3&gt;
+
+&lt;p&gt;Spring은 model2 아키텍처로 구현되어 있음.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/boostcourse/dpservlet.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;붉은색(보라색) 부분이 개발자가 구현하는 부분.&lt;/p&gt;
+
+&lt;p&gt;초록색은 가끔씩 개발자가 구현하는 부분.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;mvc 동작순서&lt;/strong&gt;  __important&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HandlerMapping객체 통해 어떤 Controller가 동작할 것인지 Mapping 조회 (자바 config or xml) –&amp;gt;2&lt;/li&gt;
+  &lt;li&gt;Handler Adapter를 통해 실행할 Controller에게 실행 요청 –&amp;gt;3,4&lt;/li&gt;
+  &lt;li&gt;컨트롤러가 리턴하는 뷰를 DispatcherServlet에 전달–&amp;gt;5&lt;/li&gt;
+  &lt;li&gt;View Resolver와 View 이름을 통해 뷰를 조회하고 –&amp;gt;6 뷰를 렌더링 후 응답 –&amp;gt;7,8&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;handler-mapping--&quot;&gt;요청 선처리 작업과 Handler Mapping 동작 상세&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/boostcourse/dpservlet.png&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;요청 선처리 작업 (뒷부분에서 추가설명)&lt;/li&gt;
+  &lt;li&gt;HandelrExecutionChain 탐색&lt;/li&gt;
+  &lt;li&gt;HandlerExecutionChain 결정 –&amp;gt; 없으면 404에러 출력&lt;/li&gt;
+  &lt;li&gt;HandelrAdapter 결정 –&amp;gt;없다면 ServletException 발생&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;요청 처리&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;org.springframework.web.servlet.HandlerMapping&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;HandlerMapping구현체는 어떤 핸들러가 요청을 처리할지에 대한 정보를 알고 있다.&lt;/p&gt;
+
+&lt;p&gt;디폴트로 설정되는 있는 핸들러매핑은 BeanNameHandlerMapping과 
+DefaultAnnotationHandlerMapping 2가지가 설정되어 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;org.
+springframework.web.servlet.HandlerExecutionChain&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;HandlerExecutionChain구현체는 실제로 호출된 핸들러에 대한 참조를 가지고 있다.&lt;/p&gt;
+
+&lt;p&gt;즉, 무엇이 실행되어야 될지 알고 있는 객체라고 말할 수 있으며, 핸들러 실행전과 실행후에 수행될 HandlerInterceptor도 참조하고 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;org.springframework.web.servlet.HandlerAdapter&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;실제 핸들러를 실행하는 역할을 담당한다.&lt;/p&gt;
+
+&lt;p&gt;핸들러 어댑터는 선택된 핸들러를 실행하는 방법과 응답을 ModelAndView로 변화하는 방법에 대해 알고 있다.&lt;/p&gt;
+
+&lt;p&gt;디폴트로 설정되어 있는 핸들러어댑터는 HttpRequestHandlerAdapter, SimpleControllerHandlerAdapter, AnnotationMethodHanlderAdapter 3가지이다.&lt;/p&gt;
+
+&lt;p&gt;@RequestMapping과 @Controller 애노테이션을 통해 정의되는 컨트롤러의 경우&lt;/p&gt;
+
+&lt;p&gt;DefaultAnnotationHandlerMapping에 의해 핸들러가 결정되고, 그에 대응되는 AnnotationMethodHandlerAdapter에 의해 호출이 일어난다.&lt;/p&gt;
+
+&lt;h3 id=&quot;dispatcherservlet-&quot;&gt;요청 선처리 작업 (DispatcherServlet) 동작과정&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/boostcourse/dpservlet.png&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Locale 결정 : Locale에 설정된 지역정보를 통해 지역화&lt;/li&gt;
+  &lt;li&gt;RequestContextHolder에 요청 저장 : 요청을 받아 응답하기 이전까지 HTTPServlet Request, Response 객체를 저장함. –&amp;gt; 일반 빈에서 바로 선언해서 사용할 수 있도록 함&lt;/li&gt;
+  &lt;li&gt;FlashMap 복원 : redirect로 파라미터 전달 시 URL을 복잡하게 하는부분들을 정리해주는 역할&lt;/li&gt;
+  &lt;li&gt;멀티파트 요청인 경우,  요청 제어를 MultipartResolver로 넘김&lt;/li&gt;
+  &lt;li&gt;핸들러 결정과 실행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;요청 선처리 작업시 사용된 컴포넌트&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;org.springframework.web.servlet.LocaleResolver&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;지역 정보를 결정해주는 전략 오브젝트이다.&lt;/p&gt;
+
+&lt;p&gt;디폴트인 AcceptHeaderLocalResolver는 HTTP 헤더의 정보를 보고 지역정보를 설정해준다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;org.springframework.web.servlet.FlashMapManager&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;FlashMap객체를 조회(retrieve) &amp;amp; 저장을 위한 인터페이스
+RedirectAttributes의 addFlashAttribute메소드를 이용해서 저장한다.&lt;/p&gt;
+
+&lt;p&gt;리다이렉트 후 조회를 하면 바로 정보는 삭제된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;org.springframework.web.context.request RequestContextHolder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;일반 빈에서 HttpServletRequest, HttpServletResponse, HttpSession 등을 사용할 수 있도록 한다.&lt;/p&gt;
+
+&lt;p&gt;해당 객체를 일반 빈에서 사용하게 되면, Web에 종속적이 될 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;org.springframework.web.multipart.MultipartResolver&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;멀티파트 파일 업로드를 처리하는 전략&lt;/p&gt;
 </description>
         <pubDate>Mon, 08 Jul 2019 21:00:00 +0900</pubDate>
         <link>http://lee95292.github.io/boostcourse/2019/07/08/BoostCourse-PJ3_Backend_Spring.html</link>
