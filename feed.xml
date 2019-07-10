@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 11 Jul 2019 08:31:50 +0900</pubDate>
-    <lastBuildDate>Thu, 11 Jul 2019 08:31:50 +0900</lastBuildDate>
+    <pubDate>Thu, 11 Jul 2019 08:36:07 +0900</pubDate>
+    <lastBuildDate>Thu, 11 Jul 2019 08:36:07 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -166,7 +166,7 @@ BCI : 실행시간에 .class 바이트코드 수정&lt;/p&gt;
 
 &lt;h3 id=&quot;handler-mapping--&quot;&gt;요청 선처리 작업과 Handler Mapping 동작 상세&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/boostcourse/dpservlet.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/boostcourse/springmvc.png&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;요청 선처리 작업 (뒷부분에서 추가설명)&lt;/li&gt;
@@ -211,7 +211,7 @@ springframework.web.servlet.HandlerExecutionChain&lt;/li&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/boostcourse/dpservlet.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/boostcourse/befrq.png&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Locale 결정 : Locale에 설정된 지역정보를 통해 지역화&lt;/li&gt;
