@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 11 Jul 2019 08:36:07 +0900</pubDate>
-    <lastBuildDate>Thu, 11 Jul 2019 08:36:07 +0900</lastBuildDate>
+    <pubDate>Thu, 11 Jul 2019 17:21:42 +0900</pubDate>
+    <lastBuildDate>Thu, 11 Jul 2019 17:21:42 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -119,7 +119,7 @@ BCI : 실행시간에 .class 바이트코드 수정&lt;/p&gt;
 
 &lt;p&gt;웹 상에서 MVC  구조는 몇 단계의 발전을 이뤄왔다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/boostcourse/mvc.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/boostcourse/mvc.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;위 MVC 구조에서는 JSP Page 내에 html과 java 코드가 섞여있어 유지/보수가 힘들었다.&lt;/p&gt;
 
@@ -127,7 +127,7 @@ BCI : 실행시간에 .class 바이트코드 수정&lt;/p&gt;
 
 &lt;p&gt;뷰와 컨트롤을 담당하는 사람이 분리된 프로젝트의 경우 상당한 불편함을 초래했다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/boostcourse/mvc1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/boostcourse/mvc1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;MVC2 구조에서는 요청을 servlet이 받아, Controll 작업을 수행해, 로직과 뷰를 분리하였다.&lt;/p&gt;
 
@@ -139,7 +139,7 @@ BCI : 실행시간에 .class 바이트코드 수정&lt;/p&gt;
   &lt;li&gt;관심사의 효과적인 분리&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/boostcourse/mvc2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/boostcourse/mvc2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;위의 MVC2 발전형태에서는, Front Controller가 요청을 받고, 또 다른 Controller 클래스가 요청을 위임받는다.&lt;/p&gt;
 
@@ -149,7 +149,7 @@ BCI : 실행시간에 .class 바이트코드 수정&lt;/p&gt;
 
 &lt;p&gt;Spring은 model2 아키텍처로 구현되어 있음.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/boostcourse/dpservlet.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/boostcourse/dpservlet.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;붉은색(보라색) 부분이 개발자가 구현하는 부분.&lt;/p&gt;
 
@@ -166,7 +166,7 @@ BCI : 실행시간에 .class 바이트코드 수정&lt;/p&gt;
 
 &lt;h3 id=&quot;handler-mapping--&quot;&gt;요청 선처리 작업과 Handler Mapping 동작 상세&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/boostcourse/springmvc.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/boostcourse/springmvc.png&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;요청 선처리 작업 (뒷부분에서 추가설명)&lt;/li&gt;
@@ -211,7 +211,7 @@ springframework.web.servlet.HandlerExecutionChain&lt;/li&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/boostcourse/befrq.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/assets/img/boostcourse/befrq.png&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Locale 결정 : Locale에 설정된 지역정보를 통해 지역화&lt;/li&gt;
