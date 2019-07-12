@@ -307,7 +307,7 @@ BCI : 실행시간에 .class 바이트코드 수정</p>
 
 <p>초록색은 가끔씩 개발자가 구현하는 부분.</p>
 
-<h3 id="handler-mapping--">요청 선처리 작업과 Handler Mapping 동작 상세</h3>
+<h3 id="dispatcherservlet-">DispatcherServlet 동작과정</h3>
 
 <p><img src="/assets/img/boostcourse/dpservlet.png" /></p>
 
@@ -319,39 +319,7 @@ BCI : 실행시간에 .class 바이트코드 수정</p>
   <li>요청 처리</li>
 </ul>
 
-<div style="border:1px solid blue">
-
-### 요청 전달 시 사용된 컴포넌트
-
-* org.springframework.web.servlet.HandlerMapping
-
-HandlerMapping구현체는 어떤 핸들러가 요청을 처리할지에 대한 정보를 알고 있다.
-
-디폴트로 설정되는 있는 핸들러매핑은 BeanNameHandlerMapping과 
-DefaultAnnotationHandlerMapping 2가지가 설정되어 있다.
-
-* org.
-springframework.web.servlet.HandlerExecutionChain
-
-HandlerExecutionChain구현체는 실제로 호출된 핸들러에 대한 참조를 가지고 있다.
-
-즉, 무엇이 실행되어야 될지 알고 있는 객체라고 말할 수 있으며, 핸들러 실행전과 실행후에 수행될 HandlerInterceptor도 참조하고 있다.
-
-* org.springframework.web.servlet.HandlerAdapter
-
-실제 핸들러를 실행하는 역할을 담당한다.
-
-핸들러 어댑터는 선택된 핸들러를 실행하는 방법과 응답을 ModelAndView로 변화하는 방법에 대해 알고 있다.
-
-디폴트로 설정되어 있는 핸들러어댑터는 HttpRequestHandlerAdapter, SimpleControllerHandlerAdapter, AnnotationMethodHanlderAdapter 3가지이다.
-
-@RequestMapping과 @Controller 애노테이션을 통해 정의되는 컨트롤러의 경우 
-
-DefaultAnnotationHandlerMapping에 의해 핸들러가 결정되고, 그에 대응되는 AnnotationMethodHandlerAdapter에 의해 호출이 일어난다.
-
-</div>
-
-<h3 id="dispatcherservlet-">요청 선처리 작업 (DispatcherServlet) 동작과정</h3>
+<h3 id="dispatcherservlet--1">요청 선처리 작업 (DispatcherServlet) 동작과정</h3>
 
 <hr />
 
@@ -365,34 +333,11 @@ DefaultAnnotationHandlerMapping에 의해 핸들러가 결정되고, 그에 대�
   <li>핸들러 결정과 실행</li>
 </ul>
 
-<h3 id="section">요청 선처리 작업시 사용된 컴포넌트</h3>
+<h3 id="dispatcherservlet---">DispatcherServlet &gt; 요청처리 과정</h3>
 
-<div style="border:solid 1px blue">
+<hr />
 
-* org.springframework.web.servlet.LocaleResolver
-
-지역 정보를 결정해주는 전략 오브젝트이다.
-
-디폴트인 AcceptHeaderLocalResolver는 HTTP 헤더의 정보를 보고 지역정보를 설정해준다.
-
-* org.springframework.web.servlet.FlashMapManager
-
-FlashMap객체를 조회(retrieve) &amp; 저장을 위한 인터페이스
-RedirectAttributes의 addFlashAttribute메소드를 이용해서 저장한다.
-
-리다이렉트 후 조회를 하면 바로 정보는 삭제된다.
-
-* org.springframework.web.context.request RequestContextHolder
-
-일반 빈에서 HttpServletRequest, HttpServletResponse, HttpSession 등을 사용할 수 있도록 한다.
-
-해당 객체를 일반 빈에서 사용하게 되면, Web에 종속적이 될 수 있다.
-
-* org.springframework.web.multipart.MultipartResolver
-
-멀티파트 파일 업로드를 처리하는 전략
-
-</div>
+<p><img src="/assets/img/boostcourse/handreq.png" /></p>
 
 </article>
 

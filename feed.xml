@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 13 Jul 2019 00:57:18 +0900</pubDate>
-    <lastBuildDate>Sat, 13 Jul 2019 00:57:18 +0900</lastBuildDate>
+    <pubDate>Sat, 13 Jul 2019 01:19:21 +0900</pubDate>
+    <lastBuildDate>Sat, 13 Jul 2019 01:19:21 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -172,7 +172,7 @@ BCI : 실행시간에 .class 바이트코드 수정&lt;/p&gt;
 
 &lt;p&gt;초록색은 가끔씩 개발자가 구현하는 부분.&lt;/p&gt;
 
-&lt;h3 id=&quot;handler-mapping--&quot;&gt;요청 선처리 작업과 Handler Mapping 동작 상세&lt;/h3&gt;
+&lt;h3 id=&quot;dispatcherservlet-&quot;&gt;DispatcherServlet 동작과정&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/boostcourse/dpservlet.png&quot; /&gt;&lt;/p&gt;
 
@@ -184,39 +184,7 @@ BCI : 실행시간에 .class 바이트코드 수정&lt;/p&gt;
   &lt;li&gt;요청 처리&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div style=&quot;border:1px solid blue&quot;&gt;
-
-### 요청 전달 시 사용된 컴포넌트
-
-* org.springframework.web.servlet.HandlerMapping
-
-HandlerMapping구현체는 어떤 핸들러가 요청을 처리할지에 대한 정보를 알고 있다.
-
-디폴트로 설정되는 있는 핸들러매핑은 BeanNameHandlerMapping과 
-DefaultAnnotationHandlerMapping 2가지가 설정되어 있다.
-
-* org.
-springframework.web.servlet.HandlerExecutionChain
-
-HandlerExecutionChain구현체는 실제로 호출된 핸들러에 대한 참조를 가지고 있다.
-
-즉, 무엇이 실행되어야 될지 알고 있는 객체라고 말할 수 있으며, 핸들러 실행전과 실행후에 수행될 HandlerInterceptor도 참조하고 있다.
-
-* org.springframework.web.servlet.HandlerAdapter
-
-실제 핸들러를 실행하는 역할을 담당한다.
-
-핸들러 어댑터는 선택된 핸들러를 실행하는 방법과 응답을 ModelAndView로 변화하는 방법에 대해 알고 있다.
-
-디폴트로 설정되어 있는 핸들러어댑터는 HttpRequestHandlerAdapter, SimpleControllerHandlerAdapter, AnnotationMethodHanlderAdapter 3가지이다.
-
-@RequestMapping과 @Controller 애노테이션을 통해 정의되는 컨트롤러의 경우 
-
-DefaultAnnotationHandlerMapping에 의해 핸들러가 결정되고, 그에 대응되는 AnnotationMethodHandlerAdapter에 의해 호출이 일어난다.
-
-&lt;/div&gt;
-
-&lt;h3 id=&quot;dispatcherservlet-&quot;&gt;요청 선처리 작업 (DispatcherServlet) 동작과정&lt;/h3&gt;
+&lt;h3 id=&quot;dispatcherservlet--1&quot;&gt;요청 선처리 작업 (DispatcherServlet) 동작과정&lt;/h3&gt;
 
 &lt;hr /&gt;
 
@@ -230,34 +198,11 @@ DefaultAnnotationHandlerMapping에 의해 핸들러가 결정되고, 그에 대�
   &lt;li&gt;핸들러 결정과 실행&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;section&quot;&gt;요청 선처리 작업시 사용된 컴포넌트&lt;/h3&gt;
+&lt;h3 id=&quot;dispatcherservlet---&quot;&gt;DispatcherServlet &amp;gt; 요청처리 과정&lt;/h3&gt;
 
-&lt;div style=&quot;border:solid 1px blue&quot;&gt;
+&lt;hr /&gt;
 
-* org.springframework.web.servlet.LocaleResolver
-
-지역 정보를 결정해주는 전략 오브젝트이다.
-
-디폴트인 AcceptHeaderLocalResolver는 HTTP 헤더의 정보를 보고 지역정보를 설정해준다.
-
-* org.springframework.web.servlet.FlashMapManager
-
-FlashMap객체를 조회(retrieve) &amp;amp; 저장을 위한 인터페이스
-RedirectAttributes의 addFlashAttribute메소드를 이용해서 저장한다.
-
-리다이렉트 후 조회를 하면 바로 정보는 삭제된다.
-
-* org.springframework.web.context.request RequestContextHolder
-
-일반 빈에서 HttpServletRequest, HttpServletResponse, HttpSession 등을 사용할 수 있도록 한다.
-
-해당 객체를 일반 빈에서 사용하게 되면, Web에 종속적이 될 수 있다.
-
-* org.springframework.web.multipart.MultipartResolver
-
-멀티파트 파일 업로드를 처리하는 전략
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/boostcourse/handreq.png&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 08 Jul 2019 21:00:00 +0900</pubDate>
         <link>http://lee95292.github.io/boostcourse/2019/07/08/BoostCourse-PJ3_Backend_Spring.html</link>
