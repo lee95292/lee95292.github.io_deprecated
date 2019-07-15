@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Jul 2019 20:24:23 +0900</pubDate>
-    <lastBuildDate>Mon, 15 Jul 2019 20:24:23 +0900</lastBuildDate>
+    <pubDate>Mon, 15 Jul 2019 20:25:28 +0900</pubDate>
+    <lastBuildDate>Mon, 15 Jul 2019 20:25:28 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -494,6 +494,7 @@ Server Tomcat v&lt;/em&gt;.0 Server at localhost was unable to start within 45 s
   &lt;li&gt;project 우클릭 &amp;gt; properties&lt;/li&gt;
   &lt;li&gt;Deployment Assembly 탭&lt;/li&gt;
   &lt;li&gt;add.. 버튼&lt;/li&gt;
+  &lt;li&gt;Java BuildPath Entries 선택&lt;/li&gt;
   &lt;li&gt;maven dependency 추가 후 적용
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
