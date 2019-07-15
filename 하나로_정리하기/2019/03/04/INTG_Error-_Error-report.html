@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>[INTG Project] 프로그래밍 언어, 프레임워크 Error Report</title>
-  <meta name="description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  Javascript  Eclipse_Setting  Spring  Java  Git  python  Jekyll/BlogJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 있을때,  g...">
+  <meta name="description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  Javascript  Eclipse_Setting  Spring  Maven  Java  Git  python  Jekyll/BlogJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 ...">
   
   <meta name="author" content="LeeMyungKyu">
   <meta name="copyright" content="&copy; LeeMyungKyu 2019">
@@ -41,7 +41,7 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  Javascript  Eclipse_Setting  Spring  Java  Git  python  Jekyll/BlogJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 있을때,  g..." />
+  <meta property="og:description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  Javascript  Eclipse_Setting  Spring  Maven  Java  Git  python  Jekyll/BlogJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 ..." />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
   <meta property="og:title" content="[INTG Project] 프로그래밍 언어, 프레임워크 Error Report" />
@@ -56,7 +56,7 @@
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="[INTG Project] 프로그래밍 언어, 프레임워크 Error Report">
-  <meta name="twitter:description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  Javascript  Eclipse_Setting  Spring  Java  Git  python  Jekyll/BlogJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 있을때,  g...">
+  <meta name="twitter:description" content="에러 리포트 하나로 정리하기 : INTG 프로젝트목차  Javascript  Eclipse_Setting  Spring  Maven  Java  Git  python  Jekyll/BlogJavascriptE001에러 내용 - js파일이 html파일에 extern 형식으로 들어가 ...">
   <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
   
@@ -157,6 +157,7 @@
   <li><a href="#js">Javascript</a></li>
   <li><a href="#eclipse">Eclipse_Setting</a></li>
   <li><a href="#spring">Spring</a></li>
+  <li><a href="#maven">Maven</a></li>
   <li><a href="#java">Java</a></li>
   <li><a href="#git">Git</a></li>
   <li><a href="#python">python</a></li>
@@ -245,6 +246,22 @@ Server Tomcat v</em>.0 Server at localhost was unable to start within 45 seconds
 <h1><a name="spring">Spring</a></h1>
 <hr />
 <p><br /></p>
+<h1><a name="maven">Maven</a></h1>
+<hr />
+
+<p><strong>E001</strong> java.lang.ClassNotFoundException : org.springframework.web.servlet.DispatcherServlet</p>
+
+<p>pom.xml에 의존성 추가 후, Maven Library 탭에서도 (org.springframework.web.servlet.DispatcherServlet)의 존재가 확인되지만, 런타임에서 해당 클래스 로딩 오류 발생!</p>
+
+<p>해결 방법</p>
+
+<ul>
+  <li>project 우클릭 &gt; properties</li>
+  <li>Deployment Assembly 탭</li>
+  <li>add.. 버튼</li>
+  <li>maven dependency 추가 후 적용
+<br /></li>
+</ul>
 
 <h1><a name="Java">Java</a></h1>
 <hr />

@@ -6,9 +6,38 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 13 Jul 2019 01:19:21 +0900</pubDate>
-    <lastBuildDate>Sat, 13 Jul 2019 01:19:21 +0900</lastBuildDate>
+    <pubDate>Mon, 15 Jul 2019 20:24:23 +0900</pubDate>
+    <lastBuildDate>Mon, 15 Jul 2019 20:24:23 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>[BoostCourse] PJ3 BackEnd 강의 정리(Spring MCV 실습)</title>
+        <description>&lt;h2 id=&quot;mvc---&quot;&gt;MVC 웹 작성 실습&lt;/h2&gt;
+
+&lt;p&gt;1) pom.xml에 spring-context, spring-mvc, jstl, jsp, servlet api 추가&lt;/p&gt;
+
+&lt;p&gt;2)&lt;/p&gt;
+
+&lt;p&gt;servelt&lt;/p&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;nt&quot;&gt;&amp;lt;servlet&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;servlet-name&amp;gt;&lt;/span&gt;dispathcerServlet&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet-name&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;servlet-class&amp;gt;&lt;/span&gt;org.springframework.servlet.DispatcherServlet&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet-class&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;init-param&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;param-name&amp;gt;&lt;/span&gt;contextConfigLocation&lt;span class=&quot;nt&quot;&gt;&amp;lt;/param-name&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;param-value&amp;gt;&lt;/span&gt;classpath:WebMVCContextConfig.xml&lt;span class=&quot;nt&quot;&gt;&amp;lt;/param-value&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/init-param&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/servlet&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 13 Jul 2019 21:00:00 +0900</pubDate>
+        <link>http://lee95292.github.io/boostcourse/2019/07/13/Boostcourse-PJ3_Backend_Spring2.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/boostcourse/2019/07/13/Boostcourse-PJ3_Backend_Spring2.html</guid>
+        
+        
+        <category>boostcourse</category>
+        
+      </item>
     
       <item>
         <title>[BoostCourse] PJ3 BackEnd 강의 정리(Spring 개요)</title>
@@ -363,6 +392,7 @@ BCI : 실행시간에 .class 바이트코드 수정&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;#js&quot;&gt;Javascript&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#eclipse&quot;&gt;Eclipse_Setting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#spring&quot;&gt;Spring&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#maven&quot;&gt;Maven&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#java&quot;&gt;Java&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#git&quot;&gt;Git&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#python&quot;&gt;python&lt;/a&gt;&lt;/li&gt;
@@ -451,6 +481,22 @@ Server Tomcat v&lt;/em&gt;.0 Server at localhost was unable to start within 45 s
 &lt;h1&gt;&lt;a name=&quot;spring&quot;&gt;Spring&lt;/a&gt;&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1&gt;&lt;a name=&quot;maven&quot;&gt;Maven&lt;/a&gt;&lt;/h1&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;E001&lt;/strong&gt; java.lang.ClassNotFoundException : org.springframework.web.servlet.DispatcherServlet&lt;/p&gt;
+
+&lt;p&gt;pom.xml에 의존성 추가 후, Maven Library 탭에서도 (org.springframework.web.servlet.DispatcherServlet)의 존재가 확인되지만, 런타임에서 해당 클래스 로딩 오류 발생!&lt;/p&gt;
+
+&lt;p&gt;해결 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;project 우클릭 &amp;gt; properties&lt;/li&gt;
+  &lt;li&gt;Deployment Assembly 탭&lt;/li&gt;
+  &lt;li&gt;add.. 버튼&lt;/li&gt;
+  &lt;li&gt;maven dependency 추가 후 적용
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1&gt;&lt;a name=&quot;Java&quot;&gt;Java&lt;/a&gt;&lt;/h1&gt;
 &lt;hr /&gt;
@@ -1492,27 +1538,6 @@ console.log(newArr)     //문자열 배열로 리턴
         
         
         <category>python</category>
-        
-      </item>
-    
-      <item>
-        <title>Git 용어 및 개념 정리</title>
-        <description>&lt;p&gt;0408_ 일단 후퇴&lt;/p&gt;
-
-&lt;p&gt;궁금한것_&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;git fetch&lt;/li&gt;
-  &lt;li&gt;git branch 관리하기&lt;/li&gt;
-  &lt;li&gt;git&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 30 Dec 2018 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/git/2018/12/30/__LatePost__-Git-_Git_Theory.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/git/2018/12/30/__LatePost__-Git-_Git_Theory.html</guid>
-        
-        
-        <category>git</category>
         
       </item>
     
