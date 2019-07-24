@@ -6,13 +6,17 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Jul 2019 22:42:30 +0900</pubDate>
-    <lastBuildDate>Wed, 24 Jul 2019 22:42:30 +0900</lastBuildDate>
+    <pubDate>Wed, 24 Jul 2019 23:42:19 +0900</pubDate>
+    <lastBuildDate>Wed, 24 Jul 2019 23:42:19 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>[BoostCourse] PJ3 BackEnd 강의 정리(Spring MCV 실습 및 레이어드 아키텍쳐)</title>
-        <description>&lt;p&gt;실습을 따라하는 과정을 포스팅하는 것은 의미없다고 생각했습니다.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;em&gt;작성중인 포스트입니다&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;실습을 따라하는 과정을 포스팅하는 것은 의미없다고 생각했습니다.&lt;/p&gt;
 
 &lt;p&gt;내용이 많아 강사님이 자세히 설명하시지 않았지만 스프링을 처음 접하는 입장에서 그냥 넘어가기에는 찝찝한 부분들이 꽤나 있는것 같습니다.&lt;/p&gt;
 
@@ -49,9 +53,9 @@
 
 &lt;p&gt;주입 대상이되는 bean을 컨테이너에 찾아 주입하는 어노테이션&lt;/p&gt;
 </description>
-        <pubDate>Sat, 13 Jul 2019 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/boostcourse/2019/07/13/Boostcourse-PJ3_Backend_Spring2.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/boostcourse/2019/07/13/Boostcourse-PJ3_Backend_Spring2.html</guid>
+        <pubDate>Sun, 21 Jul 2019 21:00:00 +0900</pubDate>
+        <link>http://lee95292.github.io/boostcourse/2019/07/21/Boostcourse-PJ3_Backend_Spring2.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/boostcourse/2019/07/21/Boostcourse-PJ3_Backend_Spring2.html</guid>
         
         
         <category>boostcourse</category>
