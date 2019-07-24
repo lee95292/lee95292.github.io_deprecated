@@ -189,6 +189,14 @@
 <hr />
 <p><br /></p>
 
+<p>이클립스의 경우 수정사항이 제대로 바뀌지 않았을 때가 있다. 이럴 땐,</p>
+
+<p>project &gt; clean을 수행해주자.  잘못된, 꼬인 설정들을 정리해준다. <a href="https://huelet.tistory.com/entry/%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4-%ED%81%B4%EB%A6%B0clean%EA%B8%B0%EB%8A%A5">Eclipse_clean기능</a></p>
+
+<p>이클립스에서 톰캣을 사용하는 경우에도 분명 실행되어야 하는 코드가 에러를 발생시킬 때,</p>
+
+<p>구동 서버에서 프로젝트를 삭제하고 다시 실행시키자. (servers &gt; project 우클릭, remove)</p>
+
 <p><strong>E001</strong> ,Dynamic Web project
  —</p>
 
@@ -253,7 +261,7 @@ Server Tomcat v</em>.0 Server at localhost was unable to start within 45 seconds
 
 <p>pom.xml에 의존성 추가 후, Maven Library 탭에서도 (org.springframework.web.servlet.DispatcherServlet)의 존재가 확인되지만, 런타임에서 해당 클래스 로딩 오류 발생!</p>
 
-<p>해결 방법</p>
+<p>해결 방법   <a href="https://crunchify.com/how-to-fix-java-lang-classnotfoundexception-org-springframework-web-servlet-dispatcherservlet-exception-spring-mvc-tomcat-and-404-error/">링크</a></p>
 
 <ul>
   <li>project 우클릭 &gt; properties</li>
