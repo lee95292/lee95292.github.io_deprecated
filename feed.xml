@@ -6,78 +6,9 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 02 Aug 2019 01:45:13 +0900</pubDate>
-    <lastBuildDate>Fri, 02 Aug 2019 01:45:13 +0900</lastBuildDate>
+    <pubDate>Mon, 05 Aug 2019 15:57:09 +0900</pubDate>
+    <lastBuildDate>Mon, 05 Aug 2019 15:57:09 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
-    
-      <item>
-        <title>[Spring Framework] InternalViewResolver 클래스 계층도 분석하기</title>
-        <description>&lt;h2 id=&quot;internalresourceviewresolverclass&quot;&gt;InternalResourceViewResolver.class&lt;/h2&gt;
-
-&lt;p&gt;InternalResourceViewResolver를 통해 생성된 view class는 setview메서드 통해 지정된다.&lt;/p&gt;
-
-&lt;p&gt;InternalViewResolver&lt;/p&gt;
-
-&lt;p&gt;[Class, InternalResourceView와 JstlView 같은 부속클래스를 지원하는 UrlBasedViewResolver의 간편화된 클래스이다.&lt;/p&gt;
-
-&lt;p&gt;IRVR은 UrlBasedViewResolver의 간단한 구현체이다.]&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;UrlBasedViewResolver&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;[Class, ]&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;blockquote&gt;
-    &lt;p&gt;Ordered&lt;/p&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;[Interface, ]&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;blockquote&gt;
-    &lt;p&gt;AbstractCachingVIewResolver&lt;/p&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;[Abstract, ViewResolver를 구현하는 추상클래스.&lt;/p&gt;
-
-&lt;p&gt;한 번 resolve된 view 객체를 캐싱하는 역할을 통해 성능 향상
-subclass에서는 loadview메서드를 오버라이드 해야함.]&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;blockquote&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;ViewResolver&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;[Interface, ]&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;blockquote&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;WebApplicationObjectSupport&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;[Abstract, ]&lt;/p&gt;
-</description>
-        <pubDate>Thu, 01 Aug 2019 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/spring/2019/08/01/Spring-InternalViewResolver_analysis.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/spring/2019/08/01/Spring-InternalViewResolver_analysis.html</guid>
-        
-        
-        <category>spring</category>
-        
-      </item>
     
       <item>
         <title>[BoostCourse] PJ3 BackEnd 강의 정리(Spring MCV 실습 및 레이어드 아키텍쳐)</title>
@@ -985,6 +916,16 @@ Server Tomcat v&lt;/em&gt;.0 Server at localhost was unable to start within 45 s
 
 &lt;h1&gt;&lt;a name=&quot;Java&quot;&gt;Java&lt;/a&gt;&lt;/h1&gt;
 &lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;E001&lt;/strong&gt; Description	Resource	Path	Location	Type
+Java compiler level does not match the version of the installed Java project facet.	MySchool		Unknown	Faceted Project Problem (Java Version Mismatch)&lt;/p&gt;
+
+&lt;p&gt;해결방법&lt;/p&gt;
+
+&lt;p&gt;project &amp;gt; properties &amp;gt; project facet에서의 자바 버전과,&lt;/p&gt;
+
+&lt;p&gt;project &amp;gt; properties &amp;gt; java compiler 에서의 자바 버전을 동일하게 설정해주자.&lt;/p&gt;
+
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h1&gt;&lt;a name=&quot;git&quot;&gt;Git&lt;/a&gt;&lt;/h1&gt;
@@ -1622,6 +1563,23 @@ to your command may solve this.
         
         
         <category>회고</category>
+        
+      </item>
+    
+      <item>
+        <title>[Pyton] 함수 총정리</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;프로그래밍 언어 파이썬의 함수&lt;em&gt;(function)&lt;/em&gt; 총정리입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;(김동근 저, 쉽게 배우는 파이썬 프로그래밍 책의 내용을 정리했음)&lt;/p&gt;
+</description>
+        <pubDate>Sat, 02 Feb 2019 21:00:00 +0900</pubDate>
+        <link>http://lee95292.github.io/python/2019/02/02/pyhton-fucntion.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/python/2019/02/02/pyhton-fucntion.html</guid>
+        
+        
+        <category>python</category>
         
       </item>
     
