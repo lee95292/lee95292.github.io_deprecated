@@ -272,6 +272,18 @@ Server Tomcat v</em>.0 Server at localhost was unable to start within 45 seconds
 <br /></li>
 </ul>
 
+<p><strong>E002</strong> Maven Unknown</p>
+
+<p>git에서 spring 프로젝트를 clone했는데 pom.xml에서 에러발생.</p>
+
+<p>에러로그를 확인 : Unknown….. 구글링 결과</p>
+
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;maven-jar-plugin.version&gt;</span>3.1.1<span class="nt">&lt;/maven-jar-plugin.version&gt;</span>
+</code></pre>
+</div>
+
+<p>properties context에 위 문구를 추가해주면 에러가 지워진다.</p>
+
 <h1><a name="Java">Java</a></h1>
 <hr />
 

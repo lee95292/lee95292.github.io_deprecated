@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 05 Aug 2019 15:57:09 +0900</pubDate>
-    <lastBuildDate>Mon, 05 Aug 2019 15:57:09 +0900</lastBuildDate>
+    <pubDate>Tue, 06 Aug 2019 19:28:57 +0900</pubDate>
+    <lastBuildDate>Tue, 06 Aug 2019 19:28:57 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -913,6 +913,18 @@ Server Tomcat v&lt;/em&gt;.0 Server at localhost was unable to start within 45 s
   &lt;li&gt;maven dependency 추가 후 적용
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;E002&lt;/strong&gt; Maven Unknown&lt;/p&gt;
+
+&lt;p&gt;git에서 spring 프로젝트를 clone했는데 pom.xml에서 에러발생.&lt;/p&gt;
+
+&lt;p&gt;에러로그를 확인 : Unknown….. 구글링 결과&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;maven-jar-plugin.version&amp;gt;&lt;/span&gt;3.1.1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/maven-jar-plugin.version&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;properties context에 위 문구를 추가해주면 에러가 지워진다.&lt;/p&gt;
 
 &lt;h1&gt;&lt;a name=&quot;Java&quot;&gt;Java&lt;/a&gt;&lt;/h1&gt;
 &lt;hr /&gt;
