@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Aug 2019 16:59:28 +0900</pubDate>
-    <lastBuildDate>Sat, 10 Aug 2019 16:59:28 +0900</lastBuildDate>
+    <pubDate>Sat, 10 Aug 2019 17:00:42 +0900</pubDate>
+    <lastBuildDate>Sat, 10 Aug 2019 17:00:42 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -653,16 +653,21 @@ console.log(newArr)     //문자열 배열로 리턴
         <title>[INTG Project] 개념이 잘 정리된 링크 모음</title>
         <description>&lt;h2 id=&quot;section&quot;&gt;목차&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#sys&quot;&gt;OS/Linux/Windows&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;쉘 스크립트&lt;/p&gt;
+  &lt;li&gt;&lt;a href=&quot;#sys&quot;&gt;OS/Linux/Windows&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;쉘 스크립트&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#web&quot;&gt;웹&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;보안&lt;/p&gt;
+  &lt;li&gt;&lt;a href=&quot;#web&quot;&gt;웹&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;보안&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#etc&quot;&gt;기타&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;블로깅&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#etc&quot;&gt;기타&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;블로깅&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;section-1&quot;&gt;본문&lt;/h1&gt;
