@@ -6,9 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Mleek's blog_ study note & daily life
-">
+  <title>REST API 기본개념</title>
+  <meta name="description" content="참고 링크REST API 제대로 알고 사용하기그런 REST API로 괜찮은가REST API란?디자인 특징으로는,  Representational State Transfer - URI가 하나의 Resource를 표헌한다.  자원에 대한 행위를 HTTP 메서드로서 표현할 수 있다.  ...">
   
   <meta name="author" content="LeeMyungKyu">
   <meta name="copyright" content="&copy; LeeMyungKyu 2019">
@@ -42,11 +41,10 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="Mleek's blog_ study note & daily life
-" />
+  <meta property="og:description" content="참고 링크REST API 제대로 알고 사용하기그런 REST API로 괜찮은가REST API란?디자인 특징으로는,  Representational State Transfer - URI가 하나의 Resource를 표헌한다.  자원에 대한 행위를 HTTP 메서드로서 표현할 수 있다.  ..." />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
-  <meta property="og:title" content="About" />
+  <meta property="og:title" content="REST API 기본개념" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -57,9 +55,8 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About">
-  <meta name="twitter:description" content="Mleek's blog_ study note & daily life
-">
+  <meta name="twitter:title" content="REST API 기본개념">
+  <meta name="twitter:description" content="참고 링크REST API 제대로 알고 사용하기그런 REST API로 괜찮은가REST API란?디자인 특징으로는,  Representational State Transfer - URI가 하나의 Resource를 표헌한다.  자원에 대한 행위를 HTTP 메서드로서 표현할 수 있다.  ...">
   <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
   
@@ -68,7 +65,7 @@
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://lee95292.github.io/about/">
+  <link rel="canonical" href="http://lee95292.github.io/web/http/2019/08/31/HTTP-REST_API.html">
   <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
 </head>
 
@@ -121,30 +118,260 @@
 
 
     <div class="page-content">
-        <div class="wrapper">
-<div class="page">
+        <div class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">About</h1>
-  </header>
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">REST API 기본개념</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
 
-  <span class="page-divider">
+<div class="wrapper">
+
+ <span class="page-divider">
   <span class="one"></span>
   <span class="two"></span>
 </span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">August 31, 2019</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/WEB">Web</a>, 
+    
+  
+    
+    <a href="/category/HTTP">Http</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p>참고 링크
+<a href="https://meetup.toast.com/posts/92">REST API 제대로 알고 사용하기</a>
+<a href="https://www.youtube.com/watch?v=RP_f5dMoHFc">그런 REST API로 괜찮은가</a></p>
+
+<p>REST API란?</p>
+
+<p>디자인 특징으로는,</p>
+<ul>
+  <li>Representational State Transfer - URI가 하나의 Resource를 표헌한다.</li>
+  <li>자원에 대한 행위를 HTTP 메서드로서 표현할 수 있다.
+    <div class="highlighter-rouge"><pre class="highlight"><code>DELETE /article/3
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p>의미 상,
+다음 조건을 만족하는 분산 하이퍼미디어 시스템(웹)을 위한 아키텍처 스타일의(제약조건) 집합 
+즉, 웹을 구현할 떄 사용되는 어떤 <a href="https://ko.wikipedia.org/wiki/REST#REST_%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EC%97%90_%EC%A0%81%EC%9A%A9%EB%90%98%EB%8A%94_6%EA%B0%80%EC%A7%80_%EC%A0%9C%ED%95%9C_%EC%A1%B0%EA%B1%B4">제약조건</a>들의 집합</p>
+
+<ol>
+  <li>client - server :클라이언트가 요청하고 서버가 응답하는 구조</li>
+  <li>stateless : 서버가 클라이언트의 상태를 저장하지 않음</li>
+  <li>cache : 캐시(지역성과 공간성에 의존해 데이터 캐싱)</li>
+  <li>uniform interface</li>
+  <li>layered system</li>
+  <li>code on demand (optional) : 서버에서 클라이언트의 동작 가능하게함 (EX. javascript)</li>
+</ol>
+
+<p><strong>4.Uniform Interface</strong>가 가장 신경써야하는 제약조건, 구성요소를 살펴보자.</p>
+
+<ul>
+  <li>Identification of resource                       - 자원이 URI로 대표되어야 한다. (대체적으로 잘 지켜짐)</li>
+  <li>manipulation of resource through representations - 리소스의 행위를 HTTP 메서드로서 수행해야 한다(잘 지켜짐)</li>
+  <li>self-descriptive messages                        - 메시지는 스스로를 설명해야 한다 (잘 지켜지지 않음!)</li>
+  <li>메시지가 도달하는 경로</li>
+  <li>응답메시지의 문법(의미전달)
+ 잘 지켜진 응답메시지 예시를 살펴보자
+ ```
+ HTTP/1.1 200 OK
+ Content-Type: application/json-patch+json
+ HOST: example.com</li>
+</ul>
+
+<p>[ { “op” : “remove”, “path”: “a/b/c” } ]
+ ```</p>
+
+<p><a href="https://en.wikipedia.org/wiki/JSON_Patch">json-patch+json</a>은 JSON을 문서의 변경을 알리는 웹 표준 포멧이다. op(Operation)에는 add, remove, replace, copy, move, test등의 메서드가 자리할 수 있다.</p>
+<ul>
+  <li>HATEOAS 애플리케이션의 상태는 Hyperlink를 이용해 전이되어야 한다. (잘 지켜지지 않는 경우가 많다.)</li>
+</ul>
 
 
-  <article class="post-content">
-    <p><img src="/assets/profile-placeholder.gif" title="Profile Picture" class="profile" /></p>
-
-<p>Centrarium is a custom theme for Jekyll, made by <a href="http://bencentra.com">Ben Centra</a> for his own blog. He’d be humbled if you liked it enough to use it as well! Installation and configuration instructions can be found in the <a href="https://github.com/bencentra/centrarium">GitHub repository</a>.</p>
-
-<p>This page is a good place to write about yourself, your project, your product, or whatever it is your site is for. You can replace the image above, or you can get rid of it entirely.</p>
-
-<p>You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="http://jekyllrb.com/">jekyllrb.com</a>. And you can find the source code for Jekyll at <a href="https://github.com/jekyll/jekyll">github.com/jekyll/jekyll</a></p>
+</article>
 
 
-  </article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=REST+API+%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90&url=http%3A%2F%2Flee95292.github.io%2Fweb%2Fhttp%2F2019%2F08%2F31%2FHTTP-REST_API.html&media=http://lee95292.github.io/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
 
 </div>
 </div>

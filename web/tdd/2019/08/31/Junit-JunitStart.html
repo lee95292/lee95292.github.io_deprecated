@@ -6,9 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Mleek's blog_ study note & daily life
-">
+  <title>Junit 기초 사용법</title>
+  <meta name="description" content="박재성님 Junit 강좌 정리Junit 기본 사용법(setup)  STS에 Junit 라이브러리가 추가되어 있어야 함. build path에서 추가.  (사진추가) Junit Test 버튼 클릭으로 테스트 클래스 생성  Test Annotation을 추가한 메서드 내에서 단위테스트...">
   
   <meta name="author" content="LeeMyungKyu">
   <meta name="copyright" content="&copy; LeeMyungKyu 2019">
@@ -42,11 +41,10 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="Mleek's blog_ study note & daily life
-" />
+  <meta property="og:description" content="박재성님 Junit 강좌 정리Junit 기본 사용법(setup)  STS에 Junit 라이브러리가 추가되어 있어야 함. build path에서 추가.  (사진추가) Junit Test 버튼 클릭으로 테스트 클래스 생성  Test Annotation을 추가한 메서드 내에서 단위테스트..." />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
-  <meta property="og:title" content="About" />
+  <meta property="og:title" content="Junit 기초 사용법" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -57,9 +55,8 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About">
-  <meta name="twitter:description" content="Mleek's blog_ study note & daily life
-">
+  <meta name="twitter:title" content="Junit 기초 사용법">
+  <meta name="twitter:description" content="박재성님 Junit 강좌 정리Junit 기본 사용법(setup)  STS에 Junit 라이브러리가 추가되어 있어야 함. build path에서 추가.  (사진추가) Junit Test 버튼 클릭으로 테스트 클래스 생성  Test Annotation을 추가한 메서드 내에서 단위테스트...">
   <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
   
@@ -68,7 +65,7 @@
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://lee95292.github.io/about/">
+  <link rel="canonical" href="http://lee95292.github.io/web/tdd/2019/08/31/Junit-JunitStart.html">
   <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
 </head>
 
@@ -121,30 +118,241 @@
 
 
     <div class="page-content">
-        <div class="wrapper">
-<div class="page">
+        <div class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">About</h1>
-  </header>
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">Junit 기초 사용법</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
 
-  <span class="page-divider">
+<div class="wrapper">
+
+ <span class="page-divider">
   <span class="one"></span>
   <span class="two"></span>
 </span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">August 31, 2019</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/WEB">Web</a>, 
+    
+  
+    
+    <a href="/category/TDD">Tdd</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p><a href="https://www.youtube.com/watch?v=tyZMdwT3rIY">박재성님 Junit 강좌</a> 정리</p>
+
+<h1 id="junit--">Junit 기본 사용법</h1>
+<hr />
+
+<p>(setup)</p>
+<ul>
+  <li>STS에 J<strong>unit 라이브러리가 추가되어 있어야 함</strong>. build path에서 추가.</li>
+  <li>(사진추가) Junit Test 버튼 클릭으로 테스트 클래스 생성</li>
+  <li>Test Annotation을 추가한 메서드 내에서 단위테스트 진행</li>
+</ul>
+
+<p>(using)</p>
+<ul>
+  <li>하나의 메서드만 테스트를 원할경우, 메서드 이름에 커서를 올린 상태로, Ctrl + f11</li>
+  <li>결과값 확인은, assertEquals(기댓값,결과값), assert류 메서드를 사용해 확인한다. 이 메서드가 false를 반환하면, testcase가 실패하게 된다.</li>
+  <li>인스턴스의 테스트간 독립성을 보장하기 위해 @Before 애너테이션을 통해 초기화 진행하자. 테스트케이스별로 인스턴스 초기화 작업 수행
+```java
+… import…</li>
+</ul>
+
+<p>…class</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@Before
+public void setup(){
+    cal = new Calculator();     //후에 수행되는 모든 TestCase에 대해 해당 초기화작업 진행
+} ``` 
+</code></pre>
+</div>
+
+<ul>
+  <li>자원 반납과 같은 후처리 작업의 경우, @After 애너테이션을 사용한다</li>
+</ul>
+
+</article>
 
 
-  <article class="post-content">
-    <p><img src="/assets/profile-placeholder.gif" title="Profile Picture" class="profile" /></p>
-
-<p>Centrarium is a custom theme for Jekyll, made by <a href="http://bencentra.com">Ben Centra</a> for his own blog. He’d be humbled if you liked it enough to use it as well! Installation and configuration instructions can be found in the <a href="https://github.com/bencentra/centrarium">GitHub repository</a>.</p>
-
-<p>This page is a good place to write about yourself, your project, your product, or whatever it is your site is for. You can replace the image above, or you can get rid of it entirely.</p>
-
-<p>You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="http://jekyllrb.com/">jekyllrb.com</a>. And you can find the source code for Jekyll at <a href="https://github.com/jekyll/jekyll">github.com/jekyll/jekyll</a></p>
 
 
-  </article>
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=Junit+%EA%B8%B0%EC%B4%88+%EC%82%AC%EC%9A%A9%EB%B2%95&url=http%3A%2F%2Flee95292.github.io%2Fweb%2Ftdd%2F2019%2F08%2F31%2FJunit-JunitStart.html&media=http://lee95292.github.io/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
 
 </div>
 </div>

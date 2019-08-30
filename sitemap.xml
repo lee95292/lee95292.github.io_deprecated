@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://lee95292.github.io/web/tdd/2019/08/31/Junit-JunitStart.html</loc>
+<lastmod>2019-08-31T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://lee95292.github.io/web/http/2019/08/31/HTTP-REST_API.html</loc>
+<lastmod>2019-08-31T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://lee95292.github.io/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/08/13/INTG_TheoryLink-TheoryLink.html</loc>
 <lastmod>2019-08-13T14:46:00+09:00</lastmod>
 </url>
