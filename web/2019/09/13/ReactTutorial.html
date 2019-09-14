@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>React.js 기초 튜터리얼, 개념 편 [1]</title>
+  <meta name="description" content="  React.js 기초 튜터리얼을 학습하며 작성하는 글입니다. 오류가 있을 수 있으며, 이메일을 통한 오류 수정 환영합니다.JSXconst element = &lt;h1&gt; hello &lt;/h1&gt;위와 같은 문법으로 JSX를 작성한다.JSX는 Javascript의 St...">
+  
+  <meta name="author" content="LeeMyungKyu">
+  <meta name="copyright" content="&copy; LeeMyungKyu 2019">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="  React.js 기초 튜터리얼을 학습하며 작성하는 글입니다. 오류가 있을 수 있으며, 이메일을 통한 오류 수정 환영합니다.JSXconst element = &lt;h1&gt; hello &lt;/h1&gt;위와 같은 문법으로 JSX를 작성한다.JSX는 Javascript의 St..." />
+  <meta property="og:url" content="http://lee95292.github.io" />
+  <meta property="og:site_name" content="Mleek's blog" />
+  <meta property="og:title" content="React.js 기초 튜터리얼, 개념 편 [1]" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="React.js 기초 튜터리얼, 개념 편 [1]">
+  <meta name="twitter:description" content="  React.js 기초 튜터리얼을 학습하며 작성하는 글입니다. 오류가 있을 수 있으며, 이메일을 통한 오류 수정 환영합니다.JSXconst element = &lt;h1&gt; hello &lt;/h1&gt;위와 같은 문법으로 JSX를 작성한다.JSX는 Javascript의 St...">
+  <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
+  <meta name="twitter:url" content="http://lee95292.github.io">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://lee95292.github.io/web/2019/09/13/ReactTutorial.html">
+  <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Mleek's blog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/typography/">Typography</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">React.js 기초 튜터리얼, 개념 편 [1]</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">September 13, 2019</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/WEB">Web</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <blockquote>
+  <p><a href="https://ko.reactjs.org">React.js 기초 튜터리얼</a>을 학습하며 작성하는 글입니다. 오류가 있을 수 있으며, 이메일을 통한 오류 수정 환영합니다.</p>
+</blockquote>
+
+<h1 id="jsx">JSX</h1>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span> <span class="nx">hello</span> <span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span></code></pre>
+</div>
+
+<p>위와 같은 문법으로 JSX를 작성한다.</p>
+
+<p>JSX는 Javascript의 String도 아니고, HTML역시 아닌데, JSX는 <strong>React Element</strong>를 생성하고, DOM에 렌더링한다.</p>
+
+<h3 id="reactjs-">React.js의 컴포넌트</h3>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'mklee'</span>
+<span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span><span class="err">;
+</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+    <span class="nx">element</span><span class="p">,</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">gelElementById</span><span class="p">(</span><span class="s1">'root'</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre>
+</div>
+
+<p>JSX의 중괄호 안에는 모든 Javascript 표현식이 들어갈 수 있다.</p>
+
+<p>부연설명 -  이는 React의 컴포넌트가 로직과 뷰를 분리하지 않는다는 특성과 관련있다. 컴포넌트는 엘리먼트를 포함하는 개념으로만 알고있자.</p>
+
+<p>(참고로, JSX는 뷰와 로직이 섞여있기는 하지만, Javascript에 더 가깝기에, Camelcase 변수 표기법을 사용한다.)</p>
+
+<ul>
+  <li>JSX 예제</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span><span class="p">(</span>
+<span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">profileURL</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="se">)</span><span class="err">;
+</span></code></pre>
+</div>
+
+<p>이처럼,</p>
+<ul>
+  <li>Attribute에도 Javascript 표현식이 들어갈 수 있고,</li>
+  <li>자식으로 JSX를 포함할 수도 있다.</li>
+  <li>인터프리터 언어 특성 상, 줄바꿈 시 자동 세미콜론이 등록되므로, 엘리먼트 범위를 소괄호로 묶어주거나 한 줄에 작성하도록 하자.</li>
+</ul>
+
+<h1 id="react--">React의 엘리먼트 렌더링</h1>
+<hr />
+
+<p>앞의 예제에서 살펴보았듯,  <strong>ReactDOM.render(element,,target)</strong>를 통해 엘리먼트를 렌더링한다.</p>
+
+<h3 id="section">렌더링된 엘리먼트 업데이트</h3>
+
+<p>React의 엘리먼트는 불변객체(const로 선언)이므로, 이것의 내용을 변경할 수 없다.</p>
+
+<p>하지만, 새로운 Element를 생성하고 이를 렌더링하는 방식으로 극복할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">tick</span><span class="p">(){</span>
+    <span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">it</span><span class="s1">'s {new Date().toLocaleTimeString()} &lt;/h1&gt;
+    );
+    ReactDOM.render(element,document.getElementById('</span><span class="nx">root</span><span class="err">'</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nx">setInterval</span><span class="p">(</span><span class="nx">tick</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+</code></pre>
+</div>
+<p>참고 - 이후에 배우는 개념을 학습하면…</p>
+
+<p>유상태 컴포넌트(엘리먼트 변경이 있는 컴포넌트)는 대부분 한번의 rㅣender하는 방식으로 작성할 수 있다.
+ReactDom은 변경이 필요한 경우에만 업데이트를 수행한다.</p>
+
+<h1 id="component-props">Component와 Props</h1>
+<hr />
+
+<p>UI를 분리하여 재사용 가능하도록 하는 React의 유닛을 컴포넌트라고 한다.</p>
+
+<p>또한, 속성을 나타내는 props 객체를 통해 결과를 표현합니다.</p>
+
+<p>컴포넌트 선언 시, 이름의 첫글자는 대문자입니다(컨벤션).</p>
+
+<ul>
+  <li>함수 컴포넌트</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Welcome</span><span class="p">(</span><span class="nx">props</span><span class="p">){</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span><span class="p">}</span>
+</code></pre>
+</div>
+
+<p>props객체를 인자로 받아 React 앨리먼트를 반환하는 Javascript 함수를 유효한 함수 컴포넌트라고 합니다.</p>
+
+<ul>
+  <li>클래스 컴포넌트</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">Class</span> <span class="nx">Welcome</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="p">{</span>
+    <span class="nx">render</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">hello</span><span class="p">,</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span><span class="err">;
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>응용 - 사용자 정의 컴포넌트로 엘리먼트 생성</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Welcome</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"mklee"</span><span class="o">/&gt;</span>
+</code></pre>
+</div>
+
+<h3 id="section-1">컴포넌트 렌더링</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Welcome</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span><span class="err">;
+</span><span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Welcome</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"Sara"</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="nx">element</span><span class="p">,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'root'</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre>
+</div>
+
+<h1 id="state-lifecycle">State와 LifeCycle</h1>
+<hr />
+
+<p>위쪽 파트에서 작성한 시계 코드를 리팩토링 해보자.</p>
+
+<ul>
+  <li>기존 코드</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">tick</span><span class="p">(){</span>
+    <span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">it</span><span class="s1">'s {new Date().toLocaleTimeString()} &lt;/h1&gt;
+    );
+    ReactDOM.render(element,document.getElementById('</span><span class="nx">root</span><span class="err">'</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nx">setInterval</span><span class="p">(</span><span class="nx">tick</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>UI를 업데이트하기 위해 ReactDOM.render()를 호출해주었는데, state 개념을 활용해 효율적인 코드를 작성한다.</p>
+
+<ul>
+  <li>컴포넌트로 분리하기
+```javascript
+function Clock(props){
+  return (
+      &lt;h1&gt;it’s props.date.toLocaleTimeString()&lt;/h1&gt;
+  );
+}</li>
+</ul>
+
+<p>function tick(){
+    ReactDOM.render(
+        &lt;Clock date={new Date()}/&gt;,
+        document.getElementById(‘root’)
+    );
+}</p>
+
+<p>setInterval(tick,1000);</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+위 코드의 문제점
+* 한번의 실행이 업데이트를 수행하지 않음
+
+해결방법?
+* state를 사용하자 
+* state는 props와 유사한 개념
+* props와 달리 비공개 객체
+
+코드 수정하기
+* 우선, 함수 컴포넌트를 클래스 컴포넌트로 전환하고
+* render()의 리턴으로 해당 JSX를 추가
+* 생성자를 아래와 같이 작성하고, status를 초기화해주기
+* React의 컴포넌트 생명주기 메서드인 componentDidMount(), componentDidMount()를 작성해 시계가 랜더링될 때와 언마운트 될때의 수행코드 작성
+* 매 초 status를 변경해주는 tick함수 작성. (이 떄, status값의 수정은 setStatus를 통해서만 갱신된다)
+
+```javascript
+Class Clock extends React.Component{   
+    constructor(props){     
+        super(props);
+        this.state={date:new Date()};
+    }
+
+    componentDidMount(){
+        this.timerID=setInterval(()=&gt; this.tick(),1000);
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.timerID);
+    }
+
+    tick(){
+        this.setState({date:new Date()})
+    }
+    render(){
+        return &lt;h1&gt;it's {this.props.state.date.toLocaleTimeString()}&lt;/h1&gt;;
+    }
+}
+
+ReactDOM.render(
+    &lt;Clock /&gt;,
+    document.getElementById('root')
+);
+</code></pre>
+</div>
+<p>실행과정</p>
+<ul>
+  <li><strong>ReactDOM.render()</strong>의 Clock 컴포넌트의 생성자를 호출하고 status 초기화됨.</li>
+  <li><strong>Clock의 render()</strong>가 호출된다. 이제부터 React에서 화면에 표시될 내용과 Clock의 렌더링 출력을 비교해 DOM을 업데이트한다.</li>
+  <li>DOM이 업데이트 된 이후, componentDidMount() (마운트 동작)를 호출하고, 매 초 tick()함수를 호출하며, tick()함수에서는 status를 새로운 날짜로 갱신합니다.</li>
+  <li>만약 Clock 컴포넌트가 삭제된다면, clearInterval을 통해 타이머가 중지됩니다.</li>
+</ul>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=React.js+%EA%B8%B0%EC%B4%88+%ED%8A%9C%ED%84%B0%EB%A6%AC%EC%96%BC%2C+%EA%B0%9C%EB%85%90+%ED%8E%B8+%5B1%5D&url=http%3A%2F%2Flee95292.github.io%2Fweb%2F2019%2F09%2F13%2FReactTutorial.html&media=http://lee95292.github.io/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Mleek's blog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:lee95292@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">lee95292@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/TheBenCentra" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">TheBenCentra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/lee95292" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">lee95292</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/pub/ben-centra/47/769/60a" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Ben Centra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Mleek's blog_ study note & daily life
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>
