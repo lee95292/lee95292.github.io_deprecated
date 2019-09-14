@@ -305,66 +305,73 @@ ReactDom은 변경이 필요한 경우에만 업데이트를 수행한다.</p>
 <p>UI를 업데이트하기 위해 ReactDOM.render()를 호출해주었는데, state 개념을 활용해 효율적인 코드를 작성한다.</p>
 
 <ul>
-  <li>컴포넌트로 분리하기
-```javascript
-function Clock(props){
-  return (
-      &lt;h1&gt;it’s props.date.toLocaleTimeString()&lt;/h1&gt;
-  );
-}</li>
+  <li>컴포넌트로 분리하기</li>
 </ul>
 
-<p>function tick(){
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Clock</span><span class="p">(</span><span class="nx">props</span><span class="p">){</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">it</span><span class="s1">'s props.date.toLocaleTimeString()&lt;/h1&gt;
+    );
+}
+
+function tick(){
     ReactDOM.render(
         &lt;Clock date={new Date()}/&gt;,
-        document.getElementById(‘root’)
-    );
-}</p>
+        document.getElementById('</span><span class="nx">root</span><span class="err">'</span><span class="p">)</span>
+    <span class="p">);</span>
+<span class="p">}</span>
 
-<p>setInterval(tick,1000);</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>
-위 코드의 문제점
-* 한번의 실행이 업데이트를 수행하지 않음
+<span class="nx">setInterval</span><span class="p">(</span><span class="nx">tick</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+</code></pre>
+</div>
 
-해결방법?
-* state를 사용하자 
-* state는 props와 유사한 개념
-* props와 달리 비공개 객체
+<p>위 코드의 문제점</p>
+<ul>
+  <li>한번의 실행이 업데이트를 수행하지 않음</li>
+</ul>
 
-코드 수정하기
-* 우선, 함수 컴포넌트를 클래스 컴포넌트로 전환하고
-* render()의 리턴으로 해당 JSX를 추가
-* 생성자를 아래와 같이 작성하고, status를 초기화해주기
-* React의 컴포넌트 생명주기 메서드인 componentDidMount(), componentDidMount()를 작성해 시계가 랜더링될 때와 언마운트 될때의 수행코드 작성
-* 매 초 status를 변경해주는 tick함수 작성. (이 떄, status값의 수정은 setStatus를 통해서만 갱신된다)
+<p>해결방법?</p>
+<ul>
+  <li>state를 사용하자</li>
+  <li>state는 props와 유사한 개념</li>
+  <li>props와 달리 비공개 객체</li>
+</ul>
 
-```javascript
-Class Clock extends React.Component{   
-    constructor(props){     
-        super(props);
-        this.state={date:new Date()};
-    }
+<p>코드 수정하기</p>
+<ul>
+  <li>우선, 함수 컴포넌트를 클래스 컴포넌트로 전환하고</li>
+  <li>render()의 리턴으로 해당 JSX를 추가</li>
+  <li>생성자를 아래와 같이 작성하고, status를 초기화해주기</li>
+  <li>React의 컴포넌트 생명주기 메서드인 componentDidMount(), componentDidMount()를 작성해 시계가 랜더링될 때와 언마운트 될때의 수행코드 작성</li>
+  <li>매 초 status를 변경해주는 tick함수 작성. (이 떄, status값의 수정은 setStatus를 통해서만 갱신된다)</li>
+</ul>
 
-    componentDidMount(){
-        this.timerID=setInterval(()=&gt; this.tick(),1000);
-    }
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">Class</span> <span class="nx">Clock</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="p">{</span>   
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">){</span>     
+        <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="o">=</span><span class="p">{</span><span class="na">date</span><span class="p">:</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()};</span>
+    <span class="p">}</span>
 
-    componentWillUnmount(){
-        clearInterval(this.timerID);
-    }
+    <span class="nx">componentDidMount</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">timerID</span><span class="o">=</span><span class="nx">setInterval</span><span class="p">(()</span><span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">tick</span><span class="p">(),</span><span class="mi">1000</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    tick(){
-        this.setState({date:new Date()})
-    }
-    render(){
-        return &lt;h1&gt;it's {this.props.state.date.toLocaleTimeString()}&lt;/h1&gt;;
+    <span class="nx">componentWillUnmount</span><span class="p">(){</span>
+        <span class="nx">clearInterval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">timerID</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">tick</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="na">date</span><span class="p">:</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()})</span>
+    <span class="p">}</span>
+    <span class="nx">render</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">it</span><span class="s1">'s {this.props.state.date.toLocaleTimeString()}&lt;/h1&gt;;
     }
 }
 
 ReactDOM.render(
     &lt;Clock /&gt;,
-    document.getElementById('root')
-);
+    document.getElementById('</span><span class="nx">root</span><span class="err">'</span><span class="p">)</span>
+<span class="p">);</span>
 </code></pre>
 </div>
 <p>실행과정</p>

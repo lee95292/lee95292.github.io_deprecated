@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 14 Sep 2019 21:13:33 +0900</pubDate>
-    <lastBuildDate>Sat, 14 Sep 2019 21:13:33 +0900</lastBuildDate>
+    <pubDate>Sat, 14 Sep 2019 21:15:48 +0900</pubDate>
+    <lastBuildDate>Sat, 14 Sep 2019 21:15:48 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -168,66 +168,73 @@ ReactDom은 변경이 필요한 경우에만 업데이트를 수행한다.&lt;/p
 &lt;p&gt;UI를 업데이트하기 위해 ReactDOM.render()를 호출해주었는데, state 개념을 활용해 효율적인 코드를 작성한다.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;컴포넌트로 분리하기
-```javascript
-function Clock(props){
-  return (
-      &amp;lt;h1&amp;gt;it’s props.date.toLocaleTimeString()&amp;lt;/h1&amp;gt;
-  );
-}&lt;/li&gt;
+  &lt;li&gt;컴포넌트로 분리하기&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;function tick(){
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Clock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'s props.date.toLocaleTimeString()&amp;lt;/h1&amp;gt;
+    );
+}
+
+function tick(){
     ReactDOM.render(
         &amp;lt;Clock date={new Date()}/&amp;gt;,
-        document.getElementById(‘root’)
-    );
-}&lt;/p&gt;
+        document.getElementById('&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;p&gt;setInterval(tick,1000);&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-위 코드의 문제점
-* 한번의 실행이 업데이트를 수행하지 않음
+&lt;span class=&quot;nx&quot;&gt;setInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-해결방법?
-* state를 사용하자 
-* state는 props와 유사한 개념
-* props와 달리 비공개 객체
+&lt;p&gt;위 코드의 문제점&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;한번의 실행이 업데이트를 수행하지 않음&lt;/li&gt;
+&lt;/ul&gt;
 
-코드 수정하기
-* 우선, 함수 컴포넌트를 클래스 컴포넌트로 전환하고
-* render()의 리턴으로 해당 JSX를 추가
-* 생성자를 아래와 같이 작성하고, status를 초기화해주기
-* React의 컴포넌트 생명주기 메서드인 componentDidMount(), componentDidMount()를 작성해 시계가 랜더링될 때와 언마운트 될때의 수행코드 작성
-* 매 초 status를 변경해주는 tick함수 작성. (이 떄, status값의 수정은 setStatus를 통해서만 갱신된다)
+&lt;p&gt;해결방법?&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;state를 사용하자&lt;/li&gt;
+  &lt;li&gt;state는 props와 유사한 개념&lt;/li&gt;
+  &lt;li&gt;props와 달리 비공개 객체&lt;/li&gt;
+&lt;/ul&gt;
 
-```javascript
-Class Clock extends React.Component{   
-    constructor(props){     
-        super(props);
-        this.state={date:new Date()};
-    }
+&lt;p&gt;코드 수정하기&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;우선, 함수 컴포넌트를 클래스 컴포넌트로 전환하고&lt;/li&gt;
+  &lt;li&gt;render()의 리턴으로 해당 JSX를 추가&lt;/li&gt;
+  &lt;li&gt;생성자를 아래와 같이 작성하고, status를 초기화해주기&lt;/li&gt;
+  &lt;li&gt;React의 컴포넌트 생명주기 메서드인 componentDidMount(), componentDidMount()를 작성해 시계가 랜더링될 때와 언마운트 될때의 수행코드 작성&lt;/li&gt;
+  &lt;li&gt;매 초 status를 변경해주는 tick함수 작성. (이 떄, status값의 수정은 setStatus를 통해서만 갱신된다)&lt;/li&gt;
+&lt;/ul&gt;
 
-    componentDidMount(){
-        this.timerID=setInterval(()=&amp;gt; this.tick(),1000);
-    }
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Clock&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;   
+    &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;     
+        &lt;span class=&quot;kr&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()};&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-    componentWillUnmount(){
-        clearInterval(this.timerID);
-    }
+    &lt;span class=&quot;nx&quot;&gt;componentDidMount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;timerID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-    tick(){
-        this.setState({date:new Date()})
-    }
-    render(){
-        return &amp;lt;h1&amp;gt;it's {this.props.state.date.toLocaleTimeString()}&amp;lt;/h1&amp;gt;;
+    &lt;span class=&quot;nx&quot;&gt;componentWillUnmount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;clearInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;timerID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;tick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()})&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'s {this.props.state.date.toLocaleTimeString()}&amp;lt;/h1&amp;gt;;
     }
 }
 
 ReactDOM.render(
     &amp;lt;Clock /&amp;gt;,
-    document.getElementById('root')
-);
+    document.getElementById('&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;실행과정&lt;/p&gt;
