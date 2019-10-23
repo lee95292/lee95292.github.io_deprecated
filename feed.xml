@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 Oct 2019 20:44:03 +0900</pubDate>
-    <lastBuildDate>Tue, 22 Oct 2019 20:44:03 +0900</lastBuildDate>
+    <pubDate>Wed, 23 Oct 2019 13:57:38 +0900</pubDate>
+    <lastBuildDate>Wed, 23 Oct 2019 13:57:38 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -455,6 +455,11 @@ categories: 회고
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;https://blog.outsider.ne.kr/1160&quot;&gt;JWT 개념&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://all-record.tistory.com/186&quot;&gt;우분투환경에서 단순 배포하기_W&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;클라우드
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://medium.com/harrythegreat/aws-%EA%B0%80%EC%9E%A5%EC%89%BD%EA%B2%8C-vpc-%EA%B0%9C%EB%85%90%EC%9E%A1%EA%B8%B0-71eef95a7098&quot;&gt;vpc개념&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;기타
