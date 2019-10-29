@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 29 Oct 2019 11:11:47 +0900</pubDate>
-    <lastBuildDate>Tue, 29 Oct 2019 11:11:47 +0900</lastBuildDate>
+    <pubDate>Tue, 29 Oct 2019 11:13:10 +0900</pubDate>
+    <lastBuildDate>Tue, 29 Oct 2019 11:13:10 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -339,23 +339,18 @@ ReactDOM.render(
  HOST: example.com&lt;/p&gt;
 
 &lt;p&gt;[ { “op” : “remove”, “path”: “a/b/c” } ]&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+ [json-patch+json](https://en.wikipedia.org/wiki/JSON_Patch)은 JSON을 문서의 변경을 알리는 웹 표준 포멧이다. op(Operation)에는 add, remove, replace, copy, move, test등의 메서드가 자리할 수 있다.
+ * HATEOAS 애플리케이션의 상태는 Hyperlink를 이용해 전이되어야 한다. (잘 지켜지지 않는 경우가 많다.)
 
-&lt;p&gt;```&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/JSON_Patch&quot;&gt;json-patch+json&lt;/a&gt;은 JSON을 문서의 변경을 알리는 웹 표준 포멧이다. op(Operation)에는 add, remove, replace, copy, move, test등의 메서드가 자리할 수 있다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;HATEOAS 애플리케이션의 상태는 Hyperlink를 이용해 전이되어야 한다. (잘 지켜지지 않는 경우가 많다.)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;디자인 특징&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Representational State Transfer - URI가 하나의 Resource를 표헌한다.&lt;/li&gt;
-  &lt;li&gt;자원에 대한 행위를 HTTP 메서드로서 표현할 수 있다.
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DELETE /article/3
+### 디자인 특징
+* Representational State Transfer - URI가 하나의 Resource를 표헌한다.
+* 자원에 대한 행위를 HTTP 메서드로서 표현할 수 있다.
 &lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;DELETE /article/3
+```&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 31 Aug 2019 00:00:00 +0900</pubDate>

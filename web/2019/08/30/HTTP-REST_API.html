@@ -190,23 +190,18 @@
  HOST: example.com</p>
 
 <p>[ { “op” : “remove”, “path”: “a/b/c” } ]</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+ [json-patch+json](https://en.wikipedia.org/wiki/JSON_Patch)은 JSON을 문서의 변경을 알리는 웹 표준 포멧이다. op(Operation)에는 add, remove, replace, copy, move, test등의 메서드가 자리할 수 있다.
+ * HATEOAS 애플리케이션의 상태는 Hyperlink를 이용해 전이되어야 한다. (잘 지켜지지 않는 경우가 많다.)
 
-<p>```</p>
 
-<p><a href="https://en.wikipedia.org/wiki/JSON_Patch">json-patch+json</a>은 JSON을 문서의 변경을 알리는 웹 표준 포멧이다. op(Operation)에는 add, remove, replace, copy, move, test등의 메서드가 자리할 수 있다.</p>
-<ul>
-  <li>HATEOAS 애플리케이션의 상태는 Hyperlink를 이용해 전이되어야 한다. (잘 지켜지지 않는 경우가 많다.)</li>
-</ul>
-
-<h3 id="section">디자인 특징</h3>
-<ul>
-  <li>Representational State Transfer - URI가 하나의 Resource를 표헌한다.</li>
-  <li>자원에 대한 행위를 HTTP 메서드로서 표현할 수 있다.
-    <div class="highlighter-rouge"><pre class="highlight"><code>DELETE /article/3
+### 디자인 특징
+* Representational State Transfer - URI가 하나의 Resource를 표헌한다.
+* 자원에 대한 행위를 HTTP 메서드로서 표현할 수 있다.
 </code></pre>
-    </div>
-  </li>
-</ul>
+</div>
+<p>DELETE /article/3
+```</p>
 
 
 </article>
