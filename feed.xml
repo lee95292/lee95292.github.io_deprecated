@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 29 Oct 2019 11:09:53 +0900</pubDate>
-    <lastBuildDate>Tue, 29 Oct 2019 11:09:53 +0900</lastBuildDate>
+    <pubDate>Tue, 29 Oct 2019 11:11:47 +0900</pubDate>
+    <lastBuildDate>Tue, 29 Oct 2019 11:11:47 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -305,7 +305,7 @@ ReactDOM.render(
         <description>&lt;p&gt;참고 링크&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://meetup.toast.com/posts/92&quot;&gt;REST API 제대로 알고 사용하기&lt;/a&gt; &lt;br /&gt;
-&lt;a href=&quot;https://www.youtube.com/watch?v=RP_f5dMoHFc&quot;&gt;그런 REST API로 괜찮은가&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=RP_f5dMoHFc&quot;&gt;그런 REST API로 괜찮은가(유튜브)&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;rest-api&quot;&gt;REST API란?&lt;/h3&gt;
 
@@ -338,8 +338,9 @@ ReactDOM.render(
  Content-Type: application/json-patch+json
  HOST: example.com&lt;/p&gt;
 
-&lt;p&gt;[ { “op” : “remove”, “path”: “a/b/c” } ]
- ```&lt;/p&gt;
+&lt;p&gt;[ { “op” : “remove”, “path”: “a/b/c” } ]&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/JSON_Patch&quot;&gt;json-patch+json&lt;/a&gt;은 JSON을 문서의 변경을 알리는 웹 표준 포멧이다. op(Operation)에는 add, remove, replace, copy, move, test등의 메서드가 자리할 수 있다.&lt;/p&gt;
 &lt;ul&gt;
