@@ -10,9 +10,8 @@
   <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
   <!-- My Change!! end -->
   
-  <title>web</title>
-  <meta name="description" content="Mleek's blog_ study note & daily life
-">
+  <title>[React] 리액트 라우터 on use</title>
+  <meta name="description" content="  간단한 기록용 포스트공통적으로,import {Router,Link} from 'react-router-dom';Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact path="...">
   
   <meta name="author" content="LeeMyungKyu">
   <meta name="copyright" content="&copy; LeeMyungKyu 2019">
@@ -46,11 +45,10 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="Mleek's blog_ study note & daily life
-" />
+  <meta property="og:description" content="  간단한 기록용 포스트공통적으로,import {Router,Link} from 'react-router-dom';Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact path="..." />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
-  <meta property="og:title" content="web" />
+  <meta property="og:title" content="[React] 리액트 라우터 on use" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -61,9 +59,8 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="web">
-  <meta name="twitter:description" content="Mleek's blog_ study note & daily life
-">
+  <meta name="twitter:title" content="[React] 리액트 라우터 on use">
+  <meta name="twitter:description" content="  간단한 기록용 포스트공통적으로,import {Router,Link} from 'react-router-dom';Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact path="...">
   <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
   
@@ -72,7 +69,7 @@
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://lee95292.github.io/category/web/">
+  <link rel="canonical" href="http://lee95292.github.io/react/2019/09/12/React-Router_on_use.html">
   <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
 </head>
 
@@ -110,6 +107,14 @@
           <li class="nav-link"><a href="/typography/">Typography</a>
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       </ul>
     </nav>
   </div>
@@ -117,30 +122,260 @@
 
 
     <div class="page-content">
-        <div class="wrapper">
-<div class="page">
+        <div class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">Posts in "Web"</h1>
-  </header>
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">[React] 리액트 라우터 on use</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
 
-  <span class="page-divider">
+<div class="wrapper">
+
+ <span class="page-divider">
   <span class="one"></span>
   <span class="two"></span>
 </span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">September 12, 2019</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/react">React</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <blockquote>
+  <p>간단한 기록용 포스트</p>
+</blockquote>
+
+<p>공통적으로,</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Router</span><span class="p">,</span><span class="nx">Link</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-router-dom'</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<h3 id="route---path-component--">Route - path와 component 속성으로 설명해보자.</h3>
+
+<p>exact path와 일치하는 component를 보여준다. 즉,</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;Route</span> <span class="na">exact</span> <span class="na">path=</span><span class="s">"/"</span> <span class="na">component=</span><span class="s">{Home}</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<p>위의 경우 url상에서 루트 경로일 때, Home 컴포넌트를 보여주는 것.</p>
+
+<p>즉, Route는 의미적(Semantic)인 컴포넌트이고, URL의 정보를 참조해서 뷰를 보여주는 역할을 수행한다.</p>
+
+<p>(이 때, exact path가 아니라 path만을 사용한다면, path=”/about” 인 설정의 경우, path=”/” 과 path=”/about”의 라우트까지 모두 보여준다.<br />
+즉, exact하지 않는 매칭을 한다)</p>
+
+<h3 id="parameter">Parameter</h3>
+
+<p>parameter는 url path 뒤에 콜론(:)을 붙여 입력받는다.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>import {Router} from 'react-router-dom';
+
+...
+ <span class="nt">&lt;Route</span> <span class="na">path=</span><span class="s">"/about/:name"</span> <span class="na">component=</span><span class="s">{About}/</span><span class="nt">&gt;</span>
+</code></pre>
+</div>
+
+<p>(전달예시)</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>https://localhost:3000/about/mklee
+</code></pre>
+</div>
+
+<p>위의 경우, ‘mklee’가 About 컴포넌트에 파라미터로 사용한다.</p>
+
+<p>이 때,  About의 컴포넌트는 <strong>const name=match.params.name</strong> 과 같이 해당 값을 사용한다</p>
+
+<h3 id="link-----router">Link 컴포넌트를 통해 새로고침 없는 Router이동</h3>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>import {Link} from 'react-router-dom'
+...
+
+<span class="nt">&lt;Link</span> <span class="na">to=</span><span class="s">"/about"</span><span class="nt">&gt;</span> About <span class="nt">&lt;/Link&gt;</span>
+</code></pre>
+</div>
+
+<p>a 태그를 통해 URL을 변경시키고 이동할 수도 있지만, 새로고침 없이 Link 컴포넌트를 통해 새로고침 없는 페이지전환이 가능하다.</p>
+
+</article>
 
 
-  <article class="post-content">
-    <ul class="posts-list">
-      
-      <li><strong><a class="post-link" href="/web/2019/08/30/HTTP-REST_API.html">REST API 핵심개념 체크</a></strong><span class="post-date"> - August 30, 2019</span></li>
-      
-    </ul>
-  </article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BReact%5D+%EB%A6%AC%EC%95%A1%ED%8A%B8+%EB%9D%BC%EC%9A%B0%ED%84%B0+on+use&url=http%3A%2F%2Flee95292.github.io%2Freact%2F2019%2F09%2F12%2FReact-Router_on_use.html&media=http://lee95292.github.io/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
 
 </div>
 </div>
-<br>
 
     </div>
 
@@ -171,6 +406,14 @@
         
         
           <li class="nav-link"><a href="/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+        
+        
         
         
       </ul>

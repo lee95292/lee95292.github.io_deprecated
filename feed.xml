@@ -6,9 +6,74 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Nov 2019 00:23:08 +0900</pubDate>
-    <lastBuildDate>Sun, 03 Nov 2019 00:23:08 +0900</lastBuildDate>
+    <pubDate>Fri, 08 Nov 2019 21:07:33 +0900</pubDate>
+    <lastBuildDate>Fri, 08 Nov 2019 21:07:33 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>[React] 리액트 라우터 on use</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;간단한 기록용 포스트&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;공통적으로,&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'react-router-dom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;route---path-component--&quot;&gt;Route - path와 component 속성으로 설명해보자.&lt;/h3&gt;
+
+&lt;p&gt;exact path와 일치하는 component를 보여준다. 즉,&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Route&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;exact&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;component=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;{Home}&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;위의 경우 url상에서 루트 경로일 때, Home 컴포넌트를 보여주는 것.&lt;/p&gt;
+
+&lt;p&gt;즉, Route는 의미적(Semantic)인 컴포넌트이고, URL의 정보를 참조해서 뷰를 보여주는 역할을 수행한다.&lt;/p&gt;
+
+&lt;p&gt;(이 때, exact path가 아니라 path만을 사용한다면, path=”/about” 인 설정의 경우, path=”/” 과 path=”/about”의 라우트까지 모두 보여준다.&lt;br /&gt;
+즉, exact하지 않는 매칭을 한다)&lt;/p&gt;
+
+&lt;h3 id=&quot;parameter&quot;&gt;Parameter&lt;/h3&gt;
+
+&lt;p&gt;parameter는 url path 뒤에 콜론(:)을 붙여 입력받는다.&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import {Router} from 'react-router-dom';
+
+...
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;Route&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/about/:name&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;component=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;{About}/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;(전달예시)&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://localhost:3000/about/mklee
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;위의 경우, ‘mklee’가 About 컴포넌트에 파라미터로 사용한다.&lt;/p&gt;
+
+&lt;p&gt;이 때,  About의 컴포넌트는 &lt;strong&gt;const name=match.params.name&lt;/strong&gt; 과 같이 해당 값을 사용한다&lt;/p&gt;
+
+&lt;h3 id=&quot;link-----router&quot;&gt;Link 컴포넌트를 통해 새로고침 없는 Router이동&lt;/h3&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import {Link} from 'react-router-dom'
+...
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;Link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;to=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/about&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; About &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Link&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;a 태그를 통해 URL을 변경시키고 이동할 수도 있지만, 새로고침 없이 Link 컴포넌트를 통해 새로고침 없는 페이지전환이 가능하다.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 13 Sep 2019 00:00:00 +0900</pubDate>
+        <link>http://lee95292.github.io/react/2019/09/12/React-Router_on_use.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/react/2019/09/12/React-Router_on_use.html</guid>
+        
+        
+        <category>react</category>
+        
+      </item>
     
       <item>
         <title>React.js 기초 튜터리얼, 개념 편 [1]</title>
@@ -247,11 +312,11 @@ ReactDOM.render(
 
 </description>
         <pubDate>Fri, 13 Sep 2019 00:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/web/2019/09/12/ReactTutorial.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/web/2019/09/12/ReactTutorial.html</guid>
+        <link>http://lee95292.github.io/react/2019/09/12/ReactTutorial.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/react/2019/09/12/ReactTutorial.html</guid>
         
         
-        <category>Web</category>
+        <category>react</category>
         
       </item>
     
@@ -491,7 +556,7 @@ categories: 회고
   &lt;li&gt;&lt;a href=&quot;https://kgmyh.github.io/blog/2017/12/02/spring-boot-chapter01/&quot;&gt;spring boot(한글)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/&quot;&gt;Java8 API&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://developer.android.com&quot;&gt;Android&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/path.html&quot;&gt;node&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/&quot;&gt;node&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;section-1&quot;&gt;기업| 개인 기술블로그&lt;/h1&gt;
@@ -1152,144 +1217,6 @@ console.log(newArr)     //문자열 배열로 리턴
         
         
         <category>boostcourse</category>
-        
-      </item>
-    
-      <item>
-        <title>[INTG Project] SQL 구문 예제 및 문법 정리</title>
-        <description>&lt;p&gt;SQL 하나로 정리하기 : INTG 프로젝트&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;목차&lt;/h3&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#select&quot;&gt;select&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#create&quot;&gt;create&lt;/a&gt;  //(&lt;a href=&quot;https://sqlzoo.net/wiki/CREATE_and_DROP_Reference&quot;&gt;https://sqlzoo.net/wiki/CREATE_and_DROP_Reference&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;레퍼런스&lt;/h3&gt;
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://sqlzoo.net/&quot;&gt;SQLzoo&lt;/a&gt; :sql 예제 연습사이트&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://tcpschool.com/mysql/intro&quot;&gt;TCPschool&lt;/a&gt; : sql을 비롯한 여러가지 프로그래밍 언어 정리된 사이트&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1&gt;&lt;a name=&quot;select&quot;&gt;select문&lt;/a&gt;&lt;/h1&gt;
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;select-basics&quot;&gt;001 SELECT basics&lt;/h1&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;1번 : 독일의 인구 찾기&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;population&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;world&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Germany'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;2번 IN 사용 :(스웨덴 ,노르웨이, 덴마크)의  이름, 인구 출력&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;population&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;world&lt;/span&gt; 
-  &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IN&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Sweden'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Norway'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Denmark'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;3번 BETWEEN ~ AND 사용 - 인구가 20만~25만 사이 국가 이름,영토 출력&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;area&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;world&lt;/span&gt; 
-  &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;area&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BETWEEN&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200000&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;250000&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;select-name&quot;&gt;002 SELECT name&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;pattern matching strings&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;1번  LIKE, multicharacter wildcard(%)사용&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;world&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LIKE&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Y%'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;-- Y로 시작하는 이름&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;7번 LIKE,wildcard(%) 응용&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;world&lt;/span&gt; 
-  &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LIKE&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'%a%a%a%'&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;-- a가 세번이상 들어가는 국가&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;8번 LIKE,single character wildcard(%) 사용&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;world&lt;/span&gt; 
-  &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LIKE&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'_t'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;-- 두 번째 글자가 t&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;12번 LIKE, CONCAT 사용&lt;/p&gt;
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;world&lt;/span&gt; 
-  &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capital&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LIKE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' City'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;-- Mexico - Mexico City 같은 관계를 가진 수도 출력&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;15번 꽤 어려운 문제 - 수도가 국가이름의 확정인 경우, 국가이름과 확장된부분 출력&lt;/p&gt;
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;REPLACE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;capital&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;world&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capital&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LIKE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' %'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-   &lt;span class=&quot;k&quot;&gt;OR&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;capital&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LIKE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'-%'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1&gt;&lt;a name=&quot;create&quot;&gt;create문&lt;/a&gt;&lt;/h1&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;테이블 생성 제약조건&lt;/h3&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;NOT NULL : 해당 필드는 NULL 값을 저장할 수 없게 됩니다. INSERT 구문에서 해당 영역을 생략할 시, 기본값이 삽입됩니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;UNIQUE : 해당 필드는 서로 다른 값을 가져야만 합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;PRIMARY KEY : 해당 필드가 NOT NULL과 UNIQUE 제약 조건의 특징을 모두 가지게 됩니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;FOREIGN KEY : 하나의 테이블을 다른 테이블에 의존하게 만듭니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;DEFAULT : 해당 필드의 기본값을 설정합니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Mon, 04 Mar 2019 14:46:00 +0900</pubDate>
-        <link>http://lee95292.github.io/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_SQL-_SQLquery.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_SQL-_SQLquery.html</guid>
-        
-        
-        <category>하나로_정리하기</category>
         
       </item>
     
