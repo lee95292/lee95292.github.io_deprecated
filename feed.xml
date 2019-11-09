@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Nov 2019 21:07:48 +0900</pubDate>
-    <lastBuildDate>Fri, 08 Nov 2019 21:07:48 +0900</lastBuildDate>
+    <pubDate>Sun, 10 Nov 2019 04:22:47 +0900</pubDate>
+    <lastBuildDate>Sun, 10 Nov 2019 04:22:47 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -512,6 +512,7 @@ categories: 회고
   &lt;li&gt;OS/Linux/Windows
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;https://wiki.kldp.org/HOWTO/html/Adv-Bash-Scr-HOWTO/&quot;&gt;고급 쉘 스크립트 사전&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://blog.lael.be/post/73&quot;&gt;우분투 서버세팅(운영환경 관련 bash명령어)&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;웹
