@@ -10,9 +10,8 @@
   <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
   <!-- My Change!! end -->
   
-  <title>Posts</title>
-  <meta name="description" content="Mleek's blog_ study note & daily life
-">
+  <title>[Spring Boot,토막글] Spring boot 프로젝트에서 여러개의 설정파일 추가</title>
+  <meta name="description" content="스프링에서 API Key 또는 비밀스러운 정보를 따로 관리해야 할 때(에를 들어 public git 시스템에 푸쉬), 역할에 따른 설정파일이 필요할 때는 application.yml 이외의 설정파일을 추가해야합니다.이 떄, 스프링 부트에서 설정파일을 나누는 방법으로, 별도의 설정 ...">
   
   <meta name="author" content="LeeMyungKyu">
   <meta name="copyright" content="&copy; LeeMyungKyu 2019">
@@ -46,11 +45,10 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="Mleek's blog_ study note & daily life
-" />
+  <meta property="og:description" content="스프링에서 API Key 또는 비밀스러운 정보를 따로 관리해야 할 때(에를 들어 public git 시스템에 푸쉬), 역할에 따른 설정파일이 필요할 때는 application.yml 이외의 설정파일을 추가해야합니다.이 떄, 스프링 부트에서 설정파일을 나누는 방법으로, 별도의 설정 ..." />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
-  <meta property="og:title" content="Posts" />
+  <meta property="og:title" content="[Spring Boot,토막글] Spring boot 프로젝트에서 여러개의 설정파일 추가" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -61,9 +59,8 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Posts">
-  <meta name="twitter:description" content="Mleek's blog_ study note & daily life
-">
+  <meta name="twitter:title" content="[Spring Boot,토막글] Spring boot 프로젝트에서 여러개의 설정파일 추가">
+  <meta name="twitter:description" content="스프링에서 API Key 또는 비밀스러운 정보를 따로 관리해야 할 때(에를 들어 public git 시스템에 푸쉬), 역할에 따른 설정파일이 필요할 때는 application.yml 이외의 설정파일을 추가해야합니다.이 떄, 스프링 부트에서 설정파일을 나누는 방법으로, 별도의 설정 ...">
   <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
   
@@ -72,7 +69,7 @@
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://lee95292.github.io/posts/">
+  <link rel="canonical" href="http://lee95292.github.io/spring/2019/11/13/multi_prop.html">
   <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
 </head>
 
@@ -125,336 +122,223 @@
 
 
     <div class="page-content">
-        <div class="wrapper">
-<div class="page">
+        <div class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">Posts</h1>
-  </header>
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">[Spring Boot,토막글] Spring boot 프로젝트에서 여러개의 설정파일 추가</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
 
-  <span class="page-divider">
+<div class="wrapper">
+
+ <span class="page-divider">
   <span class="one"></span>
   <span class="two"></span>
 </span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">November 13, 2019</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/spring">Spring</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p>스프링에서 API Key 또는 비밀스러운 정보를 따로 관리해야 할 때(에를 들어 public git 시스템에 푸쉬), 역할에 따른 설정파일이 필요할 때는 application.yml 이외의 설정파일을 추가해야합니다.</p>
+
+<p>이 떄, 스프링 부트에서 설정파일을 나누는 방법으로, 별도의 설정 없이 ***.yml파일 추가 후, 아래 코드와 같이 실행파일의 경로를 등록해주면 됩니다.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@SpringBootApplication</span>
+<span class="nd">@EnableGlobalMethodSecurity</span><span class="o">(</span><span class="n">securedEnabled</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JclipProtoApplication</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">APPLICATION</span><span class="o">=</span>
+											<span class="s">"spring.config.location="</span><span class="o">+</span>
+											<span class="s">"classpath:/application.yml,"</span><span class="o">+</span>
+											<span class="s">"classpath:/private.yml"</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">new</span> <span class="nf">SpringApplicationBuilder</span><span class="o">(</span><span class="n">JclipProtoApplication</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">properties</span><span class="o">(</span><span class="n">APPLICATION</span><span class="o">).</span><span class="na">run</span><span class="o">(</span><span class="n">args</span><span class="o">);</span>
+		
+<span class="c1">//		SpringApplication.run(JclipProtoApplication.class, args);</span>
+	<span class="o">}</span>
+</code></pre>
+</div>
+
+</article>
 
 
-  <article class="post-content">
-    
-  
-  <h2 id="blog">Blog</h2>
-  
-    
-  
-    
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/blog/2018/12/22/blog-howToPost.html">[blog] Git Hosting을 통한 Jekyll 블로그 관리</a>
-      </strong>
-      <span class="post-date">- 22 December 2018</span>
-    </li>
-  
-    <li>
-      <strong>
-        <a href="/blog/2010/01/01/PostringStack.html">기술블로그 및 개인블로그 포스팅 스택</a>
-      </strong>
-      <span class="post-date">- 01 January 2010</span>
-    </li>
-  
-  </ul>
-  <hr>
 
-  
-  <h2 id="markdown">Markdown</h2>
-  
-    
-  
-    
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/markdown/2018/12/21/blog-Markdown-usage.html">[blog/첫글] 마크다운 사용법</a>
-      </strong>
-      <span class="post-date">- 21 December 2018</span>
-    </li>
-  
-  </ul>
-  <hr>
 
-  
-  <h2 id="crawling">Crawling</h2>
-  
-    
-  
-    
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/crawling/2018/12/26/INTG_Python-data_crowling2.html">[INTG Project] 웹 데이터 크롤링 총정리(셀레니움, requests,bs4)</a>
-      </strong>
-      <span class="post-date">- 26 December 2018</span>
-    </li>
-  
-  </ul>
-  <hr>
 
-  
-  <h2 id="boostcourse">Boostcourse</h2>
-  
-    
-  
-    
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/boostcourse/2019/07/21/Boostcourse-PJ3_Backend_Spring2.html">[BoostCourse] PJ3 BackEnd 강의 정리(Spring MCV 실습 및 레이어드 아키텍쳐)</a>
-      </strong>
-      <span class="post-date">- 21 July 2019</span>
-    </li>
-  
-    <li>
-      <strong>
-        <a href="/boostcourse/2019/07/08/BoostCourse-PJ3_Backend_Spring.html">[BoostCourse] PJ3 BackEnd 강의 정리(Spring 개요)</a>
-      </strong>
-      <span class="post-date">- 08 July 2019</span>
-    </li>
-  
-    <li>
-      <strong>
-        <a href="/boostcourse/2019/07/04/BoostCourse-PJ3-1_Front_2.html">[BoostCourse] PJ3 FrontEnd 강의 정리 -2</a>
-      </strong>
-      <span class="post-date">- 04 July 2019</span>
-    </li>
-  
-    <li>
-      <strong>
-        <a href="/boostcourse/2019/03/26/BoostCourse-PJ3-1_Front.html">[BoostCourse] PJ3 FrontEnd 강의 정리 -1</a>
-      </strong>
-      <span class="post-date">- 26 March 2019</span>
-    </li>
-  
-    <li>
-      <strong>
-        <a href="/boostcourse/2019/02/24/BoostCourse-_BackEnd_2.html">[BoostCourse] PJ2 BackEnd 강의 정리</a>
-      </strong>
-      <span class="post-date">- 24 February 2019</span>
-    </li>
-  
-    <li>
-      <strong>
-        <a href="/boostcourse/2019/02/18/BoostCourse-_FrontEnd_2.html">[BoostCourse] PJ2 Javascript 강의 정리</a>
-      </strong>
-      <span class="post-date">- 18 February 2019</span>
-    </li>
-  
-    <li>
-      <strong>
-        <a href="/boostcourse/2018/12/28/BoostCourse-_BackEnd_1.html">[BoostCourse] PJ1. 백엔드 강의 정리</a>
-      </strong>
-      <span class="post-date">- 28 December 2018</span>
-    </li>
-  
-    <li>
-      <strong>
-        <a href="/boostcourse/2018/12/27/BoostCourse-_Front1.html">[BoostCourse] PJ1. 프론트엔드 강의 정리</a>
-      </strong>
-      <span class="post-date">- 27 December 2018</span>
-    </li>
-  
-  </ul>
-  <hr>
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
 
+<section class="share">
+  <span>Share: </span>
   
-  <h2 id="git">Git</h2>
-  
+    
+    
+    
+    
+    
+    
+    
     
   
     
+    
+    
+    
+    
+    
+    
+    
   
-  <ul class="posts-list">
+    
+    
+    
+    
+    
+    
+    
+    
   
-    <li>
-      <strong>
-        <a href="/git/2018/12/30/__LatePost__-Git-_Git_Theory.html">Git 용어 및 개념 정리</a>
-      </strong>
-      <span class="post-date">- 30 December 2018</span>
-    </li>
+    
+    
+    
+    
+    
+    
+    
+    
   
-    <li>
-      <strong>
-        <a href="/git/2018/12/30/Git-_Git-Exercise.html">Git 명령어 예제 정리</a>
-      </strong>
-      <span class="post-date">- 30 December 2018</span>
-    </li>
+    
+    
+    
+    
+    
+    
+    
+    
   
-  </ul>
-  <hr>
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BSpring+Boot%2C%ED%86%A0%EB%A7%89%EA%B8%80%5D+Spring+boot+%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90%EC%84%9C+%EC%97%AC%EB%9F%AC%EA%B0%9C%EC%9D%98+%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC+%EC%B6%94%EA%B0%80&url=http%3A%2F%2Flee95292.github.io%2Fspring%2F2019%2F11%2F13%2Fmulti_prop.html&media=http://lee95292.github.io/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
 
-  
-  <h2 id="python">Python</h2>
-  
-    
-  
-    
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/python/2019/02/02/pyhton-fucntion.html">[Pyton] 함수 총정리</a>
-      </strong>
-      <span class="post-date">- 02 February 2019</span>
-    </li>
-  
-  </ul>
-  <hr>
 
-  
-  <h2 id="회고">회고</h2>
-  
-    
-  
-    
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/%ED%9A%8C%EA%B3%A0/2019/02/16/etc-2019_Schedule.html">2019계획 및 2018 회고, 잡담</a>
-      </strong>
-      <span class="post-date">- 16 February 2019</span>
-    </li>
-  
-  </ul>
-  <hr>
 
-  
-  <h2 id="하나로_정리하기">하나로_정리하기</h2>
-  
-    
-  
-    
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/08/13/INTG_TheoryLink-TheoryLink.html">[INTG Project] 개념이 잘 정리된 링크| 테크블로그| 공식 Document 모음</a>
-      </strong>
-      <span class="post-date">- 13 August 2019</span>
-    </li>
-  
-    <li>
-      <strong>
-        <a href="/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_SQL-_SQLquery.html">[INTG Project] SQL 구문 예제 및 문법 정리</a>
-      </strong>
-      <span class="post-date">- 04 March 2019</span>
-    </li>
-  
-    <li>
-      <strong>
-        <a href="/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2019/03/04/INTG_Error-_Error-report.html">[INTG Project] 프로그래밍 언어, 프레임워크 Error Report</a>
-      </strong>
-      <span class="post-date">- 04 March 2019</span>
-    </li>
-  
-  </ul>
-  <hr>
-
-  
-  <h2 id="web">Web</h2>
-  
-    
-  
-    
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/web/2019/08/30/HTTP-REST_API.html">REST API 핵심개념 체크</a>
-      </strong>
-      <span class="post-date">- 31 August 2019</span>
-    </li>
-  
-  </ul>
-  <hr>
-
-  
-  <h2 id="TDD">Tdd</h2>
-  
-    
-  
-    
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/tdd/2019/08/30/Junit-JunitStart.html">Junit 기초 사용법</a>
-      </strong>
-      <span class="post-date">- 31 August 2019</span>
-    </li>
-  
-  </ul>
-  <hr>
-
-  
-  <h2 id="react">React</h2>
-  
-    
-  
-    
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/react/2019/09/12/React-Router_on_use.html">[React] 리액트 라우터 on use</a>
-      </strong>
-      <span class="post-date">- 13 September 2019</span>
-    </li>
-  
-    <li>
-      <strong>
-        <a href="/react/2019/09/12/ReactTutorial.html">React.js 기초 튜터리얼, 개념 편 [1]</a>
-      </strong>
-      <span class="post-date">- 13 September 2019</span>
-    </li>
-  
-  </ul>
-  <hr>
-
-  
-  <h2 id="spring">Spring</h2>
-  
-    
-  
-    
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/spring/2019/11/13/multi_prop.html">[Spring Boot,토막글] Spring boot 프로젝트에서 여러개의 설정파일 추가</a>
-      </strong>
-      <span class="post-date">- 13 November 2019</span>
-    </li>
-  
-  </ul>
-  
-
-<br>
-
-  </article>
 
 </div>
 </div>
