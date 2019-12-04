@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://lee95292.github.io/2019/12/04/2019-12-03-Jenkins-_publishOverSSL.html</loc>
+<lastmod>2019-12-04T15:15:39+09:00</lastmod>
+</url>
+<url>
 <loc>http://lee95292.github.io/spring/2019/11/13/multi_prop.html</loc>
 <lastmod>2019-11-13T21:00:00+09:00</lastmod>
 </url>
