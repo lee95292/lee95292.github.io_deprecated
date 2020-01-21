@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://lee95292.github.io/2020/01/15/ProjectDesign.html</loc>
+<lastmod>2020-01-15T23:17:29+09:00</lastmod>
+</url>
+<url>
+<loc>http://lee95292.github.io/boostcourse/2019/12/25/vscode-_extensionDevelopment.html</loc>
+<lastmod>2019-12-26T07:43:24+09:00</lastmod>
+</url>
+<url>
+<loc>http://lee95292.github.io/boostcourse/2019/12/04/enable-mysql-remote.html</loc>
+<lastmod>2019-12-05T06:23:51+09:00</lastmod>
+</url>
+<url>
 <loc>http://lee95292.github.io/devops/2019/12/03/Jenkins-_publishOverSSL.html</loc>
 <lastmod>2019-12-04T08:07:01+09:00</lastmod>
 </url>
