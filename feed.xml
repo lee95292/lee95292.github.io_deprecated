@@ -6,9 +6,138 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 Jan 2020 22:25:51 +0900</pubDate>
-    <lastBuildDate>Tue, 21 Jan 2020 22:25:51 +0900</lastBuildDate>
+    <pubDate>Mon, 27 Jan 2020 18:07:55 +0900</pubDate>
+    <lastBuildDate>Mon, 27 Jan 2020 18:07:55 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>heritrix 오픈소스 웹 크롤러 사용하기</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Heritrix 오픈소스 웹 크롤러를 사용해보고 방법을 정리하려합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;자세한 사용법은 &lt;a href=&quot;https://github.com/internetarchive/heritrix3/wiki/&quot;&gt;github 위키&lt;/a&gt;에 잘 나와있지만, 기본적인 부분,헷갈릴만한 부분이나 자주 사용할만한 옵션들을 소개해보도록 하겠습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;설치&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget http://builds.archive.org/maven2/org/archive/heritrix/heritrix/3.4.0-SNAPSHOT/heritrix-3.4.0-20190828.200101-25-dist.tar.gz
+
+tar -xzf heritrix-3.4.0-20190828.200101-25-dist.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;-설치 끝&lt;/p&gt;
+
+&lt;p&gt;설치는 매우 간단하지만,&lt;/p&gt;
+
+&lt;p&gt;설정이 꽤 귀찮고 모호한 부분이 있습니다. spring xml properties를 사용해서 직접 설정합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;일단 기본 설정으로 크롤링 진행&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;Heritrix/bin
+
+./heritrix -a admin:amdin -b /
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;-a 옵션으로 계정을 설정하고, -b옵션을 통해 접근권한을 설정합니다.&lt;/li&gt;
+  &lt;li&gt;-b옵션 없이 실행하는 경우, localhost에서만 사용 가능하고,&lt;/li&gt;
+  &lt;li&gt;-b / 로 옵션을 주는경우, 어디서든 계정으로 엑세스할수 있습니다.&lt;/li&gt;
+  &lt;li&gt;-p 옵션으로 포트를 지정할 수 있습니다.(기본 : 8443)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(b옵션을 못찾고 포트포워딩하느라 시간을 많이 썼습니다…)&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;크롤링 수행&lt;/h3&gt;
+
+&lt;p&gt;Create job으로 job(크롤링 작업 단위) 생성합니다.&lt;/p&gt;
+
+&lt;p&gt;생성하면 Hritrix_home/jobs/[job_name]/crawler-beans.cxml 파일 생깁니다.&lt;/p&gt;
+
+&lt;p&gt;웹페이지에서 해당 파일을 수정할 수도 있지만, 저같은경우 에러가 떠서 직접 수정했습니다.&lt;/p&gt;
+
+&lt;p&gt;기본설정&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#1
+metadata.operatorContactUrl=http://lee95292.github.io
+
+...
+
+#2
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;longerOverrides&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;org.springframework.beans.factory.config.PropertyOverrideConfigurer&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;props&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;prop&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;seeds.textSource.value&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+# URLS HERE
+http://lee95292.github.io
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/prop&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/props&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/property&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;즉, metadata.operatorContactUrl을 지정하고 #URLs Here 표시된 곳 밑에 URL을 추가해주면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;operatorContactUrl에 대해서는 자세한 설명이 나와있지는 않네요..&lt;/p&gt;
+
+&lt;p&gt;저장 한 후, jobs 페이지에서 크롤링을 수행합니다.&lt;/p&gt;
+
+&lt;p&gt;build &amp;gt; launch 후 기다리시면 크롤링 작업이 완료됩니다.&lt;/p&gt;
+
+&lt;p&gt;pause를 통해 중지&lt;br /&gt;
+terminate를 통해 중단&lt;br /&gt;
+teardown을 통해 종료할 수 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;옵션&lt;/h3&gt;
+
+&lt;p&gt;crawler-beans.cxml에서 설정가능한 옵션들입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TransclusionDecideRule을&lt;/strong&gt; 삭제하시면 narrow crawling을 수행합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;seed host로 등록한 이외의 호스트를 크롤링하지 않습니다.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;postprocess&quot;&gt;PostProcess&lt;/h3&gt;
+
+&lt;p&gt;크롤링 결과물을 처리하는 방법입니다.. 유튜브에서 &lt;a href=&quot;https://www.youtube.com/watch?v=MAHWPeBVNpI&amp;amp;t=447s&quot;&gt;참고&lt;/a&gt;했습니다.&lt;/p&gt;
+
+&lt;p&gt;pip install warctools&lt;br /&gt;
+(pip3)&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;hanzo&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;warctools&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;warcStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;warctools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WarcRecored&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;open_archive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;WEB-20200121115637651-00000-20607~ip-172-31-35-42.ap-northeast-2.compute.internal~8443.warc.gz&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;record&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;warcStream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;********&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;warc record #&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;record&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 22 Jan 2020 06:02:12 +0900</pubDate>
+        <link>http://lee95292.github.io/opensource/2020/01/21/heritrix_use.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/opensource/2020/01/21/heritrix_use.html</guid>
+        
+        
+        <category>opensource</category>
+        
+      </item>
     
       <item>
         <title>ProjectDesign</title>
@@ -705,76 +834,6 @@ ReactDOM.render(
         
         
         <category>web</category>
-        
-      </item>
-    
-      <item>
-        <title>[etc]2019 2schedule</title>
-        <description>&lt;!-- ---
-layout : post
-title : &quot;2019년 상반기 회고 및 계획&quot;
-date : 2019-02-16 09:46:00 +9000
-categories: 회고
----
-
-사실 &quot;상반기&quot; 회고라고 하기에는 하반기가 4개월밖에 안남아서 1학기 &amp; 여름방학 회고 정도가 맞지 않을까 싶다.
-
-뭐 어쨌든 상반기는 상반기니까, 나의 2019년 상반기를 한 단어로 표현해본다면,
-
-**허둥지둥** 이다. 
-
-나의 동기는 너무 가볍고 쉽게 이동한다. 우선순위가 정해져있지 않고, 행동의 기반이 깊지 않다.
-
-물론 힘빠져서 축 늘어져있는 언젠가보다야 낫겠지만, 나를 움직이는 동력이 커다란 돌을 움직일 수 있는 동력은 아닌것 같다.
-
-진행중이다가 내팽기쳐진 몇 가지 작은 프로젝트들에게 조의를 표하며 회고를 작성한다 :) 
-
-이것이 어느정도 어쩔 수 없었던 이유는, 내 주변에서 여러가지 요구사항과 유혹들 있었고, 이것들을 처리하기 위해서는 내가 하던 일의 우선순위를 낮추고 요구사항을 처리해야 했었다.
-
-몇 가지 일을 처리하면서 체력이 떨어지고, 자꾸 누워있게 되고, 집중하지 못했다.
-
-이런 일들을 처리하면서 원하든 원치않든 어떤 종류의 능력의 상향이 있었지만, 내가 원하는 목표에 직접적으로 영향을 미칠지는 의문이다.
-
-
-## 그래서 무엇을 했지?
----
-
-*
-
-## 무엇을 못했지?
----
-
-* 내 블로그에 처참한 포스팅 흔적만 남아있는 네이버 부스트코스
-* sqld 자격증 공부
-* Openstack
-
-
-## 이제 어떤 일을 할 차례인지?
----
-
-커다란 계획을 세우면 항상 작고 손쉬운, 새로운 일이 생겨난다.
-
-나는 커다란 계획에 겁먹고 잠시 쉬기 위해 쉬운 일을 잡고, 그 일을 끝내며 
-
-&quot;큰건 못했지만 이걸 잘 했으니 됐어, 내일까지는 좀 쉬자!&quot; &lt;&lt; 아주 익숙한 합리화이다. 
-
-이번엔 커다란 돌을 작게 쪼개보려 한다. 
-
-* 1 커다란 돌 -  JClip 서비스 운영
-
- * 1-1 작은 돌들 - 서비스 운영기술 : jcloud 서버올리기 &gt; 도커 &gt; git
- * 1-2 작은 돌들 - 프로그래밍 스킬 : spring boot &gt; sprint data jpa &gt; spring security &gt; elk stack or chart tools &gt; log4j &gt; Java &gt; 
- * 1-3 작은 돌들 - 
-
-* 2 중간 돌 - Serbia Korea Iac 업무처리
- * 2-1 Kotlin 또는 Android 공부
-
-* 3 중간 돌 - TOPCIT 정기평가 : 9.20  --&gt;
-</description>
-        <pubDate>Mon, 26 Aug 2019 00:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/2019/08/26/etc-2019-2Schedule.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/2019/08/26/etc-2019-2Schedule.html</guid>
-        
         
       </item>
     
