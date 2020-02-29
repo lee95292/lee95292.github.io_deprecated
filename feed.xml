@@ -6,9 +6,92 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 Feb 2020 20:43:18 +0900</pubDate>
-    <lastBuildDate>Sat, 29 Feb 2020 20:43:18 +0900</lastBuildDate>
+    <pubDate>Sat, 29 Feb 2020 20:44:13 +0900</pubDate>
+    <lastBuildDate>Sat, 29 Feb 2020 20:44:13 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>글또 4기 시작, 다짐글</title>
+        <description>&lt;p&gt;글또 4기 다짐글&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;글또를 하게 된 계기&lt;/h1&gt;
+
+&lt;p&gt;나는 아래의 목적을 가지고 글을 썼지만, 글을 쓰는것에 대한 동기부여가 희미해졌다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;버그리포트를 열심히 써서 나중에 똑같은 에러가 터졌을때 참고하자 » 검색해서 보는게 빠르고 정확했다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;자기PR: 나의 꾸준함을 글쓰기로 보여주자 » 나는 별로 꾸준하지도 성실하지도 않았다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;공부하자: 글을 쓰면서 지식을 내면화하고 정리하자. » 이게 그나마 글을 쓸만한 동기였다.&lt;/p&gt;
+
+    &lt;p&gt;(글을 쓰는 과정에서 내가 알고있다고 생각한 지식에 의문을 품었고,&lt;br /&gt;
+질문에 대한 답을 찾아나가는 과정이 많은 성장동력이 된것 같다.)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;하지만 공부하려고 글을 쓰는것은 초중고 12년 공부습관에 반하는 행동이었고, 내 생각을 읽기 쉽게 정리하는것도 생각보다 너무 힘들었다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;여전히 글쓰는것은 힘들고 귀찮지만, 생각과 상황이 조금 바뀌었다.&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;우선 개발자 글쓰기모임 글또라는 활동을 알게되었다.&lt;/p&gt;
+
+    &lt;p&gt;글쓰는 또라이가 세상을 바꾼다. 이름이 멋있기도 했고, 개발자분들이 글을 쓰면서 커뮤니케이션하는 모습이 너무 부럽고 빛났다.&lt;br /&gt;
+(예치금을 두고 글을 쓴다는 약간의 강제성을 얻기 위해 지원하기도 했다.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;글을 쓰는것이 힘든것이 아니라는것을 깨달았다.&lt;/p&gt;
+
+    &lt;p&gt;글을 쓰는 것 자체로도 어렵지만, 글을 쓰기 위해 지식을 정리하고,확장하고, 내가 가진 질문에 대한 답을 채우는 것을 힘들어했고, 그것이 글쓰기를 멀리하게 된 이유였다.&lt;/p&gt;
+
+    &lt;p&gt;필요한 지식만 검색해서 얻고 땡. 이게 왜 이렇게 되는지는 시간있을때만 찾아보고 아니면 애써 무시했다.
+얻은 지식을 정리하고 확장하는 일을 게을리 하면 그것은 지식의 파편으로 남아서 곧 죽은 지식이 된다.&lt;/p&gt;
+
+    &lt;p&gt;이제는 내가 글쓰기에서 어떤 과정을 힘들어했는지 알게됐고, 극복해보려고 한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;그래서 이제 어떤 글을 쓸까?&lt;/h2&gt;
+
+&lt;p&gt;나는 개발/인프라 분야에서 흥미 분야가 광범위한 편이다.&lt;br /&gt;
+(지식영역이 넓은건 아닌데, 뭔가를 알게되면 다 재미있어보이고 한번쯤 해보고싶다.)&lt;/p&gt;
+
+&lt;p&gt;그래서 지금 쓰고싶은 글을 나열하고, 나중에 골라서 쓰면 어떨까 싶다.&lt;/p&gt;
+
+&lt;p&gt;다루고싶은 내용&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;로버트 C 마틴 - Clean Architecture
+Clean code를 너무 인상깊게 봐서 아키텍쳐편도 샀다. 아마 2~4주차 사이에 독후감으로 쓸 것 같다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;정보처리기사 - 운영체제파트
+나는 운영체제 연구실에서 운영체제와 많이 무관한 가상화파트를 다룬다. 하지만 면접 시 이부분에 대한 질문이 빠지지 않고 나오기에 정리해야할 필요성을 느꼈다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;관심은 있지만 사용경험이 적은 오픈소스 소프트웨어들
+ElasticSearch, openstack, Kafka, Zepplin - 컨트리뷰션을 목표로 공부하고 분석하고 사용해보고싶다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 29 Feb 2020 19:14:43 +0900</pubDate>
+        <link>http://lee95292.github.io/etc/2020/02/29/geultto_start.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/etc/2020/02/29/geultto_start.html</guid>
+        
+        
+        <category>etc</category>
+        
+      </item>
     
       <item>
         <title>[INTG Project] 개념이 잘 정리된 링크| 테크블로그| 공식 Document 모음</title>
@@ -831,51 +914,6 @@ ReactDOM.render(
         
         
         <category>react</category>
-        
-      </item>
-    
-      <item>
-        <title>Junit 기초 사용법</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=tyZMdwT3rIY&quot;&gt;박재성님 Junit 강좌&lt;/a&gt; 정리&lt;/p&gt;
-
-&lt;h1 id=&quot;junit--&quot;&gt;Junit 기본 사용법&lt;/h1&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;(setup)&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;STS에 J&lt;strong&gt;unit 라이브러리가 추가되어 있어야 함&lt;/strong&gt;. build path에서 추가.&lt;/li&gt;
-  &lt;li&gt;Junit Test 버튼 클릭으로 테스트 클래스 생성&lt;/li&gt;
-  &lt;li&gt;Test Annotation을 추가한 메서드 내에서 단위테스트 진행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;(using)&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;하나의 메서드만 테스트를 원할경우, 메서드 이름에 커서를 올린 상태로, Ctrl + f11&lt;/li&gt;
-  &lt;li&gt;결과값 확인은, assertEquals(기댓값,결과값), assert류 메서드를 사용해 확인한다. 이 메서드가 false를 반환하면, testcase가 실패하게 된다.&lt;/li&gt;
-  &lt;li&gt;인스턴스의 테스트간 독립성을 보장하기 위해 @Before 애너테이션을 통해 초기화 진행하자. 테스트케이스별로 인스턴스 초기화 작업 수행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;...&lt;/span&gt;
-
- &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt; 
-
-    &lt;span class=&quot;nd&quot;&gt;@Before&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Calculator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;//후에 수행되는 모든 TestCase에 대해 해당 초기화작업 진행&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;자원 반납과 같은 후처리 작업의 경우, @After 애너테이션을 사용한다&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 31 Aug 2019 00:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/tdd/2019/08/30/Junit-JunitStart.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/tdd/2019/08/30/Junit-JunitStart.html</guid>
-        
-        
-        <category>TDD</category>
         
       </item>
     
