@@ -6,9 +6,113 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Jan 2020 18:07:55 +0900</pubDate>
-    <lastBuildDate>Mon, 27 Jan 2020 18:07:55 +0900</lastBuildDate>
+    <pubDate>Sat, 29 Feb 2020 20:26:45 +0900</pubDate>
+    <lastBuildDate>Sat, 29 Feb 2020 20:26:45 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>[INTG Project] 개념이 잘 정리된 링크| 테크블로그| 공식 Document 모음</title>
+        <description>&lt;p&gt;Spring boot - cloud - database - frontend - devops -security&lt;/p&gt;
+
+&lt;p&gt;웹 서비스를 위한 폭넓은 개발스택을 갖추길 희망합니다.&lt;/p&gt;
+
+&lt;p&gt;저만을 위한 링크북 인덱스이고, 제가 이해한 글들을 모아놓았지만, 비슷한 목표를 가진분들이 참고하시면 좋을것 같습니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;개념이 잘 정리된 링크&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;시스템 OS/Linux/Windows/JVM&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://wiki.kldp.org/HOWTO/html/Adv-Bash-Scr-HOWTO/&quot;&gt;고급 쉘 스크립트 사전&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://blog.lael.be/post/73&quot;&gt;우분투 서버세팅(운영환경 관련 bash명령어)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.holaxprogramming.com/2017/10/09/java-jvm-performance/&quot;&gt;JVM 메모리 관리구조&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://yaboong.github.io/java/2018/05/26/java-memory-management/&quot;&gt;JVM Stacc, Heap 할당방법&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;웹&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Front
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://velog.io/@jeff0720/React-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD%EC%9D%84-%EA%B5%AC%EC%B6%95%ED%95%98%EB%A9%B4%EC%84%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-Webpack-%EA%B8%B0%EC%B4%88#%EC%9B%B9%ED%8C%A9%EC%9C%BC%EB%A1%9C-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%8C%8C%EC%9D%BC-%EB%B9%8C%EB%93%9C%ED%95%98%EA%B8%B0&quot;&gt;Webpack - React 설정&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Back
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://blog.outsider.ne.kr/1160&quot;&gt;JWT 개념&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://all-record.tistory.com/186&quot;&gt;우분투환경에서 단순 배포하기_W&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Spring
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://jeong-pro.tistory.com/167&quot;&gt;Spring bean 생성과정&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;클라우드&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://medium.com/harrythegreat/aws-%EA%B0%80%EC%9E%A5%EC%89%BD%EA%B2%8C-vpc-%EA%B0%9C%EB%85%90%EC%9E%A1%EA%B8%B0-71eef95a7098&quot;&gt;VPC(Virtual Private Clout)개념, 클라우드 네트워크 헷갈릴 때 보기&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git &amp;amp; github&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Reset-%EB%AA%85%ED%99%95%ED%9E%88-%EC%95%8C%EA%B3%A0-%EA%B0%80%EA%B8%B0&quot;&gt;git reset(add,commit 리셋)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;기타&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://heropy.blog/2017/09/30/markdown/&quot;&gt;Markdown 문법&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;document&quot;&gt;공식 Document&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/&quot;&gt;Java8 API&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://kgmyh.github.io/blog/2017/12/02/spring-boot-chapter01/&quot;&gt;spring boot(한글)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;2&quot;&gt;Python&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.spring.io/&quot;&gt;Spring&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.docker.com&quot;&gt;도커&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://kubernetes.io/ko/docs/home/&quot;&gt;k8s(한글)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.android.com&quot;&gt;Android&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/&quot;&gt;node&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;기업| 개인 기술블로그&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;사실 &lt;a href=&quot;https://medium.com/@Dongmin_Jang/%EC%97%85%EC%B2%B4%EB%B3%84-%EA%B8%B0%EC%88%A0-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A6%AC%EC%8A%A4%ED%8A%B8-e2d736d0e658&quot;&gt;테크블로그는 여기&lt;/a&gt;에 다 정리되어있다. 내가 자주보는 한글 블로그 위주로 모았다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://d2.naver.com/home&quot;&gt;네이버 D2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://tech.kakao.com/&quot;&gt;카카오 기술블로그&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/coupang-tech&quot;&gt;쿠팡 기술블로그&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://xguru.net/&quot;&gt;구루(권정혁님) 기술블로그&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 27 Jan 2020 14:46:00 +0900</pubDate>
+        <link>http://lee95292.github.io/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2020/01/27/INTG_TheoryLink-TheoryLink.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2020/01/27/INTG_TheoryLink-TheoryLink.html</guid>
+        
+        
+        <category>하나로_정리하기</category>
+        
+      </item>
     
       <item>
         <title>heritrix 오픈소스 웹 크롤러 사용하기</title>
@@ -772,68 +876,6 @@ ReactDOM.render(
         
         
         <category>TDD</category>
-        
-      </item>
-    
-      <item>
-        <title>REST API 핵심개념 체크</title>
-        <description>&lt;p&gt;참고 링크&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://meetup.toast.com/posts/92&quot;&gt;REST API 제대로 알고 사용하기&lt;/a&gt; &lt;br /&gt;
-&lt;a href=&quot;https://www.youtube.com/watch?v=RP_f5dMoHFc&quot;&gt;그런 REST API로 괜찮은가(유튜브)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;rest-api&quot;&gt;REST API란?&lt;/h3&gt;
-
-&lt;p&gt;다음 조건을 만족하는 분산 하이퍼미디어 시스템(웹)을 위한 아키텍처 스타일의(제약조건) 집합&lt;/p&gt;
-
-&lt;p&gt;즉, 웹을 구현할 떄 사용되는 어떤 &lt;a href=&quot;https://ko.wikipedia.org/wiki/REST#REST_%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EC%97%90_%EC%A0%81%EC%9A%A9%EB%90%98%EB%8A%94_6%EA%B0%80%EC%A7%80_%EC%A0%9C%ED%95%9C_%EC%A1%B0%EA%B1%B4&quot;&gt;제약조건&lt;/a&gt;들의 집합&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;client - server :클라이언트가 요청하고 서버가 응답하는 구조&lt;/li&gt;
-  &lt;li&gt;stateless : 서버가 클라이언트의 상태를 저장하지 않음&lt;/li&gt;
-  &lt;li&gt;cache : 캐시(지역성과 공간성에 의존해 데이터 캐싱)&lt;/li&gt;
-  &lt;li&gt;uniform interface&lt;/li&gt;
-  &lt;li&gt;layered system&lt;/li&gt;
-  &lt;li&gt;code on demand (optional) : 서버에서 클라이언트의 동작 가능하게함 (EX. javascript)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;4.Uniform Interface&lt;/strong&gt;가 가장 신경써야하는 제약조건, 구성요소를 살펴보자.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Identification of resource                       - 자원이 URI로 대표되어야 한다. (대체적으로 잘 지켜짐)&lt;/li&gt;
-  &lt;li&gt;manipulation of resource through representations - 리소스의 행위를 HTTP 메서드로서 수행해야 한다(잘 지켜짐)&lt;/li&gt;
-  &lt;li&gt;self-descriptive messages                        - 메시지는 스스로를 설명해야 한다 (잘 지켜지지 않음!)&lt;/li&gt;
-  &lt;li&gt;메시지가 도달하는 경로&lt;/li&gt;
-  &lt;li&gt;응답메시지의 문법(의미전달)
- 잘 지켜진 응답메시지 예시를 살펴보자&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;```
- HTTP/1.1 200 OK
- Content-Type: application/json-patch+json
- HOST: example.com&lt;/p&gt;
-
-&lt;p&gt;[ { “op” : “remove”, “path”: “a/b/c” } ]&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
- [json-patch+json](https://en.wikipedia.org/wiki/JSON_Patch)은 JSON을 문서의 변경을 알리는 웹 표준 포멧이다. op(Operation)에는 add, remove, replace, copy, move, test등의 메서드가 자리할 수 있다.
- * HATEOAS 애플리케이션의 상태는 Hyperlink를 이용해 전이되어야 한다. (잘 지켜지지 않는 경우가 많다.)
-
-
-### 디자인 특징
-* Representational State Transfer - URI가 하나의 Resource를 표헌한다.
-* 자원에 대한 행위를 HTTP 메서드로서 표현할 수 있다.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;DELETE /article/3
-```&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 31 Aug 2019 00:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/web/2019/08/30/HTTP-REST_API.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/web/2019/08/30/HTTP-REST_API.html</guid>
-        
-        
-        <category>web</category>
         
       </item>
     
