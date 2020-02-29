@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 Feb 2020 20:44:46 +0900</pubDate>
-    <lastBuildDate>Sat, 29 Feb 2020 20:44:46 +0900</lastBuildDate>
+    <pubDate>Sat, 29 Feb 2020 20:57:10 +0900</pubDate>
+    <lastBuildDate>Sat, 29 Feb 2020 20:57:10 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -83,6 +83,12 @@ Clean code를 너무 인상깊게 봐서 아키텍쳐편도 샀다. 아마 2~4�
 ElasticSearch, openstack, Kafka, Zepplin - 컨트리뷰션을 목표로 공부하고 분석하고 사용해보고싶다.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/etc/posting_stack.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;사실 이전에도 포스팅 스택은 항상 차있었지만, 글을 쓰기 전에 흥미가 다른곳으로 돌아간 경우가 많다.&lt;/p&gt;
+
+&lt;p&gt;하지만! 이번엔 능동적인 글쓰기를 목표로, (다루고싶은 내용)에 적힌 글을 쓸 것이다.&lt;/p&gt;
 </description>
         <pubDate>Sat, 29 Feb 2020 19:14:43 +0900</pubDate>
         <link>http://lee95292.github.io/etc/2020/02/29/geultto_start.html</link>
