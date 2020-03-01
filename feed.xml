@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 Mar 2020 09:00:10 +0900</pubDate>
-    <lastBuildDate>Sun, 01 Mar 2020 09:00:10 +0900</lastBuildDate>
+    <pubDate>Sun, 01 Mar 2020 14:46:39 +0900</pubDate>
+    <lastBuildDate>Sun, 01 Mar 2020 14:46:39 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -70,15 +70,15 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;로버트 C 마틴 - Clean Architecture
+    &lt;p&gt;로버트 C 마틴 - Clean Architecture&lt;br /&gt;
 Clean code를 너무 인상깊게 봐서 아키텍쳐편도 샀다. 아마 2~4주차 사이에 독후감으로 쓸 것 같다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;정보처리기사 - 운영체제파트
+    &lt;p&gt;정보처리기사 - 운영체제파트&lt;br /&gt;
 나는 운영체제 연구실에서 운영체제와 많이 무관한 가상화파트를 다룬다. 하지만 면접 시 이부분에 대한 질문이 빠지지 않고 나오기에 정리해야할 필요성을 느꼈다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;관심은 있지만 사용경험이 적은 오픈소스 소프트웨어들
+    &lt;p&gt;관심은 있지만 사용경험이 적은 오픈소스 소프트웨어들&lt;br /&gt;
 ElasticSearch, openstack, Kafka, Zepplin - 컨트리뷰션을 목표로 공부하고 분석하고 사용해보고싶다.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
