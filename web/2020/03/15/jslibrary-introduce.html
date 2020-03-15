@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- My Change!!  start-->
+  <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
+  <!-- My Change!! end -->
+  
+  <title>자바스크립트를 공부하려하는 당신에게</title>
+  <meta name="description" content="저는 학교에서 Python, C/C++, Java를 다루는 수업을 수강하고, 문법을 익혔고, Java와 C로는 여러 토이프로젝트를 해보면서 나름 프로그래밍 언어를 배우고 사용하는데 익숙해져 있어서 내심 프로그래밍 언어는 거기서 거기지~ 라는 생각을 해왔습니다.">
+  
+  <meta name="author" content="LeeMyungKyu">
+  <meta name="copyright" content="&copy; LeeMyungKyu 2020">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="저는 학교에서 Python, C/C++, Java를 다루는 수업을 수강하고, 문법을 익혔고, Java와 C로는 여러 토이프로젝트를 해보면서 나름 프로그래밍 언어를 배우고 사용하는데 익숙해져 있어서 내심 프로그래밍 언어는 거기서 거기지~ 라는 생각을 해왔습니다." />
+  <meta property="og:url" content="http://lee95292.github.io" />
+  <meta property="og:site_name" content="Mleek's blog" />
+  <meta property="og:title" content="자바스크립트를 공부하려하는 당신에게" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="자바스크립트를 공부하려하는 당신에게">
+  <meta name="twitter:description" content="저는 학교에서 Python, C/C++, Java를 다루는 수업을 수강하고, 문법을 익혔고, Java와 C로는 여러 토이프로젝트를 해보면서 나름 프로그래밍 언어를 배우고 사용하는데 익숙해져 있어서 내심 프로그래밍 언어는 거기서 거기지~ 라는 생각을 해왔습니다.">
+  <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
+  <meta name="twitter:url" content="http://lee95292.github.io">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://lee95292.github.io/web/2020/03/15/jslibrary-introduce.html">
+  <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Mleek's blog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/typography/">Typography</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">자바스크립트를 공부하려하는 당신에게</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">March 15, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/web">Web</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p>저는 학교에서 Python, C/C++, Java를 다루는 수업을 수강하고, 문법을 익혔고, Java와 C로는 여러 토이프로젝트를 해보면서 나름 프로그래밍 언어를 배우고 사용하는데 익숙해져 있어서 내심 프로그래밍 언어는 거기서 거기지~ 라는 생각을 해왔습니다.</p>
+
+<p>자바스크립트를 배우면서 그 오만한 생각은 와장창 깨져버렸습니다…</p>
+
+<blockquote>
+  <p>이 글에서는 제가 자바스크립트를 공부하며,사용하며 어떤게 어려웠는지, 그럼에도 계속 자바스크립트를 공부하는 이유, 제가 생각하는 자바스크립트의 매력을 소개해보려 합니다!</p>
+</blockquote>
+
+<hr />
+
+<h2 id="reactjs">사용한 라이브러리 :React.js</h2>
+
+<p>제일 처음으로 저는 웹 프론트 페이지를 만들기 위해 Reactjs 라이브러리를 공부했습니다. 이전까지 HTML/CSS/JQuery로 페이지를 구성했는데, 이때는 HTML문서에 Javascript를 끼워넣는 느낌이어서 코딩을 한다는 느낌이 들지는 않았고, 제대로된 페이지를 만들어 본 경험은 없었습니다.</p>
+
+<p>조금 더 제대로된 다이나믹한 웹 페이지를 만들기 위해 Jquery를 더 공부할까 고민했습니다. 그러던 도중 주변에서 React가 정말 쉽고 간편하다는 이야기를 듣고 React를 시작하게 되었습니다.</p>
+
+<p>결론부터 말씀드리자면,<strong>React는 간편하지만 절대 쉽지는 않습니다</strong>.<br />
+위에서 말씀드렸듯, 저는 프로그래밍 언어 학습을 몇차례 학습하면서, 각 언어들이 가지는 공통점과 차이점을 비교하면서 학습하는 것에 익숙해져 있었는데요, React에서 다루는 중점적인 개념은 여타 프로그래밍 언어와 상당히 차이가 있었습니다!</p>
+
+<p><img src="/assets/img/jslib-intro/react-lifecycle.png" /></p>
+
+<p>대표적인 예시로,<strong>state와 property를 다루는 일, 컴포넌트의 생명주기, 모듈화, 컴포넌트, 훅</strong> 등이 그것입니다.</p>
+
+<p>React에서는 컴포넌트의 렌더링이 Property와 State라고 불리는 리액트 컴포넌트의 특수 변수의 변경에 따라 일어나는데, 이런 개념을 멀리서 보면 객체지향의 상속과 비슷하네~ 생각할 수도 있지만 전혀 다른 개념이며, 이와 비슷하게 리액트가 사용하는 생소한 개념에 익숙해지는 것에 생각보다 시간이 많이 걸렸습니다…</p>
+
+<p>이렇듯, “쉽다”는것이 (최소한 저에게) 리액트의 장점이 아닙니다. 그럼에도 불구하고, 저는 이제 페이지를 구현할 때 React만을 사용합니다.<br />
+리액트는 컴포넌트를 재사용하기에 정말 편리합니다. 물론 HTML/CSS코드도 하면 재활용할 수 있지만 이는 말그대로 재활용이고, 상황에 맞게 코드를 수정해주어야 합니다.</p>
+
+<p>컴포넌트를 재사용한다는 것은, 기존 HTML/CSS/JS로 작성된 소스코드를 마치 <strong>함수 호출하듯 편리하게 사용</strong>하는것을 의미합니다.<br />
+저에게는 이것이 React를 배우는 데 걸리는 어떤 어려움도 커버할 수 있을만한 큰 장점이라고 생각합니다.</p>
+
+<p>프론트엔드 코드를 객체지향적으로 다루는 것 또한 저에게 장점으로 다가왔습니다.</p>
+
+<h2 id="nodejs">사용한 라이브러리 :Node.js</h2>
+
+<hr />
+
+<p>저는 여태 서버 프로그램을 작성하기 위해 Spring framework의 Spring boot를 사용했습니다. 스프링 부트를 사용하면서 딱히 불만이나 단점에 대해 생각해본 적이 없고, 오히려 SpringFramework는 국내에서 주도적으로 사용되는 만큼 문서가 풍부하고 한국 내 커뮤니티도 활발해 버그를 해결하는 것이 어렵지 않았습니다.</p>
+
+<p>그러던 어느날 저는 어떤 계기로 Nodejs의 express 라이브러리를 이용해 서버 프로그램을 작성해보았고, 스프링을 사용할때와 상당히 다른 느낌을 받았습니다. 짧은 기간 사용했지만, 그 느낌을 공유해볼까 합니다.</p>
+
+<p>스프링같은 경우, 엔터프라이즈급 서버 프로그램을 위한 <strong>“프레임워크”</strong>이기 때문에, 시작부터 어떤 틀 위에서 시작하고, 여러가지 설정을 거쳐 프로젝트를 시작합니다. 누군가는 이 과정이 너무 복잡하고 쓸데없다고 말하지만, 저는 절대 그렇게 생각하지 않습니다. 프로젝트를 시작함과 동시에 많은 부분을 프레임워크로부터 보장받는 것이기에, 프레임워크를 사용하는것과 Node같은 라이브러리 패키지를 사용하는 것과의 장단점을 비교하는 것은 의미가 없다고 생각합니다.</p>
+
+<p>Springboot : 46.1k stars, 662 contributers<br />
+nodejs : 68.3k stars, 2657contributers</p>
+
+<p>다만 Node.js 런타임 뿐만 아니라 Javascript 라이브러리 전반적으로 커뮤니티 활성화 정도가 매우 높다고 느꼈습니다. 위는 Nodejs와 Spring project의 컨트리뷰터 수입니다. 물론 Node는 Spring과 비교될 격이 아니고, OpenJRE나 OpenJDK와 비교해야 옳지만, jre,jdk는 상용 버전인 oracle의 비중이 더 높기에 최대한 커뮤니티 활정정도를 비교할만한 지표로 생각했습니다.</p>
+
+<p>커뮤니티 활성 정도를 보며 한편으론 다른 재단이나 커뮤니티에 비해 유저들이 참여해 생성해낸 프로젝트가 큰 영향력을 갖는 것이 신기했습니다.</p>
+
+<p>Spring같은 경우 pivotal이라는 회사에서 spring 관련 프로젝트를 시작하고 키워나가는 방식입니다. 어찌보면 pivotal이 무조건 메인 프로젝트이므로 유저에게 선택권이 줄어들 수 있다고 생각할 수 있습니다.<br />
+(스프링은 스프링 자체의 설계 방식이 있기에 어쩔 수 없습니다. 저는 잘 모르지만 이 방식이 같는 장점 또한 있을 것입니다.)</p>
+
+<p>반면 Nodejs의 경우 인증이라는 커다란 부분을 담당하는 패키지 Passport.js는 개인이 설립한 프로젝트임에도 유저들에게 그 편리성과 효용성을 입증받아 가장 많이 사용되는 패키지로 선택되었습니다. 이런 적자생존 방식으로 생태계가 유지되는 것이 매우 어렵지만, 그만큼 유저에게 많은 편리함을 주고있다고 생각했습니다.</p>
+
+<h3 id="section">마무리</h3>
+
+<p>나름 장단점을 설명한다고 글을 썼지만, 너무 장점 위주로 설명한 것 같습니다…<br />
+생태계가 활발하고 자주 변화한다고 좋은 것만은 아니라고 생각합니다. 유저는 변화한 내용을 계속 학습하는 것에 비용이 많이 발생할 수도 있고, 새로운 보안 취약점이 발생하거나 기반 패키지가 업데이트 된 경우 상위 패키지와 호환성이 떨어질 수도 있습니다.</p>
+
+<p>마지막 부분, nodejs의 특징을 조금 더 잘 설명하기 위해 제가 경험한 Spring framework와 비교하며 작성했지만, 위에 말씀드렸 듯 모든것에는 장단점이 있으니, 프로젝트에 사용할 기술스택을 잘 선택하셨으면 합니다!</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A5%BC+%EA%B3%B5%EB%B6%80%ED%95%98%EB%A0%A4%ED%95%98%EB%8A%94+%EB%8B%B9%EC%8B%A0%EC%97%90%EA%B2%8C&url=http%3A%2F%2Flee95292.github.io%2Fweb%2F2020%2F03%2F15%2Fjslibrary-introduce.html&media=http://lee95292.github.io/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Mleek's blog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:lee95292@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">lee95292@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/TheBenCentra" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">TheBenCentra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/lee95292" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">lee95292</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/pub/ben-centra/47/769/60a" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Ben Centra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Mleek's blog_ study note & daily life
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>
