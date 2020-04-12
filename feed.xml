@@ -6,15 +6,17 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 Apr 2020 15:26:21 +0900</pubDate>
-    <lastBuildDate>Sun, 12 Apr 2020 15:26:21 +0900</lastBuildDate>
+    <pubDate>Sun, 12 Apr 2020 15:35:59 +0900</pubDate>
+    <lastBuildDate>Sun, 12 Apr 2020 15:35:59 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>jenkins403_No valid crumb was included in the request</title>
+        <title>[jenkins 403, no valid crumb] 에러 리포트</title>
         <description>&lt;p&gt;이번 포스팅에서는 젠킨스를 사용하며 만난 403에러의 원인과 해결과정을 풀어서 설명하겠습니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/git_jenkins_403/jenkinserror.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;“No valid crumb was included in the request”&lt;/p&gt;
 
 &lt;p&gt;(만약 빠른 해결을 원하신다면, jenkins global security settings &amp;gt; csrf disable을 체크하면 됩니다.)&lt;/p&gt;
 
@@ -36,7 +38,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/git_jenkins_403/jenkins-workflow.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;(jenkins-workflow, &lt;a href=&quot;http://oraclefusiontechnologies.blogspot.com/2014/04/continuous-integration-with-jenkins.html&quot;&gt;출처&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;(jenkins-workflow, &lt;a href=&quot;http://oraclefusiontechnologies.blogspot.com/2014/04/continuous-integration-with-jenkins.html&quot;&gt;위키백과&lt;/a&gt;)&lt;/p&gt;
 
 &lt;h1 id=&quot;section&quot;&gt;오류 상황&lt;/h1&gt;
 
@@ -49,7 +51,7 @@
 
 &lt;p&gt;에러메시지에는 crumb라는 특이한 단어가 등장합니다. 직역하면 빵부스러기, 구글에 검색해도 특별한 내용이 나오진 않습니다만, &lt;strong&gt;Jenkins crumb&lt;/strong&gt;라고 검색하니 jenkins의 보안관련 문서들이 보였습니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;crumb-jenkins-github-----------ipsalt--&quot;&gt;&lt;strong&gt;crumb&lt;/strong&gt;란, Jenkins에서 github등 소스코드 리포지토리의 데이터를 가져올 때 요청의 주체가 자신임을 확인하도록 하는 IP+salt로 이루어진 쿠키입니다.&lt;/h3&gt;
+&lt;p style=&quot;font-size:1rem&quot;&gt;crumb란, Jenkins에서 github등 소스코드 리포지토리의 데이터를 가져올 때 요청의 주체가 자신임을 확인하도록 하는 IP+salt로 이루어진 쿠키입니다. &lt;/p&gt;
 
 &lt;p&gt;즉, crumb를 요청헤더에 쿠키로 추가하므로써 CSRF 공격을 방지할 수 있는것이죠!&lt;/p&gt;
 
@@ -58,7 +60,8 @@
 
 &lt;h1 id=&quot;section-1&quot;&gt;문제 분석 및 해결&lt;/h1&gt;
 
-&lt;p&gt;위에서 이야기한 &lt;strong&gt;어떤 문제&lt;/strong&gt;를 찾는건 시간이 꽤 걸렸습니다… crumb에 대해 잘 모를 때 github의 설정문제라고 생각하고 자꾸 삽질을 했는데요,&lt;br /&gt;
+&lt;p&gt;위에서 이야기한 &lt;strong&gt;어떤 문제&lt;/strong&gt;를 찾는건 시간이 꽤 걸렸습니다…&lt;br /&gt;
+crumb에 대해 잘 모를 때 github의 설정문제라고 생각하고 자꾸 삽질을 했는데요,&lt;br /&gt;
 has no valid crumb 에러가 발생하는 이유는 대부분 프록시 설정 문제입니다.&lt;/p&gt;
 
 &lt;p&gt;crumb는 IP+salt의 조합이라고 설명했는데요, “has no valid crumb”라는 에러메시지를 통해 제가 Jenkins를 서비스하는 과정에서 요청 IP가 변경되는 과정이 있는지 생각해봐야합니다.&lt;br /&gt;
@@ -154,7 +157,7 @@ has no valid crumb 에러가 발생하는 이유는 대부분 프록시 설정 �
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;CSRF설정으로 인해 403에러가 발생하는것에 있어, 조금 복잡한 설정방법이었습니다.&lt;/p&gt;
+&lt;p&gt;CSRF와 프록시 설정으로 인해 발생하는 403에러에 대한 해결과정이었습니다!&lt;/p&gt;
 </description>
         <pubDate>Sun, 12 Apr 2020 12:21:57 +0900</pubDate>
         <link>http://lee95292.github.io/jenkins/2020/04/12/jenkins403.html</link>
