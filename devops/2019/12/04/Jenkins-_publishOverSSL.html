@@ -10,8 +10,8 @@
   <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
   <!-- My Change!! end -->
   
-  <title>[React] 리액트 라우터 on use</title>
-  <meta name="description" content="  간단한 기록용 포스트공통적으로,import {Router,Link} from 'react-router-dom';Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact path="...">
+  <title>[Jenkins] 젠킨스 원격 배포 (CD) 수행하기</title>
+  <meta name="description" content="젠킨스 서버에서 CI된 결과물을 원격 서버에 CD하기.">
   
   <meta name="author" content="LeeMyungKyu">
   <meta name="copyright" content="&copy; LeeMyungKyu 2020">
@@ -45,10 +45,10 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="  간단한 기록용 포스트공통적으로,import {Router,Link} from 'react-router-dom';Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact path="..." />
+  <meta property="og:description" content="젠킨스 서버에서 CI된 결과물을 원격 서버에 CD하기." />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
-  <meta property="og:title" content="[React] 리액트 라우터 on use" />
+  <meta property="og:title" content="[Jenkins] 젠킨스 원격 배포 (CD) 수행하기" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -59,8 +59,8 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="[React] 리액트 라우터 on use">
-  <meta name="twitter:description" content="  간단한 기록용 포스트공통적으로,import {Router,Link} from 'react-router-dom';Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact path="...">
+  <meta name="twitter:title" content="[Jenkins] 젠킨스 원격 배포 (CD) 수행하기">
+  <meta name="twitter:description" content="젠킨스 서버에서 CI된 결과물을 원격 서버에 CD하기.">
   <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
   
@@ -69,7 +69,7 @@
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://lee95292.github.io/react/2019/09/12/React-Router_on_use.html">
+  <link rel="canonical" href="http://lee95292.github.io/devops/2019/12/04/Jenkins-_publishOverSSL.html">
   <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
 </head>
 
@@ -131,7 +131,7 @@
 <div class="post-header-container " >
   <div class="scrim ">
     <header class="post-header">
-      <h1 class="title">[React] 리액트 라우터 on use</h1>
+      <h1 class="title">[Jenkins] 젠킨스 원격 배포 (CD) 수행하기</h1>
       <p class="info">by <strong></strong></p>
     </header>
   </div>
@@ -146,70 +146,80 @@
  
 
 <section class="post-meta">
-  <div class="post-date">September 12, 2019</div>
+  <div class="post-date">December 4, 2019</div>
   <div class="post-categories">
   in 
     
-    <a href="/category/react">React</a>
+    <a href="/category/devops">Devops</a>
     
   
   </div>
 </section>
 
 <article class="post-content">
-  <blockquote>
-  <p>간단한 기록용 포스트</p>
-</blockquote>
+  <p>젠킨스 서버에서 CI된 결과물을 원격 서버에 CD하기.</p>
 
-<p>공통적으로,</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Router</span><span class="p">,</span><span class="nx">Link</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-router-dom'</span><span class="p">;</span>
-</code></pre>
-</div>
+<p>선결조건</p>
+<ul>
+  <li>젠킨스 구동 중</li>
+  <li>CI(빌드) 세팅 완료</li>
+</ul>
 
-<h3 id="route---path-component--">Route - path와 component 속성으로 설명해보자.</h3>
+<p>원리</p>
+<ul>
+  <li>publish over ssh 플러그인 사용</li>
+  <li>scp를 통해 배포파일 (spring의 경우는 **.jar) 전송</li>
+  <li>ssh를 통해 배포파일 실행(서버 가동스크립트)</li>
+</ul>
 
-<p>exact path와 일치하는 component를 보여준다. 즉,</p>
+<h3 id="jenkins-on-use--1------">Jenkins on use -1 : 사전  설정 (원격지 등록)</h3>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;Route</span> <span class="na">exact</span> <span class="na">path=</span><span class="s">"/"</span> <span class="na">component=</span><span class="s">{Home}</span> <span class="nt">/&gt;</span>
-</code></pre>
-</div>
+<ul>
+  <li><strong>Jenkins &gt; Jenkins관리 &gt; 시스템 설정화면</strong></li>
+</ul>
 
-<p>위의 경우 url상에서 루트 경로일 때, Home 컴포넌트를 보여주는 것.</p>
+<p><img src="/assets/img/jenkins/jenkins_001.PNG" /></p>
 
-<p>즉, Route는 의미적(Semantic)인 컴포넌트이고, URL의 정보를 참조해서 뷰를 보여주는 역할을 수행한다.</p>
+<p><em>아래쪽 publish over ssh 탭 작성</em></p>
 
-<p>(이 때, exact path가 아니라 path만을 사용한다면, path=”/about” 인 설정의 경우, path=”/” 과 path=”/about”의 라우트까지 모두 보여준다.<br />
-즉, exact하지 않는 매칭을 한다)</p>
+<p>Key 탭 - 원격지에 접근하기 위한 키 작성</p>
 
-<h3 id="parameter">Parameter</h3>
+<p>SSH Servers탭 - 배포파일을 전송할 원격지</p>
+<ul>
+  <li>Name - 구분을 위한 이름</li>
+  <li>hostname - 호스트 주소</li>
+  <li>username - 연결을 위한 유저 이름</li>
+</ul>
 
-<p>parameter는 url path 뒤에 콜론(:)을 붙여 입력받는다.</p>
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>import {Router} from 'react-router-dom';
+<p>왼쪽 아래 저장버튼을 눌러 원격지 등록 완료!</p>
 
-...
- <span class="nt">&lt;Route</span> <span class="na">path=</span><span class="s">"/about/:name"</span> <span class="na">component=</span><span class="s">{About}/</span><span class="nt">&gt;</span>
-</code></pre>
-</div>
+<h3 id="jenkins-on-use--2---ci----">Jenkins on use -2 : 프로젝트 빌드(CI) 이후 원격지로 실제 배포하기</h3>
 
-<p>(전달예시)</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>https://localhost:3000/about/mklee
-</code></pre>
-</div>
+<ul>
+  <li>
+    <p><strong>각자 프로젝트  선택 &gt; 구성 &gt; Build탭의 add build step &gt; send files or execute commands over SSH</strong>
+<img src="/assets/img/jenkins/jenkins_002.PNG" /></p>
+  </li>
+  <li>
+    <p><strong>접속 이후 수행동작 작성하기</strong>
+<img src="/assets/img/jenkins/jenkins_003.PNG" /></p>
+  </li>
+</ul>
 
-<p>위의 경우, ‘mklee’가 About 컴포넌트에 파라미터로 사용한다.</p>
+<h3 id="section">항목들  설명</h3>
+<ul>
+  <li>SSH Server - Name - 사전 설정과정에서 등록한 서버의 이름</li>
+  <li>Transfes
+    <ul>
+      <li>Source files : 젠킨스 서버에서 빌드 완료된 배포파일(전송할 배포파일)</li>
+      <li>Exec command : 배포파일 실행 명령</li>
+    </ul>
+  </li>
+</ul>
 
-<p>이 때,  About의 컴포넌트는 <strong>const name=match.params.name</strong> 과 같이 해당 값을 사용한다</p>
+<p>저장을 눌러 배포 설정 완료하고,</p>
 
-<h3 id="link-----router">Link 컴포넌트를 통해 새로고침 없는 Router이동</h3>
-
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>import {Link} from 'react-router-dom'
-...
-
-<span class="nt">&lt;Link</span> <span class="na">to=</span><span class="s">"/about"</span><span class="nt">&gt;</span> About <span class="nt">&lt;/Link&gt;</span>
-</code></pre>
-</div>
-
-<p>a 태그를 통해 URL을 변경시키고 이동할 수도 있지만, 새로고침 없이 Link 컴포넌트를 통해 새로고침 없는 페이지전환이 가능하다.</p>
+<p>빌드 수행!</p>
 
 </article>
 
@@ -293,7 +303,7 @@
     
     
     
-      <a href="//www.pinterest.com/pin/create/button/?description=%5BReact%5D+%EB%A6%AC%EC%95%A1%ED%8A%B8+%EB%9D%BC%EC%9A%B0%ED%84%B0+on+use&url=http%3A%2F%2Flee95292.github.io%2Freact%2F2019%2F09%2F12%2FReact-Router_on_use.html&media=http://lee95292.github.io/assets/header_image.jpg"
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BJenkins%5D+%EC%A0%A0%ED%82%A8%EC%8A%A4+%EC%9B%90%EA%B2%A9+%EB%B0%B0%ED%8F%AC+%28CD%29+%EC%88%98%ED%96%89%ED%95%98%EA%B8%B0&url=http%3A%2F%2Flee95292.github.io%2Fdevops%2F2019%2F12%2F04%2FJenkins-_publishOverSSL.html&media=http://lee95292.github.io/assets/header_image.jpg"
         onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
         <i class="fa fa-pinterest-square fa-lg"></i>
       </a>

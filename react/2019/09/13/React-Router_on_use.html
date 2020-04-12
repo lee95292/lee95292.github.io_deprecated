@@ -10,8 +10,8 @@
   <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
   <!-- My Change!! end -->
   
-  <title>Junit 기초 사용법</title>
-  <meta name="description" content="박재성님 Junit 강좌 정리Junit 기본 사용법(setup)  STS에 Junit 라이브러리가 추가되어 있어야 함. build path에서 추가.  Junit Test 버튼 클릭으로 테스트 클래스 생성  Test Annotation을 추가한 메서드 내에서 단위테스트 진행(usi...">
+  <title>[React] 리액트 라우터 on use</title>
+  <meta name="description" content="  간단한 기록용 포스트공통적으로,import {Router,Link} from 'react-router-dom';Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact path="...">
   
   <meta name="author" content="LeeMyungKyu">
   <meta name="copyright" content="&copy; LeeMyungKyu 2020">
@@ -45,10 +45,10 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="박재성님 Junit 강좌 정리Junit 기본 사용법(setup)  STS에 Junit 라이브러리가 추가되어 있어야 함. build path에서 추가.  Junit Test 버튼 클릭으로 테스트 클래스 생성  Test Annotation을 추가한 메서드 내에서 단위테스트 진행(usi..." />
+  <meta property="og:description" content="  간단한 기록용 포스트공통적으로,import {Router,Link} from 'react-router-dom';Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact path="..." />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
-  <meta property="og:title" content="Junit 기초 사용법" />
+  <meta property="og:title" content="[React] 리액트 라우터 on use" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -59,8 +59,8 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Junit 기초 사용법">
-  <meta name="twitter:description" content="박재성님 Junit 강좌 정리Junit 기본 사용법(setup)  STS에 Junit 라이브러리가 추가되어 있어야 함. build path에서 추가.  Junit Test 버튼 클릭으로 테스트 클래스 생성  Test Annotation을 추가한 메서드 내에서 단위테스트 진행(usi...">
+  <meta name="twitter:title" content="[React] 리액트 라우터 on use">
+  <meta name="twitter:description" content="  간단한 기록용 포스트공통적으로,import {Router,Link} from 'react-router-dom';Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact path="...">
   <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
   
@@ -69,7 +69,7 @@
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://lee95292.github.io/tdd/2019/08/30/Junit-JunitStart.html">
+  <link rel="canonical" href="http://lee95292.github.io/react/2019/09/13/React-Router_on_use.html">
   <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
 </head>
 
@@ -131,7 +131,7 @@
 <div class="post-header-container " >
   <div class="scrim ">
     <header class="post-header">
-      <h1 class="title">Junit 기초 사용법</h1>
+      <h1 class="title">[React] 리액트 라우터 on use</h1>
       <p class="info">by <strong></strong></p>
     </header>
   </div>
@@ -146,50 +146,70 @@
  
 
 <section class="post-meta">
-  <div class="post-date">August 30, 2019</div>
+  <div class="post-date">September 13, 2019</div>
   <div class="post-categories">
   in 
     
-    <a href="/category/TDD">Tdd</a>
+    <a href="/category/react">React</a>
     
   
   </div>
 </section>
 
 <article class="post-content">
-  <p><a href="https://www.youtube.com/watch?v=tyZMdwT3rIY">박재성님 Junit 강좌</a> 정리</p>
+  <blockquote>
+  <p>간단한 기록용 포스트</p>
+</blockquote>
 
-<h1 id="junit--">Junit 기본 사용법</h1>
-<hr />
-
-<p>(setup)</p>
-<ul>
-  <li>STS에 J<strong>unit 라이브러리가 추가되어 있어야 함</strong>. build path에서 추가.</li>
-  <li>Junit Test 버튼 클릭으로 테스트 클래스 생성</li>
-  <li>Test Annotation을 추가한 메서드 내에서 단위테스트 진행</li>
-</ul>
-
-<p>(using)</p>
-<ul>
-  <li>하나의 메서드만 테스트를 원할경우, 메서드 이름에 커서를 올린 상태로, Ctrl + f11</li>
-  <li>결과값 확인은, assertEquals(기댓값,결과값), assert류 메서드를 사용해 확인한다. 이 메서드가 false를 반환하면, testcase가 실패하게 된다.</li>
-  <li>인스턴스의 테스트간 독립성을 보장하기 위해 @Before 애너테이션을 통해 초기화 진행하자. 테스트케이스별로 인스턴스 초기화 작업 수행</li>
-</ul>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="o">...</span> <span class="kn">import</span><span class="nn">...</span>
-
- <span class="o">...</span><span class="na">class</span> 
-
-    <span class="nd">@Before</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="o">(){</span>
-        <span class="n">cal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calculator</span><span class="o">();</span>     <span class="c1">//후에 수행되는 모든 TestCase에 대해 해당 초기화작업 진행</span>
-    <span class="o">}</span>
+<p>공통적으로,</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Router</span><span class="p">,</span><span class="nx">Link</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-router-dom'</span><span class="p">;</span>
 </code></pre>
 </div>
 
-<ul>
-  <li>자원 반납과 같은 후처리 작업의 경우, @After 애너테이션을 사용한다</li>
-</ul>
+<h3 id="route---path-component--">Route - path와 component 속성으로 설명해보자.</h3>
+
+<p>exact path와 일치하는 component를 보여준다. 즉,</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;Route</span> <span class="na">exact</span> <span class="na">path=</span><span class="s">"/"</span> <span class="na">component=</span><span class="s">{Home}</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<p>위의 경우 url상에서 루트 경로일 때, Home 컴포넌트를 보여주는 것.</p>
+
+<p>즉, Route는 의미적(Semantic)인 컴포넌트이고, URL의 정보를 참조해서 뷰를 보여주는 역할을 수행한다.</p>
+
+<p>(이 때, exact path가 아니라 path만을 사용한다면, path=”/about” 인 설정의 경우, path=”/” 과 path=”/about”의 라우트까지 모두 보여준다.<br />
+즉, exact하지 않는 매칭을 한다)</p>
+
+<h3 id="parameter">Parameter</h3>
+
+<p>parameter는 url path 뒤에 콜론(:)을 붙여 입력받는다.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>import {Router} from 'react-router-dom';
+
+...
+ <span class="nt">&lt;Route</span> <span class="na">path=</span><span class="s">"/about/:name"</span> <span class="na">component=</span><span class="s">{About}/</span><span class="nt">&gt;</span>
+</code></pre>
+</div>
+
+<p>(전달예시)</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>https://localhost:3000/about/mklee
+</code></pre>
+</div>
+
+<p>위의 경우, ‘mklee’가 About 컴포넌트에 파라미터로 사용한다.</p>
+
+<p>이 때,  About의 컴포넌트는 <strong>const name=match.params.name</strong> 과 같이 해당 값을 사용한다</p>
+
+<h3 id="link-----router">Link 컴포넌트를 통해 새로고침 없는 Router이동</h3>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>import {Link} from 'react-router-dom'
+...
+
+<span class="nt">&lt;Link</span> <span class="na">to=</span><span class="s">"/about"</span><span class="nt">&gt;</span> About <span class="nt">&lt;/Link&gt;</span>
+</code></pre>
+</div>
+
+<p>a 태그를 통해 URL을 변경시키고 이동할 수도 있지만, 새로고침 없이 Link 컴포넌트를 통해 새로고침 없는 페이지전환이 가능하다.</p>
 
 </article>
 
@@ -273,7 +293,7 @@
     
     
     
-      <a href="//www.pinterest.com/pin/create/button/?description=Junit+%EA%B8%B0%EC%B4%88+%EC%82%AC%EC%9A%A9%EB%B2%95&url=http%3A%2F%2Flee95292.github.io%2Ftdd%2F2019%2F08%2F30%2FJunit-JunitStart.html&media=http://lee95292.github.io/assets/header_image.jpg"
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BReact%5D+%EB%A6%AC%EC%95%A1%ED%8A%B8+%EB%9D%BC%EC%9A%B0%ED%84%B0+on+use&url=http%3A%2F%2Flee95292.github.io%2Freact%2F2019%2F09%2F13%2FReact-Router_on_use.html&media=http://lee95292.github.io/assets/header_image.jpg"
         onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
         <i class="fa fa-pinterest-square fa-lg"></i>
       </a>
