@@ -6,15 +6,15 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 Apr 2020 15:38:57 +0900</pubDate>
-    <lastBuildDate>Sun, 12 Apr 2020 15:38:57 +0900</lastBuildDate>
+    <pubDate>Sun, 12 Apr 2020 15:57:16 +0900</pubDate>
+    <lastBuildDate>Sun, 12 Apr 2020 15:57:16 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>[jenkins 403, no valid crumb] 에러 리포트</title>
         <description>&lt;p&gt;이번 포스팅에서는 젠킨스를 사용하며 만난 403에러의 원인과 해결과정을 풀어서 설명하겠습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/git_jenkins_403/jenkinserror.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/git_jenkins_403/Inkedjenkinserror_LI.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;“No valid crumb was included in the request”&lt;/p&gt;
 
@@ -45,7 +45,7 @@
 &lt;p&gt;소스코드의 업데이트를 확인하기 위해 Github의 Webhook이나 다른 연동 도구를 통해서 젠킨스와 연결해야합니다.&lt;br /&gt;
 이 과정에서 아래와 같은 에러문구를 확인했고, 어떤 이유에서 github가 &lt;strong&gt;jenkins의 요청을 거부&lt;/strong&gt;했다는 것을 알 수 있었습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/git_jenkins_403/jenkinserror.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/git_jenkins_403/Inkedjenkinserror_LI.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;에러메시지 : No valid crumb was included in the request — 요청에 유효한 Crumb가 존재하지 않는다.&lt;/p&gt;
 
