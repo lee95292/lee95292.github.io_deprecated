@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- My Change!!  start-->
+  <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
+  <!-- My Change!! end -->
+  
+  <title>jenkins403_No valid crumb was included in the request</title>
+  <meta name="description" content="이번 포스팅에서는 젠킨스를 사용하며 만난 403에러의 원인과 해결과정을 풀어서 설명하겠습니다.">
+  
+  <meta name="author" content="LeeMyungKyu">
+  <meta name="copyright" content="&copy; LeeMyungKyu 2020">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="이번 포스팅에서는 젠킨스를 사용하며 만난 403에러의 원인과 해결과정을 풀어서 설명하겠습니다." />
+  <meta property="og:url" content="http://lee95292.github.io" />
+  <meta property="og:site_name" content="Mleek's blog" />
+  <meta property="og:title" content="jenkins403_No valid crumb was included in the request" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="jenkins403_No valid crumb was included in the request">
+  <meta name="twitter:description" content="이번 포스팅에서는 젠킨스를 사용하며 만난 403에러의 원인과 해결과정을 풀어서 설명하겠습니다.">
+  <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
+  <meta name="twitter:url" content="http://lee95292.github.io">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://lee95292.github.io/jenkins/2020/04/12/jenkins403.html">
+  <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Mleek's blog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/typography/">Typography</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">jenkins403_No valid crumb was included in the request</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">April 12, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/jenkins">Jenkins</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p>이번 포스팅에서는 젠킨스를 사용하며 만난 403에러의 원인과 해결과정을 풀어서 설명하겠습니다.</p>
+
+<p><img src="/assets/img/git_jenkins_403/jenkinserror.png" /></p>
+
+<p>(만약 빠른 해결을 원하신다면, jenkins global security settings &gt; csrf disable을 체크하면 됩니다.)</p>
+
+<h1 id="intro">Intro</h1>
+
+<h3 id="csrf">CSRF란?</h3>
+
+<p>사이트 간 요청 위조(또는 크로스 사이트 요청 위조, 영어: Cross-site request forgery, CSRF, XSRF)는 웹사이트 취약점 공격의 하나로, 사용자가 자신의 의지와는 무관하게 공격자가 의도한 행위(수정, 삭제, 등록 등)를 특정 웹사이트에 요청하게 하는 공격을 말합니다.<br />
+<a href="https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%ED%8A%B8_%EA%B0%84_%EC%9A%94%EC%B2%AD_%EC%9C%84%EC%A1%B0">출처</a></p>
+
+<hr />
+
+<h3 id="jenkins">Jenkins란?</h3>
+
+<p>개발에 이은 지속적인 통합과 배포를 담당하는 도구입니다.<br />
+젠킨스는 Java언어 베이스로 만들어진 CI/CD 도구로, 1400개가 넘는 다양한 플러그인을 지원하기때문에 배포 시 테스트 자동화, 취약점 점검 등 서비스를 배포/운영하는 개발자 및 인프라 관련 업무에서 많은 편리함을 주는 도구입니다.</p>
+
+<p>비슷하게 지속적 통합을 제공하는 도구로는 travisCI,circleCI등이 있습니다.</p>
+
+<p><img src="/assets/img/git_jenkins_403/jenkins-workflow.png" /></p>
+
+<p>(jenkins-workflow, <a href="http://oraclefusiontechnologies.blogspot.com/2014/04/continuous-integration-with-jenkins.html">출처</a>)</p>
+
+<h1 id="section">오류 상황</h1>
+
+<p>소스코드의 업데이트를 확인하기 위해 Github의 Webhook이나 다른 연동 도구를 통해서 젠킨스와 연결해야합니다.<br />
+이 과정에서 아래와 같은 에러문구를 확인했고, 어떤 이유에서 github가 <strong>jenkins의 요청을 거부</strong>했다는 것을 알 수 있었습니다.</p>
+
+<p><img src="/assets/img/git_jenkins_403/jenkinserror.png" /></p>
+
+<p>에러메시지 : No valid crumb was included in the request — 요청에 유효한 Crumb가 존재하지 않는다.</p>
+
+<p>에러메시지에는 crumb라는 특이한 단어가 등장합니다. 직역하면 빵부스러기, 구글에 검색해도 특별한 내용이 나오진 않습니다만, <strong>Jenkins crumb</strong>라고 검색하니 jenkins의 보안관련 문서들이 보였습니다.</p>
+
+<h3 id="crumb-jenkins-github-----------ipsalt--"><strong>crumb</strong>란, Jenkins에서 github등 소스코드 리포지토리의 데이터를 가져올 때 요청의 주체가 자신임을 확인하도록 하는 IP+salt로 이루어진 쿠키입니다.</h3>
+
+<p>즉, crumb를 요청헤더에 쿠키로 추가하므로써 CSRF 공격을 방지할 수 있는것이죠!</p>
+
+<p>반대로 Jenkins의 CSRF 보안 설정을 켜놓으면 <strong>어떤 문제</strong>로 인해 crumb의 유효성이 사라졌을 때 403에러와 함께 일을 진행하지 못하는 사태가 발생합니다. 참고로 젠킨스는 2.0부터 CSRF protection이 기본 보안설정입니다.<br />
+(하지만 위에서도 말씀드렸듯, CSRF 보안 설정을 체크헤제하면 에러는 말끔히 사라집니다.)</p>
+
+<h1 id="section-1">문제 분석 및 해결</h1>
+
+<p>위에서 이야기한 <strong>어떤 문제</strong>를 찾는건 시간이 꽤 걸렸습니다… crumb에 대해 잘 모를 때 github의 설정문제라고 생각하고 자꾸 삽질을 했는데요,<br />
+has no valid crumb 에러가 발생하는 이유는 대부분 프록시 설정 문제입니다.</p>
+
+<p>crumb는 IP+salt의 조합이라고 설명했는데요, “has no valid crumb”라는 에러메시지를 통해 제가 Jenkins를 서비스하는 과정에서 요청 IP가 변경되는 과정이 있는지 생각해봐야합니다.<br />
+대부분 젠킨스 서버와 프록시가 있거나 캐싱 서버가 있어 IP주소가 변경되는 경우가 많습니다. 이때문에 Crumb가 유효성을 상실하게 됩니다.</p>
+
+<p>문제를 찾고 이부분을 어떻게 해결할까 하다가 Jenkins Crumb정책 관련한 소스코드를 보면서 답을 찾았습니다.</p>
+
+<p>Jenkins의 소스코드입니다.
+<a href="https://github.com/jenkinsci/jenkins/blob/master/core/src/main/java/hudson/security/csrf/DefaultCrumbIssuer.java">Jenkins DefaultCrumbIssuer.java</a></p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DefaultCrumbIssuer</span> <span class="kd">extends</span> <span class="n">CrumbIssuer</span> <span class="o">{</span>
+    <span class="o">...</span>
+
+    <span class="nd">@DataBoundConstructor</span>
+    <span class="kd">public</span> <span class="nf">DefaultCrumbIssuer</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">excludeClientIPFromCrumb</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">excludeClientIPFromCrumb</span> <span class="o">=</span> <span class="n">excludeClientIPFromCrumb</span><span class="o">;</span>
+        <span class="n">initializeMessageDigest</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="o">...</span>
+     <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kd">synchronized</span> <span class="n">String</span> <span class="nf">issueCrumb</span><span class="o">(</span><span class="n">ServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">String</span> <span class="n">salt</span><span class="o">)</span> <span class="o">{</span>
+        <span class="o">...</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">isExcludeClientIPFromCrumb</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">buffer</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">getClientIP</span><span class="o">(</span><span class="n">req</span><span class="o">));</span>
+        <span class="o">}</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+
+    <span class="o">...</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="nf">getClientIP</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">req</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">defaultAddress</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getRemoteAddr</span><span class="o">();</span>
+        <span class="n">String</span> <span class="n">forwarded</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getHeader</span><span class="o">(</span><span class="n">X_FORWARDED_FOR</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">forwarded</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+	        <span class="n">String</span><span class="o">[]</span> <span class="n">hopList</span> <span class="o">=</span> <span class="n">forwarded</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">","</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">hopList</span><span class="o">.</span><span class="na">length</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">hopList</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">defaultAddress</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="o">...</span>
+
+</code></pre>
+</div>
+
+<p>XFF란? X-forwarded-for의 약자로, 지금 상황처럼 프록시나 다른 중간 서버로 인해 IP가 변경될 때, Origin IP를 식별하는 표준 헤더입니다.
+<a href="https://ko.wikipedia.org/wiki/XFF">위키백과</a></p>
+
+<hr />
+
+<p>getClientIP메서드에서 XFF헤더가 있는 경우 hopList를 통해 중간에 거쳐갈 IP주소 리스트를 리턴하도록 작성되었습니다.</p>
+
+<p>즉, 젠킨스 설정을 통해 문제를 해결할 수 있는것이죠!</p>
+
+<hr />
+
+<p><strong>excludeClientIPFromCrumb</strong>변수는 위의 issueCrumb메서드에서 <strong>false일 때</strong> getClientIp메서드를 통해 XFF헤더를 적용합니다.</p>
+
+<p>즉, DefaultCrumbIssuer의 생성자로 false를 지정하게 되면 XFF가 지정되고, 프록시로 인한 IP변조 문제가 해결되는것이죠.</p>
+
+<p>이제부터는 해결과정입니다.</p>
+
+<p>젠킨스 그루비 설정파일을 지정하기 위해 젠킨스 홈에서 설정파일 만들어줍니다.<br />
+(default: /var/lib/jenkins/init.goovy.d/myconf.groovy)</p>
+
+<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">hudson.security.csrf.DefaultCrumbIssuer</span>
+<span class="kn">import</span> <span class="nn">jenkins.model.Jenkins</span>
+
+<span class="c1">// 중단모드일 경우 시행하면 안됨</span>
+<span class="k">if</span><span class="o">(!</span><span class="n">Jenkins</span><span class="o">.</span><span class="na">instance</span><span class="o">.</span><span class="na">isQuietingDown</span><span class="o">()){</span>
+
+  <span class="c1">//CSRF 설정이 있는 경우</span>
+  <span class="k">if</span><span class="o">(</span><span class="n">Jenkins</span><span class="o">.</span><span class="na">instance</span><span class="o">.</span><span class="na">getCrumbIssuer</span><span class="o">()!=</span><span class="kc">null</span><span class="o">){</span>
+    <span class="kt">def</span> <span class="n">instance</span> <span class="o">=</span> <span class="n">Jenkins</span><span class="o">.</span><span class="na">instance</span>
+		<span class="c1">// DefaultCrumbIssuer(false) : XFF헤더 정의</span>
+    <span class="n">instance</span><span class="o">.</span><span class="na">setCrumbIssuer</span><span class="o">(</span><span class="k">new</span> <span class="n">DefaultCrumbIssuer</span><span class="o">(</span><span class="kc">false</span><span class="o">))</span>
+    <span class="n">instance</span><span class="o">.</span><span class="na">save</span><span class="o">()</span>
+
+    <span class="n">println</span> <span class="s1">'excludeClientIPfromCrumb set: false'</span>
+
+  <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+	  <span class="n">println</span> <span class="s1">'Nothing changed'</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>이후 젠킨스를 재시작합니다.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>service jenkins restart
+</code></pre>
+</div>
+
+<p>CSRF설정으로 인해 403에러가 발생하는것에 있어, 조금 복잡한 설정방법이었습니다.</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=jenkins403_No+valid+crumb+was+included+in+the+request&url=http%3A%2F%2Flee95292.github.io%2Fjenkins%2F2020%2F04%2F12%2Fjenkins403.html&media=http://lee95292.github.io/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Mleek's blog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:lee95292@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">lee95292@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/TheBenCentra" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">TheBenCentra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/lee95292" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">lee95292</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/pub/ben-centra/47/769/60a" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Ben Centra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Mleek's blog_ study note & daily life
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

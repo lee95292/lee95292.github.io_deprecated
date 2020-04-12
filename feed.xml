@@ -6,9 +6,164 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 Apr 2020 11:57:15 +0900</pubDate>
-    <lastBuildDate>Sun, 12 Apr 2020 11:57:15 +0900</lastBuildDate>
+    <pubDate>Sun, 12 Apr 2020 15:26:21 +0900</pubDate>
+    <lastBuildDate>Sun, 12 Apr 2020 15:26:21 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>jenkins403_No valid crumb was included in the request</title>
+        <description>&lt;p&gt;이번 포스팅에서는 젠킨스를 사용하며 만난 403에러의 원인과 해결과정을 풀어서 설명하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/git_jenkins_403/jenkinserror.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(만약 빠른 해결을 원하신다면, jenkins global security settings &amp;gt; csrf disable을 체크하면 됩니다.)&lt;/p&gt;
+
+&lt;h1 id=&quot;intro&quot;&gt;Intro&lt;/h1&gt;
+
+&lt;h3 id=&quot;csrf&quot;&gt;CSRF란?&lt;/h3&gt;
+
+&lt;p&gt;사이트 간 요청 위조(또는 크로스 사이트 요청 위조, 영어: Cross-site request forgery, CSRF, XSRF)는 웹사이트 취약점 공격의 하나로, 사용자가 자신의 의지와는 무관하게 공격자가 의도한 행위(수정, 삭제, 등록 등)를 특정 웹사이트에 요청하게 하는 공격을 말합니다.&lt;br /&gt;
+&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%ED%8A%B8_%EA%B0%84_%EC%9A%94%EC%B2%AD_%EC%9C%84%EC%A1%B0&quot;&gt;출처&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;jenkins&quot;&gt;Jenkins란?&lt;/h3&gt;
+
+&lt;p&gt;개발에 이은 지속적인 통합과 배포를 담당하는 도구입니다.&lt;br /&gt;
+젠킨스는 Java언어 베이스로 만들어진 CI/CD 도구로, 1400개가 넘는 다양한 플러그인을 지원하기때문에 배포 시 테스트 자동화, 취약점 점검 등 서비스를 배포/운영하는 개발자 및 인프라 관련 업무에서 많은 편리함을 주는 도구입니다.&lt;/p&gt;
+
+&lt;p&gt;비슷하게 지속적 통합을 제공하는 도구로는 travisCI,circleCI등이 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/git_jenkins_403/jenkins-workflow.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(jenkins-workflow, &lt;a href=&quot;http://oraclefusiontechnologies.blogspot.com/2014/04/continuous-integration-with-jenkins.html&quot;&gt;출처&lt;/a&gt;)&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;오류 상황&lt;/h1&gt;
+
+&lt;p&gt;소스코드의 업데이트를 확인하기 위해 Github의 Webhook이나 다른 연동 도구를 통해서 젠킨스와 연결해야합니다.&lt;br /&gt;
+이 과정에서 아래와 같은 에러문구를 확인했고, 어떤 이유에서 github가 &lt;strong&gt;jenkins의 요청을 거부&lt;/strong&gt;했다는 것을 알 수 있었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/git_jenkins_403/jenkinserror.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;에러메시지 : No valid crumb was included in the request — 요청에 유효한 Crumb가 존재하지 않는다.&lt;/p&gt;
+
+&lt;p&gt;에러메시지에는 crumb라는 특이한 단어가 등장합니다. 직역하면 빵부스러기, 구글에 검색해도 특별한 내용이 나오진 않습니다만, &lt;strong&gt;Jenkins crumb&lt;/strong&gt;라고 검색하니 jenkins의 보안관련 문서들이 보였습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;crumb-jenkins-github-----------ipsalt--&quot;&gt;&lt;strong&gt;crumb&lt;/strong&gt;란, Jenkins에서 github등 소스코드 리포지토리의 데이터를 가져올 때 요청의 주체가 자신임을 확인하도록 하는 IP+salt로 이루어진 쿠키입니다.&lt;/h3&gt;
+
+&lt;p&gt;즉, crumb를 요청헤더에 쿠키로 추가하므로써 CSRF 공격을 방지할 수 있는것이죠!&lt;/p&gt;
+
+&lt;p&gt;반대로 Jenkins의 CSRF 보안 설정을 켜놓으면 &lt;strong&gt;어떤 문제&lt;/strong&gt;로 인해 crumb의 유효성이 사라졌을 때 403에러와 함께 일을 진행하지 못하는 사태가 발생합니다. 참고로 젠킨스는 2.0부터 CSRF protection이 기본 보안설정입니다.&lt;br /&gt;
+(하지만 위에서도 말씀드렸듯, CSRF 보안 설정을 체크헤제하면 에러는 말끔히 사라집니다.)&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;문제 분석 및 해결&lt;/h1&gt;
+
+&lt;p&gt;위에서 이야기한 &lt;strong&gt;어떤 문제&lt;/strong&gt;를 찾는건 시간이 꽤 걸렸습니다… crumb에 대해 잘 모를 때 github의 설정문제라고 생각하고 자꾸 삽질을 했는데요,&lt;br /&gt;
+has no valid crumb 에러가 발생하는 이유는 대부분 프록시 설정 문제입니다.&lt;/p&gt;
+
+&lt;p&gt;crumb는 IP+salt의 조합이라고 설명했는데요, “has no valid crumb”라는 에러메시지를 통해 제가 Jenkins를 서비스하는 과정에서 요청 IP가 변경되는 과정이 있는지 생각해봐야합니다.&lt;br /&gt;
+대부분 젠킨스 서버와 프록시가 있거나 캐싱 서버가 있어 IP주소가 변경되는 경우가 많습니다. 이때문에 Crumb가 유효성을 상실하게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;문제를 찾고 이부분을 어떻게 해결할까 하다가 Jenkins Crumb정책 관련한 소스코드를 보면서 답을 찾았습니다.&lt;/p&gt;
+
+&lt;p&gt;Jenkins의 소스코드입니다.
+&lt;a href=&quot;https://github.com/jenkinsci/jenkins/blob/master/core/src/main/java/hudson/security/csrf/DefaultCrumbIssuer.java&quot;&gt;Jenkins DefaultCrumbIssuer.java&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DefaultCrumbIssuer&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CrumbIssuer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@DataBoundConstructor&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;DefaultCrumbIssuer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;excludeClientIPFromCrumb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;excludeClientIPFromCrumb&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;excludeClientIPFromCrumb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;initializeMessageDigest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+     &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;issueCrumb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServletRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isExcludeClientIPFromCrumb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;buffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getClientIP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getClientIP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HttpServletRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultAddress&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getRemoteAddr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;forwarded&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_FORWARDED_FOR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;forwarded&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hopList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;forwarded&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;,&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hopList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hopList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultAddress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;XFF란? X-forwarded-for의 약자로, 지금 상황처럼 프록시나 다른 중간 서버로 인해 IP가 변경될 때, Origin IP를 식별하는 표준 헤더입니다.
+&lt;a href=&quot;https://ko.wikipedia.org/wiki/XFF&quot;&gt;위키백과&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;getClientIP메서드에서 XFF헤더가 있는 경우 hopList를 통해 중간에 거쳐갈 IP주소 리스트를 리턴하도록 작성되었습니다.&lt;/p&gt;
+
+&lt;p&gt;즉, 젠킨스 설정을 통해 문제를 해결할 수 있는것이죠!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;excludeClientIPFromCrumb&lt;/strong&gt;변수는 위의 issueCrumb메서드에서 &lt;strong&gt;false일 때&lt;/strong&gt; getClientIp메서드를 통해 XFF헤더를 적용합니다.&lt;/p&gt;
+
+&lt;p&gt;즉, DefaultCrumbIssuer의 생성자로 false를 지정하게 되면 XFF가 지정되고, 프록시로 인한 IP변조 문제가 해결되는것이죠.&lt;/p&gt;
+
+&lt;p&gt;이제부터는 해결과정입니다.&lt;/p&gt;
+
+&lt;p&gt;젠킨스 그루비 설정파일을 지정하기 위해 젠킨스 홈에서 설정파일 만들어줍니다.&lt;br /&gt;
+(default: /var/lib/jenkins/init.goovy.d/myconf.groovy)&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;hudson.security.csrf.DefaultCrumbIssuer&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;jenkins.model.Jenkins&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 중단모드일 경우 시행하면 안됨&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Jenkins&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isQuietingDown&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()){&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;//CSRF 설정이 있는 경우&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Jenkins&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCrumbIssuer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()!=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Jenkins&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;instance&lt;/span&gt;
+		&lt;span class=&quot;c1&quot;&gt;// DefaultCrumbIssuer(false) : XFF헤더 정의&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCrumbIssuer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DefaultCrumbIssuer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'excludeClientIPfromCrumb set: false'&lt;/span&gt;
+
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	  &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Nothing changed'&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;이후 젠킨스를 재시작합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;service jenkins restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;CSRF설정으로 인해 403에러가 발생하는것에 있어, 조금 복잡한 설정방법이었습니다.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 12 Apr 2020 12:21:57 +0900</pubDate>
+        <link>http://lee95292.github.io/jenkins/2020/04/12/jenkins403.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/jenkins/2020/04/12/jenkins403.html</guid>
+        
+        
+        <category>jenkins</category>
+        
+      </item>
     
       <item>
         <title>자바스크립트를 공부하려하는 당신에게</title>
@@ -698,71 +853,6 @@ skip-external-locking
         
         
         <category>spring</category>
-        
-      </item>
-    
-      <item>
-        <title>[React] 리액트 라우터 on use</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;간단한 기록용 포스트&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;공통적으로,&lt;/p&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'react-router-dom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;route---path-component--&quot;&gt;Route - path와 component 속성으로 설명해보자.&lt;/h3&gt;
-
-&lt;p&gt;exact path와 일치하는 component를 보여준다. 즉,&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Route&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;exact&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;component=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;{Home}&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;위의 경우 url상에서 루트 경로일 때, Home 컴포넌트를 보여주는 것.&lt;/p&gt;
-
-&lt;p&gt;즉, Route는 의미적(Semantic)인 컴포넌트이고, URL의 정보를 참조해서 뷰를 보여주는 역할을 수행한다.&lt;/p&gt;
-
-&lt;p&gt;(이 때, exact path가 아니라 path만을 사용한다면, path=”/about” 인 설정의 경우, path=”/” 과 path=”/about”의 라우트까지 모두 보여준다.&lt;br /&gt;
-즉, exact하지 않는 매칭을 한다)&lt;/p&gt;
-
-&lt;h3 id=&quot;parameter&quot;&gt;Parameter&lt;/h3&gt;
-
-&lt;p&gt;parameter는 url path 뒤에 콜론(:)을 붙여 입력받는다.&lt;/p&gt;
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import {Router} from 'react-router-dom';
-
-...
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;Route&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/about/:name&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;component=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;{About}/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;(전달예시)&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://localhost:3000/about/mklee
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;위의 경우, ‘mklee’가 About 컴포넌트에 파라미터로 사용한다.&lt;/p&gt;
-
-&lt;p&gt;이 때,  About의 컴포넌트는 &lt;strong&gt;const name=match.params.name&lt;/strong&gt; 과 같이 해당 값을 사용한다&lt;/p&gt;
-
-&lt;h3 id=&quot;link-----router&quot;&gt;Link 컴포넌트를 통해 새로고침 없는 Router이동&lt;/h3&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import {Link} from 'react-router-dom'
-...
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;Link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;to=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/about&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; About &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Link&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;a 태그를 통해 URL을 변경시키고 이동할 수도 있지만, 새로고침 없이 Link 컴포넌트를 통해 새로고침 없는 페이지전환이 가능하다.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 13 Sep 2019 00:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/react/2019/09/13/React-Router_on_use.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/react/2019/09/13/React-Router_on_use.html</guid>
-        
-        
-        <category>react</category>
         
       </item>
     
