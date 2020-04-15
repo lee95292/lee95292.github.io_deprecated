@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Apr 2020 20:25:59 +0900</pubDate>
-    <lastBuildDate>Wed, 15 Apr 2020 20:25:59 +0900</lastBuildDate>
+    <pubDate>Wed, 15 Apr 2020 20:27:23 +0900</pubDate>
+    <lastBuildDate>Wed, 15 Apr 2020 20:27:23 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -378,6 +378,8 @@ ElasticSearch, openstack, Kafka, Zepplin - 컨트리뷰션을 목표로 공부�
       &lt;li&gt;Front
         &lt;ul&gt;
           &lt;li&gt;&lt;a href=&quot;https://velog.io/@jeff0720/React-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD%EC%9D%84-%EA%B5%AC%EC%B6%95%ED%95%98%EB%A9%B4%EC%84%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-Webpack-%EA%B8%B0%EC%B4%88#%EC%9B%B9%ED%8C%A9%EC%9C%BC%EB%A1%9C-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%8C%8C%EC%9D%BC-%EB%B9%8C%EB%93%9C%ED%95%98%EA%B8%B0&quot;&gt;Webpack - React 설정&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://webclub.tistory.com/628&quot;&gt;css flex(긴글)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://blog.naver.com/yoon980208/221478151850&quot;&gt;css flex(짧은글)&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;Back
