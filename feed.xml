@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 Apr 2020 15:57:16 +0900</pubDate>
-    <lastBuildDate>Sun, 12 Apr 2020 15:57:16 +0900</lastBuildDate>
+    <pubDate>Wed, 15 Apr 2020 20:25:59 +0900</pubDate>
+    <lastBuildDate>Wed, 15 Apr 2020 20:25:59 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -365,6 +365,13 @@ ElasticSearch, openstack, Kafka, Zepplin - 컨트리뷰션을 목표로 공부�
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
+    &lt;p&gt;인프라&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://d2.naver.com/helloworld/6070967&quot;&gt;네이버 분산처리(**꼭 정독해보자~)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
     &lt;p&gt;웹&lt;/p&gt;
 
     &lt;ul&gt;
@@ -400,12 +407,15 @@ ElasticSearch, openstack, Kafka, Zepplin - 컨트리뷰션을 목표로 공부�
       &lt;li&gt;&lt;a href=&quot;https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Reset-%EB%AA%85%ED%99%95%ED%9E%88-%EC%95%8C%EA%B3%A0-%EA%B0%80%EA%B8%B0&quot;&gt;git reset(add,commit 리셋)&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;알고리즘
+  &lt;li&gt;
+    &lt;p&gt;알고리즘&lt;/p&gt;
+
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;https://www.acmicpc.net/blog/view/9&quot;&gt;세드먼트 트리&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;기타
+  &lt;li&gt;
+    &lt;p&gt;기타&lt;/p&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;https://heropy.blog/2017/09/30/markdown/&quot;&gt;Markdown 문법&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
