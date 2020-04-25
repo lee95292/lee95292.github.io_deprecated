@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Apr 2020 17:45:08 +0900</pubDate>
-    <lastBuildDate>Sat, 25 Apr 2020 17:45:08 +0900</lastBuildDate>
+    <pubDate>Sat, 25 Apr 2020 17:58:07 +0900</pubDate>
+    <lastBuildDate>Sat, 25 Apr 2020 17:58:07 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -29,17 +29,25 @@
 
 &lt;p&gt;실제로 extension 설명 페이지에서 &lt;strong&gt;contributes&lt;/strong&gt; 라는 탭은 유저의 조작을 통해 실행할 수 있는 모든 포인트를 설명합니다.&lt;/p&gt;
 
-&lt;h2 id=&quot;contribution-points&quot;&gt;contribution points?&lt;/h2&gt;
+&lt;h3 id=&quot;contribution-points&quot;&gt;contribution points?&lt;/h3&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;contribute는, VSCode UI 또는 컨텍스트에서 유저와 Extension 사이의 Interface역할을 합니다.&lt;/p&gt;
 
 &lt;p&gt;즉, 개발자는 Extension을 개발하기 전에 &lt;a href=&quot;https://code.visualstudio.com/api/references/contribution-points#contributes&quot;&gt;모든 contributes&lt;/a&gt;를 참고하고 적절한 contribution API를 사용해 extension을 구현해야합니다.&lt;/p&gt;
 
-&lt;h1 id=&quot;contribute-&quot;&gt;Contribute의 종류&lt;/h1&gt;
+&lt;h2 id=&quot;contribute-&quot;&gt;Contribute의 종류&lt;/h2&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;User와 IDE 사이에 상호작용을 위한 많은 Contribution point가 있습니다. 자주 사용되는 내용들을 설명하도록 하겠습니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;command--vscode-----command-context----contribute-&quot;&gt;command : vscode에서 명령 팔레트를 통해 실행하는 Command context입니다. 가장 많이 사용되는 contribute중 하나입니다.&lt;/h3&gt;
+&lt;h3 id=&quot;command&quot;&gt;command&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;vscode에서 명령 팔레트를 통해 실행하는 Command context입니다. 가장 많이 사용되는 contribute중 하나입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;유저가&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;vscode&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello world&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;커멘드를&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;실행시키면&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;extension.commandTest에&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;바인딩된&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;메서드&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;실행&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;contributes&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -55,7 +63,11 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;menus-editor-file-treeviewcontext-menu---contribute&quot;&gt;menus: editor, file treeview,context menu 등에 바인딩되는 contribute입니다.&lt;/h3&gt;
+&lt;h3 id=&quot;menus&quot;&gt;menus&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;editor, file treeview,context menu 등에 바인딩되는 contribute입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;에디터에서&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;우클릭&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;시&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;나타나는&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;메뉴에&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;대한&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;contribute입니다.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;확장자가&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.java인&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;파일의&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;에디터에의&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;컨텍스트&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;메뉴에서&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;나타나며,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;선택&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;시&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;extension.commandTest에&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;바인딩된&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;메서드가&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;실행됩니다.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -72,7 +84,11 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;configuration-vscode--workspace---contribute&quot;&gt;configuration: vscode 또는 workspace의 설정에 해당하는 contribute입니다.&lt;/h3&gt;
+&lt;h3 id=&quot;configuration&quot;&gt;configuration&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;vscode 또는 workspace의 설정에 해당하는 contribute입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;vscode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;workspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myExtension&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -91,10 +107,13 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;language&quot;&gt;language:&lt;/h3&gt;
+&lt;h3 id=&quot;language&quot;&gt;language&lt;/h3&gt;
 
-&lt;p&gt;선언형 언어의 특징에 해당하는 아래 내용들을 컨트롤할 수 있는 API를 제공합니다.&lt;br /&gt;
-(주로 특정 언어에서 사용되는 확장프로그램 개발 시 자주 사용됩니다)&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;선언형 언어의 특징에 해당하는 아래 내용들을 컨트롤할 수 있는 API를 제공합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;(주로 특정 언어에서 사용되는 확장프로그램 개발 시 자주 사용됩니다)&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Comment toggling&lt;/li&gt;
@@ -108,7 +127,11 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;keybinding---&quot;&gt;keybinding: 단축키 관련 설정입니다.&lt;/h3&gt;
+&lt;h3 id=&quot;keybinding&quot;&gt;keybinding&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;단축키 관련 설정입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://code.visualstudio.com/assets/api/references/contribution-points/keybindings.png&quot; /&gt;&lt;/p&gt;
 
