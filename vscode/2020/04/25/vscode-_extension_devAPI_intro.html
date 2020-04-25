@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- My Change!!  start-->
+  <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
+  <!-- My Change!! end -->
+  
+  <title>[VSCode 확장앱] 개발 API 소개</title>
+  <meta name="description" content="Introduce">
+  
+  <meta name="author" content="LeeMyungKyu">
+  <meta name="copyright" content="&copy; LeeMyungKyu 2020">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Introduce" />
+  <meta property="og:url" content="http://lee95292.github.io" />
+  <meta property="og:site_name" content="Mleek's blog" />
+  <meta property="og:title" content="[VSCode 확장앱] 개발 API 소개" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[VSCode 확장앱] 개발 API 소개">
+  <meta name="twitter:description" content="Introduce">
+  <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
+  <meta name="twitter:url" content="http://lee95292.github.io">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://lee95292.github.io/vscode/2020/04/25/vscode-_extension_devAPI_intro.html">
+  <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Mleek's blog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/typography/">Typography</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">[VSCode 확장앱] 개발 API 소개</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">April 25, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/vscode">Vscode</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h2 id="introduce">Introduce</h2>
+
+<ul>
+  <li>
+    <p><a href="https://lee95292.github.io/boostcourse/2019/12/26/vscode-_extensionDevelopment.html">VSCode 개발환경 구성</a>이 완료된 상태라고 가정하고, 제가 사용했던 VSCode Extension API를 소개합니다.</p>
+  </li>
+  <li>
+    <p>대부분은 <a href="https://github.com/microsoft/vscode-extension-samples/">ms 공식 샘플들</a>위주로 설명합니다.</p>
+  </li>
+</ul>
+
+<p>Extension을 개발한다는 이야기는 , <strong>contributes</strong>를 통해 Command를 추가하거나 View를 개선 등등, 각각의 Context에 맞는 기능들을 개발한다는 이야기입니다.</p>
+
+<p>실제로 extension 설명 페이지에서 <strong>contributes</strong> 라는 탭은 유저의 조작을 통해 실행할 수 있는 모든 포인트를 설명합니다.</p>
+
+<h2 id="contribution-points">contribution points</h2>
+
+<p>contribute는, VSCode UI 또는 컨텍스트에서 유저와 Extension 사이의 Interface역할을 합니다.</p>
+
+<p>즉, 개발자는 Extension을 개발하기 전에 <a href="https://code.visualstudio.com/api/references/contribution-points#contributes">모든 contributes</a>를 참고하고 적절한 contribution API를 사용해 extension을 구현해야합니다.</p>
+
+<h1 id="contribute-">Contribute의 종류</h1>
+
+<hr />
+
+<h3 id="command--vscode-----command-context----contribute-">command : vscode에서 명령 팔레트를 통해 실행하는 Command context입니다. 가장 많이 사용되는 contribute중 하나입니다.</h3>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">//</span><span class="w"> </span><span class="err">유저가</span><span class="w"> </span><span class="err">vscode</span><span class="w"> </span><span class="s2">"hello world"</span><span class="w"> </span><span class="err">커멘드를</span><span class="w"> </span><span class="err">실행시키면</span><span class="w"> </span><span class="err">extension.commandTest에</span><span class="w"> </span><span class="err">바인딩된</span><span class="w"> </span><span class="err">메서드</span><span class="w"> </span><span class="err">실행</span><span class="w">
+</span><span class="s2">"contributes"</span><span class="err">:</span><span class="p">{</span><span class="w">
+   </span><span class="nt">"commands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extension.commandTest"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello world!"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<hr />
+
+<h3 id="menus-editor-file-treeviewcontext-menu---contribute">menus: editor, file treeview,context menu 등에 바인딩되는 contribute입니다.</h3>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">//</span><span class="w"> </span><span class="err">에디터에서</span><span class="w"> </span><span class="err">우클릭</span><span class="w"> </span><span class="err">시</span><span class="w"> </span><span class="err">나타나는</span><span class="w"> </span><span class="err">메뉴에</span><span class="w"> </span><span class="err">대한</span><span class="w"> </span><span class="err">contribute입니다.</span><span class="w">
+</span><span class="err">//</span><span class="w"> </span><span class="err">확장자가</span><span class="w"> </span><span class="err">.java인</span><span class="w"> </span><span class="err">파일의</span><span class="w"> </span><span class="err">에디터에의</span><span class="w"> </span><span class="err">컨텍스트</span><span class="w"> </span><span class="err">메뉴에서</span><span class="w"> </span><span class="err">나타나며,</span><span class="w"> </span><span class="err">선택</span><span class="w"> </span><span class="err">시</span><span class="w"> </span><span class="err">extension.commandTest에</span><span class="w"> </span><span class="err">바인딩된</span><span class="w"> </span><span class="err">메서드가</span><span class="w"> </span><span class="err">실행됩니다.</span><span class="w">
+</span><span class="s2">"contributes"</span><span class="err">:</span><span class="p">{</span><span class="w">
+    </span><span class="nt">"editor/context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extension.commandTest"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"when"</span><span class="p">:</span><span class="w"> </span><span class="s2">"resourceExtname==.java"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<hr />
+
+<h3 id="configuration-vscode--workspace---contribute">configuration: vscode 또는 workspace의 설정에 해당하는 contribute입니다.</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">vscode</span><span class="p">.</span><span class="nx">workspace</span><span class="p">.</span><span class="nx">getConfiguration</span><span class="p">(</span><span class="s2">"myExtension"</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>위처럼 extension 에서 불러와 값을 사용할 수도 있으며, 마찬가지로 vscode API를 통해 setting도 가능합니다.</p>
+
+<div style="display:flex">
+<img src="https://code.visualstudio.com/assets/api/references/contribution-points/configuration.png" width="70%" />
+
+<img src="https://code.visualstudio.com/assets/api/references/contribution-points/settings-ui.png" width="100%" />
+
+</div>
+
+<p>configuration을 contribute에 configuration을 등록해놓으면 위 사진처럼 유저가 editor, UI등에서 설정을 편집할 수 있도록 해줍니다.</p>
+
+<hr />
+
+<h3 id="language">language:</h3>
+
+<p>선언형 언어의 특징에 해당하는 아래 내용들을 컨트롤할 수 있는 API를 제공합니다.</p>
+
+<ul>
+  <li>Comment toggling</li>
+  <li>Brackets definition</li>
+  <li>Autoclosing</li>
+  <li>Autosurrounding</li>
+  <li>Folding</li>
+  <li>Word pattern</li>
+  <li>Indentation Rules</li>
+</ul>
+
+<hr />
+
+<h3 id="keybinding---">keybinding: 단축키 관련 설정입니다.</h3>
+
+<p><img src="https://code.visualstudio.com/assets/api/references/contribution-points/keybindings.png" /></p>
+
+<hr />
+
+<p>자주 사용되는 contribute를 간단하게 설명했습니다. 자세한 설명과 사용법은 <a href="https://code.visualstudio.com/api/references/contribution-points#contributes">공식 페이지</a>를 참고하시면 됩니다.</p>
+
+<p>더 많은 contributes API를 사용해보고 설명 업데이트 하겠습니다 :)</p>
+
+<p>contribute와 바인딩되는 메서드들을 구현하기 위해서는 <a href="https://code.visualstudio.com/api/references/vscode-api">제공되는 API</a>를 사용하시면 됩니다.</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BVSCode+%ED%99%95%EC%9E%A5%EC%95%B1%5D+%EA%B0%9C%EB%B0%9C+API+%EC%86%8C%EA%B0%9C&url=http%3A%2F%2Flee95292.github.io%2Fvscode%2F2020%2F04%2F25%2Fvscode-_extension_devAPI_intro.html&media=http://lee95292.github.io/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Mleek's blog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:lee95292@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">lee95292@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/TheBenCentra" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">TheBenCentra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/lee95292" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">lee95292</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/pub/ben-centra/47/769/60a" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Ben Centra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Mleek's blog_ study note & daily life
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

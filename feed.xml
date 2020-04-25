@@ -6,9 +6,125 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Apr 2020 17:32:25 +0900</pubDate>
-    <lastBuildDate>Sat, 25 Apr 2020 17:32:25 +0900</lastBuildDate>
+    <pubDate>Sat, 25 Apr 2020 17:36:50 +0900</pubDate>
+    <lastBuildDate>Sat, 25 Apr 2020 17:36:50 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>[VSCode 확장앱] 개발 API 소개</title>
+        <description>&lt;h2 id=&quot;introduce&quot;&gt;Introduce&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://lee95292.github.io/boostcourse/2019/12/26/vscode-_extensionDevelopment.html&quot;&gt;VSCode 개발환경 구성&lt;/a&gt;이 완료된 상태라고 가정하고, 제가 사용했던 VSCode Extension API를 소개합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;대부분은 &lt;a href=&quot;https://github.com/microsoft/vscode-extension-samples/&quot;&gt;ms 공식 샘플들&lt;/a&gt;위주로 설명합니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Extension을 개발한다는 이야기는 , &lt;strong&gt;contributes&lt;/strong&gt;를 통해 Command를 추가하거나 View를 개선 등등, 각각의 Context에 맞는 기능들을 개발한다는 이야기입니다.&lt;/p&gt;
+
+&lt;p&gt;실제로 extension 설명 페이지에서 &lt;strong&gt;contributes&lt;/strong&gt; 라는 탭은 유저의 조작을 통해 실행할 수 있는 모든 포인트를 설명합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;contribution-points&quot;&gt;contribution points&lt;/h2&gt;
+
+&lt;p&gt;contribute는, VSCode UI 또는 컨텍스트에서 유저와 Extension 사이의 Interface역할을 합니다.&lt;/p&gt;
+
+&lt;p&gt;즉, 개발자는 Extension을 개발하기 전에 &lt;a href=&quot;https://code.visualstudio.com/api/references/contribution-points#contributes&quot;&gt;모든 contributes&lt;/a&gt;를 참고하고 적절한 contribution API를 사용해 extension을 구현해야합니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;contribute-&quot;&gt;Contribute의 종류&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;command--vscode-----command-context----contribute-&quot;&gt;command : vscode에서 명령 팔레트를 통해 실행하는 Command context입니다. 가장 많이 사용되는 contribute중 하나입니다.&lt;/h3&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;유저가&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;vscode&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello world&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;커멘드를&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;실행시키면&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;extension.commandTest에&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;바인딩된&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;메서드&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;실행&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;contributes&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+   &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;commands&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;command&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;extension.commandTest&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello world!&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+   &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;menus-editor-file-treeviewcontext-menu---contribute&quot;&gt;menus: editor, file treeview,context menu 등에 바인딩되는 contribute입니다.&lt;/h3&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;에디터에서&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;우클릭&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;시&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;나타나는&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;메뉴에&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;대한&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;contribute입니다.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;확장자가&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.java인&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;파일의&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;에디터에의&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;컨텍스트&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;메뉴에서&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;나타나며,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;선택&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;시&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;extension.commandTest에&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;바인딩된&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;메서드가&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;실행됩니다.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;contributes&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;editor/context&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;command&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;extension.commandTest&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;when&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;resourceExtname==.java&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;configuration-vscode--workspace---contribute&quot;&gt;configuration: vscode 또는 workspace의 설정에 해당하는 contribute입니다.&lt;/h3&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;vscode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;workspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myExtension&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;위처럼 extension 에서 불러와 값을 사용할 수도 있으며, 마찬가지로 vscode API를 통해 setting도 가능합니다.&lt;/p&gt;
+
+&lt;div style=&quot;display:flex&quot;&gt;
+&lt;img src=&quot;https://code.visualstudio.com/assets/api/references/contribution-points/configuration.png&quot; width=&quot;70%&quot; /&gt;
+
+&lt;img src=&quot;https://code.visualstudio.com/assets/api/references/contribution-points/settings-ui.png&quot; width=&quot;100%&quot; /&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;configuration을 contribute에 configuration을 등록해놓으면 위 사진처럼 유저가 editor, UI등에서 설정을 편집할 수 있도록 해줍니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;language&quot;&gt;language:&lt;/h3&gt;
+
+&lt;p&gt;선언형 언어의 특징에 해당하는 아래 내용들을 컨트롤할 수 있는 API를 제공합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Comment toggling&lt;/li&gt;
+  &lt;li&gt;Brackets definition&lt;/li&gt;
+  &lt;li&gt;Autoclosing&lt;/li&gt;
+  &lt;li&gt;Autosurrounding&lt;/li&gt;
+  &lt;li&gt;Folding&lt;/li&gt;
+  &lt;li&gt;Word pattern&lt;/li&gt;
+  &lt;li&gt;Indentation Rules&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;keybinding---&quot;&gt;keybinding: 단축키 관련 설정입니다.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://code.visualstudio.com/assets/api/references/contribution-points/keybindings.png&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;자주 사용되는 contribute를 간단하게 설명했습니다. 자세한 설명과 사용법은 &lt;a href=&quot;https://code.visualstudio.com/api/references/contribution-points#contributes&quot;&gt;공식 페이지&lt;/a&gt;를 참고하시면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;더 많은 contributes API를 사용해보고 설명 업데이트 하겠습니다 :)&lt;/p&gt;
+
+&lt;p&gt;contribute와 바인딩되는 메서드들을 구현하기 위해서는 &lt;a href=&quot;https://code.visualstudio.com/api/references/vscode-api&quot;&gt;제공되는 API&lt;/a&gt;를 사용하시면 됩니다.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 25 Apr 2020 17:33:22 +0900</pubDate>
+        <link>http://lee95292.github.io/vscode/2020/04/25/vscode-_extension_devAPI_intro.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/vscode/2020/04/25/vscode-_extension_devAPI_intro.html</guid>
+        
+        
+        <category>vscode</category>
+        
+      </item>
     
       <item>
         <title>[jenkins 403, no valid crumb] 에러 리포트</title>
@@ -838,37 +954,6 @@ skip-external-locking
         
         
         <category>devops</category>
-        
-      </item>
-    
-      <item>
-        <title>[Spring Boot,토막글] Spring boot 프로젝트에서 여러개의 설정파일 추가</title>
-        <description>&lt;p&gt;스프링에서 API Key 또는 비밀스러운 정보를 따로 관리해야 할 때(에를 들어 public git 시스템에 푸쉬), 역할에 따른 설정파일이 필요할 때는 application.yml 이외의 설정파일을 추가해야합니다.&lt;/p&gt;
-
-&lt;p&gt;이 떄, 스프링 부트에서 설정파일을 나누는 방법으로, 별도의 설정 없이 ***.yml파일 추가 후, 아래 코드와 같이 실행파일의 경로를 등록해주면 됩니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@SpringBootApplication&lt;/span&gt;
-&lt;span class=&quot;nd&quot;&gt;@EnableGlobalMethodSecurity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;securedEnabled&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JclipProtoApplication&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;APPLICATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
-											&lt;span class=&quot;s&quot;&gt;&quot;spring.config.location=&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-											&lt;span class=&quot;s&quot;&gt;&quot;classpath:/application.yml,&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-											&lt;span class=&quot;s&quot;&gt;&quot;classpath:/private.yml&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;SpringApplicationBuilder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JclipProtoApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;APPLICATION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		
-&lt;span class=&quot;c1&quot;&gt;//		SpringApplication.run(JclipProtoApplication.class, args);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Wed, 13 Nov 2019 21:00:00 +0900</pubDate>
-        <link>http://lee95292.github.io/spring/2019/11/13/multi_prop.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/spring/2019/11/13/multi_prop.html</guid>
-        
-        
-        <category>spring</category>
         
       </item>
     
