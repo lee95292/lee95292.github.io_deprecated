@@ -10,7 +10,7 @@
   <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
   <!-- My Change!! end -->
   
-  <title>[VSCode 확장앱] 개발 API 소개</title>
+  <title>[VSCode 확장앱] 개발 contribute 개념 소개</title>
   <meta name="description" content="Introduce">
   
   <meta name="author" content="LeeMyungKyu">
@@ -48,7 +48,7 @@
   <meta property="og:description" content="Introduce" />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
-  <meta property="og:title" content="[VSCode 확장앱] 개발 API 소개" />
+  <meta property="og:title" content="[VSCode 확장앱] 개발 contribute 개념 소개" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -59,7 +59,7 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="[VSCode 확장앱] 개발 API 소개">
+  <meta name="twitter:title" content="[VSCode 확장앱] 개발 contribute 개념 소개">
   <meta name="twitter:description" content="Introduce">
   <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
@@ -131,7 +131,7 @@
 <div class="post-header-container " >
   <div class="scrim ">
     <header class="post-header">
-      <h1 class="title">[VSCode 확장앱] 개발 API 소개</h1>
+      <h1 class="title">[VSCode 확장앱] 개발 contribute 개념 소개</h1>
       <p class="info">by <strong></strong></p>
     </header>
   </div>
@@ -164,15 +164,17 @@
     <p><a href="https://lee95292.github.io/boostcourse/2019/12/26/vscode-_extensionDevelopment.html">VSCode 개발환경 구성</a>이 완료된 상태라고 가정하고, 제가 사용했던 VSCode Extension API를 소개합니다.</p>
   </li>
   <li>
-    <p>대부분은 <a href="https://github.com/microsoft/vscode-extension-samples/">ms 공식 샘플들</a>위주로 설명합니다.</p>
+    <p>실제 사용 예시는 <a href="https://github.com/microsoft/vscode-extension-samples/">ms 공식 샘플들</a>를 참고하시면 좋습니다.</p>
   </li>
 </ul>
+
+<hr />
 
 <p>Extension을 개발한다는 이야기는 , <strong>contributes</strong>를 통해 Command를 추가하거나 View를 개선 등등, 각각의 Context에 맞는 기능들을 개발한다는 이야기입니다.</p>
 
 <p>실제로 extension 설명 페이지에서 <strong>contributes</strong> 라는 탭은 유저의 조작을 통해 실행할 수 있는 모든 포인트를 설명합니다.</p>
 
-<h2 id="contribution-points">contribution points</h2>
+<h2 id="contribution-points">contribution points?</h2>
 
 <p>contribute는, VSCode UI 또는 컨텍스트에서 유저와 Extension 사이의 Interface역할을 합니다.</p>
 
@@ -180,7 +182,7 @@
 
 <h1 id="contribute-">Contribute의 종류</h1>
 
-<hr />
+<p>User와 IDE 사이에 상호작용을 위한 많은 Contribution point가 있습니다. 자주 사용되는 내용들을 설명하도록 하겠습니다.</p>
 
 <h3 id="command--vscode-----command-context----contribute-">command : vscode에서 명령 팔레트를 통해 실행하는 Command context입니다. 가장 많이 사용되는 contribute중 하나입니다.</h3>
 
@@ -236,7 +238,8 @@
 
 <h3 id="language">language:</h3>
 
-<p>선언형 언어의 특징에 해당하는 아래 내용들을 컨트롤할 수 있는 API를 제공합니다.</p>
+<p>선언형 언어의 특징에 해당하는 아래 내용들을 컨트롤할 수 있는 API를 제공합니다.<br />
+(주로 특정 언어에서 사용되는 확장프로그램 개발 시 자주 사용됩니다)</p>
 
 <ul>
   <li>Comment toggling</li>
@@ -256,11 +259,18 @@
 
 <hr />
 
-<p>자주 사용되는 contribute를 간단하게 설명했습니다. 자세한 설명과 사용법은 <a href="https://code.visualstudio.com/api/references/contribution-points#contributes">공식 페이지</a>를 참고하시면 됩니다.</p>
+<h3 id="closing">Closing</h3>
+
+<ul>
+  <li>
+    <p>자주 사용되는 contribute를 간단하게 설명했습니다. contribution point에 대한 자세한 설명과 사용법은 <a href="https://code.visualstudio.com/api/references/contribution-points#contributes">공식 페이지의 Contribution-point</a>를 참고하시면 됩니다.</p>
+  </li>
+  <li>
+    <p>extension 개발을 위해 contribute와 바인딩되는 메서드들을 구현하기 위해서는 <a href="https://code.visualstudio.com/api/references/vscode-api">공식 페이지의 VScode-API</a>를 참고해 개발하시면 됩니다.</p>
+  </li>
+</ul>
 
 <p>더 많은 contributes API를 사용해보고 설명 업데이트 하겠습니다 :)</p>
-
-<p>contribute와 바인딩되는 메서드들을 구현하기 위해서는 <a href="https://code.visualstudio.com/api/references/vscode-api">제공되는 API</a>를 사용하시면 됩니다.</p>
 
 </article>
 
@@ -344,7 +354,7 @@
     
     
     
-      <a href="//www.pinterest.com/pin/create/button/?description=%5BVSCode+%ED%99%95%EC%9E%A5%EC%95%B1%5D+%EA%B0%9C%EB%B0%9C+API+%EC%86%8C%EA%B0%9C&url=http%3A%2F%2Flee95292.github.io%2Fvscode%2F2020%2F04%2F25%2Fvscode-_extension_devAPI_intro.html&media=http://lee95292.github.io/assets/header_image.jpg"
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BVSCode+%ED%99%95%EC%9E%A5%EC%95%B1%5D+%EA%B0%9C%EB%B0%9C+contribute+%EA%B0%9C%EB%85%90+%EC%86%8C%EA%B0%9C&url=http%3A%2F%2Flee95292.github.io%2Fvscode%2F2020%2F04%2F25%2Fvscode-_extension_devAPI_intro.html&media=http://lee95292.github.io/assets/header_image.jpg"
         onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
         <i class="fa fa-pinterest-square fa-lg"></i>
       </a>

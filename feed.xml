@@ -6,12 +6,12 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Apr 2020 17:36:50 +0900</pubDate>
-    <lastBuildDate>Sat, 25 Apr 2020 17:36:50 +0900</lastBuildDate>
+    <pubDate>Sat, 25 Apr 2020 17:45:08 +0900</pubDate>
+    <lastBuildDate>Sat, 25 Apr 2020 17:45:08 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>[VSCode 확장앱] 개발 API 소개</title>
+        <title>[VSCode 확장앱] 개발 contribute 개념 소개</title>
         <description>&lt;h2 id=&quot;introduce&quot;&gt;Introduce&lt;/h2&gt;
 
 &lt;ul&gt;
@@ -19,15 +19,17 @@
     &lt;p&gt;&lt;a href=&quot;https://lee95292.github.io/boostcourse/2019/12/26/vscode-_extensionDevelopment.html&quot;&gt;VSCode 개발환경 구성&lt;/a&gt;이 완료된 상태라고 가정하고, 제가 사용했던 VSCode Extension API를 소개합니다.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;대부분은 &lt;a href=&quot;https://github.com/microsoft/vscode-extension-samples/&quot;&gt;ms 공식 샘플들&lt;/a&gt;위주로 설명합니다.&lt;/p&gt;
+    &lt;p&gt;실제 사용 예시는 &lt;a href=&quot;https://github.com/microsoft/vscode-extension-samples/&quot;&gt;ms 공식 샘플들&lt;/a&gt;를 참고하시면 좋습니다.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;Extension을 개발한다는 이야기는 , &lt;strong&gt;contributes&lt;/strong&gt;를 통해 Command를 추가하거나 View를 개선 등등, 각각의 Context에 맞는 기능들을 개발한다는 이야기입니다.&lt;/p&gt;
 
 &lt;p&gt;실제로 extension 설명 페이지에서 &lt;strong&gt;contributes&lt;/strong&gt; 라는 탭은 유저의 조작을 통해 실행할 수 있는 모든 포인트를 설명합니다.&lt;/p&gt;
 
-&lt;h2 id=&quot;contribution-points&quot;&gt;contribution points&lt;/h2&gt;
+&lt;h2 id=&quot;contribution-points&quot;&gt;contribution points?&lt;/h2&gt;
 
 &lt;p&gt;contribute는, VSCode UI 또는 컨텍스트에서 유저와 Extension 사이의 Interface역할을 합니다.&lt;/p&gt;
 
@@ -35,7 +37,7 @@
 
 &lt;h1 id=&quot;contribute-&quot;&gt;Contribute의 종류&lt;/h1&gt;
 
-&lt;hr /&gt;
+&lt;p&gt;User와 IDE 사이에 상호작용을 위한 많은 Contribution point가 있습니다. 자주 사용되는 내용들을 설명하도록 하겠습니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;command--vscode-----command-context----contribute-&quot;&gt;command : vscode에서 명령 팔레트를 통해 실행하는 Command context입니다. 가장 많이 사용되는 contribute중 하나입니다.&lt;/h3&gt;
 
@@ -91,7 +93,8 @@
 
 &lt;h3 id=&quot;language&quot;&gt;language:&lt;/h3&gt;
 
-&lt;p&gt;선언형 언어의 특징에 해당하는 아래 내용들을 컨트롤할 수 있는 API를 제공합니다.&lt;/p&gt;
+&lt;p&gt;선언형 언어의 특징에 해당하는 아래 내용들을 컨트롤할 수 있는 API를 제공합니다.&lt;br /&gt;
+(주로 특정 언어에서 사용되는 확장프로그램 개발 시 자주 사용됩니다)&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Comment toggling&lt;/li&gt;
@@ -111,11 +114,18 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;자주 사용되는 contribute를 간단하게 설명했습니다. 자세한 설명과 사용법은 &lt;a href=&quot;https://code.visualstudio.com/api/references/contribution-points#contributes&quot;&gt;공식 페이지&lt;/a&gt;를 참고하시면 됩니다.&lt;/p&gt;
+&lt;h3 id=&quot;closing&quot;&gt;Closing&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;자주 사용되는 contribute를 간단하게 설명했습니다. contribution point에 대한 자세한 설명과 사용법은 &lt;a href=&quot;https://code.visualstudio.com/api/references/contribution-points#contributes&quot;&gt;공식 페이지의 Contribution-point&lt;/a&gt;를 참고하시면 됩니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;extension 개발을 위해 contribute와 바인딩되는 메서드들을 구현하기 위해서는 &lt;a href=&quot;https://code.visualstudio.com/api/references/vscode-api&quot;&gt;공식 페이지의 VScode-API&lt;/a&gt;를 참고해 개발하시면 됩니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;더 많은 contributes API를 사용해보고 설명 업데이트 하겠습니다 :)&lt;/p&gt;
-
-&lt;p&gt;contribute와 바인딩되는 메서드들을 구현하기 위해서는 &lt;a href=&quot;https://code.visualstudio.com/api/references/vscode-api&quot;&gt;제공되는 API&lt;/a&gt;를 사용하시면 됩니다.&lt;/p&gt;
 </description>
         <pubDate>Sat, 25 Apr 2020 17:33:22 +0900</pubDate>
         <link>http://lee95292.github.io/vscode/2020/04/25/vscode-_extension_devAPI_intro.html</link>
