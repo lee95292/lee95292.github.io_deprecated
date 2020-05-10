@@ -10,8 +10,9 @@
   <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
   <!-- My Change!! end -->
   
-  <title>ProjectDesign</title>
-  <meta name="description" content="Project Beta 화면 및 구현설계">
+  <title>http</title>
+  <meta name="description" content="Mleek's blog_ study note & daily life
+">
   
   <meta name="author" content="LeeMyungKyu">
   <meta name="copyright" content="&copy; LeeMyungKyu 2020">
@@ -45,10 +46,11 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="Project Beta 화면 및 구현설계" />
+  <meta property="og:description" content="Mleek's blog_ study note & daily life
+" />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
-  <meta property="og:title" content="ProjectDesign" />
+  <meta property="og:title" content="http" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -59,8 +61,9 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="ProjectDesign">
-  <meta name="twitter:description" content="Project Beta 화면 및 구현설계">
+  <meta name="twitter:title" content="http">
+  <meta name="twitter:description" content="Mleek's blog_ study note & daily life
+">
   <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
   
@@ -69,7 +72,7 @@
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://lee95292.github.io/2020/01/15/ProjectDesign.html">
+  <link rel="canonical" href="http://lee95292.github.io/category/http/">
   <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
 </head>
 
@@ -107,20 +110,6 @@
           <li class="nav-link"><a href="/typography/">Typography</a>
           
         
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
       </ul>
     </nav>
   </div>
@@ -128,242 +117,30 @@
 
 
     <div class="page-content">
-        <div class="post">
+        <div class="wrapper">
+<div class="page">
 
-<div class="post-header-container " >
-  <div class="scrim ">
-    <header class="post-header">
-      <h1 class="title">ProjectDesign</h1>
-      <p class="info">by <strong></strong></p>
-    </header>
-  </div>
-</div>
+  <header class="post-header">
+    <h1 class="post-title">Posts in "Http"</h1>
+  </header>
 
-<div class="wrapper">
-
- <span class="page-divider">
+  <span class="page-divider">
   <span class="one"></span>
   <span class="two"></span>
 </span>
- 
 
-<section class="post-meta">
-  <div class="post-date">January 15, 2020</div>
-  <div class="post-categories">
-  
-  </div>
-</section>
 
-<article class="post-content">
-  <h1 id="project-beta---">Project Beta 화면 및 구현설계</h1>
-
-<h2 id="section">기능개요</h2>
-
-<blockquote>
-  <p>키워드 등록을 통한 타겟 알림 시스템 (ElasticSearch 활용)</p>
-</blockquote>
-
-<blockquote>
-  <p>등록한 키워드와 관심분야 설정을 통한 문서 추천 시스템 ( <a href="https://yeomko.tistory.com/6?category=805638">Collaborative Filtering</a>활용 )</p>
-</blockquote>
-
-<hr />
-
-<h3 id="section-1">1. 키워드 등록을 통한 타겟 알림 시스템</h3>
-
-<p>크롤링 시나리오</p>
-
-<ul>
-  <li>크롤링할 호스트에 대한 설정파일 참조</li>
-  <li>graph,linked list 형식으로 링크 관계 저장 / 리스트에 존재하는 문서 크롤링
-    <ul>
-      <li>1 Search Process : 그래프 refresh를 통해 새로운 문서가 있는지 판별</li>
-      <li>2-1. 새로운 문서가 있다면 문서의 메타정보를 그래프에 저장</li>
-      <li>2-2. 문서의 Topic판별, 단어 추출 등, Elastic에 저장하기 위한 구성 설정</li>
+  <article class="post-content">
+    <ul class="posts-list">
+      
+      <li><strong><a class="post-link" href="/http/2020/05/10/principleOfwebhook.html">웹훅의 동작과정, 스펙 요약[Webpush]</a></strong><span class="post-date"> - May 10, 2020</span></li>
+      
     </ul>
-  </li>
-  <li>Elastic 쿼리 전송</li>
-</ul>
-
-<p>키워드 등록 시나리오</p>
-
-<ul>
-  <li>여러개의 호스트에 여러개의 키워드 등록 가능하도록 설정
-    <ul>
-      <li>Create: 여러개의 키워드를 한번에 요청한경우 어근 추출을 통해 압축 (만들기,만들어 -&gt;만들다)</li>
-    </ul>
-  </li>
-</ul>
-
-</article>
-
-
-
-
-
-<section class="rss">
-  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
-</section>
-
-<section class="share">
-  <span>Share: </span>
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      <a href="//www.pinterest.com/pin/create/button/?description=ProjectDesign&url=http%3A%2F%2Flee95292.github.io%2F2020%2F01%2F15%2FProjectDesign.html&media=http://lee95292.github.io/assets/header_image.jpg"
-        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
-        <i class="fa fa-pinterest-square fa-lg"></i>
-      </a>
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-</section>
-
-
-
+  </article>
 
 </div>
 </div>
+<br>
 
     </div>
 
@@ -394,20 +171,6 @@
         
         
           <li class="nav-link"><a href="/typography/">Typography</a>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
       </ul>

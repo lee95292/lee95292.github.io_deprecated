@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://lee95292.github.io/http/2020/05/10/principleOfwebhook.html</loc>
+<lastmod>2020-05-10T21:06:14+09:00</lastmod>
+</url>
+<url>
+<loc>http://lee95292.github.io/2020/05/04/devlog.html</loc>
+<lastmod>2020-05-04T08:08:28+09:00</lastmod>
+</url>
+<url>
 <loc>http://lee95292.github.io/vscode/2020/04/25/vscode-_extension_devAPI_intro.html</loc>
 <lastmod>2020-04-25T17:33:22+09:00</lastmod>
 </url>
