@@ -10,7 +10,7 @@
   <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
   <!-- My Change!! end -->
   
-  <title>웹훅의 동작과정, 스펙 요약[Webpush]</title>
+  <title>웹훅 (webhook)이 뭐야?, HTTP/2.0 Webpush 스펙 요약</title>
   <meta name="description" content="Intro">
   
   <meta name="author" content="LeeMyungKyu">
@@ -48,7 +48,7 @@
   <meta property="og:description" content="Intro" />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
-  <meta property="og:title" content="웹훅의 동작과정, 스펙 요약[Webpush]" />
+  <meta property="og:title" content="웹훅 (webhook)이 뭐야?, HTTP/2.0 Webpush 스펙 요약" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -59,7 +59,7 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="웹훅의 동작과정, 스펙 요약[Webpush]">
+  <meta name="twitter:title" content="웹훅 (webhook)이 뭐야?, HTTP/2.0 Webpush 스펙 요약">
   <meta name="twitter:description" content="Intro">
   <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
@@ -133,7 +133,7 @@
 <div class="post-header-container " >
   <div class="scrim ">
     <header class="post-header">
-      <h1 class="title">웹훅의 동작과정, 스펙 요약[Webpush]</h1>
+      <h1 class="title">웹훅 (webhook)이 뭐야?, HTTP/2.0 Webpush 스펙 요약</h1>
       <p class="info">by <strong></strong></p>
     </header>
   </div>
@@ -163,19 +163,23 @@
 
 <p>오늘 소개할 주제는 <strong>webhook</strong> 입니다.</p>
 
-<p>웹훅이라는 단어는 github과 jenkins를 연동하며 github에서 푸쉬 이벤트를 jenkins로 전달해주기 위해 사용하는것을 관찰했습니다.<br />
-이때는 웹훅 개념을 모르더라도 설정 관련 UI가 잘 구성되어있어 무리없이 웹훅을 구성해 사용했습니다.</p>
+<p>서비스를 배포하거나 관련 공부를 해보셨다면,<br />
+github과 Jenkins같은 CI도구를 연동하며 github에서 푸쉬를 비롯한 특정 이벤트를 jenkins로 전달해주기 위해 연동해본 경험이 있습니다.</p>
 
-<p>최근에는 웹 플랫폼에서 공개하는 API를 활용해 개발을 진행하면서 웹훅을 사용하는 상황이 되었는데요,</p>
+<p>이때 github서버는 Jenkins가 별다른 요청을 하지 않아도 서버 내에서 특정 이벤트가 일어났을 때 Jenkins로 관련 정보들을 보내줍니다.<br />
+이것은 “웹훅”이라고 불리는 과정인데요, 일반적으로 클라이언트가 서버에게 정보 또는 행위를 요청하는 방식과는 다릅니다.</p>
 
-<p>클라이언트에서 발생하는 이벤트를 처리하기 위해 웹 API를 사용한다는 것은 알고있었고,</p>
+<p>오늘은 위에서 설명한 웹훅이 어떻게 가능한지 간단하게 공부하려합니다.</p>
+
+<hr />
+
+<p>클라이언트에서 서버의 자원을 이용하기 위해, 또는 서버를 동작하기 위한 인터페이스로 Web API를 사용합니다.</p>
 
 <p>이와 반대로 <strong>역방향 API, 서버에서 발생하는 이벤트를 처리하기 위해 Webhook을 사용한다는 것을 알게되었습니다.</strong></p>
 
 <p>웹 API를 통해 클라이언트의 요청을 처리하는 방식은 일상적인 방법이기에 무리없이 관련 동작을 이해하고 개발에 사용했지만,<br />
  서버에서 발생하는 이벤트를 클라이언트로 전달하는 과정은 쉽사리 이해되지 않았습니다.<br />
- 또한 순수하게 이것이 어떤 원리로 가능한지 궁금하기도 했습니다.
-가</p>
+ 또한 순수하게 이것이 어떤 원리로 가능한지 궁금하기도 했습니다.</p>
 
 <h1 id="principle">Principle</h1>
 
@@ -377,7 +381,7 @@ Broker : <strong>Push Service</strong></p>
     
     
     
-      <a href="//www.pinterest.com/pin/create/button/?description=%EC%9B%B9%ED%9B%85%EC%9D%98+%EB%8F%99%EC%9E%91%EA%B3%BC%EC%A0%95%2C+%EC%8A%A4%ED%8E%99+%EC%9A%94%EC%95%BD%5BWebpush%5D&url=http%3A%2F%2Flee95292.github.io%2Fhttp%2F2020%2F05%2F10%2FprincipleOfwebhook.html&media=http://lee95292.github.io/assets/header_image.jpg"
+      <a href="//www.pinterest.com/pin/create/button/?description=%EC%9B%B9%ED%9B%85+%28webhook%29%EC%9D%B4+%EB%AD%90%EC%95%BC%3F%2C+HTTP%2F2.0+Webpush+%EC%8A%A4%ED%8E%99+%EC%9A%94%EC%95%BD&url=http%3A%2F%2Flee95292.github.io%2Fhttp%2F2020%2F05%2F10%2FprincipleOfwebhook.html&media=http://lee95292.github.io/assets/header_image.jpg"
         onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
         <i class="fa fa-pinterest-square fa-lg"></i>
       </a>
