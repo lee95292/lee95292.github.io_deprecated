@@ -159,7 +159,7 @@
 </section>
 
 <article class="post-content">
-  <h2 id="introduce">Introduce</h2>
+  <h1 id="introduce">Introduce</h1>
 
 <ul>
   <li>
@@ -176,7 +176,7 @@
 
 <p>실제로 extension 설명 페이지에서 <strong>contributes</strong> 라는 탭은 유저의 조작을 통해 실행할 수 있는 모든 포인트를 설명합니다.</p>
 
-<h3 id="contribution-points">contribution points?</h3>
+<h2 id="contribution-points">contribution points?</h2>
 
 <hr />
 
@@ -184,13 +184,13 @@
 
 <p>즉, 개발자는 Extension을 개발하기 전에 <a href="https://code.visualstudio.com/api/references/contribution-points#contributes">모든 contributes</a>를 참고하고 적절한 contribution API를 사용해 extension을 구현해야합니다.</p>
 
-<h2 id="contribute-">Contribute의 종류</h2>
+<h1 id="contribute-">Contribute의 종류</h1>
 
 <hr />
 
 <p>User와 IDE 사이에 상호작용을 위한 많은 Contribution point가 있습니다. 자주 사용되는 내용들을 설명하도록 하겠습니다.</p>
 
-<h3 id="command">command</h3>
+<h2 id="command">command</h2>
 
 <blockquote>
   <p>vscode에서 명령 팔레트를 통해 실행하는 Command context입니다. 가장 많이 사용되는 contribute중 하나입니다.</p>
@@ -210,15 +210,16 @@
 
 <hr />
 
-<h3 id="menus">menus</h3>
+<h2 id="menus">menus</h2>
 
 <blockquote>
   <p>editor, file treeview,context menu 등에 바인딩되는 contribute입니다.</p>
 </blockquote>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">//</span><span class="w"> </span><span class="err">에디터에서</span><span class="w"> </span><span class="err">우클릭</span><span class="w"> </span><span class="err">시</span><span class="w"> </span><span class="err">나타나는</span><span class="w"> </span><span class="err">메뉴에</span><span class="w"> </span><span class="err">대한</span><span class="w"> </span><span class="err">contribute입니다.</span><span class="w">
-</span><span class="err">//</span><span class="w"> </span><span class="err">확장자가</span><span class="w"> </span><span class="err">.java인</span><span class="w"> </span><span class="err">파일의</span><span class="w"> </span><span class="err">에디터에의</span><span class="w"> </span><span class="err">컨텍스트</span><span class="w"> </span><span class="err">메뉴에서</span><span class="w"> </span><span class="err">나타나며,</span><span class="w"> </span><span class="err">선택</span><span class="w"> </span><span class="err">시</span><span class="w"> </span><span class="err">extension.commandTest에</span><span class="w"> </span><span class="err">바인딩된</span><span class="w"> </span><span class="err">메서드가</span><span class="w"> </span><span class="err">실행됩니다.</span><span class="w">
-</span><span class="s2">"contributes"</span><span class="err">:</span><span class="p">{</span><span class="w">
+<p>아래는 에디터에서 우클릭 시 나타나는 메뉴에 대한 contribute입니다.<br />
+확장자가 .java인 파일의 에디터에의 컨텍스트 메뉴에서 나타나며, 선택 시 extension.commandTest에 바인딩된 메서드가 실행됩니다.</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"contributes"</span><span class="err">:</span><span class="p">{</span><span class="w">
     </span><span class="nt">"editor/context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extension.commandTest"</span><span class="p">,</span><span class="w">
@@ -231,11 +232,9 @@
 
 <hr />
 
-<h3 id="configuration">configuration</h3>
+<h2 id="configuration">configuration</h2>
 
-<blockquote>
-  <p>vscode 또는 workspace의 설정에 해당하는 contribute입니다.</p>
-</blockquote>
+<h3 id="overview-vscode--workspace---contribute">overview: vscode 또는 workspace의 설정에 해당하는 contribute입니다.</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">vscode</span><span class="p">.</span><span class="nx">workspace</span><span class="p">.</span><span class="nx">getConfiguration</span><span class="p">(</span><span class="s2">"myExtension"</span><span class="p">);</span>
 </code></pre>
@@ -243,21 +242,66 @@
 
 <p>위처럼 extension 에서 불러와 값을 사용할 수도 있으며, 마찬가지로 vscode API를 통해 setting도 가능합니다.</p>
 
-<div style="display:flex">
-<img src="https://code.visualstudio.com/assets/api/references/contribution-points/configuration.png" width="70%" />
+<p><img src="https://code.visualstudio.com/assets/api/references/contribution-points/configuration.png" width="50%" /></p>
 
-<img src="https://code.visualstudio.com/assets/api/references/contribution-points/settings-ui.png" width="100%" />
-
-</div>
-
-<p>configuration을 contribute에 configuration을 등록해놓으면 위 사진처럼 유저가 editor, UI등에서 설정을 편집할 수 있도록 해줍니다.</p>
+<p><img src="https://code.visualstudio.com/assets/api/references/contribution-points/settings-ui.png" width="50%" /></p>
 
 <hr />
 
-<h3 id="language">language</h3>
+<p>유저는 configuration key를 통해 key에 해당하는 value를 editor, UI, json 등에서 설정을 편집할 수 있도록 해줍니다.</p>
+
+<h3 id="practical--">practical: 기본 세팅</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="s2">"contributes"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"configuration"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"title"</span><span class="err">:</span> <span class="s2">"TypeScript"</span><span class="p">,</span>
+      <span class="s2">"properties"</span><span class="err">:</span> <span class="p">{</span>
+        <span class="s2">"typescript.useCodeSnippetsOnMethodSuggest"</span><span class="err">:</span> <span class="p">{</span>
+          <span class="s2">"type"</span><span class="err">:</span> <span class="s2">"boolean"</span><span class="p">,</span>
+          <span class="s2">"default"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="s2">"description"</span><span class="err">:</span> <span class="s2">"Complete functions with their parameter signature."</span>
+        <span class="p">},</span>
+        <span class="s2">"typescript.tsdk"</span><span class="err">:</span> <span class="p">{</span>
+          <span class="s2">"type"</span><span class="err">:</span> <span class="p">[</span><span class="s2">"string"</span><span class="p">,</span> <span class="s2">"null"</span><span class="p">],</span>
+          <span class="s2">"default"</span><span class="err">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="s2">"description"</span><span class="err">:</span> <span class="s2">"Specifies the folder path containing the tsserver and lib*.d.ts files to use."</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<ul>
+  <li><strong>contribution &gt; properties &gt; [설정 KEY]</strong>가 위치합니다.
+    <ul>
+      <li>위의 예시에서는 <em>typescript.useCodeSnippetsOnMethodSuggest</em>, <em>typescript.tsdk</em>가 KEY로 등록되었습니다.</li>
+      <li>.(dot)을 기준으로 계층을 이룹니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>설정의 메타정보는 아래와 같습니다.</p>
+
+<ul>
+  <li>설정의 메타정보로 들어가는 필드
+    <ul>
+      <li>type: 설정 값의 타입: boolean, string, number, null 등 javascript 변수가 들어간다.</li>
+      <li>scope: workspace, folder, user, window 설정의 적용 범위</li>
+      <li>default: 설정의 기본값. type과 일치해야한다.</li>
+      <li>enum: dropdown처럼</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="language">language</h2>
 
 <blockquote>
-  <p>선언형 언어의 특징에 해당하는 아래 내용들을 컨트롤할 수 있는 API를 제공합니다.</p>
+  <p>practical: 선언형 언어의 특징에 해당하는 아래 내용들을 컨트롤할 수 있는 API를 제공합니다.</p>
 </blockquote>
 
 <p>(주로 특정 언어에서 사용되는 확장프로그램 개발 시 자주 사용됩니다)</p>

@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 12 May 2020 20:57:54 +0900</pubDate>
-    <lastBuildDate>Tue, 12 May 2020 20:57:54 +0900</lastBuildDate>
+    <pubDate>Sun, 24 May 2020 23:50:36 +0900</pubDate>
+    <lastBuildDate>Sun, 24 May 2020 23:50:36 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -162,7 +162,7 @@ Broker : &lt;strong&gt;Push Service&lt;/strong&gt;&lt;/p&gt;
       </item>
     
       <item>
-        <title>devlog</title>
+        <title>[Continue]devlog</title>
         <description>&lt;blockquote&gt;
   &lt;p&gt;Devlog는 2020년 5월 3일부터 작성하였습니다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -282,7 +282,7 @@ package TEST;
     
       <item>
         <title>[VSCode 확장앱] 개발 contribute 개념 소개</title>
-        <description>&lt;h2 id=&quot;introduce&quot;&gt;Introduce&lt;/h2&gt;
+        <description>&lt;h1 id=&quot;introduce&quot;&gt;Introduce&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -299,7 +299,7 @@ package TEST;
 
 &lt;p&gt;실제로 extension 설명 페이지에서 &lt;strong&gt;contributes&lt;/strong&gt; 라는 탭은 유저의 조작을 통해 실행할 수 있는 모든 포인트를 설명합니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;contribution-points&quot;&gt;contribution points?&lt;/h3&gt;
+&lt;h2 id=&quot;contribution-points&quot;&gt;contribution points?&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -307,13 +307,13 @@ package TEST;
 
 &lt;p&gt;즉, 개발자는 Extension을 개발하기 전에 &lt;a href=&quot;https://code.visualstudio.com/api/references/contribution-points#contributes&quot;&gt;모든 contributes&lt;/a&gt;를 참고하고 적절한 contribution API를 사용해 extension을 구현해야합니다.&lt;/p&gt;
 
-&lt;h2 id=&quot;contribute-&quot;&gt;Contribute의 종류&lt;/h2&gt;
+&lt;h1 id=&quot;contribute-&quot;&gt;Contribute의 종류&lt;/h1&gt;
 
 &lt;hr /&gt;
 
 &lt;p&gt;User와 IDE 사이에 상호작용을 위한 많은 Contribution point가 있습니다. 자주 사용되는 내용들을 설명하도록 하겠습니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;command&quot;&gt;command&lt;/h3&gt;
+&lt;h2 id=&quot;command&quot;&gt;command&lt;/h2&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;vscode에서 명령 팔레트를 통해 실행하는 Command context입니다. 가장 많이 사용되는 contribute중 하나입니다.&lt;/p&gt;
@@ -333,15 +333,16 @@ package TEST;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;menus&quot;&gt;menus&lt;/h3&gt;
+&lt;h2 id=&quot;menus&quot;&gt;menus&lt;/h2&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;editor, file treeview,context menu 등에 바인딩되는 contribute입니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;에디터에서&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;우클릭&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;시&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;나타나는&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;메뉴에&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;대한&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;contribute입니다.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;확장자가&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.java인&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;파일의&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;에디터에의&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;컨텍스트&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;메뉴에서&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;나타나며,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;선택&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;시&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;extension.commandTest에&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;바인딩된&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;메서드가&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;실행됩니다.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;contributes&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;p&gt;아래는 에디터에서 우클릭 시 나타나는 메뉴에 대한 contribute입니다.&lt;br /&gt;
+확장자가 .java인 파일의 에디터에의 컨텍스트 메뉴에서 나타나며, 선택 시 extension.commandTest에 바인딩된 메서드가 실행됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;contributes&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
     &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;editor/context&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
         &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
           &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;command&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;extension.commandTest&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -354,11 +355,9 @@ package TEST;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;configuration&quot;&gt;configuration&lt;/h3&gt;
+&lt;h2 id=&quot;configuration&quot;&gt;configuration&lt;/h2&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;vscode 또는 workspace의 설정에 해당하는 contribute입니다.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h3 id=&quot;overview-vscode--workspace---contribute&quot;&gt;overview: vscode 또는 workspace의 설정에 해당하는 contribute입니다.&lt;/h3&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;vscode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;workspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myExtension&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -366,21 +365,66 @@ package TEST;
 
 &lt;p&gt;위처럼 extension 에서 불러와 값을 사용할 수도 있으며, 마찬가지로 vscode API를 통해 setting도 가능합니다.&lt;/p&gt;
 
-&lt;div style=&quot;display:flex&quot;&gt;
-&lt;img src=&quot;https://code.visualstudio.com/assets/api/references/contribution-points/configuration.png&quot; width=&quot;70%&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://code.visualstudio.com/assets/api/references/contribution-points/configuration.png&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 
-&lt;img src=&quot;https://code.visualstudio.com/assets/api/references/contribution-points/settings-ui.png&quot; width=&quot;100%&quot; /&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;configuration을 contribute에 configuration을 등록해놓으면 위 사진처럼 유저가 editor, UI등에서 설정을 편집할 수 있도록 해줍니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://code.visualstudio.com/assets/api/references/contribution-points/settings-ui.png&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;language&quot;&gt;language&lt;/h3&gt;
+&lt;p&gt;유저는 configuration key를 통해 key에 해당하는 value를 editor, UI, json 등에서 설정을 편집할 수 있도록 해줍니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;practical--&quot;&gt;practical: 기본 세팅&lt;/h3&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;contributes&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;configuration&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;TypeScript&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;typescript.useCodeSnippetsOnMethodSuggest&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;boolean&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;s2&quot;&gt;&quot;default&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;s2&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Complete functions with their parameter signature.&quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;typescript.tsdk&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;null&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+          &lt;span class=&quot;s2&quot;&gt;&quot;default&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;s2&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Specifies the folder path containing the tsserver and lib*.d.ts files to use.&quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;contribution &amp;gt; properties &amp;gt; [설정 KEY]&lt;/strong&gt;가 위치합니다.
+    &lt;ul&gt;
+      &lt;li&gt;위의 예시에서는 &lt;em&gt;typescript.useCodeSnippetsOnMethodSuggest&lt;/em&gt;, &lt;em&gt;typescript.tsdk&lt;/em&gt;가 KEY로 등록되었습니다.&lt;/li&gt;
+      &lt;li&gt;.(dot)을 기준으로 계층을 이룹니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;설정의 메타정보는 아래와 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;설정의 메타정보로 들어가는 필드
+    &lt;ul&gt;
+      &lt;li&gt;type: 설정 값의 타입: boolean, string, number, null 등 javascript 변수가 들어간다.&lt;/li&gt;
+      &lt;li&gt;scope: workspace, folder, user, window 설정의 적용 범위&lt;/li&gt;
+      &lt;li&gt;default: 설정의 기본값. type과 일치해야한다.&lt;/li&gt;
+      &lt;li&gt;enum: dropdown처럼&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;language&quot;&gt;language&lt;/h2&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;선언형 언어의 특징에 해당하는 아래 내용들을 컨트롤할 수 있는 API를 제공합니다.&lt;/p&gt;
+  &lt;p&gt;practical: 선언형 언어의 특징에 해당하는 아래 내용들을 컨트롤할 수 있는 API를 제공합니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;(주로 특정 언어에서 사용되는 확장프로그램 개발 시 자주 사용됩니다)&lt;/p&gt;
@@ -761,7 +805,7 @@ ElasticSearch, openstack, Kafka, Zepplin - 컨트리뷰션을 목표로 공부�
       </item>
     
       <item>
-        <title>[INTG Project] 개념이 잘 정리된 링크| 테크블로그| 공식 Document 모음</title>
+        <title>[Continue,Intg] 개념이 잘 정리된 링크| 테크블로그| 공식 Document 모음</title>
         <description>&lt;p&gt;Spring boot - cloud - database - frontend - devops -security&lt;/p&gt;
 
 &lt;p&gt;웹 서비스를 위한 폭넓은 개발스택을 갖추길 희망합니다.&lt;/p&gt;
@@ -873,11 +917,11 @@ ElasticSearch, openstack, Kafka, Zepplin - 컨트리뷰션을 목표로 공부�
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 27 Jan 2020 14:46:00 +0900</pubDate>
-        <link>http://lee95292.github.io/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2020/01/27/INTG_TheoryLink-TheoryLink.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/%ED%95%98%EB%82%98%EB%A1%9C_%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0/2020/01/27/INTG_TheoryLink-TheoryLink.html</guid>
+        <link>http://lee95292.github.io/intg/2020/01/27/INTG_TheoryLink-TheoryLink.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/intg/2020/01/27/INTG_TheoryLink-TheoryLink.html</guid>
         
         
-        <category>하나로_정리하기</category>
+        <category>intg</category>
         
       </item>
     
