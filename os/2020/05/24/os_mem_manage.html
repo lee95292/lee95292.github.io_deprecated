@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- My Change!!  start-->
+  <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
+  <!-- My Change!! end -->
+  
+  <title>[Continue,OS] 메모리파트 정리</title>
+  <meta name="description" content="  주제 : 운영체제 메모리 관리: 물리메모리 할당 방식!">
+  
+  <meta name="author" content="LeeMyungKyu">
+  <meta name="copyright" content="&copy; LeeMyungKyu 2020">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="  주제 : 운영체제 메모리 관리: 물리메모리 할당 방식!" />
+  <meta property="og:url" content="http://lee95292.github.io" />
+  <meta property="og:site_name" content="Mleek's blog" />
+  <meta property="og:title" content="[Continue,OS] 메모리파트 정리" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[Continue,OS] 메모리파트 정리">
+  <meta name="twitter:description" content="  주제 : 운영체제 메모리 관리: 물리메모리 할당 방식!">
+  <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
+  <meta name="twitter:url" content="http://lee95292.github.io">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://lee95292.github.io/os/2020/05/24/os_mem_manage.html">
+  <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Mleek's blog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/typography/">Typography</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">[Continue,OS] 메모리파트 정리</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">May 24, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/OS">Os</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <blockquote>
+  <p>주제 : 운영체제 메모리 관리: 물리메모리 할당 방식!</p>
+</blockquote>
+
+<ul>
+  <li>목차</li>
+  <li>연속 메모리 할당
+    <ul>
+      <li>고정 분할 방식 Fixed Allocation</li>
+      <li>가변 분할 방식 Variable Allocation</li>
+    </ul>
+  </li>
+  <li>비연속 메모리 할당
+    <ul>
+      <li>세그멘테이션 Segmentation</li>
+      <li>페이징 Paging</li>
+    </ul>
+
+    <p>—continue—</p>
+    <ul>
+      <li>페이징/세그멘테이션 혼합</li>
+      <li>페이지 요구 Demand Paging</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<h1 id="section">연속 할당 방식</h1>
+
+<p>하나의 프로그램이 실행되는 메모리 순서를 연속적으로 물리 메모리에 할당하는 방법</p>
+
+<h3 id="section-1">고정 분할 방식</h3>
+
+<p>물리적 메모리를 몇 개의 영구적인 분할로 나누어 각각의 영역에 프로그램을 적재시킨다.</p>
+
+<p>심각한 내부 단편화가 발생할 수 있다. <br />
+예를 들어 256MB의 메모리를 32MB씩 분할한다면, 2MB의 메모리만이 필요한 프로그램이 실행되는 경우 30MB의 내부 단편화가 발생한다.<br />
+(보통은 다양한 크기의 프로그램을 실행하기 위해 메모리를 다양한 크기로 분할한다.)</p>
+
+<h3 id="section-2">가변 분할 방식</h3>
+
+<p>프로그램이 실행/종료되는 시점마다 프로그램 크기에 맞는 메모리를 할당/해제하는 방식.</p>
+
+<p>첫 할당 이후 메모리 위치를 재정리할 수 없으므로, 다양한 크기의 프로그램에 대해 메모리 할당/해제를 반복하다 보면 아래와 같이 외부 단편화가 발생한다.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-----------------------------------------------------
+| running(120MB) | empty(20MB) | running(8MB) | ...
+</code></pre>
+</div>
+<hr />
+
+<h1 id="section-3">비연속 할당 방식</h1>
+
+<p>프로그램의 메모리 할당 요청을 비연속적으로 메모리에 할당하는 방식. swap space를 사용하는 가상화 기법이 활용된다.</p>
+
+<h3 id="section-4">세그먼트 :</h3>
+
+<p>메모리를 나누는 단위.</p>
+
+<p>세그먼트: 프로세스 크기에 따라 가변 크기를 갖는 <strong>물리 메모리 분할 단위</strong></p>
+
+<hr />
+
+<h3 id="section-5">페이지 / 프레임</h3>
+
+<p>페이지 : 고정 크기로 <strong>가상 메모리를 분할하는 단위</strong></p>
+
+<p>프레임 : 페이지와 1:1로 매핑되는 <strong>물리 메모리 분할 단위</strong></p>
+
+<p>페이지와 프레임은 페이지 테이블을 매개로 연결된다.</p>
+
+<p>따라서, 프로세스가 page(N)을 가지고있을 경우, OS는 가상주소 N에 데이터를 요청하고, 가상주소 N은 페이지 테이블의 정보를 통해 물리 주소인 frame(K)에 접근한다. 이 때, frame(k)주소가 존재하지 않을 경우, swap space(주로 보조 기억장치)에서 데이터를 가져온다. 이는 page fault라고 불리며, 이는 성능 저하를 일으키기도 하며 segmentation-paging 기법에서 Thrashing 등을 일으켜 심각한 성능 저하를 내기도 한다.</p>
+
+<p><img src="https://2.bp.blogspot.com/-ai1Zy16o0-U/VMlbccTy9CI/AAAAAAAAAGA/xaDhod_IdhA/s1600/4-10.png" alt="page-frame" /></p>
+
+<hr />
+
+<h3 id="section-6">페이지 테이블 / 페이징 기법</h3>
+<p><strong>페이징 기법</strong> : 가상 메모리를 <strong>고정 크기</strong>로 분할한 페이지를 통해 메모리를 관리하는 방식.<br />
+만약 프로세스가 페이지의 크기보다 적은 메모리를 필요로 하는 경우, <strong>내부 단편화((페이지)내부의 메모리 일부가 사용되지 않아 낭비되는 현상)</strong>가 발생한다.</p>
+
+<p>(페이지의 크기 :프로세스의 크키가 커지면서 4KB &gt; 4MB까지 크기가 커짐.)</p>
+
+<p>LRU, FIFO, LFU, NUR등의 페이지 교체 알고리즘을 통해 물리 메모리를 관리.</p>
+
+<p><strong>페이지 테이블</strong> : 페이지와 프레임의 매칭 정보를 담고있는 테이블.</p>
+
+<p>프로세스가 가상 메모리(page)의 정보를 hit할때 실제 물리 메모리 주소(frame)로 변환하는 역할을 수행한다.</p>
+
+<p>페이지의 크기가 커지면 아래와 같은 변화가 생긴다.</p>
+<ul>
+  <li>내부 단편화가 증가한다.</li>
+  <li>Page fault(페이지 요청 실패)가 감소한다.</li>
+  <li>페이지 테이블의 크기가 감소한다.
+    <ul>
+      <li>(TMI)페이지 테이블 비례 : 전체 메모리 사이즈 /  페이지 크기</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="section-7">세그멘테이션 테이블 /세그멘테이션 기법</h3>
+
+<p><strong>세그멘테이션 기법</strong> : 하나의 프로세스가 사용하는 메모리의 크기 단위로 가상 주소를 관리하는 기법.</p>
+
+<p>프로세스별로 요구하는 메모리가 다르므로, 세그먼트의 크기는 가변적이다.</p>
+
+<p>세그멘테이션 테이블 :</p>
+<ul>
+  <li>물리 메모리에서 세그먼트의 <strong>start address</strong></li>
+  <li>가변적인 세그먼트의 크기를 나타내는 <strong>limit</strong></li>
+</ul>
+
+<p>위 두 가지를 보관하고 있는 자료구조이다.</p>
+
+<hr />
+
+<h3 id="section-8">세그멘테이션-페이징 혼합 기법</h3>
+<p>.</p>
+<h3 id="pcb-process-control-block">PCB: Process Control Block</h3>
+
+<p>프로세스 생성 시 커널 스택만들어지는 자료구조 : Status / Pointer(addr)/ Identifier / PC / Priority 등을 저장한다.
+  <img src="https://t1.daumcdn.net/cfile/tistory/995A6E395A5E0DAF18" alt="PCB" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">/</th>
+      <th style="text-align: center">연속 메모리 할당</th>
+      <th style="text-align: center">가상화(swap)</th>
+      <th style="text-align: center">관리 테이블</th>
+      <th style="text-align: center">단편화</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">고정 분할 방식</td>
+      <td style="text-align: center">X</td>
+      <td style="text-align: center">X</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">내부 단편화</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">가변 분할 방식</td>
+      <td style="text-align: center">X</td>
+      <td style="text-align: center">X</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">외부 단편화</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">페이징 기법</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">페이지테이블</td>
+      <td style="text-align: center">페이지 내부 단편화</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">세그멘테이션 기법</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">세그먼테이션 테이블</td>
+      <td style="text-align: center">세그멘테이션 외부 단편화</td>
+    </tr>
+  </tbody>
+</table>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BContinue%2COS%5D+%EB%A9%94%EB%AA%A8%EB%A6%AC%ED%8C%8C%ED%8A%B8+%EC%A0%95%EB%A6%AC&url=http%3A%2F%2Flee95292.github.io%2Fos%2F2020%2F05%2F24%2Fos_mem_manage.html&media=http://lee95292.github.io/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Mleek's blog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:lee95292@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">lee95292@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/TheBenCentra" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">TheBenCentra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/lee95292" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">lee95292</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/pub/ben-centra/47/769/60a" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Ben Centra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Mleek's blog_ study note & daily life
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>
