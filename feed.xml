@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 24 May 2020 23:52:47 +0900</pubDate>
-    <lastBuildDate>Sun, 24 May 2020 23:52:47 +0900</lastBuildDate>
+    <pubDate>Sun, 24 May 2020 23:54:09 +0900</pubDate>
+    <lastBuildDate>Sun, 24 May 2020 23:54:09 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -84,8 +84,6 @@
 &lt;p&gt;페이지와 프레임은 페이지 테이블을 매개로 연결된다.&lt;/p&gt;
 
 &lt;p&gt;따라서, 프로세스가 page(N)을 가지고있을 경우, OS는 가상주소 N에 데이터를 요청하고, 가상주소 N은 페이지 테이블의 정보를 통해 물리 주소인 frame(K)에 접근한다. 이 때, frame(k)주소가 존재하지 않을 경우, swap space(주로 보조 기억장치)에서 데이터를 가져온다. 이는 page fault라고 불리며, 이는 성능 저하를 일으키기도 하며 segmentation-paging 기법에서 Thrashing 등을 일으켜 심각한 성능 저하를 내기도 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://2.bp.blogspot.com/-ai1Zy16o0-U/VMlbccTy9CI/AAAAAAAAAGA/xaDhod_IdhA/s1600/4-10.png&quot; alt=&quot;page-frame&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
