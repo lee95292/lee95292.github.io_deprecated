@@ -6,8 +6,8 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 01 Aug 2020 21:18:00 +0900</pubDate>
-    <lastBuildDate>Sat, 01 Aug 2020 21:18:00 +0900</lastBuildDate>
+    <pubDate>Sat, 01 Aug 2020 21:18:41 +0900</pubDate>
+    <lastBuildDate>Sat, 01 Aug 2020 21:18:41 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -141,6 +141,8 @@
 &lt;p&gt;브라우저 호환성은 Typescript의 강력한 특징중 하나입니다. Typescript는 모든 모던 브라우저와 호환 가능한 코드로 Typescript 코드를 컴파일합니다. 이런 높은 호환성이 가능한 이유는, Typescript코드를 모든 기기와 플랫폼, 브라우저를 지원하는 vanilla JS(순수 Javscript)로 컴파일할 수 있기 때문에 가능합니다.&lt;/p&gt;
 
 &lt;p&gt;Typescript를 사용하며 얻는 많은 장점이 있음에도, 이것은 완벽한 솔루션은 아닙니다.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;코드 가독성을 높히는 것에 있어 하나의 단점은, VanillaJS를 사용할 때와 비교해 Typescript를 사용할때는 가독성있는 코드를 위해 더 많은 코드를 써야하고,
 이는 잠재적으로 여러분의 개발 시간을 증가시킵니다.&lt;/p&gt;
