@@ -6,9 +6,174 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 01 Aug 2020 21:01:29 +0900</pubDate>
-    <lastBuildDate>Sat, 01 Aug 2020 21:01:29 +0900</lastBuildDate>
+    <pubDate>Sat, 01 Aug 2020 21:03:16 +0900</pubDate>
+    <lastBuildDate>Sat, 01 Aug 2020 21:03:16 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>타입스크립트 핵심 개념!</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;본문은 &lt;a href=&quot;https://www.educative.io/blog/advanced-typescript-concepts&quot;&gt;Typescript 핵심 개념&lt;/a&gt; 을 번역(+ 개인적인 의견 추가)한 글입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;OOP에 대한 기본 지식이 있으신 분은 &lt;a href=&quot;https://learnxinyminutes.com/docs/typescript/&quot;&gt;Learn Typescript in Y minutes&lt;/a&gt;또는 &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html&quot;&gt;MS 공식 DOCS&lt;/a&gt;에서 문법만 훑어보시면 좋습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;타입스크립트를 접했을때 드는 느낌은 OOP + Compile + javascript =&amp;gt; typescript로 요약할 수 있겠습니다.&lt;/p&gt;
+
+&lt;p&gt;typechecking, OOP개념이 분명하지 않은 Javscript(이하 JS)의 단점을 커버하는 언어입니다.&lt;/p&gt;
+
+&lt;p&gt;실제로 typechecking을 하지 않음으로 인해 발생하는 런타임에러는 꽤 큰 골칫거리기에 , typechekcing, compilable한 typescript의 개념이 아주 매력적입니다.&lt;/p&gt;
+
+&lt;p&gt;그리고 javascript에 익숙하다면 학습난이도도 높지 않은듯 합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(통번역입니다. 오역주의) Lets go!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;자바스크립트를 사용할 때, 디버깅은 많은 개발자들의 골칫거리입니다! 프로그램을 실행하고, 버그를 찾고 고치기를 반복합니다. 디버깅을 시작한지 몇시간 뒤에야 마침내 버그를 고치곤 합니다. 이러한 문제는 자바스크립트같이 컴파일을 하지 않는 언어(인터프리터 언어)의 공통적인 특징입니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;python 역시 타입체킹을 하지 않는 인터프리터 언어인데 디버깅이나 런타임 에러 문제에 대해 논의하는것을 보지 못했네요.. 왜 그럴까요..?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;이런 자바스크립트의 단점을 고치기 위해 Microsoft는 Typescript를 만들어냅니다. 거대한 팀들이 Typescript의 장점을 깨닫고 그들의 기술스택에 적용하면서, 많은 개발자들이 이를 학습하게 되었습니다!&lt;/p&gt;
+
+&lt;p&gt;목차&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Typescript란?&lt;/li&gt;
+  &lt;li&gt;Strict types 소개&lt;/li&gt;
+  &lt;li&gt;Typescript와 OOP(객체지향 프로그래밍)&lt;/li&gt;
+  &lt;li&gt;Typescript의 타입들&lt;/li&gt;
+  &lt;li&gt;그 외 알아야하는 것들&lt;/li&gt;
+  &lt;li&gt;마무리, 참고자료&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;typescript&quot;&gt;Typescript란?&lt;/h2&gt;
+
+&lt;p&gt;Microsoft가 만들고 관리하는, javascript의 모집합(superset)으로, 모든 자바스크립트 코드는 Typescript에서 유효하다는 특징을 가지고있습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;즉, JS로 할 수 있는건, TS로 할 수 있다는 뜻.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;TS는 아래 두개의 핵심 개념에 초점을 맞춘 Application 규모(대규모) 개발을 위한 Javascript입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;현재버전 이후의 자바스크립트 엔진의 기능을 현재 자바스크립트 엔진에서 제공&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Javascript에서 type system 제공&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Typescript의 구성요소는&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;기본적으로 javascript와 추가적인 특징/문법들로 이루어진 Typescript 자체 문법과,&lt;/li&gt;
+  &lt;li&gt;Typescript 코드를 javascript 코드로 변환해주는 컴파일러,&lt;/li&gt;
+  &lt;li&gt;Compiler 파이프라인의 끝에서 에디터같은 기능을 제공하는 Language service가 습니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;(3번기능은 지금으로서 어떤 기능인지 와닿지 않는것 같습니다.)&lt;/p&gt;
+
+&lt;p&gt;Typescript를 사용하는 이유!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;타입체킹 : MS나 Google같은 거대한 팀들이 Typescript의 정적 타입 체크가 개발 프로세스 간소화에 있어 유용함을 알아냈습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;객채지향 프로그래밍 : Typescript는 인터페이스, 상속, 클래스 등의 객체지향 프로그래밍 개념을 지원합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;컴파일 : Typescript는 인터프리팅 언어인 JS와 달리 컴파일을 지원하며, 이는 여러분 코드의 컴파일 에러를 찾아주고, 디버깅을 간편하게 해줍니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Typescript 설치&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;npm install -g typescript
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;compile&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;tsc hellowrold.ts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;npm을 사용하지 않는다면, (링크)[https://www.typescriptlang.org/#download-links]에서 typescript패키지를 다운받을 수 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;typescript--&quot;&gt;Typescript의 장점과 한계&lt;/h2&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;타입체킹&lt;/h3&gt;
+
+&lt;p&gt;Javascript는 동적으로 타입을 체킹하는 언어로, 오직 런타임에서만 에러를 찾을 수 있음을 의미합니다. 이것은 복잡한 프로젝트를 진행하는 큰 팀에게 거대한 단점으로, 코드에 대한 모든 실수를 미리 찾는 방법이 더 수월합니다.&lt;/p&gt;
+
+&lt;p&gt;Typescript는 선택적(optional) 정적 타입체킹을 제공하므로, 변수는 타입을 바꿀 수 없으며, 특정 값만을 받을 수 있습니다. 이를 통해 Typescript 컴파일러가 에러가 발생하기 쉬운 코드에서 더 많은 버그를 잡을 수 있도록 합니다. 또한 타입은 가독성있고 쉽게 리팩토링하기 위한 구조를 만듭니다.&lt;/p&gt;
+
+&lt;p&gt;Typescript와 Javacsript의 차이점을 보고싶다면 &lt;a href=&quot;https://www.typescriptlang.org/#download-links&quot;&gt;여기&lt;/a&gt;로!&lt;/p&gt;
+
+&lt;h3 id=&quot;ide-&quot;&gt;IDE 지원&lt;/h3&gt;
+
+&lt;p&gt;Typescript가 정적 타입체킹을 지원하므로, 코드 에디터 또는 IDE에서 더 많은 이점을 가질 수 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;자동완성( Javascript의 변수는 type이 존재하지 않으므로, 변수에 대한 자동완성을 지원하지 않는다. 지원하더라도, 에디터 또는 IDE는 변수의 타입을 모르기에, 적절한 메서드명이나 애트리뷰트 명을 자동완성할 수 없음),&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://visualstudio.microsoft.com/ko/services/rich-code-navigation/&quot;&gt;code navigation&lt;/a&gt;,&lt;/li&gt;
+  &lt;li&gt;type에 의한 Error flagging&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이런 IDE에서의 기능 지원은, Tpyescript로 작성해야하는 코드량이 Javascript보다 많더라도, 생산성 경쟁력에 많은 부분을 기여하고 있다.&lt;/p&gt;
+
+&lt;p&gt;Typescrpt3를 지원하는 인기있는 IDE들&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MS Visual Studio&lt;/li&gt;
+  &lt;li&gt;Webstorm&lt;/li&gt;
+  &lt;li&gt;Visual Studio Code&lt;/li&gt;
+  &lt;li&gt;Atom&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;browser-&quot;&gt;Browser 호환성&lt;/h3&gt;
+
+&lt;p&gt;브라우저 호환성은 Typescript의 강력한 특징중 하나입니다. Typescript는 모든 모던 브라우저와 호환 가능한 코드로 Typescript 코드를 컴파일합니다. 이런 높은 호환성이 가능한 이유는, Typescript코드를 모든 기기와 플랫폼, 브라우저를 지원하는 vanilla JS(순수 Javscript)로 컴파일할 수 있기 때문에 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;Typescript를 사용하며 얻는 많은 장점이 있음에도, 이것은 완벽한 솔루션은 아닙니다.&lt;/p&gt;
+
+&lt;p&gt;코드 가독성을 높히는 것에 있어 하나의 단점은, VanillaJS를 사용할 때와 비교해 Typescript를 사용할때는 가독성있는 코드를 위해 더 많은 코드를 써야하고,
+이는 잠재적으로 여러분의 개발 시간을 증가시킵니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;문법 맛보기!&lt;/h1&gt;
+
+&lt;h3 id=&quot;strict-types-&quot;&gt;Strict Types 인트로&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;noImplicitAny&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;공식 문서에 따르면 noImplicitAny는 any타입의 선언식/표현식으로 인한&lt;/p&gt;
+
+&lt;p&gt;이것은 Typescript가 타입을 유추할때마다 noImplicitAny를 허용했을 경우, 에러를 발생시킨다는 의미입니다.&lt;/p&gt;
+
+&lt;p&gt;Typescript 비기너인 경우
+benefical to streamline - 간소화에 유리
+beforehand
+downside
+prone&lt;/p&gt;
+</description>
+        <pubDate>Sat, 01 Aug 2020 18:52:03 +0900</pubDate>
+        <link>http://lee95292.github.io/typescript/2020/08/01/advanced_typescript_concept.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/typescript/2020/08/01/advanced_typescript_concept.html</guid>
+        
+        
+        <category>typescript</category>
+        
+      </item>
     
       <item>
         <title>카프가 개요 &amp; 실습(세미나 정리, Pending)</title>
@@ -1179,127 +1344,6 @@ ElasticSearch, openstack, Kafka, Zepplin - 컨트리뷰션을 목표로 공부�
         
         
         <category>etc</category>
-        
-      </item>
-    
-      <item>
-        <title>[Continue,Intg] 개념이 잘 정리된 링크| 테크블로그| 공식 Document 모음</title>
-        <description>&lt;p&gt;Spring boot - cloud - database - frontend - devops -security&lt;/p&gt;
-
-&lt;p&gt;웹 서비스를 위한 폭넓은 개발스택을 갖추길 희망합니다.&lt;/p&gt;
-
-&lt;p&gt;저만을 위한 링크북 인덱스이고, 제가 이해한 글들을 모아놓았지만, 비슷한 목표를 가진분들이 참고하시면 좋을것 같습니다.&lt;/p&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;개념이 잘 정리된 링크&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;시스템 OS/Linux/Windows/JVM&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://wiki.kldp.org/HOWTO/html/Adv-Bash-Scr-HOWTO/&quot;&gt;고급 쉘 스크립트 사전&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://blog.lael.be/post/73&quot;&gt;우분투 서버세팅(운영환경 관련 bash명령어)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.holaxprogramming.com/2017/10/09/java-jvm-performance/&quot;&gt;JVM 메모리 관리구조&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://yaboong.github.io/java/2018/05/26/java-memory-management/&quot;&gt;JVM Stacc, Heap 할당방법&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://blog.naver.com/PostView.nhn?blogId=tipsware&amp;amp;logNo=221359282016&amp;amp;parentCategoryNo=&amp;amp;categoryNo=83&amp;amp;viewDate=&amp;amp;isShowPopularPosts=true&amp;amp;from=search&quot;&gt;DLL 개념과 사용&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;인프라&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://d2.naver.com/helloworld/6070967&quot;&gt;네이버 분산처리(**꼭 정독해보자~)&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;웹&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Front
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://velog.io/@jeff0720/React-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD%EC%9D%84-%EA%B5%AC%EC%B6%95%ED%95%98%EB%A9%B4%EC%84%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-Webpack-%EA%B8%B0%EC%B4%88#%EC%9B%B9%ED%8C%A9%EC%9C%BC%EB%A1%9C-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%8C%8C%EC%9D%BC-%EB%B9%8C%EB%93%9C%ED%95%98%EA%B8%B0&quot;&gt;Webpack - React 설정&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://webclub.tistory.com/628&quot;&gt;css flex(긴글)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://blog.naver.com/yoon980208/221478151850&quot;&gt;css flex(짧은글)&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Back
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://blog.outsider.ne.kr/1160&quot;&gt;JWT 개념&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://all-record.tistory.com/186&quot;&gt;우분투환경에서 단순 배포하기_W&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Spring
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://jeong-pro.tistory.com/167&quot;&gt;Spring bean 생성과정&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;클라우드&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://medium.com/harrythegreat/aws-%EA%B0%80%EC%9E%A5%EC%89%BD%EA%B2%8C-vpc-%EA%B0%9C%EB%85%90%EC%9E%A1%EA%B8%B0-71eef95a7098&quot;&gt;VPC(Virtual Private Clout)개념, 클라우드 네트워크 헷갈릴 때 보기&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;git &amp;amp; github&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Reset-%EB%AA%85%ED%99%95%ED%9E%88-%EC%95%8C%EA%B3%A0-%EA%B0%80%EA%B8%B0&quot;&gt;git reset(add,commit 리셋)&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;알고리즘&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.acmicpc.net/blog/view/9&quot;&gt;세드먼트 트리&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;기타&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://heropy.blog/2017/09/30/markdown/&quot;&gt;Markdown 문법&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;document&quot;&gt;공식 Document&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/&quot;&gt;Java8 API&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://kgmyh.github.io/blog/2017/12/02/spring-boot-chapter01/&quot;&gt;spring boot(한글)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;2&quot;&gt;Python&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.spring.io/&quot;&gt;Spring&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.docker.com&quot;&gt;도커&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://kubernetes.io/ko/docs/home/&quot;&gt;k8s(한글)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.android.com&quot;&gt;Android&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://nodejs.org/api/&quot;&gt;node&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;section-1&quot;&gt;기업| 개인 기술블로그&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;사실 &lt;a href=&quot;https://medium.com/@Dongmin_Jang/%EC%97%85%EC%B2%B4%EB%B3%84-%EA%B8%B0%EC%88%A0-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A6%AC%EC%8A%A4%ED%8A%B8-e2d736d0e658&quot;&gt;테크블로그는 여기&lt;/a&gt;에 다 정리되어있다. 내가 자주보는 한글 블로그 위주로 모았다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://d2.naver.com/home&quot;&gt;네이버 D2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://tech.kakao.com/&quot;&gt;카카오 기술블로그&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/coupang-tech&quot;&gt;쿠팡 기술블로그&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://xguru.net/&quot;&gt;구루(권정혁님) 기술블로그&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 27 Jan 2020 14:46:00 +0900</pubDate>
-        <link>http://lee95292.github.io/intg/2020/01/27/INTG_TheoryLink-TheoryLink.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/intg/2020/01/27/INTG_TheoryLink-TheoryLink.html</guid>
-        
-        
-        <category>intg</category>
         
       </item>
     

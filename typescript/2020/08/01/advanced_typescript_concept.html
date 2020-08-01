@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- My Change!!  start-->
+  <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
+  <!-- My Change!! end -->
+  
+  <title>타입스크립트 핵심 개념!</title>
+  <meta name="description" content="  본문은 Typescript 핵심 개념 을 번역(+ 개인적인 의견 추가)한 글입니다.">
+  
+  <meta name="author" content="LeeMyungKyu">
+  <meta name="copyright" content="&copy; LeeMyungKyu 2020">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="  본문은 Typescript 핵심 개념 을 번역(+ 개인적인 의견 추가)한 글입니다." />
+  <meta property="og:url" content="http://lee95292.github.io" />
+  <meta property="og:site_name" content="Mleek's blog" />
+  <meta property="og:title" content="타입스크립트 핵심 개념!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="타입스크립트 핵심 개념!">
+  <meta name="twitter:description" content="  본문은 Typescript 핵심 개념 을 번역(+ 개인적인 의견 추가)한 글입니다.">
+  <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
+  <meta name="twitter:url" content="http://lee95292.github.io">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://lee95292.github.io/typescript/2020/08/01/advanced_typescript_concept.html">
+  <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Mleek's blog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/typography/">Typography</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">타입스크립트 핵심 개념!</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">August 1, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/typescript">Typescript</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <blockquote>
+  <p>본문은 <a href="https://www.educative.io/blog/advanced-typescript-concepts">Typescript 핵심 개념</a> 을 번역(+ 개인적인 의견 추가)한 글입니다.</p>
+</blockquote>
+
+<blockquote>
+  <p>OOP에 대한 기본 지식이 있으신 분은 <a href="https://learnxinyminutes.com/docs/typescript/">Learn Typescript in Y minutes</a>또는 <a href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html">MS 공식 DOCS</a>에서 문법만 훑어보시면 좋습니다.</p>
+</blockquote>
+
+<p>타입스크립트를 접했을때 드는 느낌은 OOP + Compile + javascript =&gt; typescript로 요약할 수 있겠습니다.</p>
+
+<p>typechecking, OOP개념이 분명하지 않은 Javscript(이하 JS)의 단점을 커버하는 언어입니다.</p>
+
+<p>실제로 typechecking을 하지 않음으로 인해 발생하는 런타임에러는 꽤 큰 골칫거리기에 , typechekcing, compilable한 typescript의 개념이 아주 매력적입니다.</p>
+
+<p>그리고 javascript에 익숙하다면 학습난이도도 높지 않은듯 합니다.</p>
+
+<p><em>(통번역입니다. 오역주의) Lets go!</em></p>
+
+<hr />
+
+<p>자바스크립트를 사용할 때, 디버깅은 많은 개발자들의 골칫거리입니다! 프로그램을 실행하고, 버그를 찾고 고치기를 반복합니다. 디버깅을 시작한지 몇시간 뒤에야 마침내 버그를 고치곤 합니다. 이러한 문제는 자바스크립트같이 컴파일을 하지 않는 언어(인터프리터 언어)의 공통적인 특징입니다.</p>
+
+<blockquote>
+  <p>python 역시 타입체킹을 하지 않는 인터프리터 언어인데 디버깅이나 런타임 에러 문제에 대해 논의하는것을 보지 못했네요.. 왜 그럴까요..?</p>
+</blockquote>
+
+<p>이런 자바스크립트의 단점을 고치기 위해 Microsoft는 Typescript를 만들어냅니다. 거대한 팀들이 Typescript의 장점을 깨닫고 그들의 기술스택에 적용하면서, 많은 개발자들이 이를 학습하게 되었습니다!</p>
+
+<p>목차</p>
+
+<ul>
+  <li>Typescript란?</li>
+  <li>Strict types 소개</li>
+  <li>Typescript와 OOP(객체지향 프로그래밍)</li>
+  <li>Typescript의 타입들</li>
+  <li>그 외 알아야하는 것들</li>
+  <li>마무리, 참고자료</li>
+</ul>
+
+<h2 id="typescript">Typescript란?</h2>
+
+<p>Microsoft가 만들고 관리하는, javascript의 모집합(superset)으로, 모든 자바스크립트 코드는 Typescript에서 유효하다는 특징을 가지고있습니다.</p>
+
+<blockquote>
+  <p>즉, JS로 할 수 있는건, TS로 할 수 있다는 뜻.</p>
+</blockquote>
+
+<p>TS는 아래 두개의 핵심 개념에 초점을 맞춘 Application 규모(대규모) 개발을 위한 Javascript입니다.</p>
+
+<ul>
+  <li>
+    <p>현재버전 이후의 자바스크립트 엔진의 기능을 현재 자바스크립트 엔진에서 제공</p>
+  </li>
+  <li>
+    <p>Javascript에서 type system 제공</p>
+  </li>
+</ul>
+
+<p>Typescript의 구성요소는</p>
+
+<ol>
+  <li>기본적으로 javascript와 추가적인 특징/문법들로 이루어진 Typescript 자체 문법과,</li>
+  <li>Typescript 코드를 javascript 코드로 변환해주는 컴파일러,</li>
+  <li>Compiler 파이프라인의 끝에서 에디터같은 기능을 제공하는 Language service가 습니다.</li>
+</ol>
+
+<p>(3번기능은 지금으로서 어떤 기능인지 와닿지 않는것 같습니다.)</p>
+
+<p>Typescript를 사용하는 이유!</p>
+
+<ul>
+  <li>
+    <p>타입체킹 : MS나 Google같은 거대한 팀들이 Typescript의 정적 타입 체크가 개발 프로세스 간소화에 있어 유용함을 알아냈습니다.</p>
+  </li>
+  <li>
+    <p>객채지향 프로그래밍 : Typescript는 인터페이스, 상속, 클래스 등의 객체지향 프로그래밍 개념을 지원합니다.</p>
+  </li>
+  <li>
+    <p>컴파일 : Typescript는 인터프리팅 언어인 JS와 달리 컴파일을 지원하며, 이는 여러분 코드의 컴파일 에러를 찾아주고, 디버깅을 간편하게 해줍니다.</p>
+  </li>
+</ul>
+
+<p>Typescript 설치</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">&gt; </span>npm install -g typescript
+</code></pre>
+</div>
+
+<p>compile</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">&gt; </span>tsc hellowrold.ts
+</code></pre>
+</div>
+
+<p>npm을 사용하지 않는다면, (링크)[https://www.typescriptlang.org/#download-links]에서 typescript패키지를 다운받을 수 있습니다.</p>
+
+<h2 id="typescript--">Typescript의 장점과 한계</h2>
+
+<h3 id="section">타입체킹</h3>
+
+<p>Javascript는 동적으로 타입을 체킹하는 언어로, 오직 런타임에서만 에러를 찾을 수 있음을 의미합니다. 이것은 복잡한 프로젝트를 진행하는 큰 팀에게 거대한 단점으로, 코드에 대한 모든 실수를 미리 찾는 방법이 더 수월합니다.</p>
+
+<p>Typescript는 선택적(optional) 정적 타입체킹을 제공하므로, 변수는 타입을 바꿀 수 없으며, 특정 값만을 받을 수 있습니다. 이를 통해 Typescript 컴파일러가 에러가 발생하기 쉬운 코드에서 더 많은 버그를 잡을 수 있도록 합니다. 또한 타입은 가독성있고 쉽게 리팩토링하기 위한 구조를 만듭니다.</p>
+
+<p>Typescript와 Javacsript의 차이점을 보고싶다면 <a href="https://www.typescriptlang.org/#download-links">여기</a>로!</p>
+
+<h3 id="ide-">IDE 지원</h3>
+
+<p>Typescript가 정적 타입체킹을 지원하므로, 코드 에디터 또는 IDE에서 더 많은 이점을 가질 수 있다.</p>
+
+<ol>
+  <li>자동완성( Javascript의 변수는 type이 존재하지 않으므로, 변수에 대한 자동완성을 지원하지 않는다. 지원하더라도, 에디터 또는 IDE는 변수의 타입을 모르기에, 적절한 메서드명이나 애트리뷰트 명을 자동완성할 수 없음),</li>
+  <li><a href="https://visualstudio.microsoft.com/ko/services/rich-code-navigation/">code navigation</a>,</li>
+  <li>type에 의한 Error flagging</li>
+</ol>
+
+<p>이런 IDE에서의 기능 지원은, Tpyescript로 작성해야하는 코드량이 Javascript보다 많더라도, 생산성 경쟁력에 많은 부분을 기여하고 있다.</p>
+
+<p>Typescrpt3를 지원하는 인기있는 IDE들</p>
+
+<ul>
+  <li>MS Visual Studio</li>
+  <li>Webstorm</li>
+  <li>Visual Studio Code</li>
+  <li>Atom</li>
+</ul>
+
+<h3 id="browser-">Browser 호환성</h3>
+
+<p>브라우저 호환성은 Typescript의 강력한 특징중 하나입니다. Typescript는 모든 모던 브라우저와 호환 가능한 코드로 Typescript 코드를 컴파일합니다. 이런 높은 호환성이 가능한 이유는, Typescript코드를 모든 기기와 플랫폼, 브라우저를 지원하는 vanilla JS(순수 Javscript)로 컴파일할 수 있기 때문에 가능합니다.</p>
+
+<p>Typescript를 사용하며 얻는 많은 장점이 있음에도, 이것은 완벽한 솔루션은 아닙니다.</p>
+
+<p>코드 가독성을 높히는 것에 있어 하나의 단점은, VanillaJS를 사용할 때와 비교해 Typescript를 사용할때는 가독성있는 코드를 위해 더 많은 코드를 써야하고,
+이는 잠재적으로 여러분의 개발 시간을 증가시킵니다.</p>
+
+<hr />
+
+<h1 id="section-1">문법 맛보기!</h1>
+
+<h3 id="strict-types-">Strict Types 인트로</h3>
+
+<p><strong>noImplicitAny</strong></p>
+
+<p>공식 문서에 따르면 noImplicitAny는 any타입의 선언식/표현식으로 인한</p>
+
+<p>이것은 Typescript가 타입을 유추할때마다 noImplicitAny를 허용했을 경우, 에러를 발생시킨다는 의미입니다.</p>
+
+<p>Typescript 비기너인 경우
+benefical to streamline - 간소화에 유리
+beforehand
+downside
+prone</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8+%ED%95%B5%EC%8B%AC+%EA%B0%9C%EB%85%90%21&url=http%3A%2F%2Flee95292.github.io%2Ftypescript%2F2020%2F08%2F01%2Fadvanced_typescript_concept.html&media=http://lee95292.github.io/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Mleek's blog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:lee95292@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">lee95292@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/TheBenCentra" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">TheBenCentra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/lee95292" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">lee95292</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/pub/ben-centra/47/769/60a" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Ben Centra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Mleek's blog_ study note & daily life
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>
