@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://lee95292.github.io/kafka/2020/06/19/kafka_seminar.html</loc>
+<lastmod>2020-06-19T22:08:48+09:00</lastmod>
+</url>
+<url>
 <loc>http://lee95292.github.io/%ED%9A%8C%EA%B3%A0/2020/06/07/2020_firstHalfOfYear.html</loc>
 <lastmod>2020-06-07T11:50:58+09:00</lastmod>
 </url>
