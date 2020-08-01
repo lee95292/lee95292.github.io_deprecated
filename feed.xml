@@ -6,12 +6,12 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 01 Aug 2020 21:13:03 +0900</pubDate>
-    <lastBuildDate>Sat, 01 Aug 2020 21:13:03 +0900</lastBuildDate>
+    <pubDate>Sat, 01 Aug 2020 21:13:25 +0900</pubDate>
+    <lastBuildDate>Sat, 01 Aug 2020 21:13:25 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>타입스크립트 핵심 Concepts (번역)!</title>
+        <title>타입스크립트 핵심 Concepts! (번역)</title>
         <description>&lt;blockquote&gt;
   &lt;p&gt;본문은 &lt;a href=&quot;https://www.educative.io/blog/advanced-typescript-concepts&quot;&gt;Typescript 핵심 개념&lt;/a&gt; 을 번역(+ 개인적인 의견 추가)한 글입니다.&lt;/p&gt;
 &lt;/blockquote&gt;
