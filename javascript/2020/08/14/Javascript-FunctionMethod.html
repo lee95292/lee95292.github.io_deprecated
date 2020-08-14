@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- My Change!!  start-->
+  <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
+  <!-- My Change!! end -->
+  
+  <title>[Javascript Function] call, apply, bind 메서드</title>
+  <meta name="description" content="Intro">
+  
+  <meta name="author" content="LeeMyungKyu">
+  <meta name="copyright" content="&copy; LeeMyungKyu 2020">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Intro" />
+  <meta property="og:url" content="http://lee95292.github.io" />
+  <meta property="og:site_name" content="Mleek's blog" />
+  <meta property="og:title" content="[Javascript Function] call, apply, bind 메서드" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[Javascript Function] call, apply, bind 메서드">
+  <meta name="twitter:description" content="Intro">
+  <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
+  <meta name="twitter:url" content="http://lee95292.github.io">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://lee95292.github.io/javascript/2020/08/14/Javascript-FunctionMethod.html">
+  <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Mleek's blog">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/typography/">Typography</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">[Javascript Function] call, apply, bind 메서드</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">August 14, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/javascript">Javascript</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h2 id="intro">Intro</h2>
+
+<p>여기 링크에서도 자세한 설명을 확인할 수 있습니다.</p>
+
+<ul>
+  <li><a href="https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd">함수의 메소드와 arguments: 제로초님 블로그</a></li>
+  <li><a href="http://jeonghwan-kim.github.io/2017/10/22/js-context-binding.html">자바스크립트 this 바인딩 우선순위 : 김정환님 블로그</a></li>
+</ul>
+
+<p>Function.prototype의 call, apply, bind 메서드,
+공부를 해도 사용시에 헷갈릴때가 많아서 정리합니다..!</p>
+
+<h2 id="call-apply">call, apply</h2>
+
+<p>Call과 Assign은 함수에 객체를 바인딩 후 호출하는 방법입니다.</p>
+
+<p>Javascript에서는 함수 역시 객체이므로, 함수 객체 내에서 call, apply, bind 메서드 역시 객체의 프로퍼티 메서드로 가지고있습니다.</p>
+
+<p>따라서 <strong>myFunction.call()</strong>, <strong>myFunction.bind()</strong>와 같은 형태로 호출해서 사용하지만, 그 역할은 <strong>myFunction()</strong>과 비슷합니다.</p>
+
+<p>예시)</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">myMethod</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">,</span> <span class="nx">arg3</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">attr</span> <span class="o">=</span> <span class="s2">"my attr"</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">attr</span><span class="p">,</span> <span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">,</span> <span class="nx">arg3</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">myMethod</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">myMethod</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span>
+<span class="nx">myMethod</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+
+<span class="c1">//result</span>
+<span class="c1">// myattr 1 2 3</span>
+<span class="c1">// myattr 1 2 4</span>
+<span class="c1">// myattr 1,2,5</span>
+</code></pre>
+</div>
+
+<p>예시와 결과로 알 수 있듯, call(null, arg, arg2, arg)와 apply(null, [arg1, arg2, arg3])은 메서드 호출의 역할을 함을 알 수 있습니다.</p>
+
+<p>그렇다면 첫 번째 인자는 어떤 역할을 수행할까요?</p>
+
+<p>바로 this 객체를 바인딩 역할을 수행합니다.</p>
+
+<p>예시는 어떻게 출력될까요?</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">myObj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">attr</span><span class="p">:</span> <span class="s2">"myattr"</span><span class="p">,</span>
+  <span class="na">log</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">attr</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">myObj</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">call</span><span class="p">({</span> <span class="na">attr</span><span class="p">:</span> <span class="s2">"your attr"</span> <span class="p">},</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>너무 티나는 예시때문에 알 수 있듯 아래와 같이 출력됩니다.</p>
+
+<p>your attr 1 2 3</p>
+
+<p>myMethod.call의 첫 번째 인자가 실행 컨텍스트를 바꿨기 때문이죠.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">va</span> <span class="o">=</span> <span class="s2">"globalValue"</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">myObj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">va</span><span class="p">:</span> <span class="s2">"asd"</span><span class="p">,</span>
+  <span class="na">log</span><span class="p">:</span> <span class="kd">function</span> <span class="nx">myFunc2</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">va</span> <span class="o">=</span> <span class="s2">"lexicalSocpe"</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">va</span><span class="p">);</span> <span class="c1">//(1)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">va</span><span class="p">);</span> <span class="c1">//(2)</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">myObj</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">call</span><span class="p">({</span> <span class="na">va</span><span class="p">:</span> <span class="s2">"callValue"</span> <span class="p">},</span> <span class="s2">"arg"</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>이건 본문과는 관련성이 떨어지지만 조금 헷갈리는 예제네요~</p>
+
+<p>(1): Lexical scope에 의해 “lexicalSocpe”가 출력됩니다.</p>
+
+<ul>
+  <li>함수가 실행될 때, 변수 참조 체인은 Call Stack이 아닌 Lexical stack에서 참조된다는 의미입니다.</li>
+</ul>
+
+<p>(2): call함수가 this를 교체했으므로, “callValue”가 출력됩니다.</p>
+
+<ul>
+  <li>myFunc.call에서, myFunc.va = “callValue”로 교체해 실행합니다.</li>
+</ul>
+
+<h2 id="bind">bind</h2>
+
+<p>Function.prototype.bind는 apply, call과 조금 다릅니다,</p>
+
+<p>apply, call 은 bind + execute였다면, bind는 메서드와 오브젝트를 바인딩합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">myObj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">va</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span>
+  <span class="na">log</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">va</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">binded</span> <span class="o">=</span> <span class="nx">myObj</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">bind</span><span class="p">({</span> <span class="na">va</span><span class="p">:</span> <span class="s2">"binded value"</span> <span class="p">});</span>
+
+<span class="nx">binded</span><span class="p">();</span> <span class="c1">// result: bindex value</span>
+</code></pre>
+</div>
+
+<p>이렇게 this가 바뀌는 것은, new 키워드에서도 확인할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Persion</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="nl">introduce</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">myeonggyu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"mklee"</span><span class="p">,</span> <span class="mi">23</span><span class="p">);</span>
+<span class="nx">myeonggyu</span><span class="p">.</span><span class="nx">introduce</span><span class="p">();</span> <span class="c1">// mklee 23</span>
+</code></pre>
+</div>
+
+<p>!! 글을 작성하다가 알게되었는데, 위 예시의 log선언부를 익명함수로 고치면 this.attr이 undefinded가 출력됩니다. 익명함수는 무조건 this가 루트를 가르키는듯 합니다.</p>
+
+<p>위에서 new를 이용해 this를 바인딩한것이 <strong>new 바인딩</strong>,</p>
+
+<p>bind,call,apply를 통해 바인딩한것이 <strong>명시적 바인딩</strong>,</p>
+
+<p>상위객체의 this값을 가지는 방법으로 바인딩되는것이 <strong>암시적 바인딩입니다.</strong></p>
+
+<p>결과적으로, 바인딩 우선순위는 <strong>new &gt; 명시적 &gt; 암시적</strong> 바인딩 순으로 결합되며,</p>
+
+<p><a href="http://jeonghwan-kim.github.io/2017/10/22/js-context-binding.html">자바스크립트 this 바인딩 우선순위 : 김정환님 블로그</a>에 잘 설명되어있습니다.</p>
+
+<h2 id="close">Close</h2>
+
+<p>사용되는것이 종종 보이긴 하지만, 볼때마다 헷갈려서 학습하곤 합니다. 관련 내용을 찾아가다 보면 Javascript동작구조에 대한 재미있는 글들이 많이 보이니, 위 글에서 얻은 키워드를 바탕으로 더 찾아보시면 도움될것 같습니다.</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BJavascript+Function%5D+call%2C+apply%2C+bind+%EB%A9%94%EC%84%9C%EB%93%9C&url=http%3A%2F%2Flee95292.github.io%2Fjavascript%2F2020%2F08%2F14%2FJavascript-FunctionMethod.html&media=http://lee95292.github.io/assets/header_image.jpg"
+        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+        <i class="fa fa-pinterest-square fa-lg"></i>
+      </a>
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Mleek's blog</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/typography/">Typography</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:lee95292@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">lee95292@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/TheBenCentra" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">TheBenCentra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+          <li>
+            <a href="https://github.com/lee95292" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">lee95292</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://www.linkedin.com/pub/ben-centra/47/769/60a" title="Connect with me on LinkedIn">
+              <i class="fa fa-linkedin"></i>
+              <span class="username">Ben Centra</span>
+            </a>
+          </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Mleek's blog_ study note & daily life
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

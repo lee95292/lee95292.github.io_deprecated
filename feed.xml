@@ -6,22 +6,177 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 15 Aug 2020 00:47:53 +0900</pubDate>
-    <lastBuildDate>Sat, 15 Aug 2020 00:47:53 +0900</lastBuildDate>
+    <pubDate>Sat, 15 Aug 2020 00:49:34 +0900</pubDate>
+    <lastBuildDate>Sat, 15 Aug 2020 00:49:34 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>[CRDT/ OT] 실시간 문서 편집 알고리즘</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;포스팅 주제 : 실시간 문서 편집 알고리즘&lt;/h2&gt;
+        <title>[Javascript Function] call, apply, bind 메서드</title>
+        <description>&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+
+&lt;p&gt;여기 링크에서도 자세한 설명을 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd&quot;&gt;함수의 메소드와 arguments: 제로초님 블로그&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jeonghwan-kim.github.io/2017/10/22/js-context-binding.html&quot;&gt;자바스크립트 this 바인딩 우선순위 : 김정환님 블로그&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Function.prototype의 call, apply, bind 메서드,
+공부를 해도 사용시에 헷갈릴때가 많아서 정리합니다..!&lt;/p&gt;
+
+&lt;h2 id=&quot;call-apply&quot;&gt;call, apply&lt;/h2&gt;
+
+&lt;p&gt;Call과 Assign은 함수에 객체를 바인딩 후 호출하는 방법입니다.&lt;/p&gt;
+
+&lt;p&gt;Javascript에서는 함수 역시 객체이므로, 함수 객체 내에서 call, apply, bind 메서드 역시 객체의 프로퍼티 메서드로 가지고있습니다.&lt;/p&gt;
+
+&lt;p&gt;따라서 &lt;strong&gt;myFunction.call()&lt;/strong&gt;, &lt;strong&gt;myFunction.bind()&lt;/strong&gt;와 같은 형태로 호출해서 사용하지만, 그 역할은 &lt;strong&gt;myFunction()&lt;/strong&gt;과 비슷합니다.&lt;/p&gt;
+
+&lt;p&gt;예시)&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myMethod&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arg1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arg2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arg3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;my attr&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arg1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arg2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arg3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;myMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;myMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;myMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//result&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// myattr 1 2 3&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// myattr 1 2 4&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// myattr 1,2,5&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;예시와 결과로 알 수 있듯, call(null, arg, arg2, arg)와 apply(null, [arg1, arg2, arg3])은 메서드 호출의 역할을 함을 알 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;그렇다면 첫 번째 인자는 어떤 역할을 수행할까요?&lt;/p&gt;
+
+&lt;p&gt;바로 this 객체를 바인딩 역할을 수행합니다.&lt;/p&gt;
+
+&lt;p&gt;예시는 어떻게 출력될까요?&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myObj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;myattr&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;myObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;your attr&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;너무 티나는 예시때문에 알 수 있듯 아래와 같이 출력됩니다.&lt;/p&gt;
+
+&lt;p&gt;your attr 1 2 3&lt;/p&gt;
+
+&lt;p&gt;myMethod.call의 첫 번째 인자가 실행 컨텍스트를 바꿨기 때문이죠.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;va&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;globalValue&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myObj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;va&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;asd&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunc2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;va&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;lexicalSocpe&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;va&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//(1)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;va&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//(2)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;myObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;va&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;callValue&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;arg&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;이건 본문과는 관련성이 떨어지지만 조금 헷갈리는 예제네요~&lt;/p&gt;
+
+&lt;p&gt;(1): Lexical scope에 의해 “lexicalSocpe”가 출력됩니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;함수가 실행될 때, 변수 참조 체인은 Call Stack이 아닌 Lexical stack에서 참조된다는 의미입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(2): call함수가 this를 교체했으므로, “callValue”가 출력됩니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;myFunc.call에서, myFunc.va = “callValue”로 교체해 실행합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;bind&quot;&gt;bind&lt;/h2&gt;
+
+&lt;p&gt;Function.prototype.bind는 apply, call과 조금 다릅니다,&lt;/p&gt;
+
+&lt;p&gt;apply, call 은 bind + execute였다면, bind는 메서드와 오브젝트를 바인딩합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;myObj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;va&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;va&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;binded&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;va&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;binded value&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;binded&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// result: bindex value&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;이렇게 this가 바뀌는 것은, new 키워드에서도 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Persion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;introduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myeonggyu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mklee&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;myeonggyu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;introduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// mklee 23&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;!! 글을 작성하다가 알게되었는데, 위 예시의 log선언부를 익명함수로 고치면 this.attr이 undefinded가 출력됩니다. 익명함수는 무조건 this가 루트를 가르키는듯 합니다.&lt;/p&gt;
+
+&lt;p&gt;위에서 new를 이용해 this를 바인딩한것이 &lt;strong&gt;new 바인딩&lt;/strong&gt;,&lt;/p&gt;
+
+&lt;p&gt;bind,call,apply를 통해 바인딩한것이 &lt;strong&gt;명시적 바인딩&lt;/strong&gt;,&lt;/p&gt;
+
+&lt;p&gt;상위객체의 this값을 가지는 방법으로 바인딩되는것이 &lt;strong&gt;암시적 바인딩입니다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;결과적으로, 바인딩 우선순위는 &lt;strong&gt;new &amp;gt; 명시적 &amp;gt; 암시적&lt;/strong&gt; 바인딩 순으로 결합되며,&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jeonghwan-kim.github.io/2017/10/22/js-context-binding.html&quot;&gt;자바스크립트 this 바인딩 우선순위 : 김정환님 블로그&lt;/a&gt;에 잘 설명되어있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;close&quot;&gt;Close&lt;/h2&gt;
+
+&lt;p&gt;사용되는것이 종종 보이긴 하지만, 볼때마다 헷갈려서 학습하곤 합니다. 관련 내용을 찾아가다 보면 Javascript동작구조에 대한 재미있는 글들이 많이 보이니, 위 글에서 얻은 키워드를 바탕으로 더 찾아보시면 도움될것 같습니다.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 14 Aug 2020 20:29:51 +0900</pubDate>
+        <link>http://lee95292.github.io/javascript/2020/08/14/Javascript-FunctionMethod.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/javascript/2020/08/14/Javascript-FunctionMethod.html</guid>
+        
+        
+        <category>javascript</category>
+        
+      </item>
+    
+      <item>
+        <title>[crdt_ot]realtime_document_collaboration_algorithm</title>
+        <description>&lt;!-- ---
+layout: post
+title: &quot;[CRDT/ OT] 실시간 문서 편집 알고리즘&quot;
+date: 2020-08-12 22:58:05
+categories: Algorithm
+--- --&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;포스팅 주제 : 실시간 문서 편집 알고리즘&lt;/h2&gt;
 
 &lt;p&gt;Google의 문서&lt;/p&gt;
 </description>
-        <pubDate>Thu, 13 Aug 2020 07:58:05 +0900</pubDate>
-        <link>http://lee95292.github.io/algorithm/2020/08/13/CRDT_OT-RealTime_Document_Collaboration_Algorithm.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/algorithm/2020/08/13/CRDT_OT-RealTime_Document_Collaboration_Algorithm.html</guid>
+        <pubDate>Wed, 12 Aug 2020 00:00:00 +0900</pubDate>
+        <link>http://lee95292.github.io/2020/08/12/CRDT_OT-RealTime_Document_Collaboration_Algorithm.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/2020/08/12/CRDT_OT-RealTime_Document_Collaboration_Algorithm.html</guid>
         
-        
-        <category>Algorithm</category>
         
       </item>
     
@@ -1169,92 +1324,6 @@ has no valid crumb 에러가 발생하는 이유는 대부분 프록시 설정 �
         
         
         <category>jenkins</category>
-        
-      </item>
-    
-      <item>
-        <title>자바스크립트를 공부하려하는 당신에게</title>
-        <description>&lt;p&gt;저는 학교에서 Python, C/C++, Java를 다루는 수업을 수강하고, 문법을 익혔고,&lt;br /&gt;
-Java와 C로는 여러 토이프로젝트를 해보면서 나름 프로그래밍 언어를 배우고 사용하는데 익숙해져 있어서 내심 프로그래밍 언어는 거기서 거기지~ 라는 생각을 해왔습니다.&lt;/p&gt;
-
-&lt;p&gt;자바스크립트를 배우면서 그 오만한 생각은 와장창 깨져버렸습니다…&lt;/p&gt;
-
-&lt;p&gt;이 글에서는 제가 자바스크립트를 공부하며, 사용하며 어떤게 어려웠는지,&lt;br /&gt;
-그럼에도 계속 자바스크립트를 공부하는 이유, 제가 생각하는 자바스크립트의 매력을 소개해보려 합니다!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;reactjs&quot;&gt;사용한 라이브러리 :React.js&lt;/h2&gt;
-
-&lt;p&gt;제일 처음으로 저는 웹 프론트 페이지를 만들기 위해 Reactjs 라이브러리를 공부했습니다.&lt;br /&gt;
-이전까지 HTML/CSS/JQuery로 페이지를 구성했는데, 이때는 HTML문서에 Javascript를 끼워넣는 느낌이어서 코딩을 한다는 느낌이 들지는 않았고, 제대로된 페이지를 만들어 본 경험은 없었습니다.&lt;/p&gt;
-
-&lt;p&gt;조금 더 제대로된 다이나믹한 웹 페이지를 만들기 위해 Jquery를 더 공부할까 고민했습니다.&lt;br /&gt;
-그러던 도중 주변에서 React가 정말 쉽고 간편하다는 이야기를 듣고 React를 시작하게 되었습니다.&lt;/p&gt;
-
-&lt;p&gt;결론부터 말씀드리자면,&lt;strong&gt;React는 간편하지만 절대 쉽지는 않습니다&lt;/strong&gt;.&lt;br /&gt;
-위에서 말씀드렸듯, 저는 프로그래밍 언어 학습을 몇차례 학습하고, 각 언어들이 가지는 공통점과 차이점을 비교하면서 학습하는 것에 익숙해져 있었는데요, React에서 다루는 중점적인 개념은 여타 프로그래밍 언어와 상당히 차이가 있었습니다!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/jslib-intro/react-lifecycle.png&quot; /&gt;
-&lt;span style=&quot;text-align:center&quot;&gt;그림: React 컴포넌트의 생명주기&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;대표적인 예시로,&lt;strong&gt;state와 property를 다루는 일, 컴포넌트의 생명주기, 모듈화, 컴포넌트, 훅&lt;/strong&gt; 등이 그것입니다.&lt;/p&gt;
-
-&lt;p&gt;React에서는 컴포넌트의 렌더링이 Property와 State라고 불리는 리액트 컴포넌트의 특수 변수의 변경에 따라 일어나는데,&lt;br /&gt;
-이런 개념을 멀리서 보면 객체지향의 상속과 비슷하다 생각할 수도 있지만 전혀 다른 개념이며, 이와 비슷하게 리액트가 사용하는 생소한 개념에 익숙해지는 것에 생각보다 시간이 많이 걸렸습니다…&lt;/p&gt;
-
-&lt;p&gt;이렇듯, “쉽다”는것이 (최소한 저에게) 리액트의 장점이 아닙니다.&lt;br /&gt;
-그럼에도 불구하고, 저는 이제 페이지를 구현할 때 React만을 사용합니다.&lt;br /&gt;
-리액트는 컴포넌트를 재사용하기에 정말 편리합니다.&lt;br /&gt;
-물론 HTML/CSS코드도 하면 재활용할 수 있지만 이는 말그대로 재활용이고, 상황에 맞게 코드를 수정해주어야 합니다.&lt;/p&gt;
-
-&lt;p&gt;컴포넌트를 재사용한다는 것은, 기존 HTML/CSS/JS로 작성된 소스코드를 마치 &lt;strong&gt;함수 호출하듯 편리하게 사용&lt;/strong&gt;하는것을 의미합니다.&lt;br /&gt;
-저에게는 이것이 React를 배우는 데 걸리는 어떤 어려움도 커버할 수 있을만한 큰 장점이라고 생각합니다.&lt;/p&gt;
-
-&lt;p&gt;프론트엔드 코드를 객체지향적으로 다루는 것 또한 저에게 장점으로 다가왔습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;nodejs&quot;&gt;사용한 라이브러리 :Node.js&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;저는 여태 서버 프로그램을 작성하기 위해 Spring framework의 Spring boot를 사용했습니다.&lt;br /&gt;
-스프링 부트를 사용하면서 딱히 불만이나 단점에 대해 생각해본 적이 없고, 오히려 SpringFramework는 국내에서 주도적으로 사용되는 만큼 문서가 풍부하고 한국 내 커뮤니티도 활발해 버그를 해결하는 것이 어렵지 않았습니다.&lt;/p&gt;
-
-&lt;p&gt;그러던 어느날 저는 어떤 계기로 Nodejs의 express 라이브러리를 이용해 서버 프로그램을 작성해보았고, 스프링을 사용할때와 상당히 다른 느낌을 받았습니다.&lt;br /&gt;
-짧은 기간 사용했지만, 그 느낌을 공유해볼까 합니다.&lt;/p&gt;
-
-&lt;p&gt;스프링같은 경우, 엔터프라이즈급 서버 프로그램을 위한 &lt;strong&gt;“프레임워크”&lt;/strong&gt;이기 때문에,&lt;br /&gt;
-시작부터 어떤 틀 위에서 시작하고, 여러가지 설정을 거쳐 프로젝트를 시작합니다. 누군가는 이 과정이 너무 복잡하고 쓸데없다고 말하지만, 저는 절대 그렇게 생각하지 않습니다.&lt;br /&gt;
-프로젝트를 시작함과 동시에 많은 부분을 프레임워크로부터 보장받는 것이기에, 프레임워크를 사용하는것과 Node같은 라이브러리 패키지를 사용하는 것과의 장단점을 비교하는 것은 의미가 없다고 생각합니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Springboot: 46.1k stars, 662contributers&lt;br /&gt;
-nodejs : 68.3k stars, 2657contributers&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;다만 Node.js 런타임 뿐만 아니라 Javascript 라이브러리 전반적으로 커뮤니티 활성화 정도가 매우 높다고 느꼈습니다.&lt;br /&gt;
-위는 Nodejs와 Spring project의 컨트리뷰터 수입니다. 물론 Node는 Spring과 비교될 격이 아니고, OpenJRE나 OpenJDK와 비교해야 옳지만, jre,jdk는 상용 버전인 oracle의 비중이 더 높기에 최대한 커뮤니티 활정정도를 비교할만한 지표로 생각했습니다.&lt;/p&gt;
-
-&lt;p&gt;커뮤니티 활성 정도를 보며 한편으론 다른 재단이나 커뮤니티에 비해 유저들이 참여해 생성해낸 프로젝트가 큰 영향력을 갖는 것이 신기했습니다.&lt;/p&gt;
-
-&lt;p&gt;Spring같은 경우 pivotal이라는 회사에서 spring 관련 프로젝트를 시작하고 키워나가는 방식입니다. 어찌보면 pivotal이 시작한 프로젝트가 무조건 메인 프로젝트이므로 유저에게 선택권이 줄어들 수 있다고 생각할 수 있습니다.&lt;br /&gt;
-(스프링은 스프링 자체의 설계 방식이 있기에 어쩔 수 없습니다. 저는 잘 모르지만 이 방식이 같는 장점 또한 있을 것입니다.)&lt;/p&gt;
-
-&lt;p&gt;반면 Nodejs의 경우 인증이라는 커다란 부분을 담당하는 패키지 Passport.js는 개인이 설립한 프로젝트임에도 유저들에게 그 편리성과 효용성을 입증받아 가장 많이 사용되는 패키지로 선택되었습니다. 이런 적자생존 방식으로 생태계가 유지되는 것이 매우 어렵지만, 그만큼 유저에게 많은 편리함을 주고있다고 생각했습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;마무리&lt;/h3&gt;
-
-&lt;p&gt;나름 장단점을 설명한다고 글을 썼지만, 너무 장점 위주로 설명한 것 같습니다…&lt;br /&gt;
-생태계가 활발하고 자주 변화한다고 좋은 것만은 아니라고 생각합니다. 유저는 변화한 내용을 계속 학습하는 것에 비용이 많이 발생할 수도 있고, 새로운 보안 취약점이 발생하거나 기반 패키지가 업데이트 된 경우 상위 패키지와 호환성이 떨어질 수도 있습니다.&lt;/p&gt;
-
-&lt;p&gt;마지막 부분, nodejs의 특징을 조금 더 잘 설명하기 위해 제가 경험한 Spring framework와 비교하며 작성했지만, 위에 말씀드렸 듯 모든것에는 장단점이 있으니, 프로젝트에 사용할 기술스택을 잘 선택하셨으면 합니다!&lt;/p&gt;
-</description>
-        <pubDate>Sun, 15 Mar 2020 09:53:54 +0900</pubDate>
-        <link>http://lee95292.github.io/web/2020/03/15/jslibrary-introduce.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/web/2020/03/15/jslibrary-introduce.html</guid>
-        
-        
-        <category>web</category>
         
       </item>
     
