@@ -10,8 +10,8 @@
   <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
   <!-- My Change!! end -->
   
-  <title>[React] 리액트 라우터 on use</title>
-  <meta name="description" content="  간단한 기록용 포스트공통적으로,import {Router,Link} from 'react-router-dom';Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact path="...">
+  <title>[React] React 라우트 기초 사용법</title>
+  <meta name="description" content="  간단한 기록용 포스트공통적으로,import { Router, Link } from "react-router-dom";Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact pat...">
   
   <meta name="author" content="LeeMyungKyu">
   <meta name="copyright" content="&copy; LeeMyungKyu 2020">
@@ -45,10 +45,10 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="  간단한 기록용 포스트공통적으로,import {Router,Link} from 'react-router-dom';Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact path="..." />
+  <meta property="og:description" content="  간단한 기록용 포스트공통적으로,import { Router, Link } from "react-router-dom";Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact pat..." />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
-  <meta property="og:title" content="[React] 리액트 라우터 on use" />
+  <meta property="og:title" content="[React] React 라우트 기초 사용법" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -59,8 +59,8 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="[React] 리액트 라우터 on use">
-  <meta name="twitter:description" content="  간단한 기록용 포스트공통적으로,import {Router,Link} from 'react-router-dom';Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact path="...">
+  <meta name="twitter:title" content="[React] React 라우트 기초 사용법">
+  <meta name="twitter:description" content="  간단한 기록용 포스트공통적으로,import { Router, Link } from "react-router-dom";Route - path와 component 속성으로 설명해보자.exact path와 일치하는 component를 보여준다. 즉,&lt;Route exact pat...">
   <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
   
@@ -121,6 +121,8 @@
         
           
         
+          
+        
       </ul>
     </nav>
   </div>
@@ -133,7 +135,7 @@
 <div class="post-header-container " >
   <div class="scrim ">
     <header class="post-header">
-      <h1 class="title">[React] 리액트 라우터 on use</h1>
+      <h1 class="title">[React] React 라우트 기초 사용법</h1>
       <p class="info">by <strong></strong></p>
     </header>
   </div>
@@ -164,7 +166,8 @@
 </blockquote>
 
 <p>공통적으로,</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span><span class="nx">Router</span><span class="p">,</span><span class="nx">Link</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-router-dom'</span><span class="p">;</span>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span><span class="p">,</span> <span class="nx">Link</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"react-router-dom"</span><span class="p">;</span>
 </code></pre>
 </div>
 
@@ -172,7 +175,7 @@
 
 <p>exact path와 일치하는 component를 보여준다. 즉,</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;Route</span> <span class="na">exact</span> <span class="na">path=</span><span class="s">"/"</span> <span class="na">component=</span><span class="s">{Home}</span> <span class="nt">/&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;Route</span> <span class="na">exact</span> <span class="na">path=</span><span class="s">"/"</span> <span class="na">component=</span><span class="s">"{Home}"</span> <span class="nt">/&gt;</span>
 </code></pre>
 </div>
 
@@ -186,21 +189,21 @@
 <h3 id="parameter">Parameter</h3>
 
 <p>parameter는 url path 뒤에 콜론(:)을 붙여 입력받는다.</p>
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>import {Router} from 'react-router-dom';
 
-...
- <span class="nt">&lt;Route</span> <span class="na">path=</span><span class="s">"/about/:name"</span> <span class="na">component=</span><span class="s">{About}/</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>import {Router} from 'react-router-dom'; ...
+<span class="nt">&lt;Route</span> <span class="na">path=</span><span class="s">"/about/:name"</span> <span class="na">component=</span><span class="s">"{About}"</span> <span class="nt">/&gt;</span>
 </code></pre>
 </div>
 
 <p>(전달예시)</p>
+
 <div class="highlighter-rouge"><pre class="highlight"><code>https://localhost:3000/about/mklee
 </code></pre>
 </div>
 
 <p>위의 경우, ‘mklee’가 About 컴포넌트에 파라미터로 사용한다.</p>
 
-<p>이 때,  About의 컴포넌트는 <strong>const name=match.params.name</strong> 과 같이 해당 값을 사용한다</p>
+<p>이 때, About의 컴포넌트는 <strong>const name=match.params.name</strong> 과 같이 해당 값을 사용한다</p>
 
 <h3 id="link-----router">Link 컴포넌트를 통해 새로고침 없는 Router이동</h3>
 
@@ -295,7 +298,7 @@
     
     
     
-      <a href="//www.pinterest.com/pin/create/button/?description=%5BReact%5D+%EB%A6%AC%EC%95%A1%ED%8A%B8+%EB%9D%BC%EC%9A%B0%ED%84%B0+on+use&url=http%3A%2F%2Flee95292.github.io%2Freact%2F2019%2F09%2F13%2FReact-Router_on_use.html&media=http://lee95292.github.io/assets/header_image.jpg"
+      <a href="//www.pinterest.com/pin/create/button/?description=%5BReact%5D+React+%EB%9D%BC%EC%9A%B0%ED%8A%B8+%EA%B8%B0%EC%B4%88+%EC%82%AC%EC%9A%A9%EB%B2%95&url=http%3A%2F%2Flee95292.github.io%2Freact%2F2019%2F09%2F13%2FReact-Router_on_use.html&media=http://lee95292.github.io/assets/header_image.jpg"
         onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
         <i class="fa fa-pinterest-square fa-lg"></i>
       </a>
@@ -412,6 +415,8 @@
         
         
           <li class="nav-link"><a href="/typography/">Typography</a>
+        
+        
         
         
         

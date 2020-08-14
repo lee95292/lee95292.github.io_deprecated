@@ -10,8 +10,9 @@
   <meta name="google-site-verification" content="s25LlTOREaaQTj-AC45RV522xpz-04zxp3AHpuD7GGE" />
   <!-- My Change!! end -->
   
-  <title>[BoostCourse] PJ3 BackEnd 강의 정리(Spring MCV 실습 및 레이어드 아키텍쳐)</title>
-  <meta name="description" content="작성중인 포스트입니다실습을 따라하는 과정을 포스팅하는 것은 의미없다고 생각했습니다.내용이 많아 강사님이 자세히 설명하시지 않았지만 스프링을 처음 접하는 입장에서 그냥 넘어가기에는 찝찝한 부분들이 꽤나 있는것 같습니다.능동적으로 코드를 작성하기 위해 소스코드를 분석해보고, 관련 정보...">
+  <title>Mleek's blog</title>
+  <meta name="description" content="Mleek's blog_ study note & daily life
+">
   
   <meta name="author" content="LeeMyungKyu">
   <meta name="copyright" content="&copy; LeeMyungKyu 2020">
@@ -45,10 +46,11 @@
 
   
   <!-- Facebook OGP cards -->
-  <meta property="og:description" content="작성중인 포스트입니다실습을 따라하는 과정을 포스팅하는 것은 의미없다고 생각했습니다.내용이 많아 강사님이 자세히 설명하시지 않았지만 스프링을 처음 접하는 입장에서 그냥 넘어가기에는 찝찝한 부분들이 꽤나 있는것 같습니다.능동적으로 코드를 작성하기 위해 소스코드를 분석해보고, 관련 정보..." />
+  <meta property="og:description" content="Mleek's blog_ study note & daily life
+" />
   <meta property="og:url" content="http://lee95292.github.io" />
   <meta property="og:site_name" content="Mleek's blog" />
-  <meta property="og:title" content="[BoostCourse] PJ3 BackEnd 강의 정리(Spring MCV 실습 및 레이어드 아키텍쳐)" />
+  <meta property="og:title" content="Mleek's blog" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://lee95292.github.io/assets/logo.png" />
   <meta property="og:image:type" content="image/png" />
@@ -59,8 +61,9 @@
   
   <!-- Twitter: card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="[BoostCourse] PJ3 BackEnd 강의 정리(Spring MCV 실습 및 레이어드 아키텍쳐)">
-  <meta name="twitter:description" content="작성중인 포스트입니다실습을 따라하는 과정을 포스팅하는 것은 의미없다고 생각했습니다.내용이 많아 강사님이 자세히 설명하시지 않았지만 스프링을 처음 접하는 입장에서 그냥 넘어가기에는 찝찝한 부분들이 꽤나 있는것 같습니다.능동적으로 코드를 작성하기 위해 소스코드를 분석해보고, 관련 정보...">
+  <meta name="twitter:title" content="Mleek's blog">
+  <meta name="twitter:description" content="Mleek's blog_ study note & daily life
+">
   <meta name="twitter:image" content="http://lee95292.github.io/assets/logo.png">
   <meta name="twitter:url" content="http://lee95292.github.io">
   
@@ -69,7 +72,7 @@
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://lee95292.github.io/boostcourse/2019/07/21/Boostcourse-PJ3_Backend_Spring2.html">
+  <link rel="canonical" href="http://lee95292.github.io/page9/">
   <link rel="alternate" type="application/rss+xml" title="Mleek's blog" href="http://lee95292.github.io/feed.xml" />
 </head>
 
@@ -130,244 +133,63 @@
 
 
     <div class="page-content">
-        <div class="post">
+        <div class="home">
 
-<div class="post-header-container " >
-  <div class="scrim ">
-    <header class="post-header">
-      <h1 class="title">[BoostCourse] PJ3 BackEnd 강의 정리(Spring MCV 실습 및 레이어드 아키텍쳐)</h1>
-      <p class="info">by <strong></strong></p>
+<div class="site-header-container has-cover" style="background-image: url(/assets/header_image.jpg);">
+  <div class="scrim has-cover">
+    <header class="site-header">
+      <h1 class="title">Mleek's blog</h1>
+      <p class="subtitle">welcome, guest :)</p>
     </header>
   </div>
 </div>
 
 <div class="wrapper">
-
- <span class="page-divider">
-  <span class="one"></span>
-  <span class="two"></span>
-</span>
- 
-
-<section class="post-meta">
-  <div class="post-date">July 21, 2019</div>
-  <div class="post-categories">
-  in 
-    
-    <a href="/category/boostcourse">Boostcourse</a>
-    
+<ul class="post-list">
   
-  </div>
-</section>
-
-<article class="post-content">
-  <p><em>작성중인 포스트입니다</em></p>
-
-<hr />
-
-<p>실습을 따라하는 과정을 포스팅하는 것은 의미없다고 생각했습니다.</p>
-
-<p>내용이 많아 강사님이 자세히 설명하시지 않았지만 스프링을 처음 접하는 입장에서 그냥 넘어가기에는 찝찝한 부분들이 꽤나 있는것 같습니다.</p>
-
-<p>능동적으로 코드를 작성하기 위해 소스코드를 분석해보고, 관련 정보들을 기록하려 합니다.</p>
-
-<p>(레이어드 아키텍처 실습부분은 따라가기만으로도 벅차서, 완성도 있는 정리할 여유가 있을지 모르겠습니다..)</p>
-
-<h3 id="section">애너테이션</h3>
-
-<hr />
-
-<ul>
-  <li>@Datasource</li>
-  <li>@Bean</li>
+  <li>
+    <h2>
+      <a class="post-link" href="/blog/2010/01/01/PostringStack.html">기술블로그 및 개인블로그 포스팅 스택</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p>Layerd Architecture 및 Micro Service Architecture 소개 및 장단점 Layerd git 개념 및 브랜치 사용 정리 리눅스마스터 2급 준비 JPA mysqld 준비 topcit Spring OAuth 연동 // JCLIP React 번들링 환경에서 테스트 npm서버 운용 //JCLIP Oauth Jwt –naver– rest-api — Posting Guideline — 문체 ~~ 합니다, 입니다 체로 통일하기. (19년...</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">January 1, 2010</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/category/blog">Blog</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  
 </ul>
 
-<p>bean을 정의하는 어노테이션</p>
-
-<ul>
-  <li>@ComponentScan</li>
-</ul>
-
-<p>@Controller, @Service, @Repository, @Component 어노테이션이 붙은 클래스를 찾아 컨테이너에 등록</p>
-
-<ul>
-  <li>@Component</li>
-</ul>
-
-<p>컴포넌트 스캔의 대상이 되는 애노테이션 중 하나로써 주로 유틸, 기타 지원 클래스에 붙이는 어노테이션</p>
-
-<ul>
-  <li>@Autowired</li>
-</ul>
-
-<p>주입 대상이되는 bean을 컨테이너에 찾아 주입하는 어노테이션</p>
-
-</article>
-
-
-
-
-
-<section class="rss">
-  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
-</section>
-
-<section class="share">
-  <span>Share: </span>
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-      <a href="//www.pinterest.com/pin/create/button/?description=%5BBoostCourse%5D+PJ3+BackEnd+%EA%B0%95%EC%9D%98+%EC%A0%95%EB%A6%AC%28Spring+MCV+%EC%8B%A4%EC%8A%B5+%EB%B0%8F+%EB%A0%88%EC%9D%B4%EC%96%B4%EB%93%9C+%EC%95%84%ED%82%A4%ED%85%8D%EC%B3%90%29&url=http%3A%2F%2Flee95292.github.io%2Fboostcourse%2F2019%2F07%2F21%2FBoostcourse-PJ3_Backend_Spring2.html&media=http://lee95292.github.io/assets/header_image.jpg"
-        onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
-        <i class="fa fa-pinterest-square fa-lg"></i>
-      </a>
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-  
-</section>
-
-
-
+<nav class="pagination" role="navigation">
+	<p>
+    
+			
+			<a class="newer-posts" href="/page8">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+			
+		
+		<span class="page-number">Page 9 of 9</span>
+		
+		<span class="fa-stack fa-lg">
+      <i class="fa fa-square fa-stack-2x"></i>
+      <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+    </span>
+		
+	</p>
+</nav>
 
 </div>
 </div>

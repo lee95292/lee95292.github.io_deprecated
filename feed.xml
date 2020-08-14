@@ -6,9 +6,24 @@
 </description>
     <link>http://lee95292.github.io/</link>
     <atom:link href="http://lee95292.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 01 Aug 2020 21:18:41 +0900</pubDate>
-    <lastBuildDate>Sat, 01 Aug 2020 21:18:41 +0900</lastBuildDate>
+    <pubDate>Sat, 15 Aug 2020 00:47:53 +0900</pubDate>
+    <lastBuildDate>Sat, 15 Aug 2020 00:47:53 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>[CRDT/ OT] 실시간 문서 편집 알고리즘</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;포스팅 주제 : 실시간 문서 편집 알고리즘&lt;/h2&gt;
+
+&lt;p&gt;Google의 문서&lt;/p&gt;
+</description>
+        <pubDate>Thu, 13 Aug 2020 07:58:05 +0900</pubDate>
+        <link>http://lee95292.github.io/algorithm/2020/08/13/CRDT_OT-RealTime_Document_Collaboration_Algorithm.html</link>
+        <guid isPermaLink="true">http://lee95292.github.io/algorithm/2020/08/13/CRDT_OT-RealTime_Document_Collaboration_Algorithm.html</guid>
+        
+        
+        <category>Algorithm</category>
+        
+      </item>
     
       <item>
         <title>타입스크립트 핵심 Concepts! (번역)</title>
@@ -1240,93 +1255,6 @@ nodejs : 68.3k stars, 2657contributers&lt;/p&gt;
         
         
         <category>web</category>
-        
-      </item>
-    
-      <item>
-        <title>글또 4기 시작, 다짐글</title>
-        <description>&lt;p&gt;글또 4기 다짐글 : 근거있는 변화와 계획!&lt;/p&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;글또를 하게 된 계기&lt;/h1&gt;
-
-&lt;p&gt;나는 아래의 목적을 가지고 글을 썼지만, 글을 쓰는것에 대한 동기부여가 희미해졌다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;버그리포트를 열심히 써서 나중에 똑같은 에러가 터졌을때 참고하자 » 검색해서 보는게 빠르고 정확했다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;자기PR: 나의 꾸준함을 글쓰기로 보여주자 » 나는 별로 꾸준하지도 성실하지도 않았다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;공부하자: 글을 쓰면서 지식을 내면화하고 정리하자. » 이게 그나마 글을 쓸만한 동기였다.&lt;/p&gt;
-
-    &lt;p&gt;(글을 쓰는 과정에서 내가 알고있다고 생각한 지식에 의문을 품었고, 질문에 대한 답을 찾아나가면서 많이 배웠다.)&lt;/p&gt;
-
-    &lt;p&gt;하지만 공부하려고 글을 쓰는것은 초중고 12년 공부습관에 반하는 행동이었고, 내 생각을 읽기 쉽게 정리하는것도 생각보다 너무 힘들었다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;여전히 글쓰는것은 힘들고 귀찮지만, 생각과 상황이 조금 바뀌었다.&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;우선 개발자 글쓰기모임 글또라는 활동을 알게되었다.&lt;/p&gt;
-
-    &lt;p&gt;글쓰는 또라이가 세상을 바꾼다. 이름이 멋있기도 했고, 개발자분들이 &lt;strong&gt;글쓰고 피드백, 커뮤니케이션&lt;/strong&gt;하는 모습이 너무 부럽고 빛났다.&lt;br /&gt;
-(예치금을 두고 글을 쓴다는 약간의 강제성을 얻기 위해 지원하기도 했다.)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;글을 쓰는것이 힘든것이 아니라는것을 깨달았다.&lt;/p&gt;
-
-    &lt;p&gt;글을 쓰는 것 자체로도 어렵지만, 글을 쓰기 위해 지식을 정리하고,확장하고, 내가 가진 질문에 대한 답을 채우는 것을 힘들어했고, 그것이 글쓰기를 멀리하게 된 이유였다.&lt;/p&gt;
-
-    &lt;p&gt;필요한 지식만 검색해서 얻고 땡. 이게 왜 이렇게 되는지는 시간있을때만 찾아보고 아니면 애써 무시했었다.
-얻은 지식을 정리하고 확장하는 일을 게을리 하면 그것은 지식의 파편으로 남아서 곧 죽은 지식이 된다.&lt;/p&gt;
-
-    &lt;p&gt;이제는 내가 글쓰기에서 어떤 과정을 힘들어했는지 알게됐고, 극복해보려고 한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;그래서 이제 어떤 글을 쓸까?&lt;/h2&gt;
-
-&lt;p&gt;나는 개발/인프라 분야에서 흥미 분야가 광범위한 편이다.&lt;br /&gt;
-(지식영역이 넓은건 아닌데, 뭔가를 알게되면 다 재미있어보이고 한번쯤 해보고싶다.)&lt;/p&gt;
-
-&lt;p&gt;그래서 지금 쓰고싶은 글을 나열하고, 나중에 골라서 쓰면 어떨까 싶다.&lt;/p&gt;
-
-&lt;p&gt;다루고싶은 내용&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;로버트 C 마틴 - Clean Architecture&lt;br /&gt;
-Clean code를 너무 인상깊게 봐서 아키텍쳐편도 샀다. 아마 2~4주차 사이에 독후감으로 쓸 것 같다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;정보처리기사 - 운영체제파트&lt;br /&gt;
-나는 운영체제 연구실에서 운영체제와 많이 무관한 가상화파트를 다룬다.
-하지만 면접만 보면 운영체제에 대한 질문이 빠지지 않고 나오기에 정리해야할 필요성을 느꼈다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;관심은 있지만 사용경험이 적은 오픈소스 소프트웨어들&lt;br /&gt;
-ElasticSearch, openstack, Kafka, Zepplin - 컨트리뷰션을 목표로 공부하고 분석하고 사용해보고싶다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;사실 이전에도 포스팅 스택은 항상 차있었지만, 글을 쓰기 전에 흥미가 다른곳으로 돌아간 경우가 많다.&lt;/p&gt;
-
-&lt;p&gt;하지만! 이번엔 능동적인 글쓰기를 목표로, (다루고싶은 내용)에 적힌 글을 쓸 것이다.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 29 Feb 2020 19:14:43 +0900</pubDate>
-        <link>http://lee95292.github.io/etc/2020/02/29/geultto_start.html</link>
-        <guid isPermaLink="true">http://lee95292.github.io/etc/2020/02/29/geultto_start.html</guid>
-        
-        
-        <category>etc</category>
         
       </item>
     
